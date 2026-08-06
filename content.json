@@ -181,21 +181,22 @@
     "url": "https://luxuryproperties.vercel.app",
     "status": "live"
   },
+    {
+    "name": "Awakart",
+    "description": "Your go-to online shopping destination for electronics, gadgets, and everyday essentials. Shop smart, save more.",
+    "logo": "awakart.jpeg",
+    "url": "https://awakart.com",
+    "status": "live"
+ },
+ 
   {
     "name": "Tripsync",
     "description": "Innovative travel platform connecting travelers with seamless booking experiences across Africa.",
     "logo": "Tripsync.jpeg",
     "url": "#",
     "status": "coming"
-  },
-  {
-    "name": "Awakart",
-    "description": "Your go-to online shopping destination for electronics, gadgets, and everyday essentials. Shop smart, save more.",
-    "logo": "awakart.jpeg",
-    "url": "https://awakart.com",
-    "status": "live"
- }
- 
+  }
+
 ],
   "testimonials": [
     {
