@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1000 Hills Group | Tech & Digital Agency in Kigali, Rwanda</title>
+
+    <meta name="description" content="1000 Hills Group is a premier Tech and digital agency in Kigali, Rwanda, offering web design, social media marketing, SEO, mobile app development and digital marketing training." />
+    <meta name="keywords" content="Tech agency Rwanda, web design Kigali, social media marketing, digital marketing, SEO, mobile apps" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://1000hillsgroup.africa/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="1000 Hills Group | Tech & Digital Agency in Kigali" />
+    <meta property="og:description" content="Web design, social media marketing, SEO, mobile apps and digital marketing training in Kigali, Rwanda." />
+    <meta property="og:image" content="https://1000hillsgroup.africa/1000hills-logo.png" />
+    <meta property="og:url" content="https://1000hillsgroup.africa/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="1000hills-logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        /* ======================================== */
+        /* PRELOADER                                */
+        /* ======================================== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0A1628;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #preloader.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .preloader-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            animation: pulseLogo 1.5s ease-in-out infinite;
+        }
+        .preloader-logo img {
+            height: 50px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        .preloader-bar {
+            width: 200px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+        }
+        .preloader-bar .fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #C9A96E, #E8D5A3);
+            border-radius: 50px;
+            animation: loadBar 2s ease-in-out forwards;
+        }
+
+        @keyframes pulseLogo {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        @keyframes loadBar {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+        }
+
+        /* ======================================== */
+        /* CLIENT LOGOS - ORIGINAL COLORS!         */
+        /* ======================================== */
+        .client-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        .client-item:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* ======================================== */
+        /* HERO - GREY BACKGROUND WITH LOGO       */
+        /* ======================================== */
+        .hero {
+            background: #1a1a2e;
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0 60px;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            max-width: 600px;
+            height: 70%;
+            background: url('1000hills-logo.png') no-repeat center center / contain;
+            opacity: 0.12;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-overlay {
+            display: none;
+        }
+
+        /* ======================================== */
+        /* HERO TEXT - 37PX BOLD NO DANCE         */
+        /* ======================================== */
+        .hero-main-title {
+            font-size: 37px;
+            font-weight: 900;
+            line-height: 1.2;
+            margin: 4px 0 0 0;
+            color: var(--white);
+            letter-spacing: -0.5px;
+        }
+        .hero-sub-title {
+            font-size: 37px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin: 2px 0 0 0;
+            color: var(--gold);
+            letter-spacing: -0.5px;
+        }
+        .hero-buttons {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="preloader-logo">
+            <img src="1000hills-logo.png" alt="1000 Hills Group" />
+        </div>
+        <div class="preloader-bar">
+            <div class="fill"></div>
+        </div>
+    </div>
+
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="1000hills-logo.png" alt="1000 Hills Group logo" />
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="companies.html">Our Companies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======================================== -->
+    <!-- HERO - BOLD TEXT 37PX NO DANCE         -->
+    <!-- ======================================== -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <span class="tag"><i class="fas fa-bolt"></i> YOUR TRUSTED TECH PARTNER</span>
+                
+                <h1 class="hero-main-title">Transform Your Business With Us</h1>
+                <h2 class="hero-sub-title">Your trusted tech partner</h2>
+                
+                <div class="hero-buttons">
+                    <a href="services.html" class="btn-primary">
+                        Our Services
+                    </a>
+                    <a href="contact.html" class="btn-outline">
+                        <i class="fas fa-comment"></i> Let's Talk
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="hero-card">
+                    <div class="hero-card-content">
+                        <h4>Social Media Marketing</h4>
+                        <p>Grow your brand with strategic social media campaigns</p>
+                        <div class="badge-group">
+                            <span class="badge"><i class="fas fa-check"></i> Content Strategy</span>
+                            <span class="badge"><i class="fas fa-check"></i> Analytics Driven</span>
+                        </div>
+                    </div>
+                    <div class="hero-card-image">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                </div>
+                <div class="hero-card" style="animation-delay: 0.5s;">
+                    <div class="hero-card-content">
+                        <h4>Web Development</h4>
+                        <p>High-performance, responsive websites that convert</p>
+                        <div class="badge-group">
+                            <span class="badge"><i class="fas fa-check"></i> Fast Loading</span>
+                            <span class="badge"><i class="fas fa-check"></i> Mobile First</span>
+                        </div>
+                    </div>
+                    <div class="hero-card-image">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- SERVICES                                 -->
+    <!-- ======================================== -->
+    <section class="services-preview" id="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="tag">What We Do</span>
+                <h2>Our <span class="highlight">Services</span></h2>
+                <p>End-to-end Tech solutions designed to elevate your business</p>
+            </div>
+            <div class="services-grid" id="servicesGrid">
+                <div class="service-card" data-aos="flip-up" data-aos-delay="0">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h4>Web Designing</h4>
+                    <p>Stunning, user-centric websites that tell your story and drive conversions.</p>
+                    <a href="services.html#web-design" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="service-icon"><i class="fas fa-share-alt"></i></div>
+                    <h4>Social Media Marketing</h4>
+                    <p>Strategic campaigns that build communities, increase engagement, and grow your brand.</p>
+                    <a href="services.html#social-media" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="flip-up" data-aos-delay="150">
+                    <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
+                    <h4>Content Marketing</h4>
+                    <p>Your story, told right. Data-driven content strategies that attract, engage, and convert.</p>
+                    <a href="services.html#content-marketing" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h4>Digital Marketing Training</h4>
+                    <p>Hands-on training programs to equip your team with the latest digital marketing skills.</p>
+                    <a href="services.html#training" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="flip-up" data-aos-delay="250">
+                    <div class="service-icon"><i class="fas fa-link"></i></div>
+                    <h4>Link Building Service</h4>
+                    <p>White-hat link building strategies that boost your domain authority and search rankings.</p>
+                    <a href="services.html#link-building" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="service-icon"><i class="fas fa-envelope"></i></div>
+                    <h4>Email Marketing</h4>
+                    <p>Personalized email campaigns that nurture leads and drive revenue.</p>
+                    <a href="services.html#email-marketing" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="flip-up" data-aos-delay="350">
+                    <div class="service-icon"><i class="fas fa-search"></i></div>
+                    <h4>SEO Optimization</h4>
+                    <p>Get to the top of Google with our proven search engine strategies.</p>
+                    <a href="services.html#seo" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="flip-up" data-aos-delay="400">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h4>Mobile App Development</h4>
+                    <p>Native and cross-platform apps that deliver seamless user experiences.</p>
+                    <a href="services.html#mobile-apps" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card" data-aos="flip-up" data-aos-delay="450">
+                    <div class="service-icon"><i class="fas fa-robot"></i></div>
+                    <h4>AI Automation</h4>
+                    <p>Intelligent automation solutions that streamline your business processes and boost efficiency.</p>
+                    <a href="services.html#ai-automation" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="services-cta" data-aos="fade-up">
+                <a href="services.html" class="btn-primary"><i class="fas fa-th-large"></i> View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- WHY US                                   -->
+    <!-- ======================================== -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="tag">Why Choose Us</span>
+                <h2>Your Trusted <span class="highlight">Tech Partner</span></h2>
+                <p>We combine technical expertise with a deep understanding of your business needs</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="why-icon"><i class="fas fa-code"></i></div>
+                    <h4>Expert Web Development</h4>
+                    <p>We build scalable, secure, and beautiful websites that perform.</p>
+                </div>
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="why-icon"><i class="fas fa-share-alt"></i></div>
+                    <h4>Social Media First</h4>
+                    <p>Strategic social media campaigns that build your brand presence.</p>
+                </div>
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="why-icon"><i class="fas fa-users"></i></div>
+                    <h4>Dedicated Team</h4>
+                    <p>Passionate professionals committed to your digital success.</p>
+                </div>
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="why-icon"><i class="fas fa-headset"></i></div>
+                    <h4>24/7 Support</h4>
+                    <p>We're always here to help — anytime, anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- CLIENTS - LOGOS DISPLAYING ORIGINAL!    -->
+    <!-- ======================================== -->
+    <section class="clients-section" id="clients">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="tag"><i class="fas fa-handshake"></i> Our Partners</span>
+                <h2>Trusted by <span class="highlight">Leading Brands</span></h2>
+                <p>We're proud to work with these amazing companies across Rwanda</p>
+            </div>
+            <div class="clients-grid" id="clientsGrid" data-aos="fade-up">
+                <div class="client-item">
+                    <img src="Lemigo.png" alt="Lemigo" loading="lazy" />
+                </div>
+                <div class="client-item">
+                    <img src="Grazia.jpeg" alt="Grazia" loading="lazy" />
+                </div>
+                <div class="client-item">
+                    <img src="Inzozi.jpeg" alt="Inzozi" loading="lazy" />
+                </div>
+                <div class="client-item">
+                    <img src="Motel-Nyanza.jpeg" alt="Motel Nyanza" loading="lazy" />
+                </div>
+                <div class="client-item">
+                    <img src="Nsbliss.jpeg" alt="Nsbliss" loading="lazy" />
+                </div>
+                <div class="client-item">
+                    <img src="Retreat.jpeg" alt="Retreat" loading="lazy" />
+                </div>
+                <div class="client-item">
+                    <img src="Rose.png" alt="Rose" loading="lazy" />
+                </div>
+                <div class="client-item">
+                    <img src="Saphir.jpeg" alt="Saphir" loading="lazy" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- TEAM                                     -->
+    <!-- ======================================== -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="tag"><i class="fas fa-user-tie"></i> Meet the Team</span>
+                <h2>Our <span class="highlight">Leadership</span></h2>
+                <p>Passionate professionals committed to your digital success</p>
+            </div>
+            <div class="team-grid">
+                <!-- GAKIRE KELVIN - CEO -->
+                <div class="team-card" data-aos="flip-up" data-aos-delay="0">
+                    <div class="team-image">
+                        <img src="Gakire.jpeg" alt="GAKIRE KELVIN" loading="lazy" />
+                        <span class="team-badge"><i class="fas fa-crown"></i> CEO</span>
+                        <div class="team-socials">
+                            <a href="https://wa.me/250788695396" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.instagram.com/1000hillsgroup_?igsh=NWZuNHBveGsxMG56&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>GAKIRE KELVIN</h4>
+                        <p class="team-role">Chief Executive Officer</p>
+                        <p class="team-bio">Visionary leader driving 1000 Hills Group's mission to deliver exceptional tech solutions across Rwanda.</p>
+                        <div class="team-skills">
+                            <span>Leadership</span>
+                            <span>Strategy</span>
+                            <span>Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UWACU EDDY CARNETTY -->
+                <div class="team-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="team-image">
+                        <img src="cipherfox.jpeg" alt="UWACU EDDY CARNETTY" loading="lazy" />
+                        <span class="team-badge"><i class="fas fa-shield-alt"></i> Security Expert</span>
+                        <div class="team-socials">
+                            <a href="https://wa.me/250788889077" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://potfolio-1-pink.vercel.app/" target="_blank"><i class="fas fa-briefcase"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-info">
+                        <h4>UWACU EDDY CARNETTY</h4>
+                        <p class="team-role">Web Developer & Cybersecurity Specialist</p>
+                        <p class="team-bio">Building secure, high-performance digital solutions for Rwanda's top brands. Protecting your digital assets.</p>
+                        <div class="team-skills">
+                            <span>Web Dev</span>
+                            <span>Cybersecurity</span>
+                            <span>Full-Stack</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- TESTIMONIALS - ONLY 3!                   -->
+    <!-- ======================================== -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="tag"><i class="fas fa-comment-dots"></i> Client Love</span>
+                <h2>What Our <span class="highlight">Clients Say</span></h2>
+                <p>Real feedback from the businesses we've worked with</p>
+            </div>
+            <div class="testimonials-grid" id="testimonialsGrid">
+                <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fas fa-quote-left testimonial-quote-icon"></i>
+                    <p class="testimonial-text">"1000 Hills Group completely transformed our online presence. Our website traffic increased by 200% and our sales doubled within 3 months. Their team is professional, responsive, and truly understands our business needs."</p>
+                    <div class="testimonial-author">
+                        <h4>Kigali Tech Solutions</h4>
+                        <span>CEO</span>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-quote-left testimonial-quote-icon"></i>
+                    <p class="testimonial-text">"The social media strategy developed by 1000 Hills Group grew our following by 300% in just 2 months. Their content creation and community management are top-notch. We've seen a significant increase in engagement."</p>
+                    <div class="testimonial-author">
+                        <h4>Rwanda Digital Hub</h4>
+                        <span>Marketing Director</span>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-quote-left testimonial-quote-icon"></i>
+                    <p class="testimonial-text">"1000 Hills Group built our corporate website from scratch and the results exceeded our expectations. The website is fast, beautiful, and SEO-optimized. We've seen a 150% increase in organic traffic since the launch."</p>
+                    <div class="testimonial-author">
+                        <h4>Rwanda Real Estate Group</h4>
+                        <span>CEO</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- CTA                                      -->
+    <!-- ======================================== -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Ready to <span class="highlight">Rise</span> Above?</h2>
+                <p>Let's build something extraordinary together. Your Tech challenges — our solutions.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Get Started</a>
+                    <a href="https://wa.me/250788695396" class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- FOOTER                                   -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="1000hills-logo.png" alt="1000 Hills Group logo" />
+                    </a>
+                    <p>Rising to your Tech challenges since 2020. We deliver innovative digital solutions across Rwanda and beyond.</p>
+                    <div class="socials">
+                        <a href="https://www.instagram.com/1000hillsgroup_?igsh=NWZuNHBveGsxMG56&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/250788695396" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="companies.html">Our Companies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Our Services</h5>
+                    <ul>
+                        <li><a href="services.html#web-design">Web Design</a></li>
+                        <li><a href="services.html#social-media">Social Media</a></li>
+                        <li><a href="services.html#seo">SEO</a></li>
+                        <li><a href="services.html#mobile-apps">Mobile Apps</a></li>
+                        <li><a href="services.html#ai-automation">AI Automation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+250788695396">+250 788 695 396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@1000hillsgroup.africa">info@1000hillsgroup.africa</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> KG 11 Ave, Kigali, Rwanda</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2020 1000 Hills Group. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart" style="color: #C9A96E;"></i> by <strong>1000 Hills Team</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ======================================== -->
+    <!-- SCRIPTS                                  -->
+    <!-- ======================================== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+            easing: 'ease-out-cubic'
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                setTimeout(function() {
+                    preloader.classList.add('hide');
+                }, 800);
+            }
+        });
+
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                setTimeout(function() {
+                    preloader.classList.add('hide');
+                }, 200);
+            }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('open');
+                const isOpen = navLinks.classList.contains('open');
+                this.setAttribute('aria-expanded', isOpen);
+            });
+
+            navLinks.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+
+        console.log('🚀 1000 Hills Group - Homepage Loaded!');
+        console.log('👤 Team: GAKIRE KELVIN & UWACU EDDY CARNETTY');
+        console.log('📋 3 Testimonials loaded!');
+        console.log('🏢 Partners logos displayed in original colors!');
+    </script>
+</body>
+</html>

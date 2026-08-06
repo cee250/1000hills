@@ -1,0 +1,222 @@
+{
+  "team": [
+    {
+      "name": "GAKIRE KELVIN",
+      "role": "Chief Executive Officer",
+      "bio": "Visionary leader driving 1000 Hills Group's mission to deliver exceptional tech solutions across Rwanda.",
+      "image": "Gakire.jpeg",
+      "badge": "CEO",
+      "badgeIcon": "fas fa-crown",
+      "skills": ["Leadership", "Strategy", "Innovation"],
+      "socials": [
+        { "url": "https://wa.me/250788695396", "icon": "fab fa-whatsapp" },
+        { "url": "https://www.instagram.com/kelvin_gakire?igsh=NWZuNHBveGsxMG56&utm_source=qr", "icon": "fab fa-instagram" }
+      ]
+    },
+    {
+      "name": "CIPHERFOX",
+      "role": "Web Developer & Cybersecurity Specialist",
+      "bio": "Building secure, high-performance digital solutions for Rwanda's top brands. Protecting your digital assets.",
+      "image": "cipherfox.jpeg",
+      "badge": "Security Expert",
+      "badgeIcon": "fas fa-shield-alt",
+      "skills": ["Web Dev", "Cybersecurity", "Full-Stack", "Firebase"],
+      "socials": [
+        { "url": "https://wa.me/250788889077", "icon": "fab fa-whatsapp" },
+        { "url": "https://potfolio-1-pink.vercel.app/", "icon": "fas fa-briefcase" }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "title": "Web Designing",
+      "icon": "fas fa-laptop-code",
+      "shortDesc": "Stunning, user-centric websites that tell your story and drive conversions.",
+      "anchor": "web-design",
+      "detailsParagraph": "We create fully responsive, SEO-optimized websites built with the latest technologies. Our designs focus on user experience, speed, and conversion optimization.",
+      "detailsList": [
+        "Responsive Design - Looks perfect on all devices",
+        "SEO Optimized - Rank higher on search engines",
+        "Fast Loading - Optimized for speed",
+        "CMS Integration - Easy content management",
+        "Custom UI/UX - Tailored to your brand"
+      ]
+    },
+    {
+      "title": "Social Media Marketing",
+      "icon": "fas fa-share-alt",
+      "shortDesc": "Strategic campaigns that build communities, increase engagement, and grow your brand.",
+      "anchor": "social-media",
+      "detailsParagraph": "We develop data-driven social media strategies that connect you with your target audience. From content creation to community management, we handle it all.",
+      "detailsList": [
+        "Content Strategy - Engaging posts that resonate",
+        "Community Management - 24/7 engagement",
+        "Analytics & Reporting - Track your ROI",
+        "Influencer Partnerships - Amplify your reach",
+        "Paid Campaigns - Targeted advertising"
+      ]
+    },
+    {
+      "title": "Content Marketing",
+      "icon": "fas fa-pen-fancy",
+      "shortDesc": "Your story, told right. Data-driven content strategies that attract, engage, and convert.",
+      "anchor": "content-marketing",
+      "detailsParagraph": "We create compelling content that tells your brand story and connects with your audience. From blog posts to video content, we help you stand out.",
+      "detailsList": [
+        "Blog Writing - SEO-optimized articles",
+        "Video Content - Engaging visual stories",
+        "Infographics - Shareable visual content",
+        "Content Strategy - Data-driven planning",
+        "Distribution - Reach the right audience"
+      ]
+    },
+    {
+      "title": "Digital Marketing Training",
+      "icon": "fas fa-graduation-cap",
+      "shortDesc": "Hands-on training programs to equip your team with the latest digital marketing skills.",
+      "anchor": "training",
+      "detailsParagraph": "We offer comprehensive training programs designed to upskill your team in all areas of digital marketing. From beginners to advanced, we've got you covered.",
+      "detailsList": [
+        "SEO Training - Master search engine optimization",
+        "Social Media Training - Build your brand online",
+        "Content Marketing - Create engaging content",
+        "Analytics Training - Data-driven decisions",
+        "PPC Training - Paid advertising mastery"
+      ]
+    },
+    {
+      "title": "Link Building Service",
+      "icon": "fas fa-link",
+      "shortDesc": "White-hat link building strategies that boost your domain authority and search rankings.",
+      "anchor": "link-building",
+      "detailsParagraph": "We use ethical, white-hat link building techniques to improve your website's authority and search engine rankings. Quality over quantity, always.",
+      "detailsList": [
+        "Guest Posting - Quality backlinks from authority sites",
+        "Directory Submissions - Boost your visibility",
+        "Broken Link Building - Find and fix broken links",
+        "Competitor Analysis - Stay ahead of the game",
+        "Monthly Reports - Track your progress"
+      ]
+    },
+    {
+      "title": "Email Marketing",
+      "icon": "fas fa-envelope",
+      "shortDesc": "Personalized email campaigns that nurture leads and drive revenue.",
+      "anchor": "email-marketing",
+      "detailsParagraph": "We create targeted email campaigns that engage your audience and drive conversions. From newsletters to automated sequences, we handle it all.",
+      "detailsList": [
+        "Campaign Design - Professional email templates",
+        "Automation - Set and forget sequences",
+        "Segmentation - Target the right people",
+        "Analytics - Track opens and clicks",
+        "A/B Testing - Optimize your campaigns"
+      ]
+    },
+    {
+      "title": "SEO Optimization",
+      "icon": "fas fa-search",
+      "shortDesc": "Get to the top of Google with our proven search engine strategies.",
+      "anchor": "seo",
+      "detailsParagraph": "Our SEO experts use white-hat techniques to improve your search rankings, drive organic traffic, and increase your online visibility.",
+      "detailsList": [
+        "On-Page SEO - Optimize your content",
+        "Off-Page SEO - Build authority",
+        "Technical SEO - Improve site performance",
+        "Keyword Research - Target the right audience",
+        "Monthly Reporting - Track your progress"
+      ]
+    },
+    {
+      "title": "Mobile App Development",
+      "icon": "fas fa-mobile-alt",
+      "shortDesc": "Native and cross-platform apps that deliver seamless user experiences.",
+      "anchor": "mobile-apps",
+      "detailsParagraph": "We build high-performance mobile applications for iOS, Android, and hybrid platforms. Our apps are designed for speed, usability, and engagement.",
+      "detailsList": [
+        "Native Apps - iOS & Android optimized",
+        "Cross-Platform - Reach more users",
+        "UI/UX Design - Intuitive interfaces",
+        "App Store Deployment - Launch successfully",
+        "Ongoing Support - Maintenance & updates"
+      ]
+    },
+    {
+      "title": "AI Automation",
+      "icon": "fas fa-robot",
+      "shortDesc": "Intelligent automation solutions that streamline your business processes and boost efficiency.",
+      "anchor": "ai-automation",
+      "detailsParagraph": "We leverage cutting-edge artificial intelligence to automate repetitive tasks, improve decision-making, and unlock new opportunities for your business.",
+      "detailsList": [
+        "Process Automation - Streamline workflows",
+        "AI Chatbots - 24/7 customer support",
+        "Predictive Analytics - Data-driven insights",
+        "Machine Learning - Smart decision making",
+        "Custom AI Solutions - Tailored to your needs"
+      ]
+    }
+  ],
+  "clients": [
+    { "name": "Lemigo", "logo": "Lemigo.png" },
+    { "name": "Grazia", "logo": "Grazia.jpeg" },
+    { "name": "Inzozi", "logo": "Inzozi.jpeg" },
+    { "name": "Motel Nyanza", "logo": "Motel-Nyanza.jpeg" },
+    { "name": "Nsbliss", "logo": "Nsbliss.jpeg" },
+    { "name": "Retreat", "logo": "Retreat.jpeg" },
+    { "name": "Rose", "logo": "Rose.png" },
+    { "name": "Saphir", "logo": "Saphir.jpeg" }
+  ],
+ "portfolio": [
+
+   {
+    "name": "MenuHub",
+    "description": "A digital QR menu platform that helps restaurants, cafés, bars, and hotels create beautiful online menus with real-time updates and a modern customer experience.",
+    "logo": "menuhub.png",
+    "url": "https://menuhub1.netlify.app",
+    "status": "live"
+  },
+  {
+    "name": "Luxury Properties Rwanda",
+    "description": "Premium real estate platform with Firebase backend, property listings, and admin dashboard.",
+    "logo": "Luxury.jpeg",
+    "url": "https://luxuryproperties.vercel.app",
+    "status": "live"
+  },
+  {
+    "name": "Tripsync",
+    "description": "Innovative travel platform connecting travelers with seamless booking experiences across Africa.",
+    "logo": "Tripsync.jpeg",
+    "url": "#",
+    "status": "coming"
+  },
+  {
+    "name": "Awakart",
+    "description": "Your go-to online shopping destination for electronics, gadgets, and everyday essentials. Shop smart, save more.",
+    "logo": "awakart.jpeg",
+    "url": "https://awakart.com",
+    "status": "live"
+ }
+ 
+],
+  "testimonials": [
+    {
+      "company": "Kigali Tech Solutions",
+      "role": "CEO",
+      "text": "1000 Hills Group completely transformed our online presence. Our website traffic increased by 200% and our sales doubled within 3 months of working with them. Their team is professional, responsive, and truly understands our business needs."
+    },
+    {
+      "company": "Rwanda Digital Hub",
+      "role": "Marketing Director",
+      "text": "The social media strategy developed by 1000 Hills Group grew our following by 300% in just 2 months. Their content creation and community management are top-notch. We've seen a significant increase in engagement and brand awareness."
+    },
+    {
+      "company": "Rwandan E-Commerce Ltd",
+      "role": "Founder",
+      "text": "Working with 1000 Hills Group on our mobile app development was a game-changer. They delivered a high-quality, user-friendly app that our customers love. The team's technical expertise and attention to detail are exceptional."
+    },
+    {
+      "company": "Rwanda Real Estate Group",
+      "role": "CEO",
+      "text": "1000 Hills Group built our corporate website from scratch and the results exceeded our expectations. The website is fast, beautiful, and SEO-optimized. We've seen a 150% increase in organic traffic since the launch."
+    }
+  ]
+}
