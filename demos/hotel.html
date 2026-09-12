@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nyungwe Eco Lodge | Luxury Forest Lodge, Rwanda — Demo</title>
+<meta name="description" content="Live website demo by 1000 Hills Group — Hotel & eco-tourism website template." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{--forest:#0E231A;--forest2:#143324;--card:#1A3A2C;--gold:#C8A96A;--gold-l:#E3CE9E;--mist:#EAF2EC;--muted:#9FB8A8;--line:rgba(200,169,106,.22);--radius:16px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--forest);color:var(--mist);line-height:1.7;overflow-x:hidden;padding-top:46px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+h1,h2,h3,h4,.display{font-family:'Marcellus',serif;font-weight:400}
+.container{width:min(1160px,92%);margin:0 auto}
+/* ===== 1000 HILLS DEMO BAR ===== */
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden}
+.demo-bar .db-left i{color:#C9A96E}
+.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.demo-bar.hidden{display:none}
+/* ===== NAV ===== */
+header{position:sticky;top:46px;z-index:900;background:rgba(14,35,26,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Marcellus',serif;font-size:1.18rem;letter-spacing:.5px}
+.brand .logo-ic{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-l));display:grid;place-items:center;color:var(--forest);font-size:1.05rem}
+.nav-links{display:flex;gap:30px;font-size:.86rem}
+.nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;border-radius:4px;font-size:.84rem;font-weight:600;letter-spacing:.5px;cursor:pointer;border:0;transition:.3s}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-l));color:var(--forest)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(200,169,106,.35)}
+.btn-line{border:1px solid var(--line);color:var(--mist)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold)}
+.hamburger{display:none;background:none;border:0;color:var(--gold);font-size:1.3rem;cursor:pointer}
+/* ===== HERO ===== */
+.hero{min-height:92vh;display:flex;align-items:flex-end;position:relative;background:url('img/hotel-hero.jpg') center/cover no-repeat}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,35,26,.25) 30%,rgba(14,35,26,.88))}
+.hero .container{position:relative;z-index:2;padding:120px 0 70px}
+.tag-pill{display:inline-flex;align-items:center;gap:9px;font-size:.72rem;letter-spacing:2.5px;font-weight:500;color:var(--gold-l);text-transform:uppercase;border:1px solid var(--line);padding:8px 18px;background:rgba(14,35,26,.55)}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;margin:24px 0 16px;max-width:15ch}
+.hero p{max-width:48ch;color:var(--muted);font-weight:300}
+.hero-btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.hero-price{margin-top:26px;font-size:.85rem;color:var(--gold-l)}
+.hero-price strong{font-family:'Marcellus',serif;font-size:1.35rem}
+/* ===== STATS ===== */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--forest2)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);text-align:center;padding:34px 0}
+.stats-grid strong{font-family:'Marcellus',serif;font-size:1.75rem;color:var(--gold);display:block}
+.stats-grid span{font-size:.74rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
+/* ===== ROOMS ===== */
+section{padding:95px 0}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 56px}
+.kicker{color:var(--gold);font-size:.75rem;letter-spacing:3.5px;font-weight:600;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:12px 0}
+.sec-head p{color:var(--muted);font-weight:300}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.room{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.room-img{position:relative}
+.room-img img{height:220px;width:100%;object-fit:cover}
+.room-img .ph{height:220px;display:grid;place-items:center;font-size:2.4rem;color:var(--gold);background:linear-gradient(135deg,#1A3A2C,#25503C)}
+.room-price{position:absolute;bottom:14px;right:14px;background:rgba(14,35,26,.85);border:1px solid var(--line);color:var(--gold-l);font-size:.78rem;padding:6px 14px;border-radius:30px}
+.room-body{padding:26px;display:flex;flex-direction:column;gap:12px;flex:1}
+.room-body h3{font-size:1.3rem}
+.room-body p{font-size:.86rem;color:var(--muted);font-weight:300}
+.room-feats{display:flex;flex-wrap:wrap;gap:8px}
+.room-feats span{font-size:.7rem;border:1px solid var(--line);padding:5px 11px;border-radius:30px;color:var(--muted)}
+.room-body .btn{margin-top:auto;justify-content:center}
+/* ===== EXPERIENCES ===== */
+.exp{background:var(--forest2)}
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.exp-card{border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;background:rgba(26,58,44,.5);transition:.3s}
+.exp-card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.exp-card i{font-size:1.6rem;color:var(--gold);margin-bottom:18px}
+.exp-card h4{font-size:1.15rem;margin-bottom:8px}
+.exp-card p{font-size:.84rem;color:var(--muted);font-weight:300}
+/* ===== SUSTAINABILITY ===== */
+.sust{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.sust span{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:40px;padding:12px 22px;font-size:.82rem;color:var(--muted)}
+.sust i{color:#6FBF8E}
+/* ===== CTA ===== */
+.cta{text-align:center;background:radial-gradient(ellipse at center,rgba(200,169,106,.14),transparent 60%)}
+.cta h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:12px}
+.cta p{color:var(--muted);margin-bottom:30px}
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--line);background:var(--forest2);padding:60px 0 30px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.f-grid h5{font-size:.85rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.f-grid p,.f-grid li{font-size:.85rem;color:var(--muted);font-weight:300}
+.f-grid li{margin-bottom:10px}.f-grid li i{color:var(--gold);margin-right:8px;width:16px}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted)}
+.socials a:hover{background:var(--gold);color:var(--forest);border-color:var(--gold)}
+.f-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.78rem;color:var(--muted)}
+.f-bottom a{color:var(--gold)}
+@media(max-width:900px){.nav-links,.nav .btn{display:none}.hamburger{display:block}
+.rooms,.exp-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr);gap:22px}
+.f-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20hotel%20website%20like%20the%20Nyungwe%20Eco%20Lodge%20demo." target="_blank" rel="noopener">Get a site like this</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand"><span class="logo-ic"><i class="fas fa-mountain-sun"></i></span>Nyungwe Eco Lodge</a>
+    <nav class="nav-links">
+      <a href="#home">Stay</a><a href="#rooms">Rooms</a><a href="#exp">Experiences</a><a href="#sustain">Sustainability</a><a href="#contact">Contact</a>
+    </nav>
+    <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20a%20stay%20at%20Nyungwe%20Eco%20Lodge." target="_blank" rel="noopener" class="btn btn-gold"><i class="fas fa-calendar"></i> Book Now</a>
+    <button class="hamburger" aria-label="menu"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <span class="tag-pill"><i class="fas fa-leaf"></i> Nyungwe National Park · 2,000m Altitude</span>
+    <h1>Wake Up Inside the Cloud Forest</h1>
+    <p>Twelve solar-powered suites suspended between mist, canopy and stars — on the edge of Africa's oldest montane rainforest.</p>
+    <div class="hero-btns">
+      <a href="#rooms" class="btn btn-gold">Explore the Suites</a>
+      <a href="#exp" class="btn btn-line">Forest Experiences</a>
+    </div>
+    <div class="hero-price">From <strong>$180</strong> / night · all-inclusive breakfast &amp; guided forest walk</div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div><strong>12</strong><span>Luxury Suites</span></div>
+    <div><strong>4.8★</strong><span>Guest Rating</span></div>
+    <div><strong>13</strong><span>Primate Species</span></div>
+    <div><strong>100%</strong><span>Solar Powered</span></div>
+  </div>
+</div>
+
+<section id="rooms">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Stay With Us</span>
+      <h2>Suites Between the Treetops</h2>
+      <p>Every suite faces the forest — and only the forest.</p>
+    </div>
+    <div class="rooms">
+      <article class="room">
+        <div class="room-img">
+          <img src="img/hotel-room.jpg" alt="Forest Suite" loading="lazy" />
+          <span class="room-price">From $180 / night</span>
+        </div>
+        <div class="room-body">
+          <h3>Forest Suite</h3>
+          <p>42m² of glass and timber with a rainforest panorama, king bed and a private outdoor shower.</p>
+          <div class="room-feats"><span>2 guests</span><span>Forest view</span><span>Outdoor shower</span><span>Wi-Fi</span></div>
+          <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20the%20Forest%20Suite." target="_blank" rel="noopener" class="btn btn-gold">Reserve This Suite</a>
+        </div>
+      </article>
+      <article class="room">
+        <div class="room-img">
+          <div class="ph"><i class="fas fa-warehouse"></i></div>
+          <span class="room-price">From $260 / night</span>
+        </div>
+        <div class="room-body">
+          <h3>Canopy Villa</h3>
+          <p>Our signature villa on stilts — 70m² with a suspended net deck directly over the ravine.</p>
+          <div class="room-feats"><span>3 guests</span><span>Net deck</span><span>Fireplace</span><span>Butler service</span></div>
+          <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20the%20Canopy%20Villa." target="_blank" rel="noopener" class="btn btn-line">Reserve This Villa</a>
+        </div>
+      </article>
+      <article class="room">
+        <div class="room-img">
+          <div class="ph"><i class="fas fa-people-roof"></i></div>
+          <span class="room-price">From $320 / night</span>
+        </div>
+        <div class="room-body">
+          <h3>Family Lodge</h3>
+          <p>Two interconnected suites, a shared living room and a terrace built for slow mornings.</p>
+          <div class="room-feats"><span>5 guests</span><span>2 bedrooms</span><span>Terrace</span><span>Board games</span></div>
+          <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20the%20Family%20Lodge." target="_blank" rel="noopener" class="btn btn-line">Reserve This Lodge</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="exp" id="exp">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Experiences</span>
+      <h2>The Forest Is the Itinerary</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card"><i class="fas fa-person-hiking"></i><h4>Canopy Walkway</h4><p>Walk 60 metres above the forest floor on East Africa's longest canopy suspension bridge.</p></div>
+      <div class="exp-card"><i class="fas fa-hippo"></i><h4>Chimp Trekking</h4><p>Track habituated chimpanzee troops at dawn with our certified park guides.</p></div>
+      <div class="exp-card"><i class="fas fa-mug-hot"></i><h4>Tea Plantation Tour</h4><p>Wander the emerald tea fields and taste single-estate infusions at origin.</p></div>
+      <div class="exp-card"><i class="fas fa-dove"></i><h4>Birdwatching</h4><p>Over 300 species — including 27 Albertine Rift endemics found nowhere else.</p></div>
+      <div class="exp-card"><i class="fas fa-leaf"></i><h4>Medicinal Trail</h4><p>Learn forest pharmacology from the healers of the neighboring villages.</p></div>
+      <div class="exp-card"><i class="fas fa-drums"></i><h4>Cultural Evenings</h4><p>Intore dance, storytelling and fire-side cuisine with our community hosts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sustain">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Sustainability</span>
+      <h2>Luxury That Gives Back</h2>
+      <p>Built and run with the forest, not against it.</p>
+    </div>
+    <div class="sust">
+      <span><i class="fas fa-sun"></i> 100% solar energy</span>
+      <span><i class="fas fa-droplet"></i> Rainwater harvesting</span>
+      <span><i class="fas fa-recycle"></i> Zero single-use plastic</span>
+      <span><i class="fas fa-users"></i> 90% local staff</span>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <h2 class="display">Your Forest Is Waiting</h2>
+    <p>Best availability in the dry seasons — June to September and December to February.</p>
+    <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20a%20stay%20at%20Nyungwe%20Eco%20Lodge." target="_blank" rel="noopener" class="btn btn-gold"><i class="fab fa-whatsapp"></i> Check Availability</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#home" class="brand" style="margin-bottom:14px"><span class="logo-ic"><i class="fas fa-mountain-sun"></i></span>Nyungwe Eco Lodge</a>
+        <p>A cloud-forest hideaway on the edge of Nyungwe National Park, Rwanda. Solar-powered, community-run, unforgettable.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul><li><a href="#rooms">Our Suites</a></li><li><a href="#exp">Experiences</a></li><li><a href="#sustain">Sustainability</a></li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul><li><i class="fas fa-phone"></i>+250 788 000 000</li><li><i class="fas fa-envelope"></i>stay@nyungweeco.rw</li><li><i class="fas fa-location-dot"></i>Kitabi, Nyungwe NP</li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Nyungwe Eco Lodge (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a> — Get yours today</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

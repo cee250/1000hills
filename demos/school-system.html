@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShulePro — School Management System Dashboard (Demo)</title>
+<meta name="description" content="Live system demo by 1000 Hills Group — School management system dashboard." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{--side:#101828;--side2:#1B2939;--ink:#101828;--muted:#667085;--bg:#F5F7FA;--card:#fff;--line:#EAECF0;--indigo:#6366F1;--indigo-d:#4F46E5;--green:#16A34A;--red:#DC2626;--amber:#D97706;--blue:#2E90FA;--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+/* ===== 1000 HILLS DEMO BAR ===== */
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden}
+.demo-bar .db-left i{color:#C9A96E}
+.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.demo-bar.hidden{display:none}
+/* ===== LAYOUT ===== */
+.app{display:grid;grid-template-columns:250px 1fr;min-height:100vh;padding-top:46px}
+/* ===== SIDEBAR ===== */
+.sidebar{background:var(--side);color:#B8C4D4;padding:22px 14px;position:sticky;top:46px;height:calc(100vh - 46px);overflow-y:auto}
+.sb-brand{display:flex;align-items:center;gap:11px;padding:6px 10px 22px;color:#fff}
+.sb-brand .ic{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--indigo),#8B9CF9);display:grid;place-items:center;font-size:1rem}
+.sb-brand strong{font-size:1.02rem;font-weight:700;letter-spacing:.2px}
+.sb-brand span{display:block;font-size:.64rem;color:#8B9CF9;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.sb-label{font-size:.64rem;letter-spacing:1.6px;text-transform:uppercase;color:#5D6B80;padding:16px 12px 8px;font-weight:700}
+.sb-link{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;font-size:.86rem;font-weight:500;margin-bottom:3px;color:#B8C4D4;transition:.2s;cursor:pointer}
+.sb-link i{width:18px;text-align:center;font-size:.92rem}
+.sb-link:hover{background:var(--side2);color:#fff}
+.sb-link.active{background:linear-gradient(90deg,rgba(99,102,241,.28),rgba(99,102,241,.1));color:#fff;box-shadow:inset 3px 0 0 var(--indigo)}
+.sb-badge{margin-left:auto;background:var(--indigo);color:#fff;font-size:.62rem;font-weight:700;border-radius:20px;padding:2px 8px}
+.sb-upgrade{margin:18px 8px 8px;background:linear-gradient(135deg,#2A3A55,#1B2939);border:1px solid rgba(139,156,249,.25);border-radius:14px;padding:18px 16px}
+.sb-upgrade h5{color:#fff;font-size:.82rem;margin-bottom:6px}
+.sb-upgrade p{font-size:.7rem;color:#8DA0BB;margin-bottom:12px}
+.sb-upgrade a{display:block;text-align:center;background:var(--indigo);color:#fff;font-size:.72rem;font-weight:700;padding:8px;border-radius:8px}
+.sb-upgrade a:hover{background:var(--indigo-d)}
+/* ===== MAIN ===== */
+.main{padding:26px 30px 50px;min-width:0}
+.topbar{display:flex;align-items:center;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.topbar h1{font-size:1.35rem;font-weight:700}
+.topbar .date{font-size:.8rem;color:var(--muted)}
+.search{flex:1;min-width:200px;max-width:380px;display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-left:auto}
+.search i{color:var(--muted)}
+.search input{border:0;outline:none;background:none;font-family:'Inter',sans-serif;font-size:.85rem;width:100%}
+.icon-btn{position:relative;width:40px;height:40px;border-radius:10px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);cursor:pointer}
+.icon-btn:hover{color:var(--indigo)}
+.dot{position:absolute;top:9px;right:10px;width:7px;height:7px;background:var(--red);border-radius:50%}
+.admin{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:6px 12px 6px 6px}
+.admin .av{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--indigo),#8B9CF9);display:grid;place-items:center;color:#fff;font-size:.72rem;font-weight:700}
+.admin b{font-size:.8rem;display:block;line-height:1.2}
+.admin span{font-size:.66rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-size:.8rem;font-weight:600;cursor:pointer;border:0;transition:.2s}
+.btn-primary{background:var(--indigo);color:#fff}
+.btn-primary:hover{background:var(--indigo-d)}
+/* ===== STAT CARDS ===== */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:22px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.stat .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.stat .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:.95rem}
+.ic-blue{background:#EFF8FF;color:var(--blue)}.ic-green{background:#ECFDF3;color:var(--green)}
+.ic-indigo{background:#EEF0FF;color:var(--indigo)}.ic-amber{background:#FFFAEB;color:var(--amber)}
+.stat .delta{font-size:.7rem;font-weight:700;border-radius:20px;padding:3px 9px}
+.up{background:#ECFDF3;color:var(--green)}.down{background:#FEF3F2;color:var(--red)}
+.stat strong{font-size:1.5rem;font-weight:800;display:block;line-height:1.15}
+.stat span{font-size:.76rem;color:var(--muted)}
+/* ===== CHARTS ROW ===== */
+.charts{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:22px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:10px;flex-wrap:wrap}
+.panel-head h3{font-size:.98rem;font-weight:700}
+.panel-head a{font-size:.75rem;color:var(--indigo);font-weight:600}
+.legend{display:flex;gap:14px;font-size:.7rem;color:var(--muted)}
+.legend i{width:9px;height:9px;border-radius:3px;display:inline-block;margin-right:5px}
+/* bar chart */
+.bars{display:flex;align-items:flex-end;gap:10px;height:190px;padding-top:10px}
+.bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end}
+.bar .fill{width:100%;max-width:34px;border-radius:7px 7px 3px 3px;background:linear-gradient(180deg,#8B9CF9,var(--indigo));transition:.3s;position:relative}
+.bar .fill.alt{background:linear-gradient(180deg,#BAC2FF,#A5AEFF);opacity:.65}
+.bar .fill:hover{transform:scaleY(1.03);filter:brightness(1.1)}
+.bar small{font-size:.64rem;color:var(--muted);font-weight:600}
+/* donut */
+.donut-wrap{display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:center}
+.donut{width:150px;height:150px;border-radius:50%;background:conic-gradient(var(--green) 0 252deg,var(--red) 252deg 295deg,var(--amber) 295deg 324deg,#E4E7EC 324deg 360deg);display:grid;place-items:center;position:relative}
+.donut::before{content:'';position:absolute;width:104px;height:104px;background:var(--card);border-radius:50%}
+.donut .center{position:relative;text-align:center}
+.donut .center strong{font-size:1.3rem;font-weight:800;display:block;line-height:1.1}
+.donut .center span{font-size:.62rem;color:var(--muted);font-weight:600}
+.donut-legend{display:grid;gap:10px}
+.dl-item{display:flex;align-items:center;gap:10px;font-size:.78rem;color:var(--muted)}
+.dl-item i{width:11px;height:11px;border-radius:4px}
+.dl-item b{margin-left:auto;color:var(--ink)}
+/* ===== TABLE + SIDE PANELS ===== */
+.grid-2{display:grid;grid-template-columns:1.7fr 1fr;gap:18px}
+table{width:100%;border-collapse:collapse}
+th{font-size:.68rem;text-transform:uppercase;letter-spacing:1px;color:var(--muted);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
+td{padding:13px 12px;font-size:.82rem;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tr:hover td{background:#F9FAFB}
+.t-student{display:flex;align-items:center;gap:11px}
+.t-av{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:.68rem;font-weight:700;flex:none}
+.t-student b{font-size:.82rem;display:block;line-height:1.25}
+.t-student span{font-size:.68rem;color:var(--muted)}
+.pill{display:inline-block;font-size:.66rem;font-weight:700;border-radius:20px;padding:3px 11px}
+.p-paid{background:#ECFDF3;color:var(--green)}.p-partial{background:#FFFAEB;color:var(--amber)}.p-pending{background:#F2F4F7;color:var(--muted)}
+.side-panels{display:grid;gap:18px}
+.event{display:flex;gap:13px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.event:last-child{border:0}
+.event .cal{width:44px;height:44px;flex:none;border-radius:10px;display:grid;place-items:center;text-align:center;line-height:1.05}
+.cal b{font-size:.95rem;display:block}
+.cal span{font-size:.58rem;text-transform:uppercase;font-weight:700}
+.cal-blue{background:#EFF8FF;color:var(--blue)}.cal-amber{background:#FFFAEB;color:var(--amber)}.cal-green{background:#ECFDF3;color:var(--green)}
+.event h5{font-size:.8rem;font-weight:600}
+.event p{font-size:.7rem;color:var(--muted)}
+.perf{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.perf:last-child{border:0}
+.perf .av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:.7rem;font-weight:700}
+.perf b{font-size:.8rem;display:block;line-height:1.25}
+.perf span{font-size:.68rem;color:var(--muted)}
+.perf .score{margin-left:auto;font-weight:800;font-size:.85rem;color:var(--green)}
+/* demo banner */
+.demo-note{margin-top:26px;background:linear-gradient(135deg,#101828,#1B2939);border-radius:var(--radius);padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;color:#fff}
+.demo-note h4{font-size:1rem;margin-bottom:4px}
+.demo-note p{font-size:.8rem;color:#9FB0C6}
+.demo-note .btn{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-weight:700}
+@media(max-width:1080px){.charts,.grid-2{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){.app{grid-template-columns:1fr}.sidebar{position:fixed;left:-270px;top:46px;z-index:950;width:250px;transition:.3s}.sidebar.open{left:0}
+.stats{grid-template-columns:1fr}.search{order:5;max-width:none}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live System Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20school%20management%20system%20like%20the%20ShulePro%20demo." target="_blank" rel="noopener">Get a system like this</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<div class="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sb-brand">
+      <span class="ic"><i class="fas fa-school"></i></span>
+      <div><strong>ShulePro</strong><span>School System</span></div>
+    </div>
+    <ul>
+      <li class="sb-label">Main</li>
+      <li><a class="sb-link active"><i class="fas fa-gauge-high"></i> Dashboard</a></li>
+      <li><a class="sb-link"><i class="fas fa-user-graduate"></i> Students <span class="sb-badge">1,248</span></a></li>
+      <li><a class="sb-link"><i class="fas fa-chalkboard-user"></i> Teachers</a></li>
+      <li><a class="sb-link"><i class="fas fa-chalkboard"></i> Classes</a></li>
+      <li class="sb-label">Operations</li>
+      <li><a class="sb-link"><i class="fas fa-clipboard-check"></i> Attendance</a></li>
+      <li><a class="sb-link"><i class="fas fa-file-invoice-dollar"></i> Fees</a></li>
+      <li><a class="sb-link"><i class="fas fa-file-pen"></i> Exams</a></li>
+      <li><a class="sb-link"><i class="fas fa-bus"></i> Transport</a></li>
+      <li><a class="sb-link"><i class="fas fa-comment-sms"></i> SMS to Parents</a></li>
+      <li class="sb-label">System</li>
+      <li><a class="sb-link"><i class="fas fa-chart-line"></i> Reports</a></li>
+      <li><a class="sb-link"><i class="fas fa-gear"></i> Settings</a></li>
+    </ul>
+    <div class="sb-upgrade">
+      <h5><i class="fas fa-crown" style="color:#C9A96E"></i> Term 3 Active</h5>
+      <p>School year 2025 · 92 days remaining</p>
+      <a href="https://wa.me/250788695396?text=I%20want%20a%20school%20management%20system%20like%20ShulePro." target="_blank" rel="noopener">Request This System</a>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <div class="topbar">
+      <button class="icon-btn" onclick="document.getElementById('sidebar').classList.toggle('open')" aria-label="Toggle menu" style="display:none" id="menuBtn"><i class="fas fa-bars"></i></button>
+      <div>
+        <h1>Dashboard</h1>
+        <div class="date"><i class="far fa-calendar"></i> Friday, 12 September 2025 · Term 3, Week 4</div>
+      </div>
+      <div class="search"><i class="fas fa-magnifying-glass"></i><input placeholder="Search students, classes, invoices…" /></div>
+      <button class="icon-btn" aria-label="Notifications"><i class="far fa-bell"></i><span class="dot"></span></button>
+      <div class="admin"><div class="av">AK</div><div><b>Aline Kabera</b><span>School Bursar</span></div></div>
+      <button class="btn btn-primary"><i class="fas fa-plus"></i> New Admission</button>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat">
+        <div class="top"><span class="ic ic-indigo"><i class="fas fa-user-graduate"></i></span><span class="delta up"><i class="fas fa-arrow-trend-up"></i> +12%</span></div>
+        <strong>1,248</strong><span>Total Students</span>
+      </div>
+      <div class="stat">
+        <div class="top"><span class="ic ic-blue"><i class="fas fa-chalkboard-user"></i></span><span class="delta up"><i class="fas fa-arrow-trend-up"></i> +3</span></div>
+        <strong>56</strong><span>Teachers on Staff</span>
+      </div>
+      <div class="stat">
+        <div class="top"><span class="ic ic-green"><i class="fas fa-clipboard-check"></i></span><span class="delta up"><i class="fas fa-arrow-trend-up"></i> +1.2%</span></div>
+        <strong>94.2%</strong><span>Attendance Today</span>
+      </div>
+      <div class="stat">
+        <div class="top"><span class="ic ic-amber"><i class="fas fa-file-invoice-dollar"></i></span><span class="delta down"><i class="fas fa-arrow-trend-down"></i> -4%</span></div>
+        <strong>78%</strong><span>Fees Collected This Term</span>
+      </div>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts">
+      <div class="panel">
+        <div class="panel-head">
+          <h3>Enrollment — 2025</h3>
+          <div class="legend"><span><i style="background:var(--indigo)"></i>2025</span><span><i style="background:#A5AEFF"></i>2024</span></div>
+        </div>
+        <div class="bars">
+          <div class="bar" title="January: 980"><div class="fill" style="height:52%"></div><small>Jan</small></div>
+          <div class="bar" title="February: 1,010"><div class="fill" style="height:56%"></div><small>Feb</small></div>
+          <div class="bar" title="March: 1,040"><div class="fill" style="height:60%"></div><small>Mar</small></div>
+          <div class="bar" title="April: 1,120"><div class="fill" style="height:68%"></div><small>Apr</small></div>
+          <div class="bar" title="May: 1,150"><div class="fill" style="height:70%"></div><small>May</small></div>
+          <div class="bar" title="June: 1,180"><div class="fill" style="height:74%"></div><small>Jun</small></div>
+          <div class="bar" title="July: 1,100"><div class="fill" style="height:66%"></div><small>Jul</small></div>
+          <div class="bar" title="August: 1,200"><div class="fill" style="height:78%"></div><small>Aug</small></div>
+          <div class="bar" title="September: 1,248"><div class="fill" style="height:84%"></div><small>Sep</small></div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Fee Collection</h3><a href="#">Details</a></div>
+        <div class="donut-wrap">
+          <div class="donut">
+            <div class="center"><strong>78%</strong><span>COLLECTED</span></div>
+          </div>
+          <div class="donut-legend">
+            <div class="dl-item"><i style="background:var(--green)"></i>Paid <b>962</b></div>
+            <div class="dl-item"><i style="background:var(--red)"></i>Overdue <b>74</b></div>
+            <div class="dl-item"><i style="background:var(--amber)"></i>Partial <b>112</b></div>
+            <div class="dl-item"><i style="background:#E4E7EC"></i>Not due yet <b>100</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLE + PANELS -->
+    <div class="grid-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Recent Admissions</h3><a href="#">View All</a></div>
+        <table>
+          <thead><tr><th>Student</th><th>Class</th><th>Guardian</th><th>Status</th><th></th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="t-student"><span class="t-av" style="background:#6366F1">IM</span><div><b>Innocent Mugisha</b><span>#S-2025-1246</span></div></div></td>
+              <td>P5 East</td><td>Jean Mugisha</td><td><span class="pill p-paid">Paid</span></td>
+              <td><a href="#" style="color:var(--indigo);font-size:.78rem;font-weight:600">View</a></td>
+            </tr>
+            <tr>
+              <td><div class="t-student"><span class="t-av" style="background:#2E90FA">DU</span><div><b>Diane Uwase</b><span>#S-2025-1247</span></div></div></td>
+              <td>S2 Science</td><td>Patrick Uwase</td><td><span class="pill p-partial">Partial</span></td>
+              <td><a href="#" style="color:var(--indigo);font-size:.78rem;font-weight:600">View</a></td>
+            </tr>
+            <tr>
+              <td><div class="t-student"><span class="t-av" style="background:#16A34A">KI</span><div><b>Kevin Iradukunda</b><span>#S-2025-1248</span></div></div></td>
+              <td>Nursery B</td><td>Grace Mukamana</td><td><span class="pill p-paid">Paid</span></td>
+              <td><a href="#" style="color:var(--indigo);font-size:.78rem;font-weight:600">View</a></td>
+            </tr>
+            <tr>
+              <td><div class="t-student"><span class="t-av" style="background:#D97706">SN</span><div><b>Sandrine Niyonkuru</b><span>#S-2025-1249</span></div></div></td>
+              <td>S4 PCB</td><td>Alphonse Niyonkuru</td><td><span class="pill p-pending">Pending</span></td>
+              <td><a href="#" style="color:var(--indigo);font-size:.78rem;font-weight:600">View</a></td>
+            </tr>
+            <tr>
+              <td><div class="t-student"><span class="t-av" style="background:#8B5CF6">EB</span><div><b>Eric Byiringiro</b><span>#S-2025-1250</span></div></div></td>
+              <td>P2 West</td><td>Christine Nyirahabimana</td><td><span class="pill p-paid">Paid</span></td>
+              <td><a href="#" style="color:var(--indigo);font-size:.78rem;font-weight:600">View</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="side-panels">
+        <div class="panel">
+          <div class="panel-head"><h3>Upcoming</h3><a href="#">Calendar</a></div>
+          <div class="event"><div class="cal cal-blue"><b>15</b><span>Sep</span></div><div><h5>Parents' Meeting — P6</h5><p>9:00 AM · Main Hall</p></div></div>
+          <div class="event"><div class="cal cal-amber"><b>18</b><span>Sep</span></div><div><h5>Mid-term Exams Begin</h5><p>All classes · Timetable ready</p></div></div>
+          <div class="event"><div class="cal cal-green"><b>22</b><span>Sep</span></div><div><h5>Fee Deadline — Term 3</h5><p>Reminder SMS to 186 parents</p></div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>Top Performers</h3><a href="#">Reports</a></div>
+          <div class="perf"><span class="av" style="background:#6366F1">IM</span><div><b>Innocent Mugisha</b><span>P5 East</span></div><span class="score">96%</span></div>
+          <div class="perf"><span class="av" style="background:#16A34A">DU</span><div><b>Diane Uwase</b><span>S2 Science</span></div><span class="score">94%</span></div>
+          <div class="perf"><span class="av" style="background:#D97706">KB</span><div><b>Kelly Bahati</b><span>S4 PCB</span></div><span class="score">93%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-note">
+      <div>
+        <h4><i class="fas fa-circle-info" style="color:#C9A96E"></i> This is a live system demo</h4>
+        <p>Student management, attendance, fees, exams, transport and parent SMS — built for Rwandan schools by 1000 Hills Group.</p>
+      </div>
+      <a class="btn" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20school%20management%20system%20like%20the%20ShulePro%20demo." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Get a Quote</a>
+    </div>
+  </main>
+</div>
+
+<script>
+if(window.matchMedia('(max-width:860px)').matches){document.getElementById('menuBtn').style.display='grid';}
+</script>
+</body>
+</html>
