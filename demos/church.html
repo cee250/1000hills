@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grace Cathedral Kigali | Services, Sermons &amp; Ministries — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live church website demo by 1000 Hills Group — service times, sermon archive, ministries and online giving template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Public+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--navy:#101A2E;--navy2:#16233E;--sky:#6FA8DC;--sky-l:#A9CCEB;--cream:#F6F3EC;--gold-c:#D9B36A;--muted:#8B99B0;--line:rgba(169,204,235,.16);--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Public Sans',sans-serif;background:var(--navy);color:var(--cream);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+.container{width:min(1120px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(16,26,46,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .cross{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#1E3054,var(--navy));border:1px solid var(--gold-c);display:grid;place-items:center;color:var(--gold-c);font-size:1.15rem}
+.brand h3{font-size:1.15rem;line-height:1.2}
+.brand small{display:block;font-family:'Public Sans',sans-serif;font-size:.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.nav-links{display:flex;gap:26px;font-size:.85rem;font-weight:600}
+.nav-links a:hover{color:var(--sky-l)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.85rem;font-weight:700;border-radius:40px;transition:.3s}
+.btn-gold{background:linear-gradient(135deg,var(--gold-c),#EBD5A4);color:var(--navy)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(217,179,106,.3)}
+.btn-sky{background:var(--sky);color:var(--navy)}
+.btn-sky:hover{background:var(--sky-l);transform:translateY(-2px)}
+.btn-line{border:1px solid rgba(169,204,235,.3);color:var(--cream)}
+.btn-line:hover{border-color:var(--sky-l);color:var(--sky-l)}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(ellipse 45% 42% at 50% 0%, rgba(217,179,106,.16), transparent 62%),
+ radial-gradient(ellipse 60% 50% at 50% 110%, rgba(111,168,220,.14), transparent 60%), var(--navy)}
+.hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:340px;background:radial-gradient(ellipse,rgba(217,179,106,.14),transparent 68%);filter:blur(8px)}
+.rays{position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:900px;height:520px;background:
+ conic-gradient(from 178deg at 50% 0%,transparent 0deg,rgba(217,179,106,.08) 8deg,transparent 16deg,rgba(217,179,106,.08) 24deg,transparent 32deg,rgba(217,179,106,.08) 40deg,transparent 48deg,rgba(217,179,106,.08) 56deg,transparent 64deg,rgba(217,179,106,.08) 72deg,transparent 80deg,rgba(217,179,106,.08) 88deg,transparent 96deg);pointer-events:none}
+.hero .container{position:relative;z-index:2;text-align:center;padding:110px 0 100px}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold-c);font-weight:700}
+.kicker::before,.kicker::after{content:'✦';color:var(--sky-l)}
+.hero h1{font-size:clamp(2.7rem,6vw,4.6rem);font-weight:600;line-height:1.1;margin:20px auto;max-width:18ch}
+.hero h1 em{color:var(--gold-c);font-style:italic}
+.hero p{max-width:52ch;margin:0 auto 34px;color:var(--muted)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+/* service times */
+.times{background:var(--navy2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.times-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:38px 0}
+.time-card{text-align:center;padding:10px}
+.time-card i{font-size:1.5rem;color:var(--gold-c);margin-bottom:10px;display:block}
+.time-card h4{font-family:'Cormorant Garamond',serif;font-size:1.3rem}
+.time-card p{font-size:.85rem;color:var(--muted)}
+.time-card span{display:inline-block;margin-top:8px;font-size:.74rem;font-weight:700;color:var(--sky-l);letter-spacing:1px}
+/* sections */
+section{padding:88px 0}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 52px}
+.sec-head .kicker2{color:var(--sky-l);font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin:10px 0;font-weight:600}
+.sec-head p{color:var(--muted)}
+.light{background:var(--cream);color:var(--navy)}
+.light .sec-head p{color:#6B7280}
+/* ministries */
+.min-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.min{background:var(--navy2);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;transition:.35s}
+.min:hover{transform:translateY(-6px);border-color:rgba(217,179,106,.4)}
+.min i{font-size:1.5rem;color:var(--gold-c);margin-bottom:16px;display:block}
+.min h4{font-family:'Cormorant Garamond',serif;font-size:1.35rem;margin-bottom:8px}
+.min p{font-size:.86rem;color:var(--muted);margin-bottom:14px}
+.min a{font-size:.8rem;font-weight:700;color:var(--sky-l)}
+/* sermon player */
+.sermon{background:var(--navy2);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.sermon-art{width:110px;height:110px;border-radius:12px;background:linear-gradient(150deg,#1E3054,#101A2E);border:1px solid var(--line);display:grid;place-items:center;font-size:2.2rem;color:var(--gold-c);flex:none}
+.sermon-info{flex:1;min-width:220px}
+.sermon-info h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem}
+.sermon-info p{font-size:.82rem;color:var(--muted)}
+.play-row{display:flex;align-items:center;gap:16px;margin-top:12px}
+.play-btn{width:46px;height:46px;border-radius:50%;background:var(--gold-c);color:var(--navy);display:grid;place-items:center;font-size:1rem;flex:none}
+.wave{flex:1;height:34px;display:flex;align-items:center;gap:3px}
+.wave i{flex:1;background:rgba(169,204,235,.35);border-radius:3px;min-width:2px}
+.sermon-list{display:grid;gap:16px}
+/* giving */
+.give-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.give-card{background:#fff;border-radius:16px;padding:34px;box-shadow:0 30px 70px rgba(16,26,46,.18)}
+.give-card h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-bottom:16px}
+.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+.amt{border:1.5px solid var(--line);border-radius:10px;padding:12px;text-align:center;font-weight:800;font-size:.9rem;color:var(--navy);background:var(--cream)}
+.amt.on{border-color:var(--gold-c);background:rgba(217,179,106,.15)}
+.give-card input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:13px 15px;font-family:inherit;font-size:.95rem;margin-bottom:14px;background:var(--cream)}
+.give-card .btn{width:100%;justify-content:center}
+.give-note{text-align:center;font-size:.74rem;color:#6B7280;margin-top:12px}
+/* verse band */
+.verse{background:linear-gradient(135deg,var(--navy2),#1E3054);text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.verse blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3.2vw,2.1rem);font-style:italic;max-width:32ch;margin:0 auto 14px}
+.verse cite{color:var(--gold-c);font-style:normal;font-size:.8rem;letter-spacing:2px;text-transform:uppercase}
+footer{background:#0B1322;color:var(--muted);padding:56px 0 30px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:var(--cream);margin-bottom:14px;font-family:'Cormorant Garamond',serif;font-size:1.15rem}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--gold-c)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:var(--gold-c)}
+@media(max-width:880px){.min-grid,.times-grid,.f-grid{grid-template-columns:1fr}.give-grid{grid-template-columns:1fr}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Grace%20Cathedral%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="cross"><i class="fas fa-church"></i></span><h3 class="serif">Grace Cathedral<small>Kigali · Est. 1962</small></h3></a>
+    <nav class="nav-links"><a href="#visit">Visit</a><a href="#sermons">Sermons</a><a href="#ministries">Ministries</a><a href="#give">Give</a></nav>
+    <a href="#give" class="btn btn-gold"><i class="fas fa-hand-holding-heart"></i> Give Online</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="rays"></div>
+  <div class="container">
+    <span class="kicker">All are welcome</span>
+    <h1>Come as you are.<br/>Leave <em>changed</em>.</h1>
+    <p>Sunday services in Kinyarwanda and English, kids' church, youth nights and a family of 3,000 believers in the heart of Kigali.</p>
+    <div class="hero-btns">
+      <a href="#visit" class="btn btn-sky"><i class="fas fa-map-location-dot"></i> Plan Your Visit</a>
+      <a href="#sermons" class="btn btn-line"><i class="fas fa-headphones"></i> Listen to Sermons</a>
+    </div>
+  </div>
+</section>
+
+<div class="times" id="visit">
+  <div class="container times-grid">
+    <div class="time-card"><i class="fas fa-sun"></i><h4>First Service</h4><p>Sunday · 7:30 – 9:00am<br/>Kinyarwanda with interpretation</p><span>Kids church provided</span></div>
+    <div class="time-card"><i class="fas fa-cloud-sun"></i><h4>Second Service</h4><p>Sunday · 10:00 – 11:45am<br/>Blended worship · English</p><span>Livestreamed on YouTube</span></div>
+    <div class="time-card"><i class="fas fa-moon"></i><h4>Midweek Recharge</h4><p>Wednesday · 6:00 – 7:30pm<br/>Prayer &amp; Bible study</p><span>Open to all</span></div>
+  </div>
+</div>
+
+<section id="sermons">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Messages</span>
+      <h2>This week at Grace</h2>
+      <p>Miss a Sunday? Every sermon lives here — audio, video and study notes.</p>
+    </div>
+    <div class="sermon-list">
+      <div class="sermon">
+        <div class="sermon-art"><i class="fas fa-play"></i></div>
+        <div class="sermon-info">
+          <h4>The God of the Hills and Valleys</h4>
+          <p>Pastor Emmanuel Nkusi · Sep 7, 2025 · 1 Kings 19</p>
+          <div class="play-row"><span class="play-btn"><i class="fas fa-play"></i></span><div class="wave"><i style="height:30%"></i><i style="height:60%"></i><i style="height:40%"></i><i style="height:85%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:35%"></i><i style="height:90%"></i><i style="height:50%"></i><i style="height:65%"></i><i style="height:45%"></i><i style="height:75%"></i><i style="height:30%"></i><i style="height:60%"></i><i style="height:80%"></i><i style="height:40%"></i><i style="height:55%"></i><i style="height:70%"></i><i style="height:35%"></i><i style="height:50%"></i></div><span style="font-size:.76rem;color:var(--muted)">42:18</span></div>
+        </div>
+      </div>
+      <div class="sermon">
+        <div class="sermon-art"><i class="fas fa-play"></i></div>
+        <div class="sermon-info">
+          <h4>Ubwiza: The Beauty of Giving</h4>
+          <p>Rev. Alice Mukamana · Aug 31, 2025 · 2 Corinthians 9</p>
+          <div class="play-row"><span class="play-btn"><i class="fas fa-play"></i></span><div class="wave"><i style="height:45%"></i><i style="height:70%"></i><i style="height:35%"></i><i style="height:80%"></i><i style="height:50%"></i><i style="height:65%"></i><i style="height:40%"></i><i style="height:75%"></i><i style="height:55%"></i><i style="height:30%"></i><i style="height:85%"></i><i style="height:45%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:70%"></i><i style="height:50%"></i><i style="height:40%"></i><i style="height:65%"></i><i style="height:30%"></i><i style="height:55%"></i></div><span style="font-size:.76rem;color:var(--muted)">38:44</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="ministries">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Get Involved</span>
+      <h2>Find your place to serve</h2>
+      <p>Church is not a building — it's a body. Every member has a part.</p>
+    </div>
+    <div class="min-grid">
+      <div class="min"><i class="fas fa-children"></i><h4>Grace Kids</h4><p>Safe, joyful Sunday classes for ages 2–12 with trained teachers and a check-in system.</p><a href="#footer">Join the team <i class="fas fa-arrow-right"></i></a></div>
+      <div class="min"><i class="fas fa-fire"></i><h4>Ignite Youth</h4><p>Fridays 5pm — worship, real talk and games for ages 13–24. Bring a friend.</p><a href="#footer">Join the team <i class="fas fa-arrow-right"></i></a></div>
+      <div class="min"><i class="fas fa-people-group"></i><h4>Home Cells</h4><p>Midweek fellowship in 40 homes across Kigali — meals, prayer and Scripture.</p><a href="#footer">Find a cell <i class="fas fa-arrow-right"></i></a></div>
+      <div class="min"><i class="fas fa-hands-praying"></i><h4>Prayer Wall</h4><p>Send a request and our intercessory team will pray daily for 30 days.</p><a href="#footer">Submit a request <i class="fas fa-arrow-right"></i></a></div>
+      <div class="min"><i class="fas fa-hand-holding-medical"></i><h4>Mercy Ministry</h4><p>Food banks, hospital visits and school fees support for vulnerable families.</p><a href="#footer">Volunteer <i class="fas fa-arrow-right"></i></a></div>
+      <div class="min"><i class="fas fa-music"></i><h4>Worship &amp; Choir</h4><p>Audition-free choir and band workshops every Saturday at 3pm.</p><a href="#footer">Join the team <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<div class="verse">
+  <div class="container">
+    <blockquote>“I will build my church, and the gates of hell shall not prevail against it.”</blockquote>
+    <cite>— Matthew 16:18</cite>
+  </div>
+</div>
+
+<section id="give">
+  <div class="container give-grid">
+    <div>
+      <span class="kicker2" style="color:var(--sky-l);font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:700">Giving</span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.7rem);font-weight:600;margin:10px 0 16px">Give cheerfully, give securely</h2>
+      <p style="color:var(--muted);margin-bottom:20px">Your tithes and offerings build the house and serve the city. Give in seconds with MTN MoMo, Airtel Money, bank transfer or card — and receive an instant receipt.</p>
+      <ul style="font-size:.9rem">
+        <li style="margin-bottom:10px"><i class="fas fa-check" style="color:var(--gold-c);margin-right:10px"></i>Designate to tithe, building fund or mercy ministry</li>
+        <li style="margin-bottom:10px"><i class="fas fa-check" style="color:var(--gold-c);margin-right:10px"></i>Annual giving statements for every member</li>
+        <li><i class="fas fa-check" style="color:var(--gold-c);margin-right:10px"></i>Transparent quarterly finance reports to the congregation</li>
+      </ul>
+    </div>
+    <form class="give-card" onsubmit="event.preventDefault();this.querySelector('.btn').innerHTML='<i class=\'fas fa-check\'></i> Thank you for your heart!'">
+      <h4>Quick Give</h4>
+      <div class="amounts">
+        <button type="button" class="amt">5,000</button>
+        <button type="button" class="amt on">10,000</button>
+        <button type="button" class="amt">50,000</button>
+      </div>
+      <input type="number" placeholder="Custom amount (RWF)"/>
+      <input type="tel" placeholder="Phone number for MoMo"/>
+      <button class="btn btn-gold" type="submit"><i class="fas fa-hand-holding-heart"></i> Give Now</button>
+      <p class="give-note"><i class="fas fa-lock"></i> Secured by MTN MoMo · Grace Cathedral (demo)</p>
+    </form>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px"><span class="cross" style="width:38px;height:38px;font-size:.95rem"><i class="fas fa-church"></i></span><h3 style="font-size:1.05rem;color:var(--cream)">Grace Cathedral</h3></a>
+        <p>A family of believers in the heart of Kigali — worshipping in truth, serving in love since 1962.</p>
+      </div>
+      <div><h5>Church</h5><ul><li><a href="#visit">Service times</a></li><li><a href="#sermons">Sermons</a></li><li><a href="#ministries">Ministries</a></li></ul></div>
+      <div><h5>Find Us</h5><ul><li>KN 20 Ave, Kigali</li><li>office@gracecathedral.rw</li><li>+250 788 000 000</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Grace Cathedral Kigali (fictional demo church)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

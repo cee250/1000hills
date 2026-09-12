@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zen Harmony Spa &amp; Salon | Beauty &amp; Wellness, Kigali — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live spa &amp; salon website demo by 1000 Hills Group — massage, facials, hair, nails, packages and online booking template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--cream:#FAF4EF;--blush:#F2E2DA;--mauve:#9C6B70;--mauve-d:#7E5055;--gold-s:#B99A5B;--ink:#43352F;--muted:#9A8880;--line:#E9DAD2;--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Cormorant',serif}
+.container{width:min(1120px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(250,244,239,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Cormorant',serif;font-size:1.35rem;font-weight:600}
+.brand .lotus{width:44px;height:44px;border-radius:50% 50% 45% 45%;background:linear-gradient(150deg,var(--mauve),var(--mauve-d));display:grid;place-items:center;color:#fff;font-size:1.05rem}
+.nav-links{display:flex;gap:28px;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.nav-links a:hover{color:var(--mauve)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 28px;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;border-radius:40px;transition:.3s}
+.btn-mauve{background:var(--mauve);color:#fff}
+.btn-mauve:hover{background:var(--mauve-d);transform:translateY(-2px)}
+.btn-line{border:1px solid var(--ink)}.btn-line:hover{background:var(--ink);color:var(--cream)}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(ellipse 45% 40% at 15% 15%, rgba(156,107,112,.1), transparent 55%),
+ radial-gradient(ellipse 45% 40% at 85% 85%, rgba(185,154,91,.1), transparent 55%), var(--cream)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:80px 0}
+.kicker{font-size:.72rem;letter-spacing:5px;text-transform:uppercase;color:var(--mauve);font-weight:600}
+.kicker::before{content:'✦';color:var(--gold-s);margin-right:10px}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.4rem);font-weight:500;line-height:1.1;margin:20px 0}
+.hero h1 em{color:var(--mauve);font-style:italic}
+.hero p{color:var(--muted);max-width:46ch;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-note{margin-top:34px;display:flex;gap:12px;align-items:center;font-size:.84rem;color:var(--muted)}
+.hero-note i{color:var(--gold-s)}
+/* stone stack visual */
+.zen-scene{position:relative;display:grid;place-items:center;min-height:420px}
+.halo{position:absolute;width:min(340px,76%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFF,#F2E2DA 75%);box-shadow:inset 0 0 60px rgba(156,107,112,.12),0 40px 80px rgba(67,53,47,.12)}
+.stones{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.stone{border-radius:50%;background:linear-gradient(150deg,#8A6F6B,#5C4744);box-shadow:0 16px 30px rgba(67,53,47,.3)}
+.st1{width:64px;height:36px}.st2{width:92px;height:48px;margin-top:-6px}.st3{width:124px;height:62px;margin-top:-6px}
+.leaf{position:absolute;font-size:2rem;color:var(--mauve);opacity:.4;animation:drift 7s ease-in-out infinite}
+.lf1{top:12%;left:16%}.lf2{bottom:16%;right:14%;animation-delay:2s;font-size:1.4rem}.lf3{top:40%;right:8%;animation-delay:4s;font-size:1rem}
+@keyframes drift{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(10deg)}}
+.treat-chip{position:absolute;background:#fff;border:1px solid var(--line);border-radius:30px;padding:11px 18px;font-size:.76rem;font-weight:500;box-shadow:0 16px 36px rgba(67,53,47,.12);display:flex;gap:10px;align-items:center;animation:bob 5s ease-in-out infinite;z-index:3}
+.treat-chip i{color:var(--mauve)}
+.tc1{top:8%;right:2%}.tc2{bottom:12%;left:-2%;animation-delay:1.6s}.tc3{top:48%;right:-6%;animation-delay:3.2s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+/* menu of services */
+section{padding:86px 0}
+.sec-head{text-align:center;max-width:600px;margin:0 auto 52px}
+.sec-head .kicker2{color:var(--mauve);font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-weight:600}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3rem);font-weight:500;font-style:italic;margin:12px 0}
+.sec-head p{color:var(--muted)}
+.soft{background:var(--blush);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.menu-cols{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 60px;max-width:920px;margin:0 auto}
+.m-col h3{font-size:1.35rem;color:var(--mauve);display:flex;align-items:center;gap:12px;margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.m-col h3 i{font-size:1rem}
+.svc-line{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.svc-line:last-child{border:0}
+.svc-line b{font-weight:600;font-size:.94rem}
+.svc-line small{display:block;color:var(--muted);font-weight:300;font-size:.78rem}
+.svc-line .dots{flex:1;border-bottom:1px dotted rgba(154,136,128,.5);transform:translateY(-4px)}
+.svc-line .price{font-family:'Cormorant',serif;font-size:1.1rem;color:var(--mauve-d);font-weight:600;white-space:nowrap}
+/* rituals */
+.rit{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.ritual{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px 30px;text-align:center;transition:.35s}
+.ritual:hover{transform:translateY(-7px);box-shadow:0 30px 60px rgba(67,53,47,.12)}
+.ritual i{font-size:1.6rem;color:var(--gold-s);margin-bottom:18px;display:block}
+.ritual h4{font-size:1.3rem;font-weight:500;margin-bottom:6px}
+.ritual .sub{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);display:block;margin-bottom:14px}
+.ritual p{font-size:.85rem;color:var(--muted);margin-bottom:18px}
+.ritual .rprice{font-family:'Cormorant',serif;font-size:1.4rem;color:var(--mauve-d);font-weight:600}
+/* gift band */
+.gift{background:linear-gradient(135deg,var(--mauve),var(--mauve-d));color:#fff;text-align:center;border-radius:18px;padding:56px 30px}
+.gift h2{font-size:clamp(1.9rem,4.2vw,2.8rem);font-style:italic;font-weight:500;margin-bottom:12px}
+.gift p{opacity:.9;max-width:50ch;margin:0 auto 26px}
+.gift-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--mauve-d)}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-ghostw{border:1px solid rgba(255,255,255,.5);color:#fff}
+.btn-ghostw:hover{background:rgba(255,255,255,.14)}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.rev .stars{color:var(--gold-s);letter-spacing:3px;font-size:.8rem;margin-bottom:14px}
+.rev p{font-size:.88rem;font-style:italic;color:var(--ink);margin-bottom:16px}
+.rev h5{font-family:'Cormorant',serif;font-size:1.1rem}
+.rev span{font-size:.74rem;color:var(--muted)}
+footer{background:#3A2E2A;color:#C0ACA5;padding:56px 0 30px;font-size:.86rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:#fff;font-family:'Cormorant',serif;font-size:1.2rem;margin-bottom:14px}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--gold-s)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.76rem}
+.f-bottom a{color:var(--gold-s)}
+@media(max-width:900px){.hero-grid,.menu-cols,.f-grid{grid-template-columns:1fr}.rit,.revs{grid-template-columns:1fr}.nav-links{display:none}.zen-scene{min-height:320px}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Zen%20Harmony%20Spa%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="lotus"><i class="fas fa-spa"></i></span>Zen Harmony</a>
+    <nav class="nav-links"><a href="#menu">Treatments</a><a href="#rituals">Rituals</a><a href="#gift">Gift Cards</a><a href="#book">Book</a></nav>
+    <a href="#book" class="btn btn-mauve">Book Your Escape</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker">Spa · Salon · Wellness</span>
+      <h1>Exhale. You're <em>here</em> now.</h1>
+      <p>Candlelit massage rooms, herbal steam, and therapists who find knots you forgot you had. Kigali's quietest luxury, priced for real life.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-mauve"><i class="fas fa-leaf"></i> View Treatment Menu</a>
+        <a href="#book" class="btn btn-line">Book Now</a>
+      </div>
+      <div class="hero-note"><i class="fas fa-clock"></i> Open 7 days · 8am – 9pm · Couples rooms available</div>
+    </div>
+    <div class="zen-scene">
+      <div class="halo"></div>
+      <div class="stones"><span class="stone st1"></span><span class="stone st2"></span><span class="stone st3"></span></div>
+      <i class="fas fa-leaf leaf lf1"></i><i class="fas fa-feather leaf lf2"></i><i class="fas fa-seedling leaf lf3"></i>
+      <div class="treat-chip tc1"><i class="fas fa-hands"></i> Deep tissue · 60 min</div>
+      <div class="treat-chip tc2"><i class="fas fa-martini-glass-citrus"></i> Rooibos tea ritual</div>
+      <div class="treat-chip tc3"><i class="fas fa-face-smile"></i> Glow facial</div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="menu">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Treatment Menu</span>
+      <h2>Choose your calm</h2>
+      <p>All treatments include herbal tea, robe and slippers. Prices in RWF.</p>
+    </div>
+    <div class="menu-cols">
+      <div class="m-col">
+        <h3><i class="fas fa-hands"></i> Massage &amp; Body</h3>
+        <div class="svc-line"><span><b>Swedish Relaxation</b><small>60 min · gentle pressure</small></span><span class="dots"></span><span class="price">25,000</span></div>
+        <div class="svc-line"><span><b>Deep Tissue Rescue</b><small>60 min · firm pressure</small></span><span class="dots"></span><span class="price">30,000</span></div>
+        <div class="svc-line"><span><b>Hot Stone Journey</b><small>90 min · volcanic stones</small></span><span class="dots"></span><span class="price">45,000</span></div>
+        <div class="svc-line"><span><b>Couples Retreat</b><small>90 min · two therapists</small></span><span class="dots"></span><span class="price">80,000</span></div>
+        <div class="svc-line"><span><b>Prenatal Comfort</b><small>60 min · side-lying</small></span><span class="dots"></span><span class="price">32,000</span></div>
+      </div>
+      <div class="m-col">
+        <h3><i class="fas fa-face-smile"></i> Face &amp; Beauty</h3>
+        <div class="svc-line"><span><b>Glow Facial</b><small>60 min · deep cleanse &amp; mask</small></span><span class="dots"></span><span class="price">28,000</span></div>
+        <div class="svc-line"><span><b>Gentleman's Facial</b><small>45 min · beard-friendly</small></span><span class="dots"></span><span class="price">25,000</span></div>
+        <div class="svc-line"><span><b>Manicure &amp; Pedicure</b><small>90 min · gel add-on 8,000</small></span><span class="dots"></span><span class="price">22,000</span></div>
+        <div class="svc-line"><span><b>Braids &amp; Styling</b><small>From · quote at consult</small></span><span class="dots"></span><span class="price">15,000</span></div>
+        <div class="svc-line"><span><b>Bridal Package</b><small>Trial + day-of glam</small></span><span class="dots"></span><span class="price">120,000</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rituals">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Signature Rituals</span>
+      <h2>Three hours. Zero thoughts.</h2>
+    </div>
+    <div class="rit">
+      <div class="ritual">
+        <i class="fas fa-mountain"></i>
+        <h4>Hills Ritual</h4>
+        <span class="sub">2.5 hours</span>
+        <p>Body scrub, full-body massage and glow facial — our bestseller for a reason.</p>
+        <div class="rprice">68,000 RWF</div>
+      </div>
+      <div class="ritual">
+        <i class="fas fa-leaf"></i>
+        <h4>Tea Garden Ritual</h4>
+        <span class="sub">3 hours</span>
+        <p>Herbal steam, hot stone massage, scalp ritual and rooibos tea service.</p>
+        <div class="rprice">85,000 RWF</div>
+      </div>
+      <div class="ritual">
+        <i class="fas fa-crown"></i>
+        <h4>Honeymoon Ritual</h4>
+        <span class="sub">3 hours · for two</span>
+        <p>Side-by-side massage, couples facial, sparkling tea and chocolate plate.</p>
+        <div class="rprice">150,000 RWF</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gift">
+  <div class="container">
+    <div class="gift">
+      <h2>The gift of "aaaah"</h2>
+      <p>Beautiful gift cards from 20,000 RWF — digital or boxed with dried flowers. Redeemable on every treatment and ritual.</p>
+      <div class="gift-btns">
+        <a href="https://wa.me/250788695396?text=I%20want%20a%20Zen%20Harmony%20gift%20card!" target="_blank" rel="noopener" class="btn btn-white"><i class="fas fa-gift"></i> Buy a Gift Card</a>
+        <a href="#book" class="btn btn-ghostw">Book for Myself</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Whispers</span>
+      <h2>What guests say</h2>
+    </div>
+    <div class="revs">
+      <div class="rev"><div class="stars">★★★★★</div><p>“I fell asleep during the hot stone massage and woke up believing I was a new person. 10/10.”</p><h5 class="serif">Diane U.</h5><span>Tea Garden Ritual</span></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>“Booked the couples retreat for our anniversary. They remembered our names from last visit. Class.”</p><h5 class="serif">Aline &amp; Patrick</h5><span>Couples Retreat</span></div>
+      <div class="rev"><div class="stars">★★★★★</div><p>“Bridal package was flawless — trial, day-of glam, and they calmed my whole bridal party down.”</p><h5 class="serif">Sandrine N.</h5><span>Bride, June 2025</span></div>
+    </div>
+  </div>
+</section>
+
+<footer id="book">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px;color:#fff"><span class="lotus" style="width:38px;height:38px;font-size:.9rem"><i class="fas fa-spa"></i></span>Zen Harmony</a>
+        <p>Spa, salon and wellness studio in Kigali. Come stressed, leave weightless.</p>
+      </div>
+      <div><h5>Visit</h5><ul><li>KG 12 Ave, Kigali</li><li>Daily 8am – 9pm</li><li>+250 788 000 000</li></ul></div>
+      <div><h5>Book</h5><ul><li><a href="#menu">Treatment menu</a></li><li>hello@zenharmony.rw</li><li>WhatsApp booking</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Zen Harmony Spa &amp; Salon (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

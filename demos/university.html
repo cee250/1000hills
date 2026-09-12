@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kigali Hills University | Admissions &amp; Programs — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live university website demo by 1000 Hills Group — academic programs, admissions, campus life and student portal template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--navy:#0E2244;--navy2:#13305C;--blue:#2D6CDF;--gold-c:#E8B54A;--parch:#F7F5F0;--muted:#5E6B80;--line:#E2E6EE;--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',sans-serif;background:var(--parch);color:var(--navy);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Libre Baskerville',serif}
+.container{width:min(1140px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+/* top utility strip */
+.util{background:var(--navy);color:#B9C7DE;font-size:.76rem;padding:8px 0}
+.util .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.util a:hover{color:var(--gold-c)}
+header{position:sticky;top:46px;z-index:900;background:rgba(247,245,240,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .crest{width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--gold-c);display:grid;place-items:center;font-size:1.15rem;border:2px solid var(--gold-c)}
+.brand h3{font-size:1.08rem;line-height:1.25}
+.brand small{display:block;font-family:'Source Sans 3',sans-serif;font-size:.66rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.nav-links{display:flex;gap:26px;font-size:.88rem;font-weight:600}
+.nav-links a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.86rem;font-weight:700;border-radius:6px;transition:.3s}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--navy);transform:translateY(-2px)}
+.btn-gold{background:var(--gold-c);color:var(--navy)}
+.btn-gold:hover{background:#F2C55F;transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--navy);color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+/* HERO */
+.hero{background:linear-gradient(158deg,var(--navy) 0%,var(--navy2) 55%,#1A3E75);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-140px;top:-140px;width:520px;height:520px;border-radius:50%;border:60px solid rgba(232,181,74,.09)}
+.hero::after{content:'';position:absolute;right:60px;bottom:-190px;width:420px;height:420px;border-radius:50%;border:48px solid rgba(45,108,223,.14)}
+.hero .container{position:relative;z-index:2;padding:90px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.kicker{display:inline-block;font-size:.74rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold-c);font-weight:800;border-bottom:2px solid var(--gold-c);padding-bottom:6px}
+.hero h1{font-size:clamp(2.3rem,5vw,3.7rem);line-height:1.15;margin:22px 0}
+.hero p{color:#C4D2E8;max-width:48ch;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-side{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);border-radius:14px;padding:34px}
+.hero-side h3{font-size:1.15rem;margin-bottom:6px;color:var(--gold-c)}
+.hero-side p{font-size:.86rem;margin-bottom:20px;color:#C4D2E8}
+.hero-side .row{display:flex;flex-direction:column;gap:12px}
+.side-stat{display:flex;gap:12px;align-items:center;font-size:.86rem}
+.side-stat i{width:38px;height:38px;border-radius:8px;background:rgba(232,181,74,.15);color:var(--gold-c);display:grid;place-items:center;flex:none}
+/* quick stats band */
+.band{background:var(--gold-c);color:var(--navy)}
+.band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:30px 0;text-align:center}
+.band strong{font-family:'Libre Baskerville',serif;font-size:2rem;display:block;line-height:1.15}
+.band span{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:1px}
+/* sections */
+section{padding:88px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 52px}
+.sec-head .kicker2{color:var(--blue);font-size:.76rem;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:10px 0}
+.sec-head p{color:var(--muted)}
+.white{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* programs */
+.prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prog{background:#fff;border:1px solid var(--line);border-radius:12px;padding:30px 26px;transition:.35s;position:relative;overflow:hidden}
+.prog::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--blue),var(--gold-c))}
+.prog:hover{transform:translateY(-7px);box-shadow:0 30px 60px rgba(14,34,68,.14)}
+.prog i{font-size:1.6rem;color:var(--blue);margin-bottom:16px;display:block}
+.prog h4{font-family:'Libre Baskerville',serif;font-size:1.12rem;margin-bottom:8px}
+.prog p{font-size:.85rem;color:var(--muted);margin-bottom:16px}
+.prog .meta{font-size:.74rem;color:var(--navy);font-weight:700;display:flex;gap:16px;border-top:1px solid var(--line);padding-top:14px}
+.prog .meta span i{color:var(--gold-c);margin-right:6px}
+/* admissions steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+.step{background:var(--parch);border:1px solid var(--line);border-radius:12px;padding:30px 24px;position:relative}
+.step .n{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold-c);display:grid;place-items:center;font-family:'Libre Baskerville',serif;font-size:1.1rem;margin-bottom:18px}
+.step h4{font-size:1rem;margin-bottom:8px}
+.step p{font-size:.83rem;color:var(--muted)}
+/* campus life */
+.campus{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.campus-card{border-radius:12px;min-height:210px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:20px;color:#fff;font-weight:700}
+.campus-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(14,34,68,.85))}
+.campus-card span{position:relative;z-index:2;font-size:.92rem}
+.cc1{background:linear-gradient(150deg,#2D6CDF,#0E2244)}
+.cc2{background:linear-gradient(150deg,#E8B54A,#8A5E13)}
+.cc3{background:linear-gradient(150deg,#3E8A5E,#143A24)}
+.cc4{background:linear-gradient(150deg,#7C5CBF,#2B1B4A)}
+.campus-card i{position:absolute;top:16px;right:16px;z-index:2;font-size:1.5rem;color:rgba(255,255,255,.85)}
+/* news */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.news-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:.3s}
+.news-card:hover{transform:translateY(-5px);box-shadow:0 24px 50px rgba(14,34,68,.12)}
+.news-visual{height:130px;display:grid;place-items:center;color:#fff;font-size:1.8rem}
+.nv1{background:linear-gradient(135deg,#2D6CDF,#5C93F0)}
+.nv2{background:linear-gradient(135deg,#E8B54A,#C98F1B)}
+.nv3{background:linear-gradient(135deg,#3E8A5E,#6FB889)}
+.news-body{padding:20px}
+.news-body .date{font-size:.7rem;color:var(--muted);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.news-body h4{font-size:1rem;margin:8px 0}
+.news-body p{font-size:.83rem;color:var(--muted)}
+/* cta */
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
+.cta p{color:#C4D2E8;margin-bottom:28px}
+footer{background:#0A1A34;color:#93A5C2;padding:56px 0 30px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:#fff;margin-bottom:14px;font-family:'Libre Baskerville',serif}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--gold-c)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:var(--gold-c)}
+@media(max-width:960px){.hero .container{grid-template-columns:1fr}.prog-grid,.news-grid{grid-template-columns:1fr 1fr}.steps,.band-grid,.campus{grid-template-columns:1fr 1fr}.f-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}}
+@media(max-width:560px){.prog-grid,.news-grid,.steps,.band-grid,.campus,.f-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Kigali%20Hills%20University%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<div class="util">
+  <div class="container">
+    <span><i class="fas fa-phone" style="color:var(--gold-c);margin-right:6px"></i> +250 788 000 000</span>
+    <span><a href="#">Student Portal</a> · <a href="#">E-Learning</a> · <a href="#">Library</a></span>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand">
+      <span class="crest"><i class="fas fa-graduation-cap"></i></span>
+      <h3 class="serif">Kigali Hills University<small>Knowledge · Ubuntu · Ubupfura</small></h3>
+    </a>
+    <nav class="nav-links"><a href="#programs">Programs</a><a href="#admissions">Admissions</a><a href="#campus">Campus Life</a><a href="#news">News</a></nav>
+    <a href="#admissions" class="btn btn-blue"><i class="fas fa-file-pen"></i> Apply Now</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <div>
+      <span class="kicker">2026 Intake Now Open</span>
+      <h1>Where Rwanda's next leaders are made.</h1>
+      <p>Accredited degrees in engineering, business, health sciences and technology — taught in Kigali, connected to the world. Scholarships for the top 100 applicants.</p>
+      <div class="hero-btns">
+        <a href="#admissions" class="btn btn-gold"><i class="fas fa-graduation-cap"></i> Start Application</a>
+        <a href="#programs" class="btn btn-line" style="border-color:rgba(255,255,255,.4);color:#fff">Explore Programs</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <h3 class="serif">Application Deadlines</h3>
+      <p>Rolling admissions — early applicants get first choice of residence halls.</p>
+      <div class="row">
+        <div class="side-stat"><i class="fas fa-calendar-day"></i><span><strong>Jan 31</strong> — Scholarship deadline</span></div>
+        <div class="side-stat"><i class="fas fa-calendar-day"></i><span><strong>Mar 15</strong> — Regular deadline</span></div>
+        <div class="side-stat"><i class="fas fa-calendar-day"></i><span><strong>Apr 30</strong> — Late &amp; transfer</span></div>
+        <div class="side-stat"><i class="fas fa-calendar-day"></i><span><strong>Sep 7</strong> — Orientation week</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="container band-grid">
+    <div><strong>8,400+</strong><span>Students enrolled</span></div>
+    <div><strong>42</strong><span>Degree programs</span></div>
+    <div><strong>94%</strong><span>Employed in 6 months</span></div>
+    <div><strong>260+</strong><span>Faculty &amp; researchers</span></div>
+  </div>
+</div>
+
+<section class="white" id="programs">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Faculties</span>
+      <h2>Find your calling</h2>
+      <p>Four faculties, forty-two programs — from certificates to PhDs.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog"><i class="fas fa-microchip"></i><h4>Engineering &amp; Technology</h4><p>Civil, electrical, mechanical and software engineering with lab-first teaching.</p><div class="meta"><span><i class="fas fa-clock"></i>4 yrs</span><span><i class="fas fa-layer-group"></i>BSc · MSc</span></div></div>
+      <div class="prog"><i class="fas fa-briefcase"></i><h4>Business &amp; Economics</h4><p>Accounting, finance, marketing and entrepreneurship with real client projects.</p><div class="meta"><span><i class="fas fa-clock"></i>3 yrs</span><span><i class="fas fa-layer-group"></i>BBA · MBA</span></div></div>
+      <div class="prog"><i class="fas fa-heart-pulse"></i><h4>Health Sciences</h4><p>Nursing, pharmacy and public health, clinical rotations from year one.</p><div class="meta"><span><i class="fas fa-clock"></i>4 yrs</span><span><i class="fas fa-layer-group"></i>BSc · MSc</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="admissions">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Admissions</span>
+      <h2>Four steps to your first lecture</h2>
+      <p>Apply online in under 20 minutes. Decisions within 10 working days.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Apply Online</h4><p>Create your applicant profile and pick up to three programs.</p></div>
+      <div class="step"><div class="n">2</div><h4>Submit Documents</h4><p>Upload transcripts, ID and recommendation letters — all digital.</p></div>
+      <div class="step"><div class="n">3</div><h4>Entrance Assessment</h4><p>Short subject test plus a conversation with faculty — on campus or video.</p></div>
+      <div class="step"><div class="n">4</div><h4>Accept &amp; Enrol</h4><p>Accept your offer, pay fees by instalment and join orientation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="white" id="campus">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Campus Life</span>
+      <h2>More than lectures</h2>
+    </div>
+    <div class="campus">
+      <div class="campus-card cc1"><i class="fas fa-bed"></i><span>Residence Halls<small style="display:block;font-weight:400;font-size:.74rem">2,000 beds · Wi-Fi</small></span></div>
+      <div class="campus-card cc2"><i class="fas fa-trophy"></i><span>Sports &amp; Clubs<small style="display:block;font-weight:400;font-size:.74rem">18 teams · annual games</small></span></div>
+      <div class="campus-card cc3"><i class="fas fa-book-open"></i><span>24/7 Library<small style="display:block;font-weight:400;font-size:.74rem">120k volumes · digital</small></span></div>
+      <div class="campus-card cc4"><i class="fas fa-lightbulb"></i><span>Innovation Hub<small style="display:block;font-weight:400;font-size:.74rem">Startup incubator</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Latest News</span>
+      <h2>Around campus</h2>
+    </div>
+    <div class="news-grid">
+      <div class="news-card"><div class="news-visual nv1"><i class="fas fa-robot"></i></div><div class="news-body"><span class="date">Sep 2, 2025</span><h4>Engineering students win national robotics challenge</h4><p>Team Ubwiza took gold with a banana-sorting robot built for Musanze cooperatives.</p></div></div>
+      <div class="news-card"><div class="news-visual nv2"><i class="fas fa-hand-holding-dollar"></i></div><div class="news-body"><span class="date">Aug 20, 2025</span><h4>New 500-scholarship fund for STEM women</h4><p>Partner banks and alumni fund tuition for 500 female STEM students from 2026.</p></div></div>
+      <div class="news-card"><div class="news-visual nv3"><i class="fas fa-flask"></i></div><div class="news-body"><span class="date">Aug 5, 2025</span><h4>Health Sciences lab accredited for research</h4><p>Our new molecular lab can now host graduate research and public-health trials.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2 class="serif">Your seat is waiting.</h2>
+    <p>Applications for the 2026 intake close March 15. Scholarships awarded monthly.</p>
+    <a href="https://wa.me/250788695396?text=I%20want%20to%20apply%20to%20Kigali%20Hills%20University." target="_blank" rel="noopener" class="btn btn-gold"><i class="fab fa-whatsapp"></i> Talk to Admissions</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px"><span class="crest" style="width:42px;height:42px;font-size:1rem"><i class="fas fa-graduation-cap"></i></span><h3 style="font-size:1rem;color:#fff">Kigali Hills University</h3></a>
+        <p>An accredited private university in Kigali shaping Rwanda's next generation of builders, healers and leaders.</p>
+      </div>
+      <div><h5>Study</h5><ul><li><a href="#programs">Programs</a></li><li><a href="#admissions">Admissions</a></li><li>Scholarships</li></ul></div>
+      <div><h5>Campus</h5><ul><li><a href="#campus">Life at KHU</a></li><li><a href="#news">News</a></li><li>Alumni</li></ul></div>
+      <div><h5>Contact</h5><ul><li>KN 11 Ave, Kigali</li><li>+250 788 000 000</li><li>admissions@khu.ac.rw</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Kigali Hills University (fictional demo institution)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

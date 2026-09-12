@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ibyiza Events &amp; Wedding Co. | Weddings, Corporate &amp; Decor — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live event planning website demo by 1000 Hills Group — weddings, corporate events, decor packages and booking template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--blush:#FBF5F2;--blush2:#F4E6E0;--rose:#C76B6B;--rose-d:#A95050;--ink:#3B2E2A;--muted:#94817A;--gold-r:#C9A227;--line:#EBD9D1;--radius:4px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:var(--blush);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+.container{width:min(1120px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(251,245,242,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700}
+.brand .rings{width:44px;height:44px;border-radius:50%;background:var(--rose);display:grid;place-items:center;color:#fff;font-size:1rem}
+.nav-links{display:flex;gap:28px;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.nav-links a:hover{color:var(--rose)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 28px;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;transition:.3s;border-radius:40px}
+.btn-rose{background:var(--rose);color:#fff}
+.btn-rose:hover{background:var(--rose-d);transform:translateY(-2px)}
+.btn-line{border:1px solid var(--ink)}.btn-line:hover{background:var(--ink);color:var(--blush)}
+/* HERO */
+.hero{min-height:90vh;display:flex;align-items:center;text-align:center;position:relative;overflow:hidden;background:
+ radial-gradient(ellipse 50% 40% at 50% 0%, rgba(199,107,107,.12), transparent 60%),
+ radial-gradient(ellipse 45% 40% at 85% 90%, rgba(201,162,39,.08), transparent 55%), var(--blush)}
+.hero::before,.hero::after{content:'\f004';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;color:rgba(199,107,107,.08)}
+.hero::before{font-size:16rem;top:-4rem;left:-4rem;transform:rotate(-14deg)}
+.hero::after{font-size:10rem;bottom:-2rem;right:-2rem;transform:rotate(12deg)}
+.hero .container{position:relative;z-index:2;padding:80px 0}
+.kicker{font-size:.72rem;letter-spacing:5px;text-transform:uppercase;color:var(--rose);font-weight:700}
+.kicker::before,.kicker::after{content:'❀';margin:0 12px;color:var(--gold-r)}
+.hero h1{font-size:clamp(2.8rem,6.2vw,4.8rem);font-weight:600;line-height:1.1;margin:20px auto;max-width:18ch;font-style:italic}
+.hero h1 em{color:var(--rose)}
+.hero p{max-width:50ch;margin:0 auto 34px;color:var(--muted)}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-count{display:flex;gap:40px;justify-content:center;margin-top:52px;flex-wrap:wrap}
+.hero-count strong{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--rose);display:block;line-height:1.1}
+.hero-count span{font-size:.74rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+/* services */
+section{padding:88px 0}
+.sec-head{text-align:center;max-width:600px;margin:0 auto 52px}
+.sec-head .kicker2{color:var(--rose);font-size:.72rem;letter-spacing:4px;text-transform:uppercase;font-weight:700}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3rem);font-weight:600;font-style:italic;margin:12px 0}
+.sec-head p{color:var(--muted)}
+.soft{background:var(--blush2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pack{background:#fff;border:1px solid var(--line);border-radius:8px;padding:40px 30px;text-align:center;transition:.35s;position:relative}
+.pack:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(59,46,42,.13)}
+.pack .p-icon{width:64px;height:64px;margin:0 auto 20px;border-radius:50%;background:var(--blush2);display:grid;place-items:center;font-size:1.4rem;color:var(--rose)}
+.pack h4{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:6px}
+.pack .from{font-size:.74rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold-r);font-weight:700;display:block;margin-bottom:18px}
+.pack ul{text-align:left;margin-bottom:22px}
+.pack ul li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:.85rem;display:flex;gap:10px}
+.pack ul i{color:var(--rose);margin-top:5px;font-size:.7rem}
+.pack .btn{width:100%;justify-content:center}
+.pack.feature{border:2px solid var(--rose);transform:scale(1.03)}
+.pack.feature .p-icon{background:var(--rose);color:#fff}
+.pop-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--rose);color:#fff;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:5px 16px;border-radius:20px}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.g-item{height:210px;border-radius:8px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:16px;color:#fff;font-size:.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.g-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(59,46,42,.55))}
+.g-item span{position:relative;z-index:2}
+.gi1{background:linear-gradient(140deg,#D98A7E,#8E4A44)}
+.gi2{background:linear-gradient(140deg,#C9A227,#7D6413)}
+.gi3{background:linear-gradient(140deg,#7E93B8,#43526E)}
+.gi4{background:linear-gradient(140deg,#93B87E,#4E6E3A)}
+.gi5{background:linear-gradient(140deg,#B87E9C,#6E3A55)}
+.gi6{background:linear-gradient(140deg,#7EB8B2,#3A6E68)}
+.gi7{background:linear-gradient(140deg,#B8AA7E,#6E623A)}
+.gi8{background:linear-gradient(140deg,#8A7ED9,#4A438E)}
+.g-item i{position:absolute;top:14px;right:14px;z-index:2;font-size:1.1rem;color:rgba(255,255,255,.85)}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.step{padding:30px 20px}
+.step .n{width:52px;height:52px;margin:0 auto 18px;border-radius:50%;border:2px solid var(--rose);color:var(--rose);display:grid;place-items:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem}
+.step h4{font-size:.95rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.step p{font-size:.82rem;color:var(--muted)}
+/* quote band */
+.quote-band{background:linear-gradient(135deg,var(--rose),#8E4444);border-radius:10px;color:#fff;text-align:center;padding:60px 30px}
+.quote-band h2{font-size:clamp(1.9rem,4.2vw,2.9rem);font-style:italic;margin-bottom:12px}
+.quote-band p{opacity:.9;margin-bottom:28px}
+footer{background:#332723;color:#C4B3AC;padding:56px 0 30px;font-size:.86rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:14px}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--rose)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.76rem}
+.f-bottom a{color:var(--gold-r)}
+@media(max-width:920px){.packs,.f-grid{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.nav-links{display:none}.pack.feature{transform:none}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Ibyiza%20Events%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="rings"><i class="fas fa-ring"></i></span>Ibyiza Events</a>
+    <nav class="nav-links"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#process">How We Work</a><a href="#book">Enquire</a></nav>
+    <a href="#book" class="btn btn-rose">Check Your Date</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <span class="kicker">Weddings · Corporate · Decor</span>
+    <h1>Your day, <em>perfected</em> to the smallest petal.</h1>
+    <p>Kigali's boutique event studio — 400+ weddings and corporate galas styled with Rwandan soul and obsessive attention to detail.</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn btn-rose"><i class="fas fa-calendar-heart"></i> Check Your Date</a>
+      <a href="#services" class="btn btn-line">View Packages</a>
+    </div>
+    <div class="hero-count">
+      <div><strong>400+</strong>Events styled</div>
+      <div><strong>98%</strong>Clients who cry (happy)</div>
+      <div><strong>1</strong>Date per day — yours</div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Packages</span>
+      <h2>Pick your celebration</h2>
+      <p>Transparent packages — or fully bespoke if you dream bigger.</p>
+    </div>
+    <div class="packs">
+      <div class="pack">
+        <div class="p-icon"><i class="fas fa-ring"></i></div>
+        <h4>Guhimbaza Wedding</h4>
+        <span class="from">From 3.5M RWF</span>
+        <ul>
+          <li><i class="fas fa-check"></i> Full planning, 6 months</li>
+          <li><i class="fas fa-check"></i> Venue &amp; vendor booking</li>
+          <li><i class="fas fa-check"></i> Decor &amp; fresh florals</li>
+          <li><i class="fas fa-check"></i> Day-of coordination team</li>
+        </ul>
+        <a href="#book" class="btn btn-rose">Enquire</a>
+      </div>
+      <div class="pack feature">
+        <span class="pop-badge">Most Loved</span>
+        <div class="p-icon"><i class="fas fa-crown"></i></div>
+        <h4>Isoko Grand Wedding</h4>
+        <span class="from">From 7M RWF</span>
+        <ul>
+          <li><i class="fas fa-check"></i> Everything in Guhimbaza</li>
+          <li><i class="fas fa-check"></i> Dowry ceremony styling</li>
+          <li><i class="fas fa-check"></i> Custom outfit design</li>
+          <li><i class="fas fa-check"></i> Photography &amp; film team</li>
+          <li><i class="fas fa-check"></i> Guest concierge &amp; transport</li>
+        </ul>
+        <a href="#book" class="btn btn-rose">Enquire</a>
+      </div>
+      <div class="pack">
+        <div class="p-icon"><i class="fas fa-champagne-glasses"></i></div>
+        <h4>Corporate &amp; Galas</h4>
+        <span class="from">From 1.8M RWF</span>
+        <ul>
+          <li><i class="fas fa-check"></i> Conferences &amp; launches</li>
+          <li><i class="fas fa-check"></i> Stage, sound &amp; LED</li>
+          <li><i class="fas fa-check"></i> Branding &amp; signage</li>
+          <li><i class="fas fa-check"></i> End-of-year parties</li>
+        </ul>
+        <a href="#book" class="btn btn-rose">Enquire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Gallery</span>
+      <h2>Days we'll never forget</h2>
+    </div>
+    <div class="gal">
+      <div class="g-item gi1"><i class="fas fa-camera"></i><span>Kivu Lakeside Wedding</span></div>
+      <div class="g-item gi2"><i class="fas fa-camera"></i><span>Gold Jubilee Gala</span></div>
+      <div class="g-item gi3"><i class="fas fa-camera"></i><span>Tech Summit 2025</span></div>
+      <div class="g-item gi4"><i class="fas fa-camera"></i><span>Garden Bridal Shower</span></div>
+      <div class="g-item gi5"><i class="fas fa-camera"></i><span>Gusaba Ceremony</span></div>
+      <div class="g-item gi6"><i class="fas fa-camera"></i><span>Lakeside Proposal</span></div>
+      <div class="g-item gi7"><i class="fas fa-camera"></i><span>Traditional Wedding</span></div>
+      <div class="g-item gi8"><i class="fas fa-camera"></i><span>Product Launch Gala</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="process">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">The Journey</span>
+      <h2>From "yes" to "I do"</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Dream Session</h4><p>Free consultation — we listen to your vision, budget and must-haves.</p></div>
+      <div class="step"><div class="n">2</div><h4>The Plan</h4><p>Moodboard, vendors and a fixed quote. No surprises, ever.</p></div>
+      <div class="step"><div class="n">3</div><h4>The Build</h4><p>We coordinate everything — you just show up and enjoy being celebrated.</p></div>
+      <div class="step"><div class="n">4</div><h4>The Day</h4><p>Our team runs the timeline to the minute while you make memories.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="container">
+    <div class="quote-band">
+      <h2>Your date is open — for now.</h2>
+      <p>We style one wedding per day, and 2026 dates are going fast. Tell us yours today.</p>
+      <a href="https://wa.me/250788695396?text=Hi%20Ibyiza%20Events!%20I%20want%20to%20check%20if%20my%20date%20is%20available." target="_blank" rel="noopener" class="btn btn-line" style="border-color:#fff;color:#fff"><i class="fab fa-whatsapp"></i> Check My Date on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px;color:#fff"><span class="rings" style="width:38px;height:38px;font-size:.9rem"><i class="fas fa-ring"></i></span>Ibyiza Events</a>
+        <p>Boutique wedding and event studio in Kigali. Beauty in every detail, calm in every crisis.</p>
+      </div>
+      <div><h5>Services</h5><ul><li><a href="#services">Weddings</a></li><li><a href="#services">Corporate</a></li><li><a href="#gallery">Gallery</a></li></ul></div>
+      <div><h5>Studio</h5><ul><li>KG 7 Ave, Kigali</li><li>hello@ibyizaevents.rw</li><li>+250 788 000 000</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Ibyiza Events &amp; Wedding Co. (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

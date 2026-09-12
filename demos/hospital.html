@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Uburanga Medical Center | Full-Service Hospital, Kigali — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live hospital website demo by 1000 Hills Group — departments, doctors, emergency care and online appointments template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--white:#F8FBFC;--navy:#0C2E44;--teal:#0E7C86;--teal-l:#E0F4F6;--aqua:#31B5C4;--ink:#173042;--muted:#5E7889;--line:#DFEAEE;--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Lora',serif}
+.container{width:min(1140px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+/* emergency strip */
+.emg{background:var(--navy);color:#fff;font-size:.8rem;padding:8px 0}
+.emg .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.emg b{color:#7BE0EA}
+header{position:sticky;top:46px;z-index:900;background:rgba(248,251,252,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .cross{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--teal),var(--aqua));display:grid;place-items:center;color:#fff;font-size:1.15rem}
+.brand h3{font-size:1.05rem;line-height:1.25}
+.brand small{display:block;font-family:'Plus Jakarta Sans',sans-serif;font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.nav-links{display:flex;gap:24px;font-size:.86rem;font-weight:600}
+.nav-links a:hover{color:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;font-size:.85rem;font-weight:700;border-radius:10px;transition:.3s}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--navy);transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--teal);color:var(--teal)}
+.btn-line:hover{background:var(--teal);color:#fff}
+/* HERO */
+.hero{background:linear-gradient(165deg,#EAF6F8 0%,var(--white) 70%);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-120px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(49,181,196,.18),transparent 65%)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:76px 0 96px}
+.kicker{display:inline-flex;align-items:center;gap:9px;background:var(--teal-l);color:var(--teal);border-radius:40px;padding:9px 20px;font-size:.76rem;font-weight:800}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4rem);line-height:1.14;margin:20px 0;font-weight:600}
+.hero h1 em{color:var(--teal);font-style:italic}
+.hero p{color:var(--muted);max-width:48ch;margin-bottom:30px}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap}
+.hero-trust{display:flex;gap:30px;margin-top:36px;flex-wrap:wrap}
+.hero-trust div{font-size:.8rem;color:var(--muted)}
+.hero-trust strong{display:block;font-family:'Lora',serif;font-size:1.6rem;color:var(--navy)}
+/* heartbeat card visual */
+.pulse-scene{position:relative;display:grid;place-items:center;min-height:400px}
+.pulse-card{width:min(360px,80%);background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:0 40px 80px rgba(12,46,68,.14);position:relative;z-index:2}
+.pc-top{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.pc-top .doc-ic{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--aqua));display:grid;place-items:center;color:#fff;font-size:1.4rem}
+.pc-top h5{font-family:'Lora',serif;font-size:1.05rem}
+.pc-top span{font-size:.74rem;color:var(--muted)}
+.ecg{height:70px;margin-bottom:16px}
+.ecg polyline{fill:none;stroke:var(--teal);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.pc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.pc-stats div{background:var(--teal-l);border-radius:12px;padding:12px 6px}
+.pc-stats strong{display:block;font-family:'Lora',serif;color:var(--navy);font-size:1.15rem}
+.pc-stats span{font-size:.64rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.next-apt{margin-top:16px;background:var(--navy);color:#fff;border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:center;font-size:.8rem}
+.next-apt i{color:#7BE0EA;font-size:1.1rem}
+.appt-chip{position:absolute;bottom:6%;left:-8%;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:.76rem;font-weight:700;display:flex;gap:10px;align-items:center;box-shadow:0 18px 40px rgba(12,46,68,.14);animation:bob 4.5s ease-in-out infinite}
+.appt-chip i{color:var(--teal)}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+/* departments */
+section{padding:86px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 52px}
+.sec-head .kicker2{color:var(--teal);font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:800;font-family:'Plus Jakarta Sans',sans-serif}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:600;margin:10px 0}
+.sec-head p{color:var(--muted)}
+.dept{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.dept-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.dept-card{border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px;transition:.3s;background:var(--white)}
+.dept-card:hover{border-color:var(--aqua);transform:translateY(-5px);box-shadow:0 24px 48px rgba(12,46,68,.1)}
+.dept-card i{width:50px;height:50px;border-radius:14px;background:var(--teal-l);color:var(--teal);display:grid;place-items:center;font-size:1.2rem;margin-bottom:14px}
+.dept-card h4{font-size:.98rem;margin-bottom:6px}
+.dept-card p{font-size:.78rem;color:var(--muted)}
+/* doctors */
+.docs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.doc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.35s}
+.doc:hover{transform:translateY(-7px);box-shadow:0 30px 60px rgba(12,46,68,.13)}
+.doc-visual{height:150px;background:linear-gradient(135deg,var(--teal),var(--navy));display:grid;place-items:center;color:#fff;font-size:2.4rem;position:relative}
+.doc-visual .online{position:absolute;top:12px;right:12px;font-size:.64rem;font-weight:800;background:rgba(255,255,255,.16);padding:4px 11px;border-radius:20px}
+.doc-body{padding:20px}
+.doc-body h4{font-family:'Lora',serif;font-size:1.05rem}
+.doc-body .spec{color:var(--teal);font-size:.78rem;font-weight:800;display:block;margin:4px 0 10px}
+.doc-body p{font-size:.8rem;color:var(--muted);margin-bottom:14px}
+.doc-body .btn{width:100%;justify-content:center;padding:10px}
+/* insurance + hours */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px}
+.info-card h3{font-size:1.25rem;margin-bottom:18px}
+.info-card li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px dashed var(--line);font-size:.88rem}
+.info-card li:last-child{border:0}
+.info-card li b{color:var(--teal)}
+.ins-logos{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.ins-logos span{background:var(--teal-l);color:var(--teal);font-size:.76rem;font-weight:800;padding:8px 16px;border-radius:30px}
+/* appointment band */
+.appt-band{background:linear-gradient(135deg,var(--navy),#14415C);color:#fff;border-radius:20px;padding:54px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.appt-band h2{font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:12px}
+.appt-band p{color:#B9D4E0;margin-bottom:22px}
+.appt-form{background:#fff;border-radius:14px;padding:26px;color:var(--ink)}
+.appt-form label{font-size:.7rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin:10px 0 5px}
+.appt-form input,.appt-form select{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px;font-family:inherit;font-size:.9rem;background:var(--white);outline:none}
+.appt-form .btn{width:100%;justify-content:center;margin-top:18px}
+footer{background:var(--navy);color:#A7C2D2;padding:56px 0 30px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:#fff;margin-bottom:14px}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:#7BE0EA}
+.f-bottom{border-top:1px solid rgba(255,255,255,.09);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:#7BE0EA}
+@media(max-width:920px){.hero-grid,.info-grid,.appt-band,.f-grid{grid-template-columns:1fr}.dept-grid{grid-template-columns:1fr 1fr}.docs{grid-template-columns:1fr 1fr}.nav-links{display:none}.pulse-scene{min-height:330px}}
+@media(max-width:560px){.dept-grid,.docs{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Uburanga%20Medical%20Center%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<div class="emg">
+  <div class="container">
+    <span><i class="fas fa-truck-medical" style="color:#7BE0EA;margin-right:6px"></i> 24/7 Emergency: <b>912</b> or +250 788 000 112</span>
+    <span>KN 4 Ave, Kigali · Open 24 hours</span>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="cross"><i class="fas fa-staff-snake"></i></span><h3 class="serif">Uburanga Medical Center<small>Hospital &amp; Specialist Clinics</small></h3></a>
+    <nav class="nav-links"><a href="#departments">Departments</a><a href="#doctors">Doctors</a><a href="#patients">Patients</a><a href="#book">Appointments</a></nav>
+    <a href="#book" class="btn btn-teal"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker"><i class="fas fa-certificate"></i> Rwanda Medical Council Accredited</span>
+      <h1>Healing with <em>heart</em>, powered by science.</h1>
+      <p>A full-service hospital in Kigali with 24/7 emergency, maternity, surgery and 12 specialist clinics — caring for over 60,000 patients a year.</p>
+      <div class="hero-btns">
+        <a href="#book" class="btn btn-teal"><i class="fas fa-calendar-check"></i> Book an Appointment</a>
+        <a href="#departments" class="btn btn-line"><i class="fas fa-hospital"></i> Our Departments</a>
+      </div>
+      <div class="hero-trust">
+        <div><strong>24/7</strong>Emergency care</div>
+        <div><strong>42</strong>Specialist doctors</div>
+        <div><strong>12</strong>Clinics under one roof</div>
+      </div>
+    </div>
+    <div class="pulse-scene">
+      <div class="pulse-card">
+        <div class="pc-top">
+          <div class="doc-ic"><i class="fas fa-user-doctor"></i></div>
+          <div><h5 class="serif">Dr. Aline Uwase</h5><span>Cardiologist · MD, FACC</span></div>
+        </div>
+        <svg class="ecg" viewBox="0 0 300 70" preserveAspectRatio="none">
+          <polyline points="0,40 30,40 42,40 50,18 58,58 66,32 74,40 110,40 122,40 130,14 138,60 146,30 154,40 200,40 212,40 220,18 228,58 236,32 244,40 300,40"/>
+        </svg>
+        <div class="pc-stats">
+          <div><strong>72</strong><span>bpm</span></div>
+          <div><strong>118/76</strong><span>mmHg</span></div>
+          <div><strong>98%</strong><span>SpO₂</span></div>
+        </div>
+        <div class="next-apt"><i class="fas fa-calendar-day"></i> Next available: <b>Tomorrow, 9:30am</b></div>
+      </div>
+      <div class="appt-chip"><i class="fas fa-video"></i> Teleconsult available</div>
+    </div>
+  </div>
+</section>
+
+<section class="dept" id="departments">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Departments</span>
+      <h2>Complete care, one campus</h2>
+      <p>From annual checkups to complex surgery — every department works as one team.</p>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card"><i class="fas fa-truck-medical"></i><h4>Emergency &amp; ICU</h4><p>24/7 ambulance, resuscitation and intensive care.</p></div>
+      <div class="dept-card"><i class="fas fa-baby"></i><h4>Maternity &amp; NICU</h4><p>Safe delivery, midwife-led care, level-3 NICU.</p></div>
+      <div class="dept-card"><i class="fas fa-heart-pulse"></i><h4>Cardiology</h4><p>Echo, ECG, stress tests and cardiac clinic weekly.</p></div>
+      <div class="dept-card"><i class="fas fa-bone"></i><h4>Orthopaedics</h4><p>Fracture care, joint surgery and physiotherapy.</p></div>
+      <div class="dept-card"><i class="fas fa-tooth"></i><h4>Dental</h4><p>Cleaning, fillings, extraction and cosmetic dentistry.</p></div>
+      <div class="dept-card"><i class="fas fa-eye"></i><h4>Ophthalmology</h4><p>Eye exams, cataract surgery and glasses on site.</p></div>
+      <div class="dept-card"><i class="fas fa-microscope"></i><h4>Laboratory</h4><p>Same-day results for over 200 tests.</p></div>
+      <div class="dept-card"><i class="fas fa-pills"></i><h4>Pharmacy</h4><p>Open 24/7 with genuine, traceable medicines.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="doctors">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Our Doctors</span>
+      <h2>Meet your specialists</h2>
+    </div>
+    <div class="docs">
+      <div class="doc">
+        <div class="doc-visual"><i class="fas fa-user-doctor"></i><span class="online">Accepting patients</span></div>
+        <div class="doc-body"><h4>Dr. Aline Uwase</h4><span class="spec">Cardiologist</span><p>12 years' experience. Trained in Nairobi &amp; Brussels.</p><a href="#book" class="btn btn-line">Book Cardiology</a></div>
+      </div>
+      <div class="doc">
+        <div class="doc-visual" style="background:linear-gradient(135deg,var(--aqua),var(--teal))"><i class="fas fa-baby"></i><span class="online">Accepting patients</span></div>
+        <div class="doc-body"><h4>Dr. Eric Nsengimana</h4><span class="spec">Paediatrician</span><p>Children's health, growth clinics and immunisation.</p><a href="#book" class="btn btn-line">Book Paediatrics</a></div>
+      </div>
+      <div class="doc">
+        <div class="doc-visual" style="background:linear-gradient(135deg,#14415C,var(--aqua))"><i class="fas fa-person-pregnant"></i><span class="online">On leave — Sep 20</span></div>
+        <div class="doc-body"><h4>Dr. Grace Ingabire</h4><span class="spec">Obstetrician &amp; Gynaecologist</span><p>1,400+ safe deliveries. Prenatal care every Tuesday.</p><a href="#book" class="btn btn-line">Book Maternity</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dept" id="patients">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Patient Info</span>
+      <h2>Hours &amp; insurance</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Opening Hours</h3>
+        <ul>
+          <li>Emergency &amp; Pharmacy <b>24 hours</b></li>
+          <li>Specialist Clinics <b>Mon – Sat · 8am – 7pm</b></li>
+          <li>Laboratory <b>Mon – Sun · 7am – 10pm</b></li>
+          <li>Maternity Ward <b>24 hours</b></li>
+          <li>Physiotherapy <b>Mon – Fri · 8am – 6pm</b></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h3>Insurance We Accept</h3>
+        <p style="font-size:.88rem;color:var(--muted);margin-bottom:6px">Cash, card and all major insurers — mutuelle welcome:</p>
+        <div class="ins-logos"><span>Mutuelle de Santé</span><span>RSSB</span><span>Radiant</span><span>Old Mutual</span><span>Soras</span><span>Prime Economic</span></div>
+        <p style="font-size:.82rem;color:var(--muted);margin-top:16px"><i class="fas fa-circle-info" style="color:var(--teal);margin-right:6px"></i>Bring your insurance card and ID. We bill insurers directly for inpatient care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="container">
+    <div class="appt-band">
+      <div>
+        <h2>See a doctor this week.</h2>
+        <p>Book online in 60 seconds — choose your department, doctor and time. Confirmation by SMS and WhatsApp. Walk-ins welcome before 10am.</p>
+        <ul style="font-size:.9rem">
+          <li style="margin-bottom:8px"><i class="fas fa-check" style="color:#7BE0EA;margin-right:8px"></i>Same-week appointments guaranteed</li>
+          <li><i class="fas fa-check" style="color:#7BE0EA;margin-right:8px"></i>Free follow-up within 14 days</li>
+        </ul>
+      </div>
+      <form class="appt-form" onsubmit="event.preventDefault();this.querySelector('.btn').innerHTML='<i class=\'fas fa-check\'></i> Request received — we\'ll confirm shortly!'">
+        <label>Department</label>
+        <select><option>General Consultation</option><option>Cardiology</option><option>Paediatrics</option><option>Maternity</option><option>Dental</option><option>Eye Clinic</option></select>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div><label>Date</label><input type="date"/></div>
+          <div><label>Time</label><select><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+        </div>
+        <label>Full name</label><input type="text" placeholder="Your name"/>
+        <label>Phone</label><input type="tel" placeholder="+250 ..."/>
+        <button class="btn btn-teal" type="submit"><i class="fas fa-calendar-check"></i> Request Appointment</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px"><span class="cross" style="width:40px;height:40px;font-size:1rem"><i class="fas fa-staff-snake"></i></span><h3 style="font-size:1rem;color:#fff">Uburanga Medical Center</h3></a>
+        <p>Full-service hospital and specialist clinics in Kigali — quality care with heart, 24 hours a day.</p>
+      </div>
+      <div><h5>Hospital</h5><ul><li><a href="#departments">Departments</a></li><li><a href="#doctors">Doctors</a></li><li><a href="#patients">Patient info</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>Emergency: 912</li><li>KN 4 Ave, Kigali</li><li>care@uburanga.rw</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Uburanga Medical Center (fictional demo hospital)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

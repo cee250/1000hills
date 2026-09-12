@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LodgeSuite PMS | Hotel &amp; Lodge Management System — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live hotel management system demo by 1000 Hills Group — bookings, rooms, housekeeping, front desk and revenue reports."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bg:#F4F2FB;--side:#241E4E;--side2:#2C2560;--indigo:#6C5CE7;--indigo-l:#8E7BFF;--card:#fff;--ink:#241E42;--muted:#8179A6;--line:#E6E2F4;--gold-p:#E8A33D;--green:#2FBF71;--red:#E8506E;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:14px;padding-top:46px}
+a{text-decoration:none;color:inherit}ul{list-style:none}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.app{display:flex;min-height:calc(100vh - 46px)}
+.sidebar{width:232px;background:var(--side);color:#C7C1E8;display:flex;flex-direction:column;position:sticky;top:46px;height:calc(100vh - 46px)}
+.s-logo{display:flex;align-items:center;gap:10px;padding:18px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.s-logo .ic{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--indigo),var(--indigo-l));display:grid;place-items:center;color:#fff;font-size:.9rem}
+.s-logo h4{color:#fff;font-size:.95rem}
+.s-logo small{display:block;font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:#9C93C9;font-weight:600}
+.s-nav{padding:14px 10px;flex:1;overflow-y:auto}
+.s-nav .label{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:#847AB8;font-weight:700;padding:12px 10px 6px}
+.s-nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:.84rem;font-weight:500;color:#C7C1E8;margin-bottom:2px;transition:.25s}
+.s-nav a i{width:18px;text-align:center;font-size:.9rem}
+.s-nav a:hover{background:rgba(255,255,255,.07);color:#fff}
+.s-nav a.on{background:linear-gradient(90deg,var(--indigo),rgba(108,92,231,.2));color:#fff;box-shadow:0 6px 18px rgba(108,92,231,.3)}
+.s-nav a .n-badge{margin-left:auto;background:var(--gold-p);color:#3A2A00;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:20px}
+.s-user{padding:14px;display:flex;gap:11px;align-items:center;border-top:1px solid rgba(255,255,255,.08)}
+.s-user .av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold-p),#F7C86B);display:grid;place-items:center;color:#5C4200;font-weight:800;font-size:.78rem}
+.s-user h6{color:#fff;font-size:.8rem}.s-user span{font-size:.68rem;color:#9C93C9}
+.main{flex:1;min-width:0}
+.topbar{background:var(--card);border-bottom:1px solid var(--line);padding:12px 24px;display:flex;align-items:center;gap:16px;position:sticky;top:46px;z-index:50}
+.topbar h3{font-size:1.05rem}
+.occ-chip{font-size:.68rem;font-weight:800;background:rgba(47,191,113,.12);color:var(--green);padding:5px 12px;border-radius:20px}
+.tb-search{margin-left:auto;display:flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--line);border-radius:30px;padding:8px 16px;min-width:210px}
+.tb-search i{color:var(--muted);font-size:.8rem}
+.tb-search input{border:0;background:none;outline:none;font-family:inherit;font-size:.8rem;width:100%;color:var(--ink)}
+.tb-ic{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);position:relative;background:#fff}
+.tb-ic::after{content:'';position:absolute;top:9px;right:10px;width:7px;height:7px;border-radius:50%;background:var(--red)}
+.content{padding:22px 24px}
+.page-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.page-head p{font-size:.82rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;font-size:.8rem;font-weight:700;transition:.25s;border:0}
+.btn-ind{background:var(--indigo);color:#fff}
+.btn-ind:hover{background:#5A4BD1}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.k1::before{background:var(--indigo)}.k2::before{background:var(--gold-p)}.k3::before{background:var(--green)}.k4::before{background:var(--indigo-l)}
+.kpi .row{display:flex;justify-content:space-between;align-items:center}
+.kpi .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:.9rem}
+.k1 .ic{background:rgba(108,92,231,.1);color:var(--indigo)}
+.k2 .ic{background:rgba(232,163,61,.12);color:#C77F17}
+.k3 .ic{background:rgba(47,191,113,.1);color:var(--green)}
+.k4 .ic{background:rgba(142,123,255,.12);color:var(--indigo-l)}
+.kpi strong{font-size:1.5rem;display:block;margin-top:10px;line-height:1.1}
+.kpi span{font-size:.72rem;color:var(--muted);font-weight:600}
+.kpi .delta{font-size:.68rem;font-weight:800}
+.up{color:var(--green)}.down{color:var(--red)}
+.panels{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;margin-bottom:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.panel-head h4{font-size:.92rem}
+.panel-head a{font-size:.72rem;color:var(--indigo);font-weight:700}
+/* room grid */
+.rooms{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+.room{border-radius:10px;padding:10px 6px;text-align:center;border:1.5px solid transparent;cursor:pointer;transition:.25s}
+.room:hover{transform:translateY(-3px)}
+.room b{display:block;font-size:.78rem}
+.room small{font-size:.58rem;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+.r-avail{background:rgba(47,191,113,.09);border-color:rgba(47,191,113,.3);color:var(--green)}
+.r-occ{background:rgba(232,80,110,.08);border-color:rgba(232,80,110,.28);color:var(--red)}
+.r-res{background:rgba(232,163,61,.1);border-color:rgba(232,163,61,.35);color:#C77F17}
+.r-cln{background:rgba(108,92,231,.08);border-color:rgba(108,92,231,.28);color:var(--indigo)}
+.r-key{background:rgba(130,130,140,.08);border-color:rgba(130,130,140,.25);color:#77777f}
+.rooms-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.66rem;color:var(--muted);font-weight:600;margin-top:14px}
+.rooms-legend i{margin-right:5px}
+/* revenue chart */
+.rev-chart{height:150px;display:flex;align-items:flex-end;gap:8px;padding-top:8px}
+.rc{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+.rc .bar{width:100%;border-radius:6px 6px 3px 3px;background:linear-gradient(180deg,var(--indigo-l),var(--indigo))}
+.rc span{font-size:.6rem;color:var(--muted);font-weight:600}
+.rc.hot .bar{background:linear-gradient(180deg,#FFD98A,var(--gold-p))}
+/* arrivals */
+.arr{display:grid;gap:10px}
+.a-row{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.a-row .av{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:.68rem;font-weight:800;color:#fff;flex:none}
+.v1{background:var(--indigo)}.v2{background:var(--gold-p)}.v3{background:var(--green)}.v4{background:var(--red)}
+.a-row h6{font-size:.82rem}
+.a-row small{display:block;font-size:.68rem;color:var(--muted)}
+.a-row .st{margin-left:auto;font-size:.62rem;font-weight:800;padding:4px 10px;border-radius:20px;white-space:nowrap}
+.st-in{background:rgba(47,191,113,.12);color:var(--green)}
+.st-due{background:rgba(232,163,61,.14);color:#C77F17}
+.st-vip{background:rgba(108,92,231,.12);color:var(--indigo)}
+.sys-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:18px 4px 4px;font-size:.7rem;color:var(--muted)}
+.sys-foot a{color:var(--indigo);font-weight:700}
+@media(max-width:1100px){.kpis{grid-template-columns:1fr 1fr}.panels{grid-template-columns:1fr}.rooms{grid-template-columns:repeat(6,1fr)}}
+@media(max-width:860px){.sidebar{display:none}.tb-search{display:none}.rooms{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.kpis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live System Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20the%20LodgeSuite%20hotel%20management%20system." target="_blank" rel="noopener">Get this system</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="s-logo">
+      <span class="ic"><i class="fas fa-hotel"></i></span>
+      <h4>LodgeSuite PMS<small>Property System</small></h4>
+    </div>
+    <nav class="s-nav">
+      <p class="label">Front Desk</p>
+      <a href="#" class="on"><i class="fas fa-gauge-high"></i> Dashboard</a>
+      <a href="#"><i class="fas fa-bed"></i> Rooms &amp; Availability</a>
+      <a href="#"><i class="fas fa-calendar-check"></i> Bookings <span class="n-badge">9</span></a>
+      <a href="#"><i class="fas fa-user-check"></i> Check-in / out</a>
+      <p class="label">Operations</p>
+      <a href="#"><i class="fas fa-broom"></i> Housekeeping</a>
+      <a href="#"><i class="fas fa-utensils"></i> Restaurant POS</a>
+      <a href="#"><i class="fas fa-file-invoice-dollar"></i> Folios &amp; Billing</a>
+      <p class="label">Management</p>
+      <a href="#"><i class="fas fa-chart-line"></i> Revenue Reports</a>
+      <a href="#"><i class="fas fa-users-gear"></i> Staff</a>
+      <a href="#"><i class="fas fa-gear"></i> Settings</a>
+    </nav>
+    <div class="s-user">
+      <span class="av">CM</span>
+      <div><h6>Claudine Mutuyimana</h6><span>Front Office Manager</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h3>Front Desk</h3>
+      <span class="occ-chip">Occupancy 78% · 42/54 rooms</span>
+      <div class="tb-search"><i class="fas fa-magnifying-glass"></i><input placeholder="Search guests, bookings…"/></div>
+      <span class="tb-ic"><i class="far fa-bell"></i></span>
+      <span class="tb-ic"><i class="fas fa-bed-front"></i></span>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div><p>Tuesday, September 12 · Lake Kivu Bay Resort · 9 arrivals, 6 departures today</p></div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-ghost"><i class="fas fa-calendar-day"></i> Walk-in</button>
+          <button class="btn btn-ind"><i class="fas fa-plus"></i> New Booking</button>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi k1"><div class="row"><span class="ic"><i class="fas fa-calendar-check"></i></span><span class="delta up">+12%</span></div><strong>128</strong><span>Bookings this month</span></div>
+        <div class="kpi k2"><div class="row"><span class="ic"><i class="fas fa-money-bill-wave"></i></span><span class="delta up">+9.4%</span></div><strong>$18.4k</strong><span>Revenue this week</span></div>
+        <div class="kpi k3"><div class="row"><span class="ic"><i class="fas fa-star"></i></span><span class="delta up">+0.2</span></div><strong>4.8★</strong><span>Guest rating</span></div>
+        <div class="kpi k4"><div class="row"><span class="ic"><i class="fas fa-broom"></i></span><span class="delta down">6 dirty</span></div><strong>7</strong><span>Rooms to clean</span></div>
+      </div>
+
+      <div class="panels">
+        <div class="panel">
+          <div class="panel-head"><h4>Floor Map — Ground &amp; 1st</h4><a href="#">Full map →</a></div>
+          <div class="rooms">
+            <div class="room r-avail"><b>101</b><small>Free</small></div>
+            <div class="room r-occ"><b>102</b><small>Occ</small></div>
+            <div class="room r-occ"><b>103</b><small>Occ</small></div>
+            <div class="room r-res"><b>104</b><small>Res</small></div>
+            <div class="room r-cln"><b>105</b><small>Clean</small></div>
+            <div class="room r-avail"><b>106</b><small>Free</small></div>
+            <div class="room r-occ"><b>107</b><small>Occ</small></div>
+            <div class="room r-key"><b>108</b><small>OOS</small></div>
+            <div class="room r-occ"><b>201</b><small>Occ</small></div>
+            <div class="room r-occ"><b>202</b><small>Occ</small></div>
+            <div class="room r-avail"><b>203</b><small>Free</small></div>
+            <div class="room r-res"><b>204</b><small>Res</small></div>
+            <div class="room r-occ"><b>205</b><small>Occ</small></div>
+            <div class="room r-cln"><b>206</b><small>Clean</small></div>
+            <div class="room r-avail"><b>207</b><small>Free</small></div>
+            <div class="room r-res"><b>208</b><small>Res</small></div>
+          </div>
+          <div class="rooms-legend"><span><i class="fas fa-square" style="color:var(--green)"></i>Available</span><span><i class="fas fa-square" style="color:var(--red)"></i>Occupied</span><span><i class="fas fa-square" style="color:var(--gold-p)"></i>Reserved</span><span><i class="fas fa-square" style="color:var(--indigo)"></i>Cleaning</span><span><i class="fas fa-square" style="color:#77777f"></i>Out of service</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>Today's Arrivals</h4><a href="#">All →</a></div>
+          <div class="arr">
+            <div class="a-row"><span class="av v1">SB</span><div><h6>Sarah Bennett</h6><small>Lakeview Deluxe · 3 nights · Booked online</small></div><span class="st st-due">Due 14:00</span></div>
+            <div class="a-row"><span class="av v2">KM</span><div><h6>Kagame Motors Ltd</h6><small>Bay Villa · corporate account</small></div><span class="st st-in">Checked in</span></div>
+            <div class="a-row"><span class="av v3">TO</span><div><h6>Tour Operator — Gorilla Trips</h6><small>Group · 8 Garden Studios</small></div><span class="st st-in">Checked in</span></div>
+            <div class="a-row"><span class="av v4">AO</span><div><h6>Amb. &amp; Mrs. Otieno</h6><small>Lakeview Suite · honeymoon</small></div><span class="st st-vip">VIP</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:18px">
+        <div class="panel-head"><h4>Revenue — Last 8 Weeks</h4><a href="#">Reports →</a></div>
+        <div class="rev-chart">
+          <div class="rc"><div class="bar" style="height:42%"></div><span>W1</span></div>
+          <div class="rc"><div class="bar" style="height:55%"></div><span>W2</span></div>
+          <div class="rc"><div class="bar" style="height:48%"></div><span>W3</span></div>
+          <div class="rc"><div class="bar" style="height:66%"></div><span>W4</span></div>
+          <div class="rc"><div class="bar" style="height:58%"></div><span>W5</span></div>
+          <div class="rc"><div class="bar" style="height:74%"></div><span>W6</span></div>
+          <div class="rc hot"><div class="bar" style="height:92%"></div><span>W7</span></div>
+          <div class="rc hot"><div class="bar" style="height:84%"></div><span>W8</span></div>
+        </div>
+      </div>
+
+      <div class="sys-foot">
+        <span>LodgeSuite PMS v3.1 — hotel &amp; lodge management (demo data)</span>
+        <span>System demo by <a href="../demos.html">1000 Hills Group</a> — we build yours custom</span>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Elimu Online | Learn Skills, Anywhere in Rwanda — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live e-learning platform demo by 1000 Hills Group — online courses, instructors, certificates and mobile money payments template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bg:#0F1220;--bg2:#151930;--card:#1B2040;--indigo:#6C5CE7;--indigo-l:#A29BFE;--mint:#2EDCB5;--amber:#FFC048;--white:#F1F2FA;--muted:#9AA0C3;--line:rgba(154,160,195,.16);--radius:16px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--white);line-height:1.65;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.sora{font-family:'Sora',sans-serif}
+.container{width:min(1140px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(15,18,32,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:800;font-size:1.2rem}
+.brand .dot{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--indigo),var(--mint));display:grid;place-items:center;color:#fff;font-size:1rem}
+.brand b{color:var(--indigo-l)}
+.nav-links{display:flex;gap:26px;font-size:.86rem;font-weight:600}
+.nav-links a:hover{color:var(--mint)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.86rem;font-weight:700;border-radius:12px;transition:.3s}
+.btn-mint{background:var(--mint);color:#0B2A24}
+.btn-mint:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(46,220,181,.35)}
+.btn-ind{background:linear-gradient(135deg,var(--indigo),var(--indigo-l));color:#fff}
+.btn-ind:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(108,92,231,.4)}
+.btn-line{border:1px solid var(--line);color:var(--white)}
+.btn-line:hover{border-color:var(--mint);color:var(--mint)}
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:80px 0 90px;background:
+ radial-gradient(ellipse 40% 40% at 82% 15%, rgba(108,92,231,.2), transparent 60%),
+ radial-gradient(ellipse 35% 35% at 10% 85%, rgba(46,220,181,.12), transparent 60%)}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(162,155,254,.14) 1.5px,transparent 1.5px);background-size:36px 36px;mask-image:radial-gradient(ellipse 60% 55% at 60% 30%,black,transparent)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero .kicker{display:inline-flex;align-items:center;gap:9px;background:rgba(108,92,231,.14);border:1px solid rgba(108,92,231,.4);color:var(--indigo-l);padding:8px 18px;border-radius:40px;font-size:.76rem;font-weight:700}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4rem);line-height:1.08;margin:22px 0}
+.hero h1 .mark{position:relative;color:var(--mint)}
+.hero h1 .mark::after{content:'';position:absolute;left:0;right:0;bottom:4px;height:9px;background:rgba(46,220,181,.25);border-radius:5px;z-index:-1}
+.hero p{color:var(--muted);max-width:48ch;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.avatars{display:flex;align-items:center;gap:14px;margin-top:36px}
+.avatars .stack{display:flex}
+.avatars .av{width:38px;height:38px;border-radius:50%;border:2px solid var(--bg);display:grid;place-items:center;font-size:.75rem;font-weight:800;color:#fff;margin-left:-10px}
+.avatars .av:first-child{margin-left:0}
+.avatars p{font-size:.8rem;color:var(--muted)}
+.avatars strong{color:var(--white)}
+/* progress card visual */
+.learn-scene{position:relative;min-height:400px;display:grid;place-items:center}
+.learn-card{width:min(360px,80%);background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 40px 80px rgba(0,0,0,.5);position:relative;z-index:2}
+.lc-top{display:flex;gap:14px;align-items:center;margin-bottom:20px}
+.lc-top .thumb{width:74px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--indigo),#8E7BFF);display:grid;place-items:center;color:#fff;font-size:1.2rem}
+.lc-top h5{font-size:.92rem}
+.lc-top span{font-size:.72rem;color:var(--muted)}
+.progress{height:9px;border-radius:20px;background:rgba(255,255,255,.08);overflow:hidden;margin:8px 0 6px}
+.progress i{display:block;height:100%;width:72%;border-radius:20px;background:linear-gradient(90deg,var(--mint),#7FF0D8)}
+.lc-row{display:flex;justify-content:space-between;font-size:.74rem;color:var(--muted);margin-bottom:18px}
+.lesson{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:12px;font-size:.83rem;font-weight:600}
+.lesson:hover{background:rgba(255,255,255,.05)}
+.lesson .ic{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-size:.74rem;flex:none}
+.ic-done{background:rgba(46,220,181,.14);color:var(--mint)}
+.ic-now{background:rgba(255,192,72,.16);color:var(--amber)}
+.ic-next{background:rgba(154,160,195,.14);color:var(--muted)}
+.lesson small{display:block;font-weight:400;font-size:.7rem;color:var(--muted)}
+.cert-chip{position:absolute;top:-22px;right:-16px;background:linear-gradient(135deg,var(--amber),#FFD98A);color:#3A2A00;font-size:.72rem;font-weight:800;padding:10px 16px;border-radius:12px;transform:rotate(4deg);box-shadow:0 16px 30px rgba(0,0,0,.4)}
+.streak-chip{position:absolute;bottom:-16px;left:-18px;background:var(--card);border:1px solid var(--line);font-size:.72rem;font-weight:700;padding:10px 16px;border-radius:12px;display:flex;gap:8px;align-items:center}
+.streak-chip i{color:var(--amber)}
+/* course grid */
+section{padding:84px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.sec-head .kicker2{color:var(--mint);font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:800;font-family:'Sora',sans-serif}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:10px 0}
+.sec-head p{color:var(--muted)}
+.cats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:38px}
+.cat-pill{padding:9px 20px;border-radius:30px;border:1px solid var(--line);font-size:.8rem;font-weight:700;color:var(--muted);background:var(--bg2)}
+.cat-pill:hover,.cat-pill.on{background:var(--indigo);color:#fff;border-color:var(--indigo)}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.course{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.35s}
+.course:hover{transform:translateY(-7px);border-color:rgba(108,92,231,.5);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.course-visual{height:130px;display:grid;place-items:center;font-size:2.4rem;color:#fff;position:relative}
+.cv1{background:linear-gradient(135deg,#6C5CE7,#A29BFE)}
+.cv2{background:linear-gradient(135deg,#2EDCB5,#199C7E)}
+.cv3{background:linear-gradient(135deg,#FFC048,#F0932B)}
+.cv4{background:linear-gradient(135deg,#FF6B81,#C44569)}
+.cv5{background:linear-gradient(135deg,#54A0FF,#2E86DE)}
+.cv6{background:linear-gradient(135deg,#8D6E63,#5D4037)}
+.course .lvl{position:absolute;top:12px;left:12px;font-size:.64rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.35);padding:4px 11px;border-radius:20px;backdrop-filter:blur(4px)}
+.course-body{padding:20px}
+.course-body h4{font-size:1rem;margin-bottom:6px}
+.course-body p{font-size:.8rem;color:var(--muted);margin-bottom:14px}
+.course-meta{display:flex;gap:14px;font-size:.72rem;color:var(--muted);margin-bottom:16px}
+.course-meta i{color:var(--indigo-l);margin-right:5px}
+.course-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:14px}
+.course-foot .price{font-family:'Sora',sans-serif;font-weight:800;color:var(--mint)}
+.course-foot .price s{color:var(--muted);font-size:.72rem;font-weight:400;margin-right:6px}
+/* perks band */
+.perks{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.perks-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.perk{display:flex;gap:16px;align-items:flex-start;padding:22px;border-radius:14px;border:1px solid var(--line);background:var(--card)}
+.perk i{font-size:1.3rem;color:var(--mint);margin-top:3px}
+.perk h4{font-size:.95rem;margin-bottom:5px}
+.perk p{font-size:.78rem;color:var(--muted)}
+/* mentor cta */
+.mentor{background:linear-gradient(120deg,#1B2040,#232A55);border:1px solid var(--line);border-radius:20px;padding:52px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.mentor h2{font-size:clamp(1.6rem,3.4vw,2.4rem);margin-bottom:12px}
+.mentor p{color:var(--muted);margin-bottom:24px}
+.mentor-earn{display:flex;gap:26px;flex-wrap:wrap}
+.mentor-earn div strong{font-family:'Sora',sans-serif;font-size:1.6rem;color:var(--amber);display:block}
+.mentor-earn div span{font-size:.76rem;color:var(--muted)}
+footer{background:#0B0E1A;color:var(--muted);padding:56px 0 30px;font-size:.88rem;border-top:1px solid rgba(255,255,255,.05)}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:var(--white);margin-bottom:14px;font-family:'Sora',sans-serif}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--mint)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:var(--mint)}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr}.courses{grid-template-columns:1fr 1fr}.perks-grid,.f-grid{grid-template-columns:1fr 1fr}.mentor{grid-template-columns:1fr;padding:34px}.nav-links{display:none}.learn-scene{min-height:340px}}
+@media(max-width:560px){.courses,.perks-grid,.f-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Elimu%20Online%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="dot"><i class="fas fa-play"></i></span>Elimu<b>Online</b></a>
+    <nav class="nav-links"><a href="#courses">Courses</a><a href="#perks">Why Us</a><a href="#teach">Teach</a><a href="#footer">Help</a></nav>
+    <a href="#courses" class="btn btn-mint"><i class="fas fa-rocket"></i> Start Learning Free</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker"><i class="fas fa-signal"></i> Works on 3G · Learn offline</span>
+      <h1>Skills that pay, <span class="mark">taught your way</span>.</h1>
+      <p>Video courses in coding, design, business and languages — taught by Rwandan pros, downloadable for offline study, certified on completion. Pay per course with MoMo.</p>
+      <div class="hero-btns">
+        <a href="#courses" class="btn btn-ind"><i class="fas fa-compass"></i> Browse Courses</a>
+        <a href="#courses" class="btn btn-line"><i class="fas fa-play"></i> Watch Free Lessons</a>
+      </div>
+      <div class="avatars">
+        <div class="stack">
+          <span class="av" style="background:#6C5CE7">UK</span><span class="av" style="background:#2EDCB5">JM</span><span class="av" style="background:#FFC048">AN</span><span class="av" style="background:#FF6B81">DK</span>
+        </div>
+        <p><strong>18,200 learners</strong> studied with us this month</p>
+      </div>
+    </div>
+    <div class="learn-scene">
+      <div class="learn-card">
+        <div class="cert-chip"><i class="fas fa-certificate"></i> Certificate earned!</div>
+        <div class="lc-top">
+          <div class="thumb"><i class="fas fa-code"></i></div>
+          <div><h5>Full-Stack Web Dev</h5><span>Module 7 of 10 · 24 lessons</span></div>
+        </div>
+        <div class="progress"><i></i></div>
+        <div class="lc-row"><span>72% complete</span><span>4h 20m left</span></div>
+        <div class="lesson"><span class="ic ic-done"><i class="fas fa-check"></i></span><span>Databases &amp; Firebase<small>Completed · 92% quiz</small></span></div>
+        <div class="lesson"><span class="ic ic-now"><i class="fas fa-play"></i></span><span>REST APIs in practice<small>In progress · 12:40</small></span></div>
+        <div class="lesson"><span class="ic ic-next"><i class="fas fa-lock"></i></span><span>Deployment &amp; launch<small>Unlocks tomorrow</small></span></div>
+      </div>
+      <div class="streak-chip"><i class="fas fa-fire"></i> 14-day learning streak 🔥</div>
+    </div>
+  </div>
+</section>
+
+<section id="courses">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Course Library</span>
+      <h2>What do you want to master?</h2>
+      <p>Every course: downloadable videos, practice projects, quizzes and a certificate.</p>
+    </div>
+    <div class="cats">
+      <button class="cat-pill on">Popular</button><button class="cat-pill">Coding</button><button class="cat-pill">Design</button><button class="cat-pill">Business</button><button class="cat-pill">Languages</button><button class="cat-pill">Free</button>
+    </div>
+    <div class="courses">
+      <div class="course"><div class="course-visual cv1"><i class="fas fa-code"></i><span class="lvl">Bestseller</span></div><div class="course-body"><h4>Full-Stack Web Development</h4><p>HTML to deployment — build and launch 3 real projects.</p><div class="course-meta"><span><i class="fas fa-video"></i>68 lessons</span><span><i class="fas fa-clock"></i>32h</span><span><i class="fas fa-star"></i>4.9</span></div><div class="course-foot"><span class="price"><s>$60</s>$39</span><a href="#footer" class="btn btn-ind" style="padding:9px 18px;font-size:.78rem">Enrol</a></div></div></div>
+      <div class="course"><div class="course-visual cv2"><i class="fas fa-palette"></i></div><div class="course-body"><h4>UI/UX Design with Figma</h4><p>Design mobile apps end-to-end and build a portfolio.</p><div class="course-meta"><span><i class="fas fa-video"></i>42 lessons</span><span><i class="fas fa-clock"></i>21h</span><span><i class="fas fa-star"></i>4.8</span></div><div class="course-foot"><span class="price"><s>$45</s>$29</span><a href="#footer" class="btn btn-ind" style="padding:9px 18px;font-size:.78rem">Enrol</a></div></div></div>
+      <div class="course"><div class="course-visual cv3"><i class="fas fa-chart-pie"></i></div><div class="course-body"><h4>Digital Marketing Bootcamp</h4><p>Social, SEO and paid ads — grow a real business page.</p><div class="course-meta"><span><i class="fas fa-video"></i>38 lessons</span><span><i class="fas fa-clock"></i>18h</span><span><i class="fas fa-star"></i>4.7</span></div><div class="course-foot"><span class="price">$25</span><a href="#footer" class="btn btn-ind" style="padding:9px 18px;font-size:.78rem">Enrol</a></div></div></div>
+      <div class="course"><div class="course-visual cv4"><i class="fas fa-language"></i></div><div class="course-body"><h4>English for Professionals</h4><p>Speak confidently at work — interviews, email and meetings.</p><div class="course-meta"><span><i class="fas fa-video"></i>50 lessons</span><span><i class="fas fa-clock"></i>25h</span><span><i class="fas fa-star"></i>4.9</span></div><div class="course-foot"><span class="price">$19</span><a href="#footer" class="btn btn-ind" style="padding:9px 18px;font-size:.78rem">Enrol</a></div></div></div>
+      <div class="course"><div class="course-visual cv5"><i class="fas fa-database"></i></div><div class="course-body"><h4>Data Analysis with Excel &amp; SQL</h4><p>From spreadsheets to dashboards employers love.</p><div class="course-meta"><span><i class="fas fa-video"></i>46 lessons</span><span><i class="fas fa-clock"></i>24h</span><span><i class="fas fa-star"></i>4.8</span></div><div class="course-foot"><span class="price"><s>$50</s>$34</span><a href="#footer" class="btn btn-ind" style="padding:9px 18px;font-size:.78rem">Enrol</a></div></div></div>
+      <div class="course"><div class="course-visual cv6"><i class="fas fa-camera"></i></div><div class="course-body"><h4>Phone Photography Pro</h4><p>Shoot and edit stunning photos with just your phone.</p><div class="course-meta"><span><i class="fas fa-video"></i>28 lessons</span><span><i class="fas fa-clock"></i>12h</span><span><i class="fas fa-star"></i>4.6</span></div><div class="course-foot"><span class="price" style="color:var(--amber)">FREE</span><a href="#footer" class="btn btn-ind" style="padding:9px 18px;font-size:.78rem">Enrol</a></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="perks" id="perks">
+  <div class="container">
+    <div class="sec-head"><span class="kicker2">Why Elimu</span><h2>Built for how Rwanda learns</h2></div>
+    <div class="perks-grid">
+      <div class="perk"><i class="fas fa-wifi-slash"></i><div><h4>Offline mode</h4><p>Download lessons on Wi-Fi, study on the matatu.</p></div></div>
+      <div class="perk"><i class="fas fa-mobile-screen-button"></i><div><h4>Data-light video</h4><p>Lessons stream at 50MB per hour — kind to bundles.</p></div></div>
+      <div class="perk"><i class="fas fa-money-bill-transfer"></i><div><h4>Pay with MoMo</h4><p>Per course or monthly pass. No card needed.</p></div></div>
+      <div class="perk"><i class="fas fa-certificate"></i><div><h4>Real certificates</h4><p>Shareable, verifiable, respected by local employers.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="teach">
+  <div class="container">
+    <div class="mentor">
+      <div>
+        <h2>Got a skill? Turn it into income.</h2>
+        <p>Teach on Elimu and earn every time a student enrols. We handle video hosting, payments, marketing — you bring the expertise.</p>
+        <a href="https://wa.me/250788695396?text=I%20want%20to%20teach%20on%20Elimu%20Online!" target="_blank" rel="noopener" class="btn btn-mint"><i class="fas fa-chalkboard-user"></i> Become an Instructor</a>
+      </div>
+      <div class="mentor-earn">
+        <div><strong>1,240+</strong><span>Active instructors</span></div>
+        <div><strong>70%</strong><span>Revenue share</span></div>
+        <div><strong>$0</strong><span>To get started</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px;color:var(--white)"><span class="dot" style="width:36px;height:36px;font-size:.9rem"><i class="fas fa-play"></i></span>Elimu<b style="color:var(--indigo-l)">Online</b></a>
+        <p>Rwanda's homegrown learning platform. Practical skills, local instructors, certificates that count.</p>
+      </div>
+      <div><h5>Learn</h5><ul><li><a href="#courses">All courses</a></li><li>Free courses</li><li>Certificates</li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="#teach">Teach with us</a></li><li>Partnerships</li><li>Careers</li></ul></div>
+      <div><h5>Support</h5><ul><li>+250 788 000 000</li><li>hello@elimuonline.rw</li><li>WhatsApp helpdesk</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Elimu Online (fictional demo platform)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
