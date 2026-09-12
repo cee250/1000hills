@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Forge Fitness Club | Gym &amp; Personal Training, Kigali — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live gym website demo by 1000 Hills Group — membership plans, classes, personal training and free trial template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--black:#0C0C0D;--black2:#141416;--card:#1A1A1D;--red:#FF3B3B;--red-d:#D42424;--white:#F5F5F5;--muted:#9B9BA3;--line:rgba(255,59,59,.22);--radius:10px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--black);color:var(--white);line-height:1.65;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.anton{font-family:'Anton',sans-serif;text-transform:uppercase;letter-spacing:1px;font-weight:400}
+.container{width:min(1140px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(12,12,13,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .dumb{width:44px;height:44px;border-radius:10px;background:var(--red);display:grid;place-items:center;color:#fff;font-size:1.1rem;box-shadow:0 0 24px rgba(255,59,59,.4)}
+.brand h3{font-size:1.35rem}
+.brand h3 b{color:var(--red)}
+.nav-links{display:flex;gap:24px;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px}
+.nav-links a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 28px;font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;transition:.3s;border-radius:6px}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 0 28px rgba(255,59,59,.35)}
+.btn-red:hover{background:var(--red-d);transform:translateY(-2px)}
+.btn-line{border:2px solid rgba(255,255,255,.2);color:var(--white)}
+.btn-line:hover{border-color:var(--red);color:var(--red)}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(ellipse 45% 45% at 80% 20%, rgba(255,59,59,.16), transparent 60%),
+ linear-gradient(180deg,#101012,#0C0C0D)}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px}
+.hero .container{position:relative;z-index:2;padding:90px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;color:var(--red);font-size:.78rem;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+.kicker::before{content:'';width:30px;height:3px;background:var(--red)}
+.hero h1{font-size:clamp(3rem,7vw,5.2rem);line-height:.95;margin:22px 0}
+.hero h1 .stroke{color:transparent;-webkit-text-stroke:2px var(--red)}
+.hero p{color:var(--muted);max-width:46ch;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-marquee{margin-top:44px;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);padding:14px 0;overflow:hidden;white-space:nowrap}
+.marq-track{display:inline-block;animation:mq 20s linear infinite;font-family:'Anton',sans-serif;text-transform:uppercase;font-size:.95rem;letter-spacing:2px;color:var(--muted)}
+.marq-track i{color:var(--red);margin:0 20px;font-size:.7rem}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* kettlebell scene */
+.kb-scene{position:relative;display:grid;place-items:center;min-height:400px}
+.kb{width:min(300px,70%);aspect-ratio:3/3.6;position:relative}
+.kb .handle{position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:34%;border:20px solid var(--red);border-radius:120px 120px 0 0;border-bottom:0}
+.kb .bell{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:100%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 28%,#3A3A40,#131316 70%);border:2px solid rgba(255,59,59,.4);box-shadow:0 40px 80px rgba(0,0,0,.6),inset 0 0 60px rgba(255,59,59,.08);display:grid;place-items:center}
+.kb .bell span{font-family:'Anton',sans-serif;font-size:3rem;color:var(--red)}
+.glow{position:absolute;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(255,59,59,.18),transparent 65%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 3.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.07)}}
+.stat-float{position:absolute;background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 18px;font-size:.78rem;font-weight:800;display:flex;gap:10px;align-items:center;animation:bob 4.5s ease-in-out infinite}
+.stat-float i{color:var(--red)}
+.sf1{top:6%;left:-4%}.sf2{bottom:12%;right:-6%;animation-delay:1.4s}.sf3{top:44%;right:-10%;animation-delay:2.8s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+/* stats band */
+.band{background:var(--red)}
+.band-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:26px 0;text-align:center;color:#fff}
+.band strong{font-family:'Anton',sans-serif;font-size:2rem;display:block;line-height:1.1}
+.band span{font-size:.72rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;opacity:.9}
+/* sections */
+section{padding:84px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3rem);margin-top:8px}
+.sec-head h2 b{color:var(--red)}
+.sec-head .kicker2{color:var(--red);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.plan{background:var(--card);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);padding:36px 30px;transition:.35s;position:relative}
+.plan:hover{transform:translateY(-8px);border-color:rgba(255,59,59,.5);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.plan.hot{border:2px solid var(--red)}
+.plan .tag-hot{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--red);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:20px;white-space:nowrap}
+.plan h4{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.3rem;letter-spacing:1px}
+.plan .price{font-family:'Anton',sans-serif;font-size:2.6rem;color:var(--red);margin:14px 0 2px}
+.plan .price small{font-size:.9rem;color:var(--muted);font-family:'Inter',sans-serif;font-weight:600}
+.plan .per{font-size:.74rem;color:var(--muted);margin-bottom:22px}
+.plan ul{margin-bottom:26px}
+.plan ul li{padding:9px 0;border-bottom:1px dashed rgba(255,255,255,.1);font-size:.86rem;display:flex;gap:10px}
+.plan ul i{color:var(--red);margin-top:4px;font-size:.72rem}
+.plan .btn{width:100%;justify-content:center}
+/* classes */
+.classes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cls{border-radius:var(--radius);padding:28px 22px;position:relative;overflow:hidden;min-height:190px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(255,255,255,.08)}
+.cls i{font-size:1.8rem;color:rgba(255,255,255,.85);position:absolute;top:20px;left:22px}
+.cls h4{font-size:1.15rem}
+.cls span{font-size:.74rem;color:rgba(255,255,255,.75);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.c1{background:linear-gradient(150deg,#3A1518,#180A0B)}
+.c2{background:linear-gradient(150deg,#15301E,#0A160F)}
+.c3{background:linear-gradient(150deg,#2E1E3A,#120A18)}
+.c4{background:linear-gradient(150deg,#332A14,#171206)}
+/* trainers */
+.trainers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.trainer{background:var(--card);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius);overflow:hidden;transition:.35s}
+.trainer:hover{transform:translateY(-7px);border-color:rgba(255,59,59,.45)}
+.tr-visual{height:150px;background:linear-gradient(135deg,#241417,#141416);display:grid;place-items:center;font-size:2.6rem;color:var(--red)}
+.tr-body{padding:22px}
+.tr-body h4{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.1rem;letter-spacing:1px}
+.tr-body .spec{color:var(--red);font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;display:block;margin:4px 0 10px}
+.tr-body p{font-size:.82rem;color:var(--muted)}
+/* trial band */
+.trial{background:linear-gradient(135deg,#1C1214,#120D0E);border:1px solid var(--line);border-radius:14px;padding:54px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.trial h2{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:12px}
+.trial h2 b{color:var(--red)}
+.trial p{color:var(--muted);margin-bottom:24px}
+footer{background:#080809;color:var(--muted);padding:56px 0 30px;font-size:.86rem;border-top:1px solid rgba(255,255,255,.06)}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:var(--white);margin-bottom:14px;font-family:'Anton',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--red)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.76rem}
+.f-bottom a{color:var(--red)}
+@media(max-width:920px){.hero .container,.trial,.f-grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.classes{grid-template-columns:1fr 1fr}.trainers{grid-template-columns:1fr 1fr}.nav-links{display:none}.kb-scene{min-height:320px}}
+@media(max-width:560px){.classes,.trainers{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Forge%20Fitness%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="dumb"><i class="fas fa-dumbbell"></i></span><h3>FORGE<b>.</b></h3></a>
+    <nav class="nav-links"><a href="#plans">Membership</a><a href="#classes">Classes</a><a href="#team">Coaches</a><a href="#trial">Free Trial</a></nav>
+    <a href="#trial" class="btn btn-red">Start Free Week</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <div>
+      <span class="kicker">Kigali's hardest-working gym</span>
+      <h1>Sweat now.<br/><span class="stroke">Shine later.</span></h1>
+      <p>Strength zones, boxing ring, spin studio and coaches who count your last rep louder than your first. Open 5am to 11pm, every single day.</p>
+      <div class="hero-btns">
+        <a href="#trial" class="btn btn-red"><i class="fas fa-bolt"></i> Claim Free Week</a>
+        <a href="#plans" class="btn btn-line">See Memberships</a>
+      </div>
+      <div class="hero-marquee">
+        <div class="marq-track">
+          <i class="fas fa-bolt"></i> No ego zone <i class="fas fa-bolt"></i> 42 classes weekly <i class="fas fa-bolt"></i> Open 5am – 11pm <i class="fas fa-bolt"></i> Certified coaches <i class="fas fa-bolt"></i> No ego zone <i class="fas fa-bolt"></i> 42 classes weekly <i class="fas fa-bolt"></i> Open 5am – 11pm <i class="fas fa-bolt"></i> Certified coaches <i class="fas fa-bolt"></i> No ego zone <i class="fas fa-bolt"></i> 42 classes weekly <i class="fas fa-bolt"></i> Open 5am – 11pm <i class="fas fa-bolt"></i> Certified coaches
+        </div>
+      </div>
+    </div>
+    <div class="kb-scene">
+      <div class="glow"></div>
+      <div class="kb"><div class="handle"></div><div class="bell"><span>24</span></div></div>
+      <div class="stat-float sf1"><i class="fas fa-users"></i> 2,300+ members</div>
+      <div class="stat-float sf2"><i class="fas fa-dumbbell"></i> 1,200 m² of floor</div>
+      <div class="stat-float sf3"><i class="fas fa-clock"></i> Open 18h daily</div>
+    </div>
+  </div>
+</section>
+
+<div class="band">
+  <div class="container band-grid">
+    <div><strong>2,300+</strong><span>Active members</span></div>
+    <div><strong>42</strong><span>Classes / week</span></div>
+    <div><strong>14</strong><span>Certified coaches</span></div>
+    <div><strong>5am</strong><span>Doors open</span></div>
+  </div>
+</div>
+
+<section id="plans">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">Membership</span>
+        <h2>Pay for <b>results</b>, not bench warmers</h2>
+      </div>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h4>Drop-In</h4>
+        <div class="price">5,000 <small>RWF</small></div>
+        <div class="per">per visit</div>
+        <ul>
+          <li><i class="fas fa-check"></i> Full gym &amp; cardio floor</li>
+          <li><i class="fas fa-check"></i> Locker &amp; shower</li>
+          <li><i class="fas fa-check"></i> Free Wi-Fi &amp; smoothie bar</li>
+        </ul>
+        <a href="#trial" class="btn btn-line">Pay at Door</a>
+      </div>
+      <div class="plan hot">
+        <span class="tag-hot">Most Popular</span>
+        <h4>Monthly Beast</h4>
+        <div class="price">65,000 <small>RWF</small></div>
+        <div class="per">per month · no lock-in</div>
+        <ul>
+          <li><i class="fas fa-check"></i> Unlimited gym access, 5am–11pm</li>
+          <li><i class="fas fa-check"></i> All 42 weekly classes</li>
+          <li><i class="fas fa-check"></i> 1 free PT session monthly</li>
+          <li><i class="fas fa-check"></i> Body composition scan</li>
+          <li><i class="fas fa-check"></i> Sauna &amp; recovery zone</li>
+        </ul>
+        <a href="#trial" class="btn btn-red">Start Free Week</a>
+      </div>
+      <div class="plan">
+        <h4>Transformation</h4>
+        <div class="price">480,000 <small>RWF</small></div>
+        <div class="per">3 months · everything included</div>
+        <ul>
+          <li><i class="fas fa-check"></i> Everything in Monthly Beast</li>
+          <li><i class="fas fa-check"></i> 12 personal training sessions</li>
+          <li><i class="fas fa-check"></i> Custom meal plan</li>
+          <li><i class="fas fa-check"></i> Weekly coach check-ins</li>
+          <li><i class="fas fa-check"></i> Progress photos &amp; report</li>
+        </ul>
+        <a href="#trial" class="btn btn-line">Go All In</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="classes" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">Timetable</span>
+        <h2>Classes that <b>hurt so good</b></h2>
+      </div>
+      <a href="#trial" class="btn btn-line">Full timetable</a>
+    </div>
+    <div class="classes">
+      <div class="cls c1"><i class="fas fa-fire"></i><h4>HIIT Inferno</h4><span>Mon · Wed · Fri · 6am</span></div>
+      <div class="cls c2"><i class="fas fa-person-running"></i><h4>Spin Rush</h4><span>Tue · Thu · 7pm</span></div>
+      <div class="cls c3"><i class="fas fa-hand-fist"></i><h4>Boxing Basics</h4><span>Sat · 9am &amp; 5pm</span></div>
+      <div class="cls c4"><i class="fas fa-spa"></i><h4>Power Yoga</h4><span>Sun · 10am</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="team" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">The Coaches</span>
+        <h2>Trained by <b>monsters</b> (the nice kind)</h2>
+      </div>
+    </div>
+    <div class="trainers">
+      <div class="trainer"><div class="tr-visual"><i class="fas fa-dumbbell"></i></div><div class="tr-body"><h4>Coach Shema</h4><span class="spec">Strength &amp; Powerlifting</span><p>National deadlift record holder. Will fix your squat in one session.</p></div></div>
+      <div class="trainer"><div class="tr-visual" style="background:linear-gradient(135deg,#141E17,#101216)"><i class="fas fa-hand-fist"></i></div><div class="tr-body"><h4>Coach Ami</h4><span class="spec">Boxing &amp; Conditioning</span><p>Ex-amateur champion. Pads, ropes and pure motivation.</p></div></div>
+      <div class="trainer"><div class="tr-visual" style="background:linear-gradient(135deg,#1C1424,#120D18)"><i class="fas fa-heart-pulse"></i></div><div class="tr-body"><h4>Coach Diane</h4><span class="spec">Weight Loss &amp; Nutrition</span><p>Guided 300+ transformations. Meal plans you'll actually follow.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="trial">
+  <div class="container">
+    <div class="trial">
+      <div>
+        <span class="kicker">Limited · 50 free week passes monthly</span>
+        <h2 style="margin-top:14px">First week <b>on us</b>. No card. No catch.</h2>
+        <p>Full access for 7 days — gym, classes, sauna and a free body scan. If you don't love it, we part as friends (sweaty friends).</p>
+        <a href="https://wa.me/250788695396?text=I%20want%20my%20free%20week%20at%20Forge%20Fitness!" target="_blank" rel="noopener" class="btn btn-red"><i class="fab fa-whatsapp"></i> Claim My Free Week</a>
+      </div>
+      <div style="display:grid;gap:14px">
+        <div class="stat-float" style="position:static;animation:none"><i class="fas fa-id-card"></i> No card required</div>
+        <div class="stat-float" style="position:static;animation:none"><i class="fas fa-user-check"></i> Free intro session with a coach</div>
+        <div class="stat-float" style="position:static;animation:none"><i class="fas fa-ban"></i> Zero pressure to join</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px"><span class="dumb" style="width:40px;height:40px;font-size:1rem"><i class="fas fa-dumbbell"></i></span><h3 style="font-size:1.2rem;color:var(--white)">FORGE<b style="color:var(--red)">.</b></h3></a>
+        <p>Kigali's strength and conditioning home. Egos checked at the door, limits checked on the floor.</p>
+      </div>
+      <div><h5>Club</h5><ul><li><a href="#plans">Membership</a></li><li><a href="#classes">Classes</a></li><li><a href="#team">Coaches</a></li></ul></div>
+      <div><h5>Find Us</h5><ul><li>KG 9 Ave, Kigali</li><li>Daily 5am – 11pm</li><li>+250 788 000 000</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Forge Fitness Club (fictional demo gym)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MediCore HMS | Hospital Management System — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live hospital management system demo by 1000 Hills Group — patients, appointments, billing, pharmacy and lab modules."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bg:#F1F5F9;--side:#0E2A3A;--side2:#12354A;--teal:#0E9AA7;--teal-d:#0B7B86;--card:#fff;--ink:#132B3A;--muted:#6B8299;--line:#E4EBF1;--red:#E8506E;--amber:#F2A93B;--green:#2FBF71;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:14px;padding-top:46px}
+a{text-decoration:none;color:inherit}ul{list-style:none}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.app{display:flex;min-height:calc(100vh - 46px)}
+/* SIDEBAR */
+.sidebar{width:232px;background:var(--side);color:#B9CCD8;display:flex;flex-direction:column;position:sticky;top:46px;height:calc(100vh - 46px)}
+.s-logo{display:flex;align-items:center;gap:10px;padding:18px 16px;border-bottom:1px solid rgba(255,255,255,.07)}
+.s-logo .ic{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--teal),#3ED3E0);display:grid;place-items:center;color:#fff;font-size:.9rem}
+.s-logo h4{color:#fff;font-size:.95rem}
+.s-logo small{display:block;font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:#7FA3B5;font-weight:600}
+.s-nav{padding:14px 10px;flex:1;overflow-y:auto}
+.s-nav .label{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:#5E8195;font-weight:700;padding:12px 10px 6px}
+.s-nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:.84rem;font-weight:500;color:#B9CCD8;margin-bottom:2px;transition:.25s}
+.s-nav a i{width:18px;text-align:center;font-size:.9rem}
+.s-nav a:hover{background:rgba(255,255,255,.06);color:#fff}
+.s-nav a.on{background:linear-gradient(90deg,var(--teal),rgba(14,154,167,.15));color:#fff;box-shadow:0 6px 18px rgba(14,154,167,.25)}
+.s-nav a .n-badge{margin-left:auto;background:var(--red);color:#fff;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:20px}
+.s-user{padding:14px;display:flex;gap:11px;align-items:center;border-top:1px solid rgba(255,255,255,.07)}
+.s-user .av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--amber),#F7C86B);display:grid;place-items:center;color:#5C4200;font-weight:800;font-size:.78rem}
+.s-user h6{color:#fff;font-size:.8rem}.s-user span{font-size:.68rem;color:#7FA3B5}
+/* MAIN */
+.main{flex:1;min-width:0}
+.topbar{background:var(--card);border-bottom:1px solid var(--line);padding:12px 24px;display:flex;align-items:center;gap:16px;position:sticky;top:46px;z-index:50}
+.topbar h3{font-size:1.05rem}
+.tb-search{margin-left:auto;display:flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--line);border-radius:30px;padding:8px 16px;min-width:230px}
+.tb-search i{color:var(--muted);font-size:.8rem}
+.tb-search input{border:0;background:none;outline:none;font-family:inherit;font-size:.8rem;width:100%;color:var(--ink)}
+.tb-ic{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);position:relative;background:#fff}
+.tb-ic::after{content:'';position:absolute;top:9px;right:10px;width:7px;height:7px;border-radius:50%;background:var(--red)}
+.content{padding:22px 24px}
+.page-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.page-head p{font-size:.82rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;font-size:.8rem;font-weight:700;transition:.25s;border:0}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-d)}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+/* KPIs */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.k1::before{background:var(--teal)}.k2::before{background:var(--green)}.k3::before{background:var(--amber)}.k4::before{background:var(--red)}
+.kpi .row{display:flex;justify-content:space-between;align-items:center}
+.kpi .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:.9rem}
+.k1 .ic{background:rgba(14,154,167,.1);color:var(--teal)}
+.k2 .ic{background:rgba(47,191,113,.1);color:var(--green)}
+.k3 .ic{background:rgba(242,169,59,.12);color:#D08010}
+.k4 .ic{background:rgba(232,80,110,.1);color:var(--red)}
+.kpi strong{font-size:1.5rem;display:block;margin-top:10px;line-height:1.1}
+.kpi span{font-size:.72rem;color:var(--muted);font-weight:600}
+.kpi .delta{font-size:.68rem;font-weight:800}
+.up{color:var(--green)}.down{color:var(--red)}
+/* panels */
+.panels{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;margin-bottom:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.panel-head h4{font-size:.92rem}
+.panel-head a{font-size:.72rem;color:var(--teal);font-weight:700}
+/* chart */
+.chart{display:flex;align-items:flex-end;gap:10px;height:170px;padding-top:10px}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:7px}
+.bar{width:100%;border-radius:7px 7px 3px 3px;background:linear-gradient(180deg,#3ED3E0,var(--teal));position:relative;transition:.3s}
+.bar.alt{background:linear-gradient(180deg,#FFE1A6,var(--amber))}
+.bar-col span{font-size:.62rem;color:var(--muted);font-weight:600}
+.bar-col:hover .bar{filter:brightness(1.1)}
+.legend{display:flex;gap:16px;font-size:.68rem;color:var(--muted);font-weight:600;margin-top:12px}
+.legend i{margin-right:5px}
+/* schedule */
+.sched{display:grid;gap:10px}
+.slot{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.slot .time{font-size:.72rem;font-weight:800;color:var(--teal);background:rgba(14,154,167,.08);padding:6px 10px;border-radius:8px;white-space:nowrap}
+.slot h6{font-size:.82rem}
+.slot small{display:block;font-size:.68rem;color:var(--muted)}
+.slot .st{margin-left:auto;font-size:.62rem;font-weight:800;padding:4px 10px;border-radius:20px;white-space:nowrap}
+.st-ok{background:rgba(47,191,113,.12);color:var(--green)}
+.st-wait{background:rgba(242,169,59,.14);color:#D08010}
+.st-urgent{background:rgba(232,80,110,.12);color:var(--red)}
+/* table */
+.table-panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.table-panel .panel-head{padding:16px 18px;margin:0;border-bottom:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th{text-align:left;font-size:.64rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:11px 18px;background:#F8FAFC;border-bottom:1px solid var(--line)}
+td{padding:12px 18px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border:0}
+tbody tr:hover{background:#F8FAFC}
+.pill{font-size:.62rem;font-weight:800;padding:4px 11px;border-radius:20px;white-space:nowrap}
+.pl-paid{background:rgba(47,191,113,.12);color:var(--green)}
+.pl-pend{background:rgba(242,169,59,.14);color:#D08010}
+.pl-ins{background:rgba(14,154,167,.1);color:var(--teal)}
+.pt{display:flex;gap:10px;align-items:center}
+.pt .av{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:.62rem;font-weight:800;color:#fff;flex:none}
+.a1{background:#0E9AA7}.a2{background:#7C6CE0}.a3{background:#E8506E}.a4{background:#F2A93B}.a5{background:#2FBF71}
+.mini-bar{width:90px;height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.mini-bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#3ED3E0,var(--teal))}
+/* footer */
+.sys-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:18px 4px 4px;font-size:.7rem;color:var(--muted)}
+.sys-foot a{color:var(--teal);font-weight:700}
+@media(max-width:1100px){.kpis{grid-template-columns:1fr 1fr}.panels{grid-template-columns:1fr}}
+@media(max-width:860px){.sidebar{display:none}.tb-search{display:none}}
+@media(max-width:560px){.kpis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live System Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20the%20MediCore%20hospital%20management%20system." target="_blank" rel="noopener">Get this system</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="s-logo">
+      <span class="ic"><i class="fas fa-staff-snake"></i></span>
+      <h4>MediCore HMS<small>Hospital Suite</small></h4>
+    </div>
+    <nav class="s-nav">
+      <p class="label">Clinical</p>
+      <a href="#" class="on"><i class="fas fa-gauge-high"></i> Dashboard</a>
+      <a href="#"><i class="fas fa-hospital-user"></i> Patients</a>
+      <a href="#"><i class="fas fa-calendar-check"></i> Appointments <span class="n-badge">12</span></a>
+      <a href="#"><i class="fas fa-bed-pulse"></i> Wards &amp; Beds</a>
+      <p class="label">Operations</p>
+      <a href="#"><i class="fas fa-pills"></i> Pharmacy</a>
+      <a href="#"><i class="fas fa-microscope"></i> Laboratory</a>
+      <a href="#"><i class="fas fa-file-invoice-dollar"></i> Billing</a>
+      <p class="label">Admin</p>
+      <a href="#"><i class="fas fa-user-doctor"></i> Staff</a>
+      <a href="#"><i class="fas fa-chart-line"></i> Reports</a>
+      <a href="#"><i class="fas fa-gear"></i> Settings</a>
+    </nav>
+    <div class="s-user">
+      <span class="av">AU</span>
+      <div><h6>Dr. Aline Uwase</h6><span>Chief Medical Officer</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h3>Hospital Dashboard</h3>
+      <div class="tb-search"><i class="fas fa-magnifying-glass"></i><input placeholder="Search patients, files, invoices…"/></div>
+      <span class="tb-ic"><i class="far fa-bell"></i></span>
+      <span class="tb-ic"><i class="fas fa-comment-medical"></i></span>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div><p>Tuesday, September 12 · Kigali Campus · All systems operational</p></div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-ghost"><i class="fas fa-download"></i> Export</button>
+          <button class="btn btn-teal"><i class="fas fa-plus"></i> New Patient</button>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi k1"><div class="row"><span class="ic"><i class="fas fa-hospital-user"></i></span><span class="delta up">+8.2%</span></div><strong>1,284</strong><span>Active patients</span></div>
+        <div class="kpi k2"><div class="row"><span class="ic"><i class="fas fa-calendar-check"></i></span><span class="delta up">+3.1%</span></div><strong>86</strong><span>Today's appointments</span></div>
+        <div class="kpi k3"><div class="row"><span class="ic"><i class="fas fa-bed-pulse"></i></span><span class="delta down">-4</span></div><strong>41/60</strong><span>Beds occupied</span></div>
+        <div class="kpi k4"><div class="row"><span class="ic"><i class="fas fa-truck-medical"></i></span><span class="delta up">+2</span></div><strong>7</strong><span>Emergency cases</span></div>
+      </div>
+
+      <div class="panels">
+        <div class="panel">
+          <div class="panel-head"><h4>Weekly Patient Flow</h4><a href="#">Full report →</a></div>
+          <div class="chart">
+            <div class="bar-col"><div class="bar" style="height:52%"></div><span>Mon</span></div>
+            <div class="bar-col"><div class="bar" style="height:66%"></div><span>Tue</span></div>
+            <div class="bar-col"><div class="bar alt" style="height:40%"></div><span>Wed</span></div>
+            <div class="bar-col"><div class="bar" style="height:78%"></div><span>Thu</span></div>
+            <div class="bar-col"><div class="bar" style="height:64%"></div><span>Fri</span></div>
+            <div class="bar-col"><div class="bar alt" style="height:34%"></div><span>Sat</span></div>
+            <div class="bar-col"><div class="bar alt" style="height:26%"></div><span>Sun</span></div>
+          </div>
+          <div class="legend"><span><i class="fas fa-square" style="color:var(--teal)"></i>Outpatients</span><span><i class="fas fa-square" style="color:var(--amber)"></i>Admissions</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>Today's Schedule</h4><a href="#">Calendar →</a></div>
+          <div class="sched">
+            <div class="slot"><span class="time">09:30</span><div><h6>Mukamana Alice</h6><small>Cardiology · Dr. Uwase</small></div><span class="st st-ok">Confirmed</span></div>
+            <div class="slot"><span class="time">10:15</span><div><h6>Nshimiyimana Eric</h6><small>Orthopaedics · Dr. Kalisa</small></div><span class="st st-wait">Waiting</span></div>
+            <div class="slot"><span class="time">11:00</span><div><h6>Ingabire Sandrine</h6><small>Maternity check · Dr. Grace</small></div><span class="st st-ok">Confirmed</span></div>
+            <div class="slot"><span class="time">11:45</span><div><h6>Emergency — RTA</h6><small>Trauma bay 2 · on call team</small></div><span class="st st-urgent">Urgent</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-panel">
+        <div class="panel-head"><h4>Recent Billing</h4><a href="#">View all →</a></div>
+        <table>
+          <thead><tr><th>Patient</th><th>Service</th><th>Amount</th><th>Insurance</th><th>Coverage</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><div class="pt"><span class="av a1">MA</span><div><b>Mukamana Alice</b><br/><small style="color:var(--muted)">PT-2041</small></div></div></td><td>Cardiology consult</td><td><b>45,000 RWF</b></td><td>RSSB</td><td><div class="mini-bar"><i style="width:80%"></i></div></td><td><span class="pill pl-paid">PAID</span></td></tr>
+            <tr><td><div class="pt"><span class="av a2">NE</span><div><b>Nshimiyimana Eric</b><br/><small style="color:var(--muted)">PT-2042</small></div></div></td><td>X-ray + cast</td><td><b>120,000 RWF</b></td><td>Radiant</td><td><div class="mini-bar"><i style="width:60%"></i></div></td><td><span class="pill pl-pend">PENDING</span></td></tr>
+            <tr><td><div class="pt"><span class="av a3">IS</span><div><b>Ingabire Sandrine</b><br/><small style="color:var(--muted)">PT-2043</small></div></div></td><td>Maternity package</td><td><b>350,000 RWF</b></td><td>Mutuelle</td><td><div class="mini-bar"><i style="width:90%"></i></div></td><td><span class="pill pl-ins">INSURANCE</span></td></tr>
+            <tr><td><div class="pt"><span class="av a4">HK</span><div><b>Habimana Kevin</b><br/><small style="color:var(--muted)">PT-2044</small></div></div></td><td>Lab panel + consult</td><td><b>38,000 RWF</b></td><td>Cash</td><td><div class="mini-bar"><i style="width:100%"></i></div></td><td><span class="pill pl-paid">PAID</span></td></tr>
+            <tr><td><div class="pt"><span class="av a5">GT</span><div><b>Gatera Thierry</b><br/><small style="color:var(--muted)">PT-2045</small></div></div></td><td>Pharmacy refill</td><td><b>22,500 RWF</b></td><td>Old Mutual</td><td><div class="mini-bar"><i style="width:70%"></i></div></td><td><span class="pill pl-paid">PAID</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sys-foot">
+        <span>MediCore HMS v4.2 — hospital management system (demo data)</span>
+        <span>System demo by <a href="../demos.html">1000 Hills Group</a> — we build yours custom</span>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

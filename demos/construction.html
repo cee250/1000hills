@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Imvubu Construction Group | Building Rwanda Since 2005 — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live construction company website demo by 1000 Hills Group — projects, services, safety record and quote request template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--coal:#15171B;--coal2:#1D2026;--yellow:#F5B921;--yellow-d:#D9A00E;--steel:#9AA3AF;--white:#F2F4F7;--line:rgba(245,185,33,.2);--radius:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',sans-serif;background:var(--coal);color:var(--white);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.cond{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.5px}
+.container{width:min(1140px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(21,23,27,.94);backdrop-filter:blur(12px);border-bottom:3px solid var(--yellow)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:13px 0}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .hard{width:46px;height:46px;border-radius:8px;background:var(--yellow);display:grid;place-items:center;color:var(--coal);font-size:1.2rem}
+.brand h3{font-size:1.3rem;font-weight:800;line-height:1}
+.brand small{display:block;font-family:'Archivo',sans-serif;font-size:.58rem;letter-spacing:3px;text-transform:uppercase;color:var(--steel);font-weight:600}
+.nav-links{display:flex;gap:24px;font-size:.84rem;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.nav-links a:hover{color:var(--yellow)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 28px;font-size:.85rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;transition:.3s;border-radius:4px}
+.btn-yel{background:var(--yellow);color:var(--coal)}
+.btn-yel:hover{background:var(--yellow-d);transform:translateY(-2px)}
+.btn-line{border:2px solid rgba(255,255,255,.25);color:var(--white)}
+.btn-line:hover{border-color:var(--yellow);color:var(--yellow)}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+ linear-gradient(180deg,rgba(21,23,27,.2),var(--coal) 96%),
+ repeating-linear-gradient(115deg,#1A1D22 0 40px,#171A1F 40px 80px)}
+.crane{position:absolute;top:8%;right:6%;font-size:9rem;color:rgba(245,185,33,.1);transform:rotate(-6deg)}
+.hero .container{position:relative;z-index:2;padding:90px 0;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--coal);padding:8px 18px;font-size:.74rem;font-weight:800;text-transform:uppercase;letter-spacing:2px;border-radius:4px}
+.hero h1{font-size:clamp(2.8rem,6vw,4.6rem);font-weight:800;line-height:1;margin:22px 0}
+.hero h1 span{color:var(--yellow)}
+.hero p{color:var(--steel);max-width:48ch;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:0;margin-top:44px;border:1px solid rgba(255,255,255,.1);border-radius:6px;overflow:hidden;max-width:520px}
+.hero-stats div{flex:1;padding:18px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.hero-stats div:last-child{border:0}
+.hero-stats strong{font-family:'Barlow Condensed',sans-serif;font-size:1.9rem;color:var(--yellow);display:block;line-height:1.05}
+.hero-stats span{font-size:.68rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--steel);font-weight:600}
+/* blueprint card */
+.blue-card{background:linear-gradient(160deg,#202631,#181C24);border:1px solid rgba(122,160,255,.25);border-radius:8px;padding:32px;position:relative;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5)}
+.blue-card::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(122,160,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(122,160,255,.09) 1px,transparent 1px);background-size:22px 22px}
+.blue-card > *{position:relative}
+.blue-card .bc-tag{display:inline-block;background:rgba(122,160,255,.15);color:#8FB4FF;font-size:.66rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;border-radius:4px;margin-bottom:16px}
+.blue-card h4{font-size:1.3rem;margin-bottom:14px}
+.mile{display:flex;gap:14px;margin-bottom:14px;font-size:.84rem}
+.mile i{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-size:.75rem;flex:none;margin-top:2px}
+.m-done i{background:rgba(245,185,33,.15);color:var(--yellow)}
+.m-now i{background:rgba(122,160,255,.15);color:#8FB4FF}
+.m-next i{background:rgba(255,255,255,.08);color:var(--steel)}
+.mile small{display:block;color:var(--steel);font-size:.72rem}
+.progress-big{height:10px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:8px}
+.progress-big i{display:block;height:100%;width:64%;background:linear-gradient(90deg,var(--yellow),#FFD766);border-radius:6px}
+/* hazard strip */
+.hazard{background:repeating-linear-gradient(-45deg,var(--yellow) 0 18px,var(--coal) 18px 36px);height:12px}
+.safety{background:var(--coal2);border-bottom:1px solid rgba(255,255,255,.06)}
+.safety-row{display:flex;justify-content:space-between;gap:18px;padding:18px 0;flex-wrap:wrap;font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--steel)}
+.safety-row span i{color:var(--yellow);margin-right:8px}
+/* sections */
+section{padding:84px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:800;margin-top:8px}
+.sec-head h2 span{color:var(--yellow)}
+.sec-head .kicker2{color:var(--yellow);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+/* services */
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{background:var(--coal2);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:32px 26px;transition:.3s;position:relative;overflow:hidden}
+.svc::after{content:'';position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--yellow);transition:.35s}
+.svc:hover{transform:translateY(-5px)}
+.svc:hover::after{width:100%}
+.svc i{font-size:1.6rem;color:var(--yellow);margin-bottom:16px;display:block}
+.svc h4{font-size:1.15rem;font-weight:700;margin-bottom:8px}
+.svc p{font-size:.84rem;color:var(--steel)}
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.proj{border-radius:6px;overflow:hidden;position:relative;height:280px;display:flex;align-items:flex-end;transition:.35s}
+.proj:hover{transform:translateY(-6px)}
+.proj::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(15,17,20,.92))}
+.pr1{background:linear-gradient(150deg,#39424E,#181C22)}
+.pr2{background:linear-gradient(150deg,#4E4339,#221C16)}
+.pr3{background:linear-gradient(150deg,#394E40,#16221B)}
+.pr4{background:linear-gradient(150deg,#4E3939,#221616)}
+.pr5{background:linear-gradient(150deg,#3E394E,#1B1622)}
+.pr6{background:linear-gradient(150deg,#4E4A39,#221F16)}
+.proj i.bg-ic{position:absolute;top:24px;left:24px;font-size:2.2rem;color:rgba(245,185,33,.5)}
+.proj .status{position:absolute;top:22px;right:22px;z-index:2;font-size:.62rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:4px}
+.st-done{background:rgba(76,222,128,.15);color:#4CDE80}
+.st-live{background:rgba(245,185,33,.15);color:var(--yellow)}
+.proj-body{position:relative;z-index:2;padding:22px}
+.proj h4{font-size:1.2rem;font-weight:700}
+.proj p{font-size:.78rem;color:var(--steel)}
+/* quote band */
+.quote-band{background:linear-gradient(135deg,#202631,#161A20);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:50px;display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.quote-band h2{font-size:clamp(1.7rem,3.6vw,2.5rem);font-weight:800;margin-bottom:12px}
+.quote-band h2 span{color:var(--yellow)}
+.quote-band p{color:var(--steel);margin-bottom:24px}
+.quote-form{background:var(--coal);border:1px solid rgba(255,255,255,.09);border-radius:8px;padding:28px}
+.quote-form label{font-size:.66rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--steel);display:block;margin:12px 0 6px}
+.quote-form input,.quote-form select{width:100%;background:var(--coal2);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:12px 14px;font-family:inherit;font-size:.88rem;border-radius:4px;outline:none}
+.quote-form .btn{width:100%;justify-content:center;margin-top:18px}
+footer{background:#101216;color:var(--steel);padding:56px 0 30px;font-size:.86rem;border-top:3px solid var(--yellow)}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:var(--white);margin-bottom:14px;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;text-transform:uppercase;letter-spacing:1px}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--yellow)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.76rem}
+.f-bottom a{color:var(--yellow)}
+@media(max-width:920px){.hero .container,.quote-band,.f-grid{grid-template-columns:1fr}.svcs,.projects{grid-template-columns:1fr 1fr}.nav-links{display:none}.crane{display:none}}
+@media(max-width:560px){.svcs,.projects{grid-template-columns:1fr}.hero-stats{flex-wrap:wrap}.hero-stats div{min-width:45%}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Imvubu%20Construction%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="hard"><i class="fas fa-helmet-safety"></i></span><h3 class="cond">Imvubu Construction<small>Group · Est. 2005</small></h3></a>
+    <nav class="nav-links"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#quote">Get a Quote</a><a href="#footer">Contact</a></nav>
+    <a href="#quote" class="btn btn-yel"><i class="fas fa-file-invoice-dollar"></i> Request Quote</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <i class="fas fa-tower-observation crane"></i>
+  <div class="container">
+    <div>
+      <span class="kicker"><i class="fas fa-hard-hat"></i> Class A Contractor · Registered with RPPA</span>
+      <h1>We don't pour concrete. <span>We pour promises.</span></h1>
+      <p>Residential, commercial and infrastructure construction across Rwanda — 240 projects delivered, zero abandoned sites, deadlines honoured since 2005.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-yel"><i class="fas fa-building"></i> See Our Work</a>
+        <a href="#quote" class="btn btn-line"><i class="fas fa-calculator"></i> Get a Free Quote</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>240+</strong>Projects done</div>
+        <div><strong>20 yrs</strong>On site</div>
+        <div><strong>0</strong>Abandoned sites</div>
+        <div><strong>1,100</strong>Jobs created</div>
+      </div>
+    </div>
+    <div class="blue-card">
+      <span class="bc-tag"><i class="fas fa-diagram-project"></i> Live Project · Nyarutarama Residence</span>
+      <h4 class="cond">Villa Umbrella — Phase 2</h4>
+      <div class="mile m-done"><i class="fas fa-check"></i><span>Foundation &amp; slab<small>Completed · on schedule</small></span></div>
+      <div class="mile m-done"><i class="fas fa-check"></i><span>Structural frame<small>Completed · 2 days early</small></span></div>
+      <div class="mile m-now"><i class="fas fa-arrow-rotate-right fa-spin"></i><span>Roofing &amp; MEP<small>In progress · week 14 of 22</small></span></div>
+      <div class="mile m-next"><i class="fas fa-lock"></i><span>Finishing &amp; handover<small>Starts November</small></span></div>
+      <div style="display:flex;justify-content:space-between;font-size:.7rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--steel);margin-top:16px"><span>Overall progress</span><span style="color:var(--yellow)">64%</span></div>
+      <div class="progress-big"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<div class="hazard"></div>
+
+<div class="safety">
+  <div class="container safety-row">
+    <span><i class="fas fa-shield-halved"></i> Zero lost-time incidents 2025</span>
+    <span><i class="fas fa-certificate"></i> ISO 9001 &amp; 45001</span>
+    <span><i class="fas fa-people-group"></i> 85% local workforce</span>
+    <span><i class="fas fa-leaf"></i> Green building certified</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">What We Build</span>
+        <h2>From foundation <span>to finish</span></h2>
+      </div>
+      <a href="#quote" class="btn btn-line">Discuss your project</a>
+    </div>
+    <div class="svcs">
+      <div class="svc"><i class="fas fa-house-chimney-crack"></i><h4>Residential Construction</h4><p>Villas, apartments and estates — design support, construction and finishing under one contract.</p></div>
+      <div class="svc"><i class="fas fa-building"></i><h4>Commercial Buildings</h4><p>Offices, retail, hotels and schools built to code, on budget, with weekly photo reports.</p></div>
+      <div class="svc"><i class="fas fa-road"></i><h4>Roads &amp; Infrastructure</h4><p>Access roads, drainage, retaining walls and civil works for districts and developers.</p></div>
+      <div class="svc"><i class="fas fa-pen-ruler"></i><h4>Design &amp; Engineering</h4><p>In-house architects and structural engineers — stamped drawings before we break ground.</p></div>
+      <div class="svc"><i class="fas fa-screwdriver-wrench"></i><h4>Renovation &amp; Fit-out</h4><p>Office fit-outs, home renovations and structural repairs with minimal disruption.</p></div>
+      <div class="svc"><i class="fas fa-file-shield"></i><h4>Project Management</h4><p>We supervise third-party builds: schedules, quality control and contractor coordination.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">Portfolio</span>
+        <h2>Recent <span>landmarks</span></h2>
+      </div>
+      <a href="#quote" class="btn btn-line">View full portfolio</a>
+    </div>
+    <div class="projects">
+      <div class="proj pr1"><i class="fas fa-building bg-ic"></i><span class="status st-done">Completed</span><div class="proj-body"><h4>Kigali Heights Annex</h4><p>Commercial · 6 floors · Kigali</p></div></div>
+      <div class="proj pr2"><i class="fas fa-house-chimney bg-ic"></i><span class="status st-live">On site</span><div class="proj-body"><h4>Villa Umbrella Estate</h4><p>Residential · 12 villas · Nyarutarama</p></div></div>
+      <div class="proj pr3"><i class="fas fa-school bg-ic"></i><span class="status st-done">Completed</span><div class="proj-body"><h4>Musanze Model School</h4><p>Education · 24 classrooms</p></div></div>
+      <div class="proj pr4"><i class="fas fa-hotel bg-ic"></i><span class="status st-done">Completed</span><div class="proj-body"><h4>Rubavu Beach Hotel</h4><p>Hospitality · 60 keys</p></div></div>
+      <div class="proj pr5"><i class="fas fa-road bg-ic"></i><span class="status st-live">On site</span><div class="proj-body"><h4>Kabuga Access Roads</h4><p>Infrastructure · 4.2 km</p></div></div>
+      <div class="proj pr6"><i class="fas fa-warehouse bg-ic"></i><span class="status st-done">Completed</span><div class="proj-body"><h4>Masaka Logistics Hub</h4><p>Industrial · 8,000 m²</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="quote" style="padding-top:0">
+  <div class="container">
+    <div class="quote-band">
+      <div>
+        <span class="kicker"><i class="fas fa-file-invoice-dollar"></i> Free · No obligation</span>
+        <h2 style="margin-top:16px">Get a quote in <span>48 hours</span>.</h2>
+        <p>Tell us what you're building. Our engineers review every request personally and come back with a realistic budget — not a lowball that changes later.</p>
+        <ul style="font-size:.9rem;color:var(--steel)">
+          <li style="margin-bottom:8px"><i class="fas fa-check" style="color:var(--yellow);margin-right:8px"></i>Fixed-price contracts available</li>
+          <li style="margin-bottom:8px"><i class="fas fa-check" style="color:var(--yellow);margin-right:8px"></i>Weekly photo &amp; video progress reports</li>
+          <li><i class="fas fa-check" style="color:var(--yellow);margin-right:8px"></i>5-year structural workmanship warranty</li>
+        </ul>
+      </div>
+      <form class="quote-form" onsubmit="event.preventDefault();this.querySelector('.btn').innerHTML='<i class=\'fas fa-check\'></i> Received — engineers reviewing!'">
+        <label>Project type</label>
+        <select><option>Residential — villa / house</option><option>Commercial — offices / retail</option><option>Renovation / fit-out</option><option>Roads / infrastructure</option><option>Other</option></select>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div><label>Budget (RWF)</label><select><option>Under 50M</option><option>50M – 150M</option><option>150M – 500M</option><option>500M+</option></select></div>
+          <div><label>Start</label><select><option>ASAP</option><option>1 – 3 months</option><option>3 – 6 months</option><option>Just planning</option></select></div>
+        </div>
+        <label>Name</label><input type="text" placeholder="Your name"/>
+        <label>Phone / WhatsApp</label><input type="tel" placeholder="+250 ..."/>
+        <button class="btn btn-yel" type="submit"><i class="fas fa-helmet-safety"></i> Request My Quote</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px"><span class="hard" style="width:40px;height:40px;font-size:1rem"><i class="fas fa-helmet-safety"></i></span><h3 style="font-size:1.1rem;color:var(--white)">Imvubu Construction</h3></a>
+        <p>Class A contractor building across Rwanda since 2005. Promises poured, deadlines honoured.</p>
+      </div>
+      <div><h5>Company</h5><ul><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#quote">Get a quote</a></li></ul></div>
+      <div><h5>Yard &amp; Office</h5><ul><li>KG 436 St, Kigali</li><li>+250 788 000 000</li><li>build@imvubu.rw</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Imvubu Construction Group (fictional demo company)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

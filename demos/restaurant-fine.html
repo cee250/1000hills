@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Le Sommet | Fine Dining &amp; Wine Cellar — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live fine-dining website demo by 1000 Hills Group — tasting menus, wine cellar, chef's table and private dining."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--ivory:#FAF6EF;--ink:#221D17;--gold:#A8842C;--gold-d:#8A6B1F;--line:#E4DAC6;--muted:#7A7160;--radius:2px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--ivory);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+.container{width:min(1120px,92%);margin:0 auto}
+/* DEMO BAR */
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}
+.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+/* NAV */
+header{position:sticky;top:46px;z-index:900;background:rgba(250,246,239,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;letter-spacing:2px}
+.brand span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+.nav-links a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;font-weight:600;transition:.3s;border-radius:2px}
+.btn-dark{background:var(--ink);color:var(--ivory)}
+.btn-dark:hover{background:var(--gold-d)}
+.btn-line{border:1px solid var(--ink);color:var(--ink)}.btn-line:hover{background:var(--ink);color:var(--ivory)}
+/* HERO */
+.hero{min-height:92vh;display:flex;align-items:center;text-align:center;background:
+ radial-gradient(ellipse 60% 50% at 50% 0%, rgba(168,132,44,.14), transparent 65%),
+ radial-gradient(ellipse 40% 40% at 85% 90%, rgba(168,132,44,.10), transparent 60%), var(--ivory);position:relative;overflow:hidden}
+.hero::before{content:'\f522';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;font-size:34rem;color:rgba(168,132,44,.05);right:-6rem;bottom:-9rem;line-height:1}
+.hero .container{position:relative;z-index:2;padding:80px 0}
+.kicker{font-size:.75rem;letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.kicker::before,.kicker::after{content:'—';margin:0 12px;color:var(--line)}
+.hero h1{font-size:clamp(3rem,7.5vw,5.6rem);font-weight:600;line-height:1.05;margin:20px 0;font-style:italic}
+.hero p{max-width:52ch;margin:0 auto 34px;color:var(--muted);font-weight:300}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero-foot{margin-top:56px;display:flex;gap:44px;justify-content:center;flex-wrap:wrap;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.hero-foot strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--gold);letter-spacing:0;text-transform:none}
+/* SECTIONS */
+section{padding:90px 0}
+.sec-head{text-align:center;max-width:600px;margin:0 auto 56px}
+.sec-head h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:600;margin:12px 0;font-style:italic}
+.sec-head p{color:var(--muted);font-weight:300}
+.alt{background:#F3EDE1;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* TASTING MENU */
+.tasting{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.tasting-card{background:linear-gradient(160deg,#241E17,#3A2E1F);color:var(--ivory);padding:56px 44px;border-radius:var(--radius);position:relative;box-shadow:0 40px 80px rgba(34,29,23,.25)}
+.tasting-card::before{content:'';position:absolute;inset:10px;border:1px solid rgba(232,213,163,.3);pointer-events:none}
+.tasting-card h3{font-size:2rem;font-style:italic;margin-bottom:6px}
+.tasting-card .sub{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:#C9A96E;margin-bottom:30px}
+.course{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid rgba(232,213,163,.15);font-size:.92rem}
+.course:last-child{border:0}
+.course b{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600}
+.course span{color:#C9A96E;white-space:nowrap}
+.tasting-info h2{font-size:clamp(1.9rem,4vw,2.7rem);font-style:italic;margin:12px 0 18px}
+.tasting-info p{color:var(--muted);font-weight:300;margin-bottom:18px}
+.tasting-info ul li{display:flex;gap:12px;align-items:center;margin-bottom:12px;font-size:.94rem}
+.tasting-info ul i{color:var(--gold);font-size:.8rem}
+/* EXPERIENCES */
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.exp{background:#fff;border:1px solid var(--line);padding:44px 32px;text-align:center;transition:.35s;border-radius:var(--radius)}
+.exp:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(34,29,23,.12)}
+.exp i{font-size:1.7rem;color:var(--gold);margin-bottom:20px;display:block}
+.exp h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-bottom:10px}
+.exp p{font-size:.88rem;color:var(--muted);font-weight:300}
+.exp .price{display:inline-block;margin-top:18px;font-size:.78rem;letter-spacing:2px;color:var(--gold);border-top:1px solid var(--line);padding-top:14px;width:100%}
+/* QUOTE */
+.quote{background:var(--ink);color:var(--ivory);text-align:center}
+.quote blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,3.4vw,2.3rem);font-style:italic;max-width:26ch;margin:0 auto 18px;line-height:1.4}
+.quote cite{color:#C9A96E;font-style:normal;font-size:.8rem;letter-spacing:3px;text-transform:uppercase}
+/* CTA */
+.cta{text-align:center;background:#F3EDE1;border-top:1px solid var(--line)}
+.cta h2{font-size:clamp(2rem,4.5vw,3rem);font-style:italic;margin-bottom:14px}
+.cta p{color:var(--muted);margin-bottom:30px}
+footer{background:var(--ink);color:#B9B0A2;padding:56px 0 30px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:var(--ivory);font-family:'Cormorant Garamond',serif;font-size:1.15rem;margin-bottom:16px}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--gold)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:#C9A96E}
+@media(max-width:860px){.tasting,.f-grid{grid-template-columns:1fr}.exp-grid{grid-template-columns:1fr}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Le%20Sommet%20fine%20dining%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand">LE <span>SOMMET</span></a>
+    <nav class="nav-links">
+      <a href="#menu">Tasting Menu</a><a href="#experiences">Experiences</a><a href="#visit">Private Dining</a><a href="#visit">Contact</a>
+    </nav>
+    <a href="#visit" class="btn btn-dark">Reserve</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <span class="kicker">Kigali · Fine Dining</span>
+    <h1>Where every plate<br/>is a summit.</h1>
+    <p>A nine-course tasting journey through the volcanoes of Rwandan flavour — fire, earth and lake, plated with precision in our hilltop dining room.</p>
+    <div class="hero-btns">
+      <a href="#visit" class="btn btn-dark"><i class="fas fa-calendar-check"></i> Book a Table</a>
+      <a href="#menu" class="btn btn-line">View Tasting Menu</a>
+    </div>
+    <div class="hero-foot">
+      <div><strong>9</strong>Courses</div>
+      <div><strong>240+</strong>Wine Labels</div>
+      <div><strong>4.9★</strong>Guest Rating</div>
+      <div><strong>2025</strong>Best Fine Dining</div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="menu">
+  <div class="container tasting">
+    <div class="tasting-card">
+      <h3>The Summit Menu</h3>
+      <p class="sub">Nine Courses · 150,000 RWF pp</p>
+      <div class="course"><b><i class="fas fa-seedling" style="color:#C9A96E;font-size:.75rem"></i> Amuse — Isooko</b><span></span></div>
+      <div class="course"><b>Lake Kivu Tilapia</b><span>Course II</span></div>
+      <div class="course"><b>Volcano Sweet Potato</b><span>Course IV</span></div>
+      <div class="course"><b>Charcoal Ayagi Beef</b><span>Course VI</span></div>
+      <div class="course"><b>Aged Gacaca Cheese</b><span>Course VIII</span></div>
+      <div class="course"><b>Ubuki Honey Dome</b><span>Course IX</span></div>
+      <p style="margin-top:26px;font-size:.8rem;color:#C9A96E;letter-spacing:2px;text-transform:uppercase">Wine pairing +45,000 RWF</p>
+    </div>
+    <div class="tasting-info">
+      <span class="kicker" style="text-align:left">The Menu</span>
+      <h2>One seating. One story. Every night.</h2>
+      <p>Chef Mutesi's kitchen writes a new menu each week from what the markets of Kimironko offer — nothing frozen, nothing wasted.</p>
+      <ul>
+        <li><i class="fas fa-check"></i> Seasonal nine-course tasting, changing weekly</li>
+        <li><i class="fas fa-check"></i> Sommelier-led pairings from our 240-label cellar</li>
+        <li><i class="fas fa-check"></i> Vegetarian &amp; vegan summit menu available</li>
+        <li><i class="fas fa-check"></i> Dietary notes taken at reservation</li>
+      </ul>
+      <a href="#visit" class="btn btn-dark" style="margin-top:22px"><i class="fas fa-utensils"></i> Reserve the Chef's Table</a>
+    </div>
+  </div>
+</section>
+
+<section id="experiences">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Experiences</span>
+      <h2>Beyond the table</h2>
+      <p>Evenings at Le Sommet are theatre. Choose your act.</p>
+    </div>
+    <div class="exp-grid">
+      <div class="exp"><i class="fas fa-wine-glass-alt"></i><h4>Cellar Tasting</h4><p>A guided flight of six wines in our volcanic-stone cellar, hosted by our head sommelier.</p><span class="price">From 38,000 RWF</span></div>
+      <div class="exp"><i class="fas fa-fire"></i><h4>Chef's Counter</h4><p>Six seats facing the open fire. Watch every course built meters from your glass.</p><span class="price">From 65,000 RWF</span></div>
+      <div class="exp"><i class="fas fa-champagne-glasses"></i><h4>Private Salon</h4><p>A dedicated room for 8–20 guests with its own service brigade and menu design.</p><span class="price">On request</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="container">
+    <blockquote>“The finest dinner service in East Africa — a mountain of a meal in every sense.”</blockquote>
+    <cite>— East Africa Dining Awards 2025</cite>
+  </div>
+</section>
+
+<section class="cta" id="visit">
+  <div class="container">
+    <h2>Your table is waiting</h2>
+    <p>Open Wed – Sun · 18:00 till late · KN 41 Kiyovu Heights, Kigali · +250 788 000 000</p>
+    <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20a%20table%20at%20Le%20Sommet." target="_blank" rel="noopener" class="btn btn-dark"><i class="fab fa-whatsapp"></i> Reserve via WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:block;margin-bottom:14px;color:var(--ivory)">LE <span>SOMMET</span></a>
+        <p>Hilltop fine dining above Kigali. One seating nightly, written by the season and cooked over fire.</p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="#menu">Tasting Menu</a></li><li><a href="#experiences">Experiences</a></li><li><a href="#visit">Reservations</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>+250 788 000 000</li><li>hello@lesommet.rw</li><li>KN 41 Kiyovu, Kigali</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Le Sommet (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Imigongo Threads | Made-in-Rwanda Fashion Store — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live fashion e-commerce demo by 1000 Hills Group — lookbook shop, kitenge &amp; imigongo prints, mobile money checkout template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bone:#F4F1EC;--ink:#141210;--terra:#C4472B;--sand:#E8DFD2;--muted:#8A8378;--line:#E0D9CE;--radius:4px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bone);color:var(--ink);line-height:1.65;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.grotesk{font-family:'Space Grotesk',sans-serif}
+.container{width:min(1160px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(244,241,236,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0;gap:20px}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:-.5px}
+.brand b{color:var(--terra)}
+.nav-links{display:flex;gap:26px;font-size:.86rem;font-weight:600}
+.nav-links a:hover{color:var(--terra)}
+.nav-icons{display:flex;gap:18px;font-size:1rem}
+.nav-icons .cart-n{position:relative}
+.nav-icons .cart-n::after{content:'3';position:absolute;top:-7px;right:-9px;background:var(--terra);color:#fff;font-size:.6rem;font-weight:800;width:16px;height:16px;border-radius:50%;display:grid;place-items:center}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.85rem;font-weight:700;transition:.3s;border-radius:var(--radius)}
+.btn-ink{background:var(--ink);color:var(--bone)}
+.btn-ink:hover{background:var(--terra);transform:translateY(-2px)}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:#A93A21;transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--ink)}.btn-line:hover{background:var(--ink);color:var(--bone)}
+/* HERO — editorial split */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px 6% 70px 0}
+.hero-copy .kicker{font-size:.74rem;letter-spacing:4px;text-transform:uppercase;color:var(--terra);font-weight:700}
+.hero h1{font-size:clamp(2.7rem,5.4vw,4.4rem);font-weight:700;line-height:1.02;letter-spacing:-2px;margin:18px 0}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.hero p{color:var(--muted);max-width:44ch;margin-bottom:30px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-art{position:relative;background:var(--sand);overflow:hidden;display:grid;place-items:center}
+.hero-art::before{content:'';position:absolute;inset:0;background:
+ repeating-linear-gradient(45deg,rgba(196,71,43,.06) 0 14px,transparent 14px 28px),
+ repeating-linear-gradient(-45deg,rgba(20,18,16,.05) 0 14px,transparent 14px 28px)}
+.hero-model{position:relative;z-index:2;width:min(330px,72%);aspect-ratio:3/4;background:linear-gradient(165deg,#2A2622,#4A4038 55%,#2A2622);border-radius:8px;display:grid;place-items:center;box-shadow:26px 26px 0 var(--terra)}
+.hero-model i{font-size:6rem;color:var(--sand)}
+.collection-tag{position:absolute;z-index:3;background:#fff;padding:12px 20px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.85rem;box-shadow:0 18px 40px rgba(0,0,0,.16)}
+.ct1{top:9%;right:8%}.ct2{bottom:12%;left:8%;box-shadow:-18px 18px 40px rgba(0,0,0,.16)}
+/* marquee */
+.marquee{background:var(--ink);color:var(--bone);overflow:hidden;white-space:nowrap;padding:12px 0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:2px;text-transform:uppercase}
+.marquee-track{display:inline-block;animation:mq 22s linear infinite}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee i{color:var(--terra);margin:0 22px}
+/* shop */
+section{padding:88px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.8rem,3.8vw,2.6rem);font-weight:700;letter-spacing:-1px;margin-top:8px}
+.sec-head .kicker2{color:var(--terra);font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.prod{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s;position:relative}
+.prod:hover{transform:translateY(-6px);box-shadow:0 26px 50px rgba(20,18,16,.14)}
+.prod-visual{aspect-ratio:1/1.12;display:grid;place-items:center;font-size:3rem;color:rgba(255,255,255,.85);position:relative}
+.pv1{background:linear-gradient(150deg,#C4472B,#7E2413)}
+.pv2{background:linear-gradient(150deg,#20303B,#0E1720)}
+.pv3{background:linear-gradient(150deg,#D9A441,#946412)}
+.pv4{background:linear-gradient(150deg,#5F7052,#333F2A)}
+.pv5{background:linear-gradient(150deg,#7E5BA6,#41315C)}
+.pv6{background:linear-gradient(150deg,#2A2622,#4A4038)}
+.pv7{background:linear-gradient(150deg,#3E7C8A,#1D4048)}
+.pv8{background:linear-gradient(150deg,#B78A5E,#6E4A2A)}
+.badge{position:absolute;top:12px;left:12px;font-size:.64rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 11px;border-radius:3px;background:var(--ink);color:#fff}
+.badge.sale{background:var(--terra)}
+.prod-body{padding:16px}
+.prod h4{font-size:.92rem;font-weight:600;margin-bottom:5px}
+.prod .cat{font-size:.72rem;color:var(--muted);display:block;margin-bottom:9px}
+.prod .row{display:flex;justify-content:space-between;align-items:center}
+.prod .price{font-weight:800;font-size:.95rem}
+.prod .price s{color:var(--muted);font-weight:400;font-size:.78rem;margin-right:6px}
+.prod .add{width:34px;height:34px;border-radius:3px;background:var(--bone);border:1px solid var(--line);display:grid;place-items:center;font-size:.8rem;transition:.3s}
+.prod .add:hover{background:var(--terra);color:#fff;border-color:var(--terra)}
+/* category strip */
+.cats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+.cat-chip{padding:10px 22px;border:1px solid var(--line);background:#fff;border-radius:40px;font-size:.82rem;font-weight:600;transition:.3s}
+.cat-chip:hover,.cat-chip.on{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+/* promise band */
+.promise{background:var(--sand)}
+.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.promise i{font-size:1.5rem;color:var(--terra);margin-bottom:12px;display:block}
+.promise h4{font-family:'Space Grotesk',sans-serif;font-size:1rem;margin-bottom:6px}
+.promise p{font-size:.84rem;color:var(--muted)}
+/* lookbook */
+.lookbook{background:var(--ink);color:var(--bone)}
+.look-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+.look{border-radius:6px;min-height:250px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:22px;font-family:'Space Grotesk',sans-serif;font-weight:600}
+.look span{position:relative;z-index:2;font-size:.95rem}
+.look::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.5))}
+.lk1{background:linear-gradient(140deg,#C4472B,#5E1F10)}
+.lk2{background:linear-gradient(140deg,#20303B,#0D151E)}
+.lk3{background:linear-gradient(140deg,#5F7052,#2C3626)}
+/* newsletter */
+.news{background:var(--sand);text-align:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.news h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:700;letter-spacing:-1px;margin-bottom:10px}
+.news p{color:var(--muted);margin-bottom:26px}
+.news-form{display:flex;gap:10px;max-width:460px;margin:0 auto}
+.news-form input{flex:1;padding:14px 18px;border:1px solid var(--line);border-radius:4px;font-family:inherit;font-size:.9rem;background:#fff;outline:none}
+footer{background:var(--ink);color:#B7AFA2;padding:56px 0 30px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:var(--bone);font-family:'Space Grotesk',sans-serif;margin-bottom:14px}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--terra)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.09);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:var(--terra)}
+@media(max-width:1000px){.shop-grid{grid-template-columns:repeat(2,1fr)}.look-grid,.f-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:860px){.hero{grid-template-columns:1fr}.hero-copy{padding:60px 0}.hero-art{min-height:340px}.nav-links{display:none}}
+@media(max-width:560px){.shop-grid{grid-template-columns:1fr 1fr;gap:14px}.f-grid{grid-template-columns:1fr}.look-grid{grid-template-columns:1fr}.news-form{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Imigongo%20Threads%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand">IMIGONGO<b>·</b>THREADS</a>
+    <nav class="nav-links"><a href="#shop">New In</a><a href="#shop">Women</a><a href="#shop">Men</a><a href="#look">Lookbook</a><a href="#footer">Contact</a></nav>
+    <div class="nav-icons"><a href="#" aria-label="Search"><i class="fas fa-magnifying-glass"></i></a><a href="#" class="cart-n" aria-label="Cart"><i class="fas fa-bag-shopping"></i></a></div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <span class="kicker">Drop 07 · Volcanoes Collection</span>
+    <h1>Wear the <span class="outline">hills</span>.<br/>Carry the culture.</h1>
+    <p>Contemporary cuts in kitenge, imigongo prints and organic Rwandan cotton — cut and sewn in Kigali, worn everywhere.</p>
+    <div class="hero-btns">
+      <a href="#shop" class="btn btn-ink">Shop New In <i class="fas fa-arrow-right"></i></a>
+      <a href="#look" class="btn btn-line">View Lookbook</a>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="hero-model"><i class="fas fa-shirt"></i></div>
+    <div class="collection-tag ct1">Kitengo Wrap — $68</div>
+    <div class="collection-tag ct2">Umurage Trench — $120</div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <i class="fas fa-star"></i> Free delivery in Kigali over $50 <i class="fas fa-star"></i> MoMo · Airtel Money · Visa <i class="fas fa-star"></i> Made in Rwanda <i class="fas fa-star"></i> Free delivery in Kigali over $50 <i class="fas fa-star"></i> MoMo · Airtel Money · Visa <i class="fas fa-star"></i> Made in Rwanda <i class="fas fa-star"></i> Free delivery in Kigali over $50 <i class="fas fa-star"></i> MoMo · Airtel Money · Visa <i class="fas fa-star"></i> Made in Rwanda
+  </div>
+</div>
+
+<section id="shop">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">Fresh Off The Machine</span>
+        <h2>New this week</h2>
+      </div>
+      <div class="cats" style="margin:0">
+        <button class="cat-chip on">All</button><button class="cat-chip">Dresses</button><button class="cat-chip">Outerwear</button><button class="cat-chip">Accessories</button>
+      </div>
+    </div>
+    <div class="shop-grid">
+      <div class="prod">
+        <div class="prod-visual pv1"><i class="fas fa-vest"></i><span class="badge sale">-20%</span></div>
+        <div class="prod-body"><h4>Kitenge Wrap Dress</h4><span class="cat">Women · Dresses</span><div class="row"><span class="price"><s>$85</s>$68</span><button class="add"><i class="fas fa-plus"></i></button></div></div>
+      </div>
+      <div class="prod">
+        <div class="prod-visual pv2"><i class="fas fa-user-tie"></i></div>
+        <div class="prod-body"><h4>Kivu Structured Blazer</h4><span class="cat">Men · Tailoring</span><div class="row"><span class="price">$95</span><button class="add"><i class="fas fa-plus"></i></button></div></div>
+      </div>
+      <div class="prod">
+        <div class="prod-visual pv3"><i class="fas fa-bag-shopping"></i><span class="badge">Bestseller</span></div>
+        <div class="prod-body"><h4>Imigongo Tote</h4><span class="cat">Accessories · Bags</span><div class="row"><span class="price">$32</span><button class="add"><i class="fas fa-plus"></i></button></div></div>
+      </div>
+      <div class="prod">
+        <div class="prod-visual pv4"><i class="fas fa-hat-cowboy"></i></div>
+        <div class="prod-body"><h4>Hills Bucket Hat</h4><span class="cat">Accessories · Hats</span><div class="row"><span class="price">$18</span><button class="add"><i class="fas fa-plus"></i></button></div></div>
+      </div>
+      <div class="prod">
+        <div class="prod-visual pv5"><i class="fas fa-shirt"></i></div>
+        <div class="prod-body"><h4>Amasaro Oversized Tee</h4><span class="cat">Unisex · Tees</span><div class="row"><span class="price">$24</span><button class="add"><i class="fas fa-plus"></i></button></div></div>
+      </div>
+      <div class="prod">
+        <div class="prod-visual pv6"><i class="fas fa-mitten"></i></div>
+        <div class="prod-body"><h4>Umurage Trench Coat</h4><span class="cat">Women · Outerwear</span><div class="row"><span class="price">$120</span><button class="add"><i class="fas fa-plus"></i></button></div></div>
+      </div>
+      <div class="prod">
+        <div class="prod-visual pv7"><i class="fas fa-shoe-prints"></i><span class="badge sale">-30%</span></div>
+        <div class="prod-body"><h4>Trail Sneakers</h4><span class="cat">Unisex · Footwear</span><div class="row"><span class="price"><s>$70</s>$49</span><button class="add"><i class="fas fa-plus"></i></button></div></div>
+      </div>
+      <div class="prod">
+        <div class="prod-visual pv8"><i class="fas fa-gem"></i></div>
+        <div class="prod-body"><h4>Agaseke Bead Earrings</h4><span class="cat">Accessories · Jewelry</span><div class="row"><span class="price">$14</span><button class="add"><i class="fas fa-plus"></i></button></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lookbook" id="look">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2" style="color:var(--terra)">The Lookbook</span>
+        <h2 style="color:var(--bone)">Drop 07 · Volcanoes</h2>
+      </div>
+      <a href="#shop" class="btn btn-terra">Shop the drop</a>
+    </div>
+    <div class="look-grid">
+      <div class="look lk1"><span>Look 01 — Kilala at Dusk</span></div>
+      <div class="look lk2"><span>Look 02 — Muhabura Slate</span></div>
+      <div class="look lk3"><span>Look 03 — Gishwati Green</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="promise">
+  <div class="container promise-grid">
+    <div><i class="fas fa-truck-fast"></i><h4>Kigali same-day</h4><p>Order before 2pm, wear it tonight. Nationwide in 48h.</p></div>
+    <div><i class="fas fa-mobile-screen"></i><h4>Pay your way</h4><p>MTN MoMo, Airtel Money, cards or cash on delivery.</p></div>
+    <div><i class="fas fa-rotate-left"></i><h4>14-day swaps</h4><p>Wrong size? We collect it and bring the right one.</p></div>
+  </div>
+</section>
+
+<section class="news">
+  <div class="container">
+    <h2>Get 10% off your first order</h2>
+    <p>Join the list — drops, restocks and studio sales, no spam.</p>
+    <form class="news-form" onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-weight:700;color:var(--terra)\'>You\'re in! Check your inbox.</p>'">
+      <input type="email" placeholder="your@email.com" required/>
+      <button class="btn btn-terra" type="submit">Join</button>
+    </form>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:block;margin-bottom:14px;color:var(--bone)">IMIGONGO<b style="color:var(--terra)">·</b>THREADS</a>
+        <p>Contemporary Rwandan fashion, cut and sewn in our Kigali studio. Culture you can wear.</p>
+      </div>
+      <div><h5>Shop</h5><ul><li><a href="#shop">New In</a></li><li><a href="#look">Lookbook</a></li><li><a href="#shop">Sale</a></li></ul></div>
+      <div><h5>Help</h5><ul><li>Shipping &amp; Returns</li><li>Size Guide</li><li>Track Order</li></ul></div>
+      <div><h5>Studio</h5><ul><li>KG 11 Ave, Kimihurura</li><li>+250 788 000 000</li><li>shop@imigongothreads.rw</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Imigongo Threads (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

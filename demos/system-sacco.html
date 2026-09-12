@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SACCOCore | Microfinance &amp; SACCO Management System — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live SACCO/microfinance management system demo by 1000 Hills Group — member accounts, savings, loans, repayments and BNR reporting."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bg:#F2F4FA;--side:#131A3A;--side2:#182045;--gold-p:#D4A94E;--gold-l:#EAC97E;--navy-b:#26307A;--card:#fff;--ink:#182036;--muted:#75809E;--line:#E4E8F4;--green:#2FBF71;--red:#E8506E;--blue:#4E7CFF;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:14px;padding-top:46px}
+a{text-decoration:none;color:inherit}ul{list-style:none}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.app{display:flex;min-height:calc(100vh - 46px)}
+.sidebar{width:230px;background:var(--side);color:#C3CADE;display:flex;flex-direction:column;position:sticky;top:46px;height:calc(100vh - 46px)}
+.s-logo{display:flex;align-items:center;gap:10px;padding:18px 16px;border-bottom:1px solid rgba(255,255,255,.08)}
+.s-logo .ic{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--gold-p),var(--gold-l));display:grid;place-items:center;color:#2A1F04;font-size:.9rem}
+.s-logo h4{color:#fff;font-size:.95rem}
+.s-logo small{display:block;font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:#8B96C4;font-weight:600}
+.s-nav{padding:14px 10px;flex:1;overflow-y:auto}
+.s-nav .label{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:#67739F;font-weight:700;padding:12px 10px 6px}
+.s-nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:.84rem;font-weight:500;color:#C3CADE;margin-bottom:2px;transition:.25s}
+.s-nav a i{width:18px;text-align:center;font-size:.9rem}
+.s-nav a:hover{background:rgba(255,255,255,.07);color:#fff}
+.s-nav a.on{background:linear-gradient(90deg,var(--navy-b),rgba(78,124,255,.16));color:#fff;box-shadow:0 6px 18px rgba(78,124,255,.25)}
+.s-nav a .n-badge{margin-left:auto;background:var(--red);color:#fff;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:20px}
+.s-user{padding:14px;display:flex;gap:11px;align-items:center;border-top:1px solid rgba(255,255,255,.08)}
+.s-user .av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold-p),var(--gold-l));display:grid;place-items:center;color:#2A1F04;font-weight:800;font-size:.78rem}
+.s-user h6{color:#fff;font-size:.8rem}.s-user span{font-size:.68rem;color:#8B96C4}
+.main{flex:1;min-width:0}
+.topbar{background:var(--card);border-bottom:1px solid var(--line);padding:12px 24px;display:flex;align-items:center;gap:14px;position:sticky;top:46px;z-index:50;flex-wrap:wrap}
+.topbar h3{font-size:1.05rem}
+.bnr-chip{font-size:.68rem;font-weight:800;background:rgba(212,169,78,.14);color:#8A6A1E;padding:5px 12px;border-radius:20px}
+.tb-search{margin-left:auto;display:flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--line);border-radius:30px;padding:8px 16px;min-width:210px}
+.tb-search i{color:var(--muted);font-size:.8rem}
+.tb-search input{border:0;background:none;outline:none;font-family:inherit;font-size:.8rem;width:100%;color:var(--ink)}
+.content{padding:22px 24px}
+.page-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.page-head p{font-size:.82rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;font-size:.8rem;font-weight:700;transition:.25s;border:0}
+.btn-navy{background:var(--navy-b);color:#fff}
+.btn-navy:hover{background:#1E2660}
+.btn-gold{background:var(--gold-p);color:#2A1F04}
+.btn-gold:hover{background:var(--gold-l)}
+.btn-ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.k1::before{background:var(--gold-p)}.k2::before{background:var(--green)}.k3::before{background:var(--blue)}.k4::before{background:var(--red)}
+.kpi .row{display:flex;justify-content:space-between;align-items:center}
+.kpi .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:.9rem}
+.k1 .ic{background:rgba(212,169,78,.14);color:#8A6A1E}
+.k2 .ic{background:rgba(47,191,113,.1);color:var(--green)}
+.k3 .ic{background:rgba(78,124,255,.1);color:var(--blue)}
+.k4 .ic{background:rgba(232,80,110,.1);color:var(--red)}
+.kpi strong{font-size:1.5rem;display:block;margin-top:10px;line-height:1.1}
+.kpi span{font-size:.72rem;color:var(--muted);font-weight:600}
+.kpi .delta{font-size:.68rem;font-weight:800}
+.up{color:var(--green)}.down{color:var(--red)}
+.panels{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;margin-bottom:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.panel-head h4{font-size:.92rem}
+.panel-head a{font-size:.72rem;color:var(--blue);font-weight:700}
+/* portfolio chart */
+.pf{height:170px;display:flex;align-items:flex-end;gap:9px;padding-top:10px}
+.pfc{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px}
+.pfc .bar{width:100%;border-radius:6px 6px 3px 3px;background:linear-gradient(180deg,var(--gold-l),var(--gold-p))}
+.pfc span{font-size:.6rem;color:var(--muted);font-weight:600}
+.pfc.split .bar{background:linear-gradient(180deg,#9DB4FF,var(--blue))}
+/* loans pending */
+.approvals{display:grid;gap:9px}
+.ap{display:flex;gap:11px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.ap .av{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:.66rem;font-weight:800;color:#fff;flex:none}
+.v1{background:var(--gold-p)}.v2{background:var(--blue)}.v3{background:var(--green)}.v4{background:var(--red)}
+.ap h6{font-size:.8rem}
+.ap small{display:block;font-size:.66rem;color:var(--muted)}
+.ap .btns{margin-left:auto;display:flex;gap:6px}
+.ap .btns span{width:27px;height:27px;border-radius:8px;display:grid;place-items:center;font-size:.66rem;cursor:pointer}
+.b-ok{background:rgba(47,191,113,.12);color:var(--green)}
+.b-no{background:rgba(232,80,110,.1);color:var(--red)}
+/* repayments table */
+.table-panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.table-panel .panel-head{padding:16px 18px;margin:0;border-bottom:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th{text-align:left;font-size:.64rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:11px 18px;background:#F8F9FD;border-bottom:1px solid var(--line)}
+td{padding:12px 18px;border-bottom:1px solid var(--line)}
+tr:last-child td{border:0}
+tbody tr:hover{background:#F8F9FD}
+.pill{font-size:.62rem;font-weight:800;padding:4px 11px;border-radius:20px;white-space:nowrap}
+.pl-ok{background:rgba(47,191,113,.12);color:var(--green)}
+.pl-due{background:rgba(212,169,78,.16);color:#8A6A1E}
+.pl-late{background:rgba(232,80,110,.1);color:var(--red)}
+.mini-bar{width:84px;height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.mini-bar i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,var(--gold-l),var(--gold-p))}
+.mini-bar i.b2{background:linear-gradient(90deg,#9DB4FF,var(--blue))}
+.sys-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:18px 4px 4px;font-size:.7rem;color:var(--muted)}
+.sys-foot a{color:var(--blue);font-weight:700}
+@media(max-width:1100px){.kpis{grid-template-columns:1fr 1fr}.panels{grid-template-columns:1fr}}
+@media(max-width:860px){.sidebar{display:none}.tb-search{display:none}}
+@media(max-width:560px){.kpis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live System Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20the%20SACCOCore%20microfinance%20system." target="_blank" rel="noopener">Get this system</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="s-logo">
+      <span class="ic"><i class="fas fa-piggy-bank"></i></span>
+      <h4>SACCOCore<small>Microfinance Suite</small></h4>
+    </div>
+    <nav class="s-nav">
+      <p class="label">Members</p>
+      <a href="#" class="on"><i class="fas fa-gauge-high"></i> Dashboard</a>
+      <a href="#"><i class="fas fa-users"></i> Members <span class="n-badge">6</span></a>
+      <a href="#"><i class="fas fa-wallet"></i> Savings Accounts</a>
+      <a href="#"><i class="fas fa-hand-holding-dollar"></i> Loans</a>
+      <p class="label">Transactions</p>
+      <a href="#"><i class="fas fa-money-bill-transfer"></i> Deposits &amp; Withdrawals</a>
+      <a href="#"><i class="fas fa-calendar-check"></i> Repayments Due</a>
+      <a href="#"><i class="fas fa-receipt"></i> Fines &amp; Interest</a>
+      <p class="label">Governance</p>
+      <a href="#"><i class="fas fa-landmark-flag"></i> BNR Reports</a>
+      <a href="#"><i class="fas fa-chart-pie"></i> Portfolio Health</a>
+      <a href="#"><i class="fas fa-gear"></i> Settings</a>
+    </nav>
+    <div class="s-user">
+      <span class="av">JM</span>
+      <div><h6>Josiane Mukandayisenga</h6><span>Branch Manager · Masaka</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h3>SACCO Dashboard</h3>
+      <span class="bnr-chip">BNR category A · licensed</span>
+      <div class="tb-search"><i class="fas fa-magnifying-glass"></i><input placeholder="Search member, account, loan…"/></div>
+      <span class="tb-ic" style="width:38px;height:38px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);background:#fff"><i class="far fa-bell"></i></span>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div><p>Tuesday, September 12 · Masaka branch · 1,842 members · fiscal year Jul–Jun</p></div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-ghost"><i class="fas fa-file-export"></i> BNR Return</button>
+          <button class="btn btn-gold"><i class="fas fa-user-plus"></i> Register Member</button>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi k1"><div class="row"><span class="ic"><i class="fas fa-sack-dollar"></i></span><span class="delta up">+6.8%</span></div><strong>482M</strong><span>Total savings (RWF)</span></div>
+        <div class="kpi k2"><div class="row"><span class="ic"><i class="fas fa-hand-holding-dollar"></i></span><span class="delta up">+4.2%</span></div><strong>366M</strong><span>Loans disbursed YTD</span></div>
+        <div class="kpi k3"><div class="row"><span class="ic"><i class="fas fa-heart-pulse"></i></span><span class="delta up">+1.1%</span></div><strong>94.2%</strong><span>Portfolio at 0 arrears</span></div>
+        <div class="kpi k4"><div class="row"><span class="ic"><i class="fas fa-user-clock"></i></span><span class="delta down">review</span></div><strong>6</strong><span>Loans pending approval</span></div>
+      </div>
+
+      <div class="panels">
+        <div class="panel">
+          <div class="panel-head"><h4>Portfolio — Savings vs Loans</h4><a href="#">Full analytics →</a></div>
+          <div class="pf">
+            <div class="pfc"><div class="bar" style="height:38%"></div><span>Q1</span></div>
+            <div class="pfc split"><div class="bar" style="height:30%"></div><span>Q1</span></div>
+            <div class="pfc"><div class="bar" style="height:48%"></div><span>Q2</span></div>
+            <div class="pfc split"><div class="bar" style="height:42%"></div><span>Q2</span></div>
+            <div class="pfc"><div class="bar" style="height:62%"></div><span>Q3</span></div>
+            <div class="pfc split"><div class="bar" style="height:58%"></div><span>Q3</span></div>
+            <div class="pfc"><div class="bar" style="height:88%"></div><span>Q4</span></div>
+            <div class="pfc split"><div class="bar" style="height:74%"></div><span>Q4</span></div>
+          </div>
+          <div style="display:flex;gap:16px;margin-top:12px;font-size:.68rem;color:var(--muted);font-weight:600"><span><i class="fas fa-square" style="color:var(--gold-p);margin-right:5px"></i>Savings</span><span><i class="fas fa-square" style="color:var(--blue);margin-right:5px"></i>Loan book</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>Loan Approvals Waiting</h4><a href="#">Committee →</a></div>
+          <div class="approvals">
+            <div class="ap"><span class="av v1">DM</span><div><h6>Dative Mukamana</h6><small>Agri loan · 800,000 RWF · 12 mo</small></div><span class="btns"><span class="b-ok"><i class="fas fa-check"></i></span><span class="b-no"><i class="fas fa-xmark"></i></span></span></div>
+            <div class="ap"><span class="av v2">JN</span><div><h6>Jean Nshimiyimana</h6><small>Business loan · 2,400,000 RWF · 18 mo</small></div><span class="btns"><span class="b-ok"><i class="fas fa-check"></i></span><span class="b-no"><i class="fas fa-xmark"></i></span></span></div>
+            <div class="ap"><span class="av v3">AK</span><div><h6>Agnes Kabuye</h6><small>School fees · 300,000 RWF · 10 mo</small></div><span class="btns"><span class="b-ok"><i class="fas fa-check"></i></span><span class="b-no"><i class="fas fa-xmark"></i></span></span></div>
+            <div class="ap"><span class="av v4">PE</span><div><h6>Peter Evariste</h6><small>Emergency loan · 150,000 RWF · 6 mo</small></div><span class="btns"><span class="b-ok"><i class="fas fa-check"></i></span><span class="b-no"><i class="fas fa-xmark"></i></span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-panel">
+        <div class="panel-head"><h4>Recent Loans &amp; Repayment Health</h4><a href="#">Loan book →</a></div>
+        <table>
+          <thead><tr><th>Member</th><th>Product</th><th>Amount</th><th>Repaid</th><th>Next Due</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><b>Mukamana Dative</b><br/><small style="color:var(--muted)">MBR-1042</small></td><td>Agri input loan</td><td><b>800,000 RWF</b></td><td><div class="mini-bar"><i style="width:66%"></i></div></td><td>Oct 05</td><td><span class="pill pl-ok">ON TRACK</span></td></tr>
+            <tr><td><b>Nshimiyimana Jean</b><br/><small style="color:var(--muted)">MBR-0988</small></td><td>Business loan</td><td><b>2,400,000 RWF</b></td><td><div class="mini-bar"><i class="b2" style="width:34%"></i></div></td><td>Sep 15</td><td><span class="pill pl-due">DUE SOON</span></td></tr>
+            <tr><td><b>Kabuye Agnes</b><br/><small style="color:var(--muted)">MBR-1103</small></td><td>School fees</td><td><b>300,000 RWF</b></td><td><div class="mini-bar"><i style="width:80%"></i></div></td><td>Sep 30</td><td><span class="pill pl-ok">ON TRACK</span></td></tr>
+            <tr><td><b>Evariste Peter</b><br/><small style="color:var(--muted)">MBR-1157</small></td><td>Emergency loan</td><td><b>150,000 RWF</b></td><td><div class="mini-bar"><i class="b2" style="width:12%"></i></div></td><td><b style="color:var(--red)">Sep 02</b></td><td><span class="pill pl-late">2 DAYS LATE</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sys-foot">
+        <span>SACCOCore v4.1 — microfinance &amp; SACCO management (demo data)</span>
+        <span>System demo by <a href="../demos.html">1000 Hills Group</a> — we build yours custom</span>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

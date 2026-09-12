@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BrightSmile Dental | Gentle Dentistry, Kigali — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live dental clinic website demo by 1000 Hills Group — teeth whitening, braces, implants and online booking template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--white:#FBFEFF;--mint:#0FB5A6;--mint-d:#0B8D81;--mint-l:#E2F7F5;--navy-d:#123B45;--ink:#1E3D42;--muted:#64828A;--line:#DBEEEC;--radius:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--white);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.round{font-family:'Quicksand',sans-serif;font-weight:700}
+.container{width:min(1120px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(251,254,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Quicksand',sans-serif;font-weight:700;font-size:1.2rem}
+.brand .tooth{width:46px;height:46px;border-radius:50% 50% 46% 46%;background:linear-gradient(160deg,var(--mint),#4ED8CC);display:grid;place-items:center;color:#fff;font-size:1.1rem}
+.brand b{color:var(--mint)}
+.nav-links{display:flex;gap:26px;font-size:.86rem;font-weight:500}
+.nav-links a:hover{color:var(--mint)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.85rem;font-weight:600;border-radius:40px;transition:.3s}
+.btn-mint{background:var(--mint);color:#fff;box-shadow:0 12px 28px rgba(15,181,166,.3)}
+.btn-mint:hover{background:var(--mint-d);transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--mint);color:var(--mint)}
+.btn-line:hover{background:var(--mint);color:#fff}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(circle at 88% 22%, rgba(15,181,166,.14), transparent 40%),
+ radial-gradient(circle at 8% 80%, rgba(15,181,166,.1), transparent 40%), var(--white)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding:78px 0}
+.hero .kicker{display:inline-flex;align-items:center;gap:9px;background:var(--mint-l);color:var(--mint-d);padding:9px 20px;border-radius:40px;font-size:.76rem;font-weight:700}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4rem);line-height:1.14;margin:20px 0}
+.hero h1 .grad{background:linear-gradient(90deg,var(--mint),#4ED8CC);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:48ch;margin-bottom:30px}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap}
+.hero-mini{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
+.hero-mini div{display:flex;gap:10px;align-items:center;font-size:.82rem;font-weight:600}
+.hero-mini i{color:var(--mint);font-size:1.05rem}
+/* tooth scene */
+.smile-scene{position:relative;display:grid;place-items:center;min-height:400px}
+.bubble-wrap{width:min(330px,74%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 32% 28%,#E8FBF9,var(--mint-l) 70%);display:grid;place-items:center;position:relative}
+.tooth-big{font-size:8rem;color:#fff;filter:drop-shadow(0 20px 30px rgba(15,181,166,.35))}
+.tooth-big i{background:linear-gradient(160deg,var(--mint),#7BE8DE);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bub{position:absolute;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 18px;font-size:.78rem;font-weight:600;display:flex;gap:10px;align-items:center;box-shadow:0 16px 36px rgba(15,181,166,.14);animation:bob 4.5s ease-in-out infinite}
+.bub i{color:var(--mint)}
+.b1{top:6%;left:-4%}.b2{bottom:10%;right:-6%;animation-delay:1.4s}.b3{top:44%;left:-12%;animation-delay:2.6s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+/* sparkle band */
+.sparkle{background:linear-gradient(90deg,var(--mint),#4ED8CC);color:#fff;padding:16px 0;text-align:center;font-weight:600;font-size:.9rem}
+.sparkle b{background:rgba(255,255,255,.2);padding:3px 12px;border-radius:20px;margin:0 8px}
+/* services */
+section{padding:84px 0}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 50px}
+.sec-head .kicker2{color:var(--mint);font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;font-family:'Quicksand',sans-serif}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.7rem);margin:10px 0}
+.sec-head p{color:var(--muted)}
+.soft{background:linear-gradient(180deg,var(--mint-l),var(--white));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svcs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;transition:.35s}
+.svc:hover{transform:translateY(-7px);box-shadow:0 30px 60px rgba(15,181,166,.16)}
+.svc .ic{width:58px;height:58px;border-radius:18px;background:var(--mint-l);color:var(--mint);display:grid;place-items:center;font-size:1.35rem;margin-bottom:18px}
+.svc h4{font-size:1.05rem;margin-bottom:8px}
+.svc p{font-size:.84rem;color:var(--muted);margin-bottom:16px}
+.svc .price{font-family:'Quicksand',sans-serif;font-weight:700;color:var(--mint-d);font-size:.95rem;border-top:1px dashed var(--line);padding-top:14px;display:flex;justify-content:space-between;align-items:center}
+/* smiles gallery */
+.smiles{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.smile-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px;text-align:center}
+.smile-card .stars{color:#F5B940;font-size:.8rem;letter-spacing:2px;margin-bottom:10px}
+.smile-card p{font-size:.82rem;color:var(--muted);font-style:italic;margin-bottom:14px}
+.smile-card h5{font-family:'Quicksand',sans-serif;font-size:.9rem}
+.smile-card span{font-size:.7rem;color:var(--muted)}
+/* first visit */
+.visit{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.visit-grid h2{font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:16px}
+.visit-grid p{color:var(--muted);margin-bottom:22px}
+.check-list li{display:flex;gap:14px;margin-bottom:16px;font-size:.92rem}
+.check-list i{width:30px;height:30px;border-radius:50%;background:var(--mint-l);color:var(--mint);display:grid;place-items:center;font-size:.78rem;flex:none;margin-top:2px}
+.offer-card{background:linear-gradient(150deg,var(--navy-d),#0C4A55);color:#fff;border-radius:24px;padding:40px;text-align:center;position:relative;overflow:hidden}
+.offer-card::before{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;background:rgba(78,216,204,.14)}
+.offer-card .tag{display:inline-block;background:rgba(255,255,255,.14);border-radius:30px;padding:6px 18px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.offer-card h3{font-size:1.5rem;margin-bottom:10px}
+.offer-card p{color:#BFE3E0;font-size:.88rem;margin-bottom:20px}
+.offer-card .price{font-family:'Quicksand',sans-serif;font-size:2.4rem;font-weight:700}
+.offer-card .price s{font-size:1.1rem;opacity:.6;margin-right:10px}
+/* book band */
+.book-band{background:linear-gradient(135deg,var(--mint),var(--mint-d));color:#fff;text-align:center;border-radius:24px;padding:56px 30px}
+.book-band h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:12px}
+.book-band p{opacity:.9;margin-bottom:26px}
+footer{background:var(--navy-d);color:#A8CBCF;padding:56px 0 30px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:#fff;margin-bottom:14px;font-family:'Quicksand',sans-serif}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:#7BE8DE}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:#7BE8DE}
+@media(max-width:900px){.hero-grid,.visit-grid,.f-grid{grid-template-columns:1fr}.svcs{grid-template-columns:1fr}.smiles{grid-template-columns:1fr 1fr}.nav-links{display:none}.smile-scene{min-height:320px}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20BrightSmile%20Dental%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="tooth"><i class="fas fa-tooth"></i></span>Bright<b>Smile</b> Dental</a>
+    <nav class="nav-links"><a href="#services">Services</a><a href="#smiles">Smiles</a><a href="#visit">First Visit</a><a href="#book">Book</a></nav>
+    <a href="#book" class="btn btn-mint"><i class="fas fa-calendar-check"></i> Book a Cleaning</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker"><i class="fas fa-heart"></i> Painless, promise — gentle dentistry</span>
+      <h1>Love your <span class="grad">smile</span> again.</h1>
+      <p>Modern, judgement-free dental care in Kigali. Cleanings, whitening, braces and implants — with music, Netflix and numbing gel that actually works.</p>
+      <div class="hero-btns">
+        <a href="#book" class="btn btn-mint"><i class="fas fa-tooth"></i> Book Online</a>
+        <a href="#services" class="btn btn-line">See Services &amp; Prices</a>
+      </div>
+      <div class="hero-mini">
+        <div><i class="fas fa-circle-check"></i> Open Saturdays</div>
+        <div><i class="fas fa-circle-check"></i> Insurance accepted</div>
+        <div><i class="fas fa-circle-check"></i> Kids welcome</div>
+      </div>
+    </div>
+    <div class="smile-scene">
+      <div class="bubble-wrap"><span class="tooth-big"><i class="fas fa-tooth"></i></span></div>
+      <div class="bub b1"><i class="fas fa-wand-magic-sparkles"></i> Whitening in 45 min</div>
+      <div class="bub b2"><i class="fas fa-shield-heart"></i> Sterile · single-use</div>
+      <div class="bub b3"><i class="fas fa-face-smile-beam"></i> 12,000+ happy smiles</div>
+    </div>
+  </div>
+</section>
+
+<div class="sparkle">
+  <i class="fas fa-star"></i> NEW PATIENT SPECIAL<b>Cleaning + Polishing 15,000 RWF</b> this month only <i class="fas fa-star"></i>
+</div>
+
+<section class="soft" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Our Services</span>
+      <h2>Everything your teeth need</h2>
+      <p>Honest prices, quoted before we start. No surprises, ever.</p>
+    </div>
+    <div class="svcs">
+      <div class="svc">
+        <div class="ic"><i class="fas fa-broom"></i></div>
+        <h4>Cleaning &amp; Polishing</h4>
+        <p>Deep clean, plaque removal and fluoride polish — the 45-minute refresh.</p>
+        <div class="price"><span>15,000 RWF</span><a href="#book" class="btn btn-line" style="padding:8px 16px;font-size:.75rem">Book</a></div>
+      </div>
+      <div class="svc">
+        <div class="ic"><i class="fas fa-wand-magic-sparkles"></i></div>
+        <h4>Laser Whitening</h4>
+        <p>Up to 8 shades brighter in one visit. Safe for enamel, results guaranteed.</p>
+        <div class="price"><span>80,000 RWF</span><a href="#book" class="btn btn-line" style="padding:8px 16px;font-size:.75rem">Book</a></div>
+      </div>
+      <div class="svc">
+        <div class="ic"><i class="fas fa-teeth-open"></i></div>
+        <h4>Braces &amp; Aligners</h4>
+        <p>Metal braces or invisible aligners with monthly follow-up included.</p>
+        <div class="price"><span>From 900,000 RWF</span><a href="#book" class="btn btn-line" style="padding:8px 16px;font-size:.75rem">Book</a></div>
+      </div>
+      <div class="svc">
+        <div class="ic"><i class="fas fa-syringe"></i></div>
+        <h4>Fillings &amp; Root Canal</h4>
+        <p>Tooth-coloured fillings and gentle root canals — most done in one visit.</p>
+        <div class="price"><span>From 25,000 RWF</span><a href="#book" class="btn btn-line" style="padding:8px 16px;font-size:.75rem">Book</a></div>
+      </div>
+      <div class="svc">
+        <div class="ic"><i class="fas fa-crown"></i></div>
+        <h4>Crowns &amp; Implants</h4>
+        <p>Porcelain crowns and titanium implants that look and bite like natural teeth.</p>
+        <div class="price"><span>From 180,000 RWF</span><a href="#book" class="btn btn-line" style="padding:8px 16px;font-size:.75rem">Book</a></div>
+      </div>
+      <div class="svc">
+        <div class="ic"><i class="fas fa-child"></i></div>
+        <h4>Kids' Dentistry</h4>
+        <p>Fun first visits, sealants and fluoride — building brave smiles early.</p>
+        <div class="price"><span>10,000 RWF</span><a href="#book" class="btn btn-line" style="padding:8px 16px;font-size:.75rem">Book</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="smiles">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Real Patients</span>
+      <h2>Smiles that speak</h2>
+    </div>
+    <div class="smiles">
+      <div class="smile-card"><div class="stars">★★★★★</div><p>“I cried — from happiness. Zero pain, and my root canal was done in one visit.”</p><h5>Alice M.</h5><span>Root canal patient</span></div>
+      <div class="smile-card"><div class="stars">★★★★★</div><p>“My wedding photos are everything because of the whitening. Worth every franc!”</p><h5>Jean-Paul K.</h5><span>Whitening patient</span></div>
+      <div class="smile-card"><div class="stars">★★★★★</div><p>“They let my son press the chair buttons. He now reminds ME about dental visits.”</p><h5>Claudine U.</h5><span>Mum of two</span></div>
+      <div class="smile-card"><div class="stars">★★★★★</div><p>“Braces for 14 months, follow-ups always on time, and the price never changed.”</p><h5>Eric N.</h5><span>Braces graduate</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="container visit-grid">
+    <div>
+      <span class="kicker2" style="color:var(--mint);font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;font-family:'Quicksand',sans-serif">First Visit</span>
+      <h2>Nervous? That's our specialty.</h2>
+      <p>Most of our patients arrived terrified. Here's exactly what happens — no lectures, no judgement, no pain.</p>
+      <ul class="check-list">
+        <li><i class="fas fa-check"></i> <span><b>Meet &amp; greet (10 min)</b> — tell us your fears, we plan around them. Stop signal agreed before anything starts.</span></li>
+        <li><i class="fas fa-check"></i> <span><b>Gentle exam &amp; X-ray (20 min)</b> — we show you everything on screen and explain in plain Kinyarwanda or English.</span></li>
+        <li><i class="fas fa-check"></i> <span><b>Honest plan &amp; quote</b> — options at different prices, you choose. Nothing happens without your yes.</span></li>
+        <li><i class="fas fa-check"></i> <span><b>Comfort menu</b> — headphones, Netflix, numbing gel, and breaks whenever you raise a hand.</span></li>
+      </ul>
+    </div>
+    <div class="offer-card">
+      <span class="tag"><i class="fas fa-gift"></i> New patient offer</span>
+      <h3>Check-up + Cleaning + X-ray</h3>
+      <p>Everything a first visit needs, bundled together:</p>
+      <div class="price"><s>35,000</s> 15,000 RWF</div>
+      <p style="margin-top:8px">Valid for first-time patients · Saturday slots available</p>
+      <a href="https://wa.me/250788695396?text=I%20want%20to%20claim%20the%20BrightSmile%20new%20patient%20offer!" target="_blank" rel="noopener" class="btn btn-mint" style="margin-top:10px"><i class="fab fa-whatsapp"></i> Claim on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="container">
+    <div class="book-band">
+      <h2>Your best smile is 60 seconds away</h2>
+      <p>Book online or on WhatsApp — choose your day, we confirm within the hour. Open Mon – Sat, 8am – 7pm.</p>
+      <a href="https://wa.me/250788695396?text=I%20want%20to%20book%20a%20dental%20appointment%20at%20BrightSmile!" target="_blank" rel="noopener" class="btn btn-line" style="border-color:#fff;color:#fff"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px;color:#fff"><span class="tooth" style="width:40px;height:40px;font-size:.95rem"><i class="fas fa-tooth"></i></span>Bright<b style="color:#7BE8DE">Smile</b> Dental</a>
+        <p>Gentle, modern dentistry in Kimihurura, Kigali. Painless promise, honest prices, smiles guaranteed.</p>
+      </div>
+      <div><h5>Clinic</h5><ul><li><a href="#services">Services</a></li><li><a href="#visit">First visit</a></li><li><a href="#book">Book online</a></li></ul></div>
+      <div><h5>Visit</h5><ul><li>KG 11 Ave, Kimihurura</li><li>Mon – Sat · 8am – 7pm</li><li>+250 788 000 000</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 BrightSmile Dental (fictional demo clinic)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

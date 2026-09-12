@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ubuntu Foundation Rwanda | Donate &amp; Change a Life — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live nonprofit website demo by 1000 Hills Group — donation campaigns, child sponsorship, impact reports and volunteer template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Karla:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--warm:#FDF8F3;--ink:#26201A;--terra:#D96C3B;--terra-d:#BC5628;--teal:#17877B;--sand:#F4E8DB;--muted:#7D7469;--line:#EADFD2;--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Karla',sans-serif;background:var(--warm);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Merriweather',serif}
+.container{width:min(1140px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(253,248,243,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Merriweather',serif;font-weight:900;font-size:1.08rem}
+.brand .hands{width:44px;height:44px;border-radius:50%;background:var(--terra);display:grid;place-items:center;color:#fff;font-size:1.05rem}
+.nav-links{display:flex;gap:24px;font-size:.88rem;font-weight:700}
+.nav-links a:hover{color:var(--terra)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.86rem;font-weight:800;border-radius:40px;transition:.3s}
+.btn-terra{background:var(--terra);color:#fff;box-shadow:0 10px 26px rgba(217,108,59,.35)}
+.btn-terra:hover{background:var(--terra-d);transform:translateY(-2px)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:#106E63;transform:translateY(-2px)}
+.btn-line{border:2px solid var(--ink)}.btn-line:hover{background:var(--ink);color:var(--warm)}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(circle at 90% 15%, rgba(217,108,59,.12), transparent 42%),
+ radial-gradient(circle at 5% 85%, rgba(23,135,123,.1), transparent 40%), var(--warm)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:80px 0}
+.tag-heart{display:inline-flex;align-items:center;gap:9px;background:var(--sand);border-radius:40px;padding:9px 20px;font-size:.78rem;font-weight:800;color:var(--terra-d)}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.1rem);font-weight:900;line-height:1.12;margin:20px 0}
+.hero h1 em{color:var(--terra);font-style:normal;position:relative}
+.hero h1 em::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:9px;background:rgba(217,108,59,.22);z-index:-1;border-radius:6px}
+.hero p{color:var(--muted);max-width:48ch;margin-bottom:30px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+/* hands visual */
+.hands-scene{position:relative;display:grid;place-items:center;min-height:400px}
+.sun-circle{width:min(340px,78%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFB88A,var(--terra) 70%);display:grid;place-items:center;position:relative;box-shadow:0 50px 90px rgba(217,108,59,.3)}
+.sun-circle i{font-size:7rem;color:rgba(255,255,255,.92)}
+.orbit{position:absolute;border:1.5px dashed rgba(217,108,59,.3);border-radius:50%}
+.o1{width:112%;height:112%;animation:spin 30s linear infinite}
+.o2{width:132%;height:132%;animation:spin 44s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.sat{position:absolute;width:54px;height:54px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:1.15rem;color:var(--terra-d);box-shadow:0 14px 30px rgba(38,32,26,.16);border:1px solid var(--line)}
+.sa1{top:2%;left:16%}.sa2{bottom:8%;right:10%}.sa3{top:38%;right:-4%}.sa4{bottom:-2%;left:6%}
+/* impact counters */
+.counters{background:var(--teal);color:#fff}
+.counter-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding:44px 0;text-align:center}
+.counter-grid strong{font-family:'Merriweather',serif;font-size:2.2rem;display:block;line-height:1.15}
+.counter-grid span{font-size:.8rem;opacity:.85;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+/* campaigns */
+section{padding:88px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 52px}
+.sec-head .kicker2{color:var(--terra);font-size:.76rem;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:900;margin:10px 0}
+.sec-head p{color:var(--muted)}
+.camps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.camp{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.35s;display:flex;flex-direction:column}
+.camp:hover{transform:translateY(-8px);box-shadow:0 30px 60px rgba(38,32,26,.14)}
+.camp-visual{height:150px;display:grid;place-items:center;color:#fff;font-size:2.4rem;position:relative}
+.ccv1{background:linear-gradient(140deg,#D96C3B,#9C4520)}
+.ccv2{background:linear-gradient(140deg,#17877B,#0C554D)}
+.ccv3{background:linear-gradient(140deg,#C99A2E,#8A6714)}
+.camp-body{padding:24px;flex:1;display:flex;flex-direction:column}
+.camp h4{font-family:'Merriweather',serif;font-size:1.08rem;margin-bottom:8px}
+.camp p{font-size:.85rem;color:var(--muted);margin-bottom:18px;flex:1}
+.pbar{height:9px;background:var(--sand);border-radius:20px;overflow:hidden;margin-bottom:9px}
+.pbar i{display:block;height:100%;border-radius:20px}
+.pb1{width:68%;background:var(--terra)}
+.pb2{width:42%;background:var(--teal)}
+.pb3{width:81%;background:#C99A2E}
+.pmeta{display:flex;justify-content:space-between;font-size:.74rem;font-weight:800;color:var(--muted);margin-bottom:16px}
+.pmeta b{color:var(--ink)}
+.camp .btn{justify-content:center;margin-top:auto;padding:11px}
+/* programs */
+.progs{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.prog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.prog{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;text-align:center;transition:.3s}
+.prog:hover{transform:translateY(-5px);box-shadow:0 22px 44px rgba(38,32,26,.1)}
+.prog i{width:56px;height:56px;border-radius:50%;background:rgba(217,108,59,.1);color:var(--terra);display:inline-grid;place-items:center;font-size:1.3rem;margin-bottom:16px}
+.prog h4{font-family:'Merriweather',serif;font-size:1rem;margin-bottom:8px}
+.prog p{font-size:.8rem;color:var(--muted)}
+/* sponsor band */
+.sponsor{background:linear-gradient(135deg,#26201A,#3A2F26);color:var(--warm);border-radius:20px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center}
+.sponsor h2{font-size:clamp(1.8rem,3.8vw,2.6rem);font-weight:900;margin-bottom:12px}
+.sponsor p{color:#CFC4B8;margin-bottom:24px}
+.sponsor-cards{display:grid;gap:14px}
+.s-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:center}
+.s-card i{font-size:1.3rem;color:#F0A868;width:44px;height:44px;border-radius:10px;background:rgba(240,168,104,.14);display:grid;place-items:center;flex:none}
+.s-card h5{font-size:.92rem}.s-card span{font-size:.76rem;color:#CFC4B8}
+/* transparency */
+.trans{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trans-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.donut{width:250px;height:250px;border-radius:50%;background:conic-gradient(var(--terra) 0 72%,var(--teal) 72% 88%,#C99A2E 88% 100%);display:grid;place-items:center;margin:0 auto}
+.donut::after{content:'87%\Aprograms';white-space:pre;text-align:center;width:64%;height:64%;background:#fff;border-radius:50%;display:grid;place-items:center;font-family:'Merriweather',serif;font-weight:900;font-size:1.5rem;color:var(--ink)}
+.legend{display:grid;gap:14px}
+.legend .lg{display:flex;gap:12px;align-items:center;font-size:.9rem;font-weight:700}
+.legend .sw{width:16px;height:16px;border-radius:5px;flex:none}
+footer{background:#241E18;color:#B8AC9F;padding:56px 0 30px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:var(--warm);margin-bottom:14px;font-family:'Merriweather',serif}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--terra)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:var(--terra)}
+@media(max-width:920px){.hero-grid,.trans-grid,.f-grid{grid-template-columns:1fr}.camps,.prog-grid,.counter-grid{grid-template-columns:1fr 1fr}.sponsor{grid-template-columns:1fr;padding:34px}.nav-links{display:none}.hands-scene{min-height:320px}}
+@media(max-width:560px){.camps,.prog-grid,.counter-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Ubuntu%20Foundation%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="hands"><i class="fas fa-hands-holding-child"></i></span>Ubuntu Foundation</a>
+    <nav class="nav-links"><a href="#campaigns">Campaigns</a><a href="#programs">Programs</a><a href="#sponsor">Sponsor</a><a href="#transparency">Where Money Goes</a></nav>
+    <a href="#sponsor" class="btn btn-terra"><i class="fas fa-heart"></i> Donate Now</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag-heart"><i class="fas fa-circle" style="font-size:.4rem;color:var(--terra)"></i> Registered NGO · Rwanda Governance Board</span>
+      <h1>Ubuntu: <em>I am</em> because we are.</h1>
+      <p>We put Rwandan children in school, mothers in business and families in safe homes — with 87% of every franc going straight to programs.</p>
+      <div class="hero-btns">
+        <a href="#campaigns" class="btn btn-terra"><i class="fas fa-hand-holding-heart"></i> Donate Now</a>
+        <a href="#sponsor" class="btn btn-line"><i class="fas fa-children"></i> Sponsor a Child</a>
+      </div>
+    </div>
+    <div class="hands-scene">
+      <div class="sun-circle"><i class="fas fa-hands-holding-child"></i><span class="orbit o1"></span><span class="orbit o2"></span></div>
+      <div class="sat sa1"><i class="fas fa-book-open"></i></div>
+      <div class="sat sa2"><i class="fas fa-utensils"></i></div>
+      <div class="sat sa3"><i class="fas fa-house"></i></div>
+      <div class="sat sa4"><i class="fas fa-stethoscope"></i></div>
+    </div>
+  </div>
+</section>
+
+<div class="counters">
+  <div class="container counter-grid">
+    <div><strong>4,200+</strong><span>Children in school</span></div>
+    <div><strong>860</strong><span>Mothers in business</span></div>
+    <div><strong>214</strong><span>Homes built</span></div>
+    <div><strong>11 yrs</strong><span>Serving Rwanda</span></div>
+  </div>
+</div>
+
+<section id="campaigns">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">Active Campaigns</span>
+      <h2>Fund what moves you</h2>
+      <p>Every campaign is budgeted, audited and reported back to donors with photos.</p>
+    </div>
+    <div class="camps">
+      <div class="camp">
+        <div class="camp-visual ccv1"><i class="fas fa-book-open-reader"></i></div>
+        <div class="camp-body">
+          <h4>Books &amp; Uniforms Drive</h4>
+          <p>School kits for 600 children starting the new term in Rubavu and Nyamagabe.</p>
+          <div class="pbar"><i class="pb1"></i></div>
+          <div class="pmeta"><span><b>RWF 8.2M</b> raised</span><span>68% of 12M</span></div>
+          <a href="#sponsor" class="btn btn-terra">Give to this</a>
+        </div>
+      </div>
+      <div class="camp">
+        <div class="camp-visual ccv2"><i class="fas fa-glass-water"></i></div>
+        <div class="camp-body">
+          <h4>Clean Water for Kayonza</h4>
+          <p>Three solar boreholes bringing safe water to 1,900 villagers and two schools.</p>
+          <div class="pbar"><i class="pb2"></i></div>
+          <div class="pmeta"><span><b>RWF 5.4M</b> raised</span><span>42% of 13M</span></div>
+          <a href="#sponsor" class="btn btn-terra">Give to this</a>
+        </div>
+      </div>
+      <div class="camp">
+        <div class="camp-visual ccv3"><i class="fas fa-utensils"></i></div>
+        <div class="camp-body">
+          <h4>Warm Meals Program</h4>
+          <p>Daily lunch for 1,200 pupils — because hungry kids can't learn.</p>
+          <div class="pbar"><i class="pb3"></i></div>
+          <div class="pmeta"><span><b>RWF 11.6M</b> raised</span><span>81% of 14.3M</span></div>
+          <a href="#sponsor" class="btn btn-terra">Give to this</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="progs" id="programs">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker2">How We Work</span>
+      <h2>Four programs, one goal</h2>
+    </div>
+    <div class="prog-grid">
+      <div class="prog"><i class="fas fa-graduation-cap"></i><h4>Education</h4><p>Fees, kits, tutoring and scholarships from P1 to university.</p></div>
+      <div class="prog"><i class="fas fa-seedling"></i><h4>Livelihoods</h4><p>Grants and training for mothers starting small businesses.</p></div>
+      <div class="prog"><i class="fas fa-house-chimney-window"></i><h4>Shelter</h4><p>Safe, decent homes for families in critical housing.</p></div>
+      <div class="prog"><i class="fas fa-stethoscope"></i><h4>Health</h4><p>Mutuelle fees, checkups and nutrition for vulnerable kids.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsor">
+  <div class="container">
+    <div class="sponsor">
+      <div>
+        <h2>Sponsor a child. Watch a life unfold.</h2>
+        <p>From RWF 25,000 a month, you'll fund one child's school, meals and healthcare — and receive their report cards, letters and photos every term.</p>
+        <a href="https://wa.me/250788695396?text=I%20want%20to%20sponsor%20a%20child%20with%20Ubuntu%20Foundation!" target="_blank" rel="noopener" class="btn btn-terra"><i class="fas fa-children"></i> Start Sponsorship</a>
+      </div>
+      <div class="sponsor-cards">
+        <div class="s-card"><i class="fas fa-envelope-open-text"></i><div><h5>Letters &amp; photos</h5><span>Every term, translated both ways</span></div></div>
+        <div class="s-card"><i class="fas fa-file-invoice"></i><div><h5>Annual impact report</h5><span>Your child's grades, health and dreams</span></div></div>
+        <div class="s-card"><i class="fas fa-people-arrows"></i><div><h5>Visit days</h5><span>Meet your child on organised trips</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trans" id="transparency">
+  <div class="container trans-grid">
+    <div>
+      <span class="kicker2" style="color:var(--teal);font-size:.76rem;letter-spacing:3px;text-transform:uppercase;font-weight:800">Radical Transparency</span>
+      <h2 style="font-size:clamp(1.8rem,3.8vw,2.6rem);font-weight:900;margin:10px 0 18px">Where every franc goes</h2>
+      <p style="color:var(--muted);margin-bottom:24px">Independent audits every year, published in full. Our 2025 report: 87% programs, 9% operations, 4% fundraising — verified by Kigali-based auditors.</p>
+      <div class="legend">
+        <div class="lg"><span class="sw" style="background:var(--terra)"></span> Programs — 87%</div>
+        <div class="lg"><span class="sw" style="background:var(--teal)"></span> Operations — 9%</div>
+        <div class="lg"><span class="sw" style="background:#C99A2E"></span> Fundraising — 4%</div>
+      </div>
+    </div>
+    <div class="donut"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px;color:var(--warm)"><span class="hands" style="width:38px;height:38px;font-size:.9rem"><i class="fas fa-hands-holding-child"></i></span>Ubuntu Foundation</a>
+        <p>Community-led charity working across all 30 districts of Rwanda since 2014. I am because we are.</p>
+      </div>
+      <div><h5>Give</h5><ul><li><a href="#campaigns">Campaigns</a></li><li><a href="#sponsor">Sponsor a child</a></li><li>Corporate partners</li></ul></div>
+      <div><h5>Reach Us</h5><ul><li>KG 11 Ave, Kigali</li><li>hello@ubunturf.rw</li><li>+250 788 000 000</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Ubuntu Foundation Rwanda (fictional demo NGO)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

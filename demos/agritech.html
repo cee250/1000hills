@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Green Hills AgriHub | Farm-Fresh Produce &amp; Agri Services — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live agribusiness website demo by 1000 Hills Group — farm produce marketplace, farmer services and agronomy support template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--cream:#F6F8F1;--leaf:#2E7D32;--leaf-d:#1F5C23;--lime:#8BC34A;--soil:#4E342E;--ink:#263228;--muted:#6F7D72;--line:#DFE7DA;--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3{font-weight:800;letter-spacing:-.5px}
+.container{width:min(1140px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(246,248,241,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .sprout{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,var(--leaf),var(--lime));display:grid;place-items:center;color:#fff;font-size:1.1rem}
+.brand h3{font-size:1.1rem;line-height:1.2}
+.brand small{display:block;font-size:.6rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);font-weight:700}
+.nav-links{display:flex;gap:24px;font-size:.86rem;font-weight:600}
+.nav-links a:hover{color:var(--leaf)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.86rem;font-weight:700;border-radius:10px;transition:.3s}
+.btn-leaf{background:var(--leaf);color:#fff;box-shadow:0 10px 26px rgba(46,125,50,.3)}
+.btn-leaf:hover{background:var(--leaf-d);transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--leaf);color:var(--leaf)}
+.btn-line:hover{background:var(--leaf);color:#fff}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(circle at 88% 18%, rgba(139,195,74,.2), transparent 42%),
+ radial-gradient(circle at 6% 82%, rgba(46,125,50,.1), transparent 42%), var(--cream)}
+.hero::before{content:'';position:absolute;bottom:-90px;left:-60px;right:-60px;height:220px;background:radial-gradient(ellipse 60% 100% at 50% 100%,rgba(139,195,74,.16),transparent 70%)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;padding:76px 0 90px}
+.hero .kicker{display:inline-flex;align-items:center;gap:9px;background:#E7F0DF;color:var(--leaf-d);border-radius:40px;padding:9px 20px;font-size:.76rem;font-weight:800}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.1rem);line-height:1.08;margin:20px 0}
+.hero h1 .leafy{color:var(--leaf)}
+.hero p{color:var(--muted);max-width:48ch;margin-bottom:30px}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap}
+.hero-mini{display:flex;gap:26px;margin-top:36px;flex-wrap:wrap}
+.hero-mini div{display:flex;gap:10px;align-items:center;font-size:.84rem;font-weight:600}
+.hero-mini i{color:var(--leaf)}
+/* veggie crate scene */
+.farm-scene{position:relative;display:grid;place-items:center;min-height:400px}
+.crate{width:min(320px,74%);aspect-ratio:1/1.1;background:linear-gradient(160deg,#8A5A3B,#5C3B27);border-radius:14px;position:relative;box-shadow:0 40px 80px rgba(78,52,46,.3);display:grid;place-items:center;overflow:hidden}
+.crate::before{content:'';position:absolute;top:24px;left:20px;right:20px;height:120px;border-radius:10px;background:
+ radial-gradient(circle at 22% 45%,#7CB342 0 15%,transparent 16%),
+ radial-gradient(circle at 45% 40%,#E53935 0 16%,transparent 17%),
+ radial-gradient(circle at 68% 46%,#FFB300 0 15%,transparent 16%),
+ radial-gradient(circle at 88% 42%,#7CB342 0 13%,transparent 14%),
+ radial-gradient(circle at 34% 72%,#FFB300 0 15%,transparent 16%),
+ radial-gradient(circle at 58% 76%,#7CB342 0 15%,transparent 16%),
+ radial-gradient(circle at 80% 72%,#E53935 0 14%,transparent 15%),
+ linear-gradient(180deg,#A1887F,#8D6E63)}
+.crate::after{content:'';position:absolute;bottom:0;left:0;right:0;height:34%;background:repeating-linear-gradient(90deg,rgba(92,59,39,.9) 0 12px,rgba(122,85,58,.9) 12px 24px)}
+.crate .crate-tag{position:absolute;bottom:26px;z-index:2;color:#F4E9DC;font-size:.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;text-align:center}
+.crop-chip{position:absolute;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:.76rem;font-weight:700;display:flex;gap:10px;align-items:center;box-shadow:0 16px 36px rgba(38,50,40,.14);animation:bob 4.5s ease-in-out infinite;z-index:3}
+.crop-chip i{color:var(--leaf)}
+.cc1{top:5%;left:-2%}.cc2{bottom:10%;right:-4%;animation-delay:1.4s}.cc3{top:46%;left:-8%;animation-delay:2.8s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+/* ticker */
+.ticker{background:var(--soil);color:#E8DCD5;padding:13px 0;font-size:.82rem;font-weight:600;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-block;animation:tk 28s linear infinite}
+.ticker-track i{color:var(--lime);margin:0 16px}
+@keyframes tk{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+/* sections */
+section{padding:84px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:42px}
+.sec-head h2{font-size:clamp(1.8rem,3.8vw,2.6rem);margin-top:8px}
+.sec-head .kicker2{color:var(--leaf);font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+.produce{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.prod{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.3s}
+.prod:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(38,50,40,.12)}
+.prod-visual{height:120px;display:grid;place-items:center;font-size:2.6rem;position:relative}
+.pv1{background:linear-gradient(150deg,#DCE9C8,#B6D28C)}
+.pv2{background:linear-gradient(150deg,#F9DCC4,#EFB28A)}
+.pv3{background:linear-gradient(150deg,#F6E3C5,#E4C385)}
+.pv4{background:linear-gradient(150deg,#CFE5F2,#9ECBDF)}
+.prod-body{padding:16px}
+.prod h4{font-size:.95rem;margin-bottom:3px}
+.prod .unit{font-size:.72rem;color:var(--muted);display:block;margin-bottom:10px}
+.prod .row{display:flex;justify-content:space-between;align-items:center}
+.prod .price{font-weight:800;color:var(--leaf-d)}
+.prod .add{width:32px;height:32px;border-radius:8px;background:#E7F0DF;color:var(--leaf);display:grid;place-items:center;font-size:.8rem;transition:.3s}
+.prod .add:hover{background:var(--leaf);color:#fff}
+/* services */
+.services{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc{border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;transition:.3s;background:var(--cream)}
+.svc:hover{border-color:var(--lime);transform:translateY(-5px)}
+.svc i{width:50px;height:50px;border-radius:14px;background:#E7F0DF;color:var(--leaf-d);display:grid;place-items:center;font-size:1.2rem;margin-bottom:14px}
+.svc h4{font-size:.98rem;margin-bottom:6px}
+.svc p{font-size:.8rem;color:var(--muted)}
+/* impact band */
+.impact{background:linear-gradient(135deg,var(--leaf-d),var(--leaf));color:#fff}
+.impact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center;padding:64px 0}
+.impact h2{font-size:clamp(1.8rem,3.8vw,2.6rem);margin-bottom:14px}
+.impact p{opacity:.9;margin-bottom:22px}
+.impact-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.impact-stats div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:20px}
+.impact-stats strong{font-size:1.7rem;display:block;line-height:1.1}
+.impact-stats span{font-size:.76rem;opacity:.85;font-weight:700}
+/* farmers voices */
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.voice{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.voice p{font-size:.88rem;font-style:italic;margin-bottom:16px}
+.voice h5{font-size:.9rem}
+.voice span{font-size:.74rem;color:var(--muted)}
+.voice .av{width:46px;height:46px;border-radius:50%;background:#E7F0DF;color:var(--leaf-d);display:grid;place-items:center;font-weight:800;margin-bottom:14px}
+footer{background:var(--soil);color:#CBB9AF;padding:56px 0 30px;font-size:.86rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:#fff;margin-bottom:14px}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--lime)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.76rem}
+.f-bottom a{color:var(--lime)}
+@media(max-width:920px){.hero-grid,.impact-grid,.f-grid{grid-template-columns:1fr}.produce{grid-template-columns:1fr 1fr}.svc-grid{grid-template-columns:1fr 1fr}.voices{grid-template-columns:1fr}.nav-links{display:none}.farm-scene{min-height:320px}}
+@media(max-width:540px){.produce,.svc-grid,.impact-stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Green%20Hills%20AgriHub%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="sprout"><i class="fas fa-seedling"></i></span><h3>Green Hills AgriHub<small>Farm to table, Rwanda</small></h3></a>
+    <nav class="nav-links"><a href="#produce">Market</a><a href="#services">For Farmers</a><a href="#impact">Impact</a><a href="#footer">Contact</a></nav>
+    <a href="#produce" class="btn btn-leaf"><i class="fas fa-basket-shopping"></i> Shop Fresh</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker"><i class="fas fa-truck-field"></i> Harvested this morning · at your door by noon</span>
+      <h1>From the <span class="leafy">hillside</span> to your table.</h1>
+      <p>We buy directly from 1,400+ smallholder farmers across Rwanda and deliver the freshest produce to homes, hotels and restaurants — fair prices up, zero middlemen.</p>
+      <div class="hero-btns">
+        <a href="#produce" class="btn btn-leaf"><i class="fas fa-basket-shopping"></i> Shop the Harvest</a>
+        <a href="#services" class="btn btn-line"><i class="fas fa-tractor"></i> I'm a Farmer</a>
+      </div>
+      <div class="hero-mini">
+        <div><i class="fas fa-circle-check"></i> Same-day Kigali</div>
+        <div><i class="fas fa-circle-check"></i> Pay on delivery</div>
+        <div><i class="fas fa-circle-check"></i> 100% traceable</div>
+      </div>
+    </div>
+    <div class="farm-scene">
+      <div class="crate"><span class="crate-tag">Today's Harvest · Kayonza</span></div>
+      <div class="crop-chip cc1"><i class="fas fa-carrot"></i> Carrots · 800 RWF/kg</div>
+      <div class="crop-chip cc2"><i class="fas fa-apple-whole"></i> Tree tomatoes · fresh</div>
+      <div class="crop-chip cc3"><i class="fas fa-wheat-awn"></i> Beans · hill 14</div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <i class="fas fa-seedling"></i> Today's market: beans 1,200/kg <i class="fas fa-seedling"></i> maize 800/kg <i class="fas fa-seedling"></i> irish potatoes 900/kg <i class="fas fa-seedling"></i> tomatoes 1,500/kg <i class="fas fa-seedling"></i> bananas 500/bunch <i class="fas fa-seedling"></i> Today's market: beans 1,200/kg <i class="fas fa-seedling"></i> maize 800/kg <i class="fas fa-seedling"></i> irish potatoes 900/kg <i class="fas fa-seedling"></i> tomatoes 1,500/kg <i class="fas fa-seedling"></i> bananas 500/bunch
+  </div>
+</div>
+
+<section id="produce">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">Today's Market</span>
+        <h2>Fresh off the hill</h2>
+      </div>
+      <a href="#produce" class="btn btn-line">Full catalogue <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="produce">
+      <div class="prod"><div class="prod-visual pv1"><i class="fas fa-carrot"></i></div><div class="prod-body"><h4>Mountain Carrots</h4><span class="unit">Bugarura · harvested 6am</span><div class="row"><span class="price">800/kg</span><button class="add"><i class="fas fa-plus"></i></button></div></div></div>
+      <div class="prod"><div class="prod-visual pv2"><i class="fas fa-apple-whole"></i></div><div class="prod-body"><h4>Tree Tomatoes</h4><span class="unit">Gishari · 3kg crates</span><div class="row"><span class="price">4,500/crate</span><button class="add"><i class="fas fa-plus"></i></button></div></div></div>
+      <div class="prod"><div class="prod-visual pv3"><i class="fas fa-wheat-awn"></i></div><div class="prod-body"><h4>Climbing Beans</h4><span class="unit">Nyamagabe · dried, sorted</span><div class="row"><span class="price">1,200/kg</span><button class="add"><i class="fas fa-plus"></i></button></div></div></div>
+      <div class="prod"><div class="prod-visual pv4"><i class="fas fa-fish"></i></div><div class="prod-body"><h4>Kivu Tilapia</h4><span class="unit">Karongi · iced on arrival</span><div class="row"><span class="price">6,000/kg</span><button class="add"><i class="fas fa-plus"></i></button></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">Farmer Services</span>
+        <h2>We've got the farmer's back</h2>
+      </div>
+      <a href="#footer" class="btn btn-leaf">Join as a farmer</a>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><i class="fas fa-scale-balanced"></i><h4>Fair-price guarantee</h4><p>We publish daily prices and never buy below them. Payment on pickup, always.</p></div>
+      <div class="svc"><i class="fas fa-truck-field"></i><h4>Cold-chain logistics</h4><p>Refrigerated collection from your hill within 6 hours of harvest.</p></div>
+      <div class="svc"><i class="fas fa-flask-vial"></i><h4>Agronomy support</h4><p>Free soil testing, seedlings at cost and field visits from our agronomists.</p></div>
+      <div class="svc"><i class="fas fa-mobile-screen"></i><h4>SMS market info</h4><p>Prices, weather and tips by SMS — works on any phone, no internet needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="impact" id="impact">
+  <div class="container impact-grid">
+    <div>
+      <span class="kicker2" style="color:#C8E6A0;font-size:.74rem;letter-spacing:3px;text-transform:uppercase;font-weight:800">Our Impact</span>
+      <h2 style="margin-top:10px">Farming that pays is farming that lasts</h2>
+      <p>Every crate you buy puts money directly in a farmer's pocket — on average 32% more than open-market routes.</p>
+      <a href="#produce" class="btn btn-line" style="border-color:rgba(255,255,255,.5);color:#fff">Shop &amp; Support</a>
+    </div>
+    <div class="impact-stats">
+      <div><strong>1,400+</strong><span>Partner farmers</span></div>
+      <div><strong>+32%</strong><span>Avg. income uplift</span></div>
+      <div><strong>18t</strong><span>Delivered weekly</span></div>
+      <div><strong>30</strong><span>Districts covered</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">Farmer Voices</span>
+        <h2>Hear it from the hills</h2>
+      </div>
+    </div>
+    <div class="voices">
+      <div class="voice"><div class="av">DM</div><p>“Before, brokers decided my price at the roadside. Now I see the price on my phone before I even harvest.”</p><h5>Dative Mukamana</h5><span>Bean farmer · Nyamagabe</span></div>
+      <div class="voice"><div class="av">JN</div><p>“Their cold truck reaches our hill the same morning. My tomatoes used to rot; now they sell out.”</p><h5>Jean Nshimiyimana</h5><span>Tomato farmer · Rwamagana</span></div>
+      <div class="voice"><div class="av">AK</div><p>“The free soil test showed me why my yields were low. One season later, my harvest doubled.”</p><h5>Agnes Kabuye</h5><span>Maize farmer · Kayonza</span></div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px;color:#fff"><span class="sprout" style="width:38px;height:38px;font-size:.9rem"><i class="fas fa-seedling"></i></span><h3 style="font-size:1rem">Green Hills AgriHub</h3></a>
+        <p>Connecting Rwandan farms to Rwandan tables — fresher food, fairer prices, stronger hills.</p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="#produce">Fresh market</a></li><li><a href="#services">Farmer services</a></li><li><a href="#impact">Our impact</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>KG 11 Ave, Kigali</li><li>+250 788 000 000</li><li>karibu@greenhills.rw</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Green Hills AgriHub (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kawa Coffee House | Specialty Coffee &amp; Brunch — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live café website demo by 1000 Hills Group — specialty coffee, brunch menu, loyalty program and co-working friendly café template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--cream:#F7F1E8;--paper:#FFFDF9;--brown:#4A2F23;--caramel:#B4763B;--caramel-d:#94591F;--leaf:#6E7F4B;--muted:#8A7A6C;--line:#EADFCE;--radius:18px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;background:var(--cream);color:var(--brown);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Fraunces',serif}
+.container{width:min(1120px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(247,241,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:1.3rem;font-weight:900}
+.brand .cup{width:42px;height:42px;border-radius:50% 50% 8px 8px;background:var(--caramel);display:grid;place-items:center;color:var(--cream);font-size:1rem}
+.nav-links{display:flex;gap:26px;font-size:.9rem;font-weight:700}
+.nav-links a:hover{color:var(--caramel)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:40px;font-size:.86rem;font-weight:800;transition:.3s}
+.btn-cara{background:var(--caramel);color:#fff;box-shadow:0 10px 24px rgba(180,118,59,.35)}
+.btn-cara:hover{background:var(--caramel-d);transform:translateY(-2px)}
+.btn-ghost{border:2px solid var(--brown)}.btn-ghost:hover{background:var(--brown);color:var(--cream)}
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(circle at 12% 20%, rgba(180,118,59,.18), transparent 40%),
+ radial-gradient(circle at 88% 30%, rgba(110,127,75,.16), transparent 45%), var(--cream)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:80px 0}
+.pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:8px 18px;border-radius:40px;font-size:.78rem;font-weight:800;color:var(--caramel-d);margin-bottom:22px}
+.pill i{color:var(--leaf)}
+.hero h1{font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:900;line-height:1.06;margin-bottom:20px}
+.hero h1 em{color:var(--caramel);font-style:italic}
+.hero p{max-width:46ch;color:var(--muted);margin-bottom:30px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:36px;margin-top:40px}
+.hero-stats strong{font-family:'Fraunces',serif;font-size:1.7rem;color:var(--caramel);display:block;line-height:1.1}
+.hero-stats span{font-size:.78rem;color:var(--muted);font-weight:700}
+/* cup illustration */
+.cup-scene{position:relative;display:grid;place-items:center;min-height:380px}
+.cup-big{width:min(320px,70%);aspect-ratio:1/1.05;background:linear-gradient(160deg,#5C3A2B,#3C2418);border-radius:26% 26% 34% 34%/22% 22% 40% 40%;position:relative;box-shadow:0 50px 90px rgba(74,47,35,.35)}
+.cup-big::before{content:'';position:absolute;top:12%;left:14%;width:34%;height:44%;background:rgba(255,255,255,.14);border-radius:50%;transform:rotate(-18deg)}
+.cup-big::after{content:'\f0f4';font-family:'Font Awesome 6 Free';font-weight:900;position:absolute;inset:0;display:grid;place-items:center;font-size:6.2rem;color:rgba(247,241,232,.9)}
+.float-card{position:absolute;background:#fff;border-radius:16px;box-shadow:0 20px 44px rgba(74,47,35,.18);padding:14px 20px;display:flex;gap:12px;align-items:center;font-size:.82rem;font-weight:800;border:1px solid var(--line);animation:bob 4s ease-in-out infinite}
+.float-card i{font-size:1.2rem;color:var(--caramel)}
+.fc1{top:6%;left:-2%}.fc2{bottom:12%;right:-4%;animation-delay:1.2s}.fc3{top:46%;right:-8%;animation-delay:2s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+/* roast strip */
+.roast{background:var(--brown);color:var(--cream);padding:26px 0}
+.roast-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-weight:800;font-size:.9rem;letter-spacing:1px}
+.roast-row span i{color:var(--caramel);margin-right:8px}
+/* menu */
+section{padding:90px 0}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 52px}
+.sec-head .kicker{color:var(--caramel);font-weight:900;font-size:.8rem;letter-spacing:3px;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:900;margin:10px 0}
+.sec-head p{color:var(--muted)}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
+.menu-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.3s}
+.menu-card:hover{transform:translateY(-6px);box-shadow:0 26px 50px rgba(74,47,35,.14)}
+.menu-card .mi{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px dashed var(--line);font-weight:700;font-size:.94rem}
+.menu-card .mi:last-of-type{border:0}
+.menu-card .price{font-family:'Fraunces',serif;color:var(--caramel);font-weight:900}
+.menu-card h3{display:flex;gap:12px;align-items:center;font-size:1.15rem;margin-bottom:14px}
+.menu-card h3 i{color:var(--caramel)}
+.tag-sweet{font-size:.66rem;background:rgba(110,127,75,.14);color:var(--leaf);padding:3px 10px;border-radius:20px;font-weight:800;vertical-align:middle}
+/* beans */
+.beans{background:#EFDFC8;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.beans-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.bean{background:#fff;border-radius:var(--radius);padding:28px 22px;text-align:center;border:1px solid var(--line)}
+.bean .bag{width:64px;height:64px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;color:#fff}
+.bean h4{font-family:'Fraunces',serif;font-size:1.1rem}
+.bean p{font-size:.8rem;color:var(--muted)}
+.bean .origin{display:inline-block;margin-top:10px;font-size:.7rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--caramel-d)}
+/* loyalty */
+.loyalty{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.loyalty h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:900;margin-bottom:16px}
+.loyalty p{color:var(--muted);margin-bottom:22px}
+.stamps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;max-width:380px}
+.stamp{aspect-ratio:1;background:#fff;border:2px dashed var(--line);border-radius:50%;display:grid;place-items:center;color:var(--caramel);font-size:1.1rem}
+.stamp.filled{background:var(--caramel);border-style:solid;color:#fff}
+.loyal-points{display:flex;gap:14px;margin-bottom:26px;flex-wrap:wrap}
+.loyal-points span{background:#fff;border:1px solid var(--line);border-radius:40px;padding:9px 18px;font-size:.82rem;font-weight:800}
+.loyal-points i{color:var(--caramel)}
+footer{background:var(--brown);color:#D8C7B8;padding:56px 0 30px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:var(--cream);font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:14px}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--caramel)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:var(--caramel)}
+@media(max-width:900px){.hero-grid,.loyalty,.f-grid{grid-template-columns:1fr}.beans-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.cup-scene{min-height:300px}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Kawa%20Coffee%20House%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="cup"><i class="fas fa-mug-hot"></i></span>Kawa Coffee House</a>
+    <nav class="nav-links"><a href="#menu">Menu</a><a href="#beans">Our Beans</a><a href="#loyalty">Loyalty</a><a href="#visit">Visit</a></nav>
+    <a href="#visit" class="btn btn-cara"><i class="fas fa-location-dot"></i> Find Us</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="pill"><i class="fas fa-mug-saucer"></i> Roasted in Kigali · Brewed with love</span>
+      <h1>Life begins <em>after coffee</em> — and brunch.</h1>
+      <p>Single-origin Rwandan beans, slow brunches and the fastest Wi-Fi on the hill. Your third place, open from 6:30am.</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn btn-cara"><i class="fas fa-mug-hot"></i> See the Menu</a>
+        <a href="#loyalty" class="btn btn-ghost"><i class="fas fa-star"></i> Join Perks Club</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>14</strong>Origins on the shelf</div>
+        <div><strong>6:30am</strong>First pour daily</div>
+        <div><strong>2,400+</strong>Perks members</div>
+      </div>
+    </div>
+    <div class="cup-scene">
+      <div class="cup-big"></div>
+      <div class="float-card fc1"><i class="fas fa-wifi"></i> Free fibre Wi-Fi</div>
+      <div class="float-card fc2"><i class="fas fa-bolt"></i> Order ahead, skip the line</div>
+      <div class="float-card fc3"><i class="fas fa-leaf"></i> 100% Rwandan beans</div>
+    </div>
+  </div>
+</section>
+
+<div class="roast">
+  <div class="container roast-row">
+    <span><i class="fas fa-fire"></i> Fresh roasted weekly</span>
+    <span><i class="fas fa-croissant"></i> Bakery all day</span>
+    <span><i class="fas fa-laptop"></i> Laptop-friendly seats</span>
+    <span><i class="fas fa-dog"></i> Pupuccinos for good dogs</span>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">All-Day Menu</span>
+      <h2>Brews, brunch &amp; bites</h2>
+      <p>Everything made to order, everything made here.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3><i class="fas fa-mug-hot"></i> Coffee Bar</h3>
+        <div class="mi"><span>Espresso / Macchiato</span><span class="price">2,000</span></div>
+        <div class="mi"><span>Flat White</span><span class="price">3,500</span></div>
+        <div class="mi"><span>Honey Oat Latte</span><span class="price">4,500</span></div>
+        <div class="mi"><span>Cold Brew Tonic</span><span class="price">5,000</span></div>
+        <div class="mi"><span>African Pour-Over</span><span class="price">5,500</span></div>
+      </div>
+      <div class="menu-card">
+        <h3><i class="fas fa-egg"></i> Brunch <span class="tag-sweet">till 2pm</span></h3>
+        <div class="mi"><span>Hillside Big Breakfast</span><span class="price">9,000</span></div>
+        <div class="mi"><span>Shakshuka &amp; Focaccia</span><span class="price">8,000</span></div>
+        <div class="mi"><span>Avocado Sourdough</span><span class="price">7,000</span></div>
+        <div class="mi"><span>Banana Bread Pudding</span><span class="price">6,000</span></div>
+        <div class="mi"><span>Granola &amp; Yogurt Bowl</span><span class="price">6,500</span></div>
+      </div>
+      <div class="menu-card">
+        <h3><i class="fas fa-cake-candles"></i> Bakery &amp; Sweets</h3>
+        <div class="mi"><span>Butter Croissant</span><span class="price">2,500</span></div>
+        <div class="mi"><span>Cinnamon Roll</span><span class="price">3,000</span></div>
+        <div class="mi"><span>Mandazi Trio</span><span class="price">1,500</span></div>
+        <div class="mi"><span>Tiramisu Jar</span><span class="price">5,000</span></div>
+        <div class="mi"><span>Cheesecake Slice</span><span class="price">4,500</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="beans" id="beans">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Our Beans</span>
+      <h2>From the hills to your hands</h2>
+      <p>Every bag is traceable to a single washing station — take a bag home.</p>
+    </div>
+    <div class="beans-grid">
+      <div class="bean"><div class="bag" style="background:#6E7F4B"><i class="fas fa-mountain"></i></div><h4>Virunga Sunrise</h4><p>Bright, citrus, black tea</p><span class="origin">Nyabihu · 1,900m</span></div>
+      <div class="bean"><div class="bag" style="background:#B4763B"><i class="fas fa-sun"></i></div><h4>Huye Amber</h4><p>Honey, caramel, stone fruit</p><span class="origin">Huye · 1,750m</span></div>
+      <div class="bean"><div class="bag" style="background:#4A2F23"><i class="fas fa-cloud-moon"></i></div><h4>Lake Kivu Midnight</h4><p>Dark chocolate, molasses</p><span class="origin">Nyamasheke · 1,600m</span></div>
+      <div class="bean"><div class="bag" style="background:#94591F"><i class="fas fa-fire"></i></div><h4>Gorilla's Espresso</h4><p>Cocoa, hazelnut, brown sugar</p><span class="origin">Musanze · 1,800m</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="loyalty">
+  <div class="container loyalty">
+    <div>
+      <span class="kicker" style="color:var(--caramel);font-weight:900;letter-spacing:3px;text-transform:uppercase;font-size:.8rem">Perks Club</span>
+      <h2>Ninth cup is on us.</h2>
+      <p>Join Perks Club and collect a stamp with every drink. Free birthday cake, double-stamp Tuesdays and members-only tastings every last Friday.</p>
+      <div class="loyal-points"><span><i class="fas fa-gift"></i> Birthday treat</span><span><i class="fas fa-bolt"></i> 2× stamp Tuesdays</span><span><i class="fas fa-wine-glass"></i> Members' cuppings</span></div>
+      <a href="https://wa.me/250788695396?text=I%20want%20to%20join%20Kawa%20Perks%20Club!" target="_blank" rel="noopener" class="btn btn-cara"><i class="fab fa-whatsapp"></i> Join on WhatsApp</a>
+    </div>
+    <div class="stamps">
+      <div class="stamp filled"><i class="fas fa-check"></i></div><div class="stamp filled"><i class="fas fa-check"></i></div><div class="stamp filled"><i class="fas fa-check"></i></div><div class="stamp filled"><i class="fas fa-check"></i></div><div class="stamp filled"><i class="fas fa-check"></i></div>
+      <div class="stamp filled"><i class="fas fa-check"></i></div><div class="stamp filled"><i class="fas fa-check"></i></div><div class="stamp filled"><i class="fas fa-check"></i></div><div class="stamp"><i class="fas fa-mug-hot"></i></div><div class="stamp"><i class="fas fa-gift"></i></div>
+    </div>
+  </div>
+</section>
+
+<footer id="visit">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px;color:var(--cream)"><span class="cup"><i class="fas fa-mug-hot"></i></span>Kawa Coffee House</a>
+        <p>Your third place on the hill — speciality coffee, slow brunch and good company, every day from 6:30am.</p>
+      </div>
+      <div><h5>Hours</h5><ul><li>Mon – Fri · 6:30 – 20:00</li><li>Sat – Sun · 7:00 – 22:00</li><li>KN 27 Kiyovu, Kigali</li></ul></div>
+      <div><h5>Say Hello</h5><ul><li>+250 788 000 000</li><li>hey@kawacoffee.rw</li><li>@kawacoffee.rw</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Kawa Coffee House (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

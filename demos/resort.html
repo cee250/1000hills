@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lake Kivu Bay Resort | Beach Resort &amp; Spa, Rubavu — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live resort website demo by 1000 Hills Group — lakefront rooms, pool &amp; spa, water sports and direct booking template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--sand:#F6F9FB;--deep:#0B3B54;--lagoon:#0E6E8C;--sky:#7FC6E8;--coral:#F2704B;--muted:#5B7A8C;--line:#DCEAF1;--radius:16px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--sand);color:var(--deep);line-height:1.7;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.serif{font-family:'DM Serif Display',serif;font-weight:400}
+.container{width:min(1140px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(246,249,251,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:'DM Serif Display',serif;font-size:1.25rem}
+.brand .ic{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--lagoon),var(--sky));display:grid;place-items:center;color:#fff;font-size:1.05rem}
+.nav-links{display:flex;gap:28px;font-size:.9rem;font-weight:500}
+.nav-links a:hover{color:var(--lagoon)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:40px;font-size:.88rem;font-weight:600;transition:.3s}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 12px 28px rgba(242,112,75,.35)}
+.btn-coral:hover{transform:translateY(-2px);background:#E05B35}
+.btn-white{background:#fff;border:1px solid var(--line);color:var(--deep)}
+.btn-white:hover{border-color:var(--lagoon);color:var(--lagoon)}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#EAF6FB 0%,var(--sand) 100%)}
+.hero::before{content:'';position:absolute;bottom:0;left:0;right:0;height:180px;background:linear-gradient(180deg,transparent,rgba(14,110,140,.14));clip-path:polygon(0 60%,100% 20%,100% 100%,0 100%)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;padding:84px 0 120px}
+.hero .kicker{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);padding:9px 20px;border-radius:40px;font-size:.78rem;font-weight:700;color:var(--lagoon);box-shadow:0 8px 24px rgba(14,110,140,.08)}
+.hero h1{font-size:clamp(2.7rem,5.8vw,4.4rem);line-height:1.05;margin:22px 0}
+.hero h1 em{color:var(--lagoon);font-style:normal;position:relative}
+.hero h1 em::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:10px;background:rgba(127,198,232,.4);z-index:-1;border-radius:6px}
+.hero p{color:var(--muted);max-width:48ch;margin-bottom:30px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-stats{display:flex;gap:34px;margin-top:40px}
+.hero-stats strong{font-family:'DM Serif Display',serif;font-size:1.8rem;color:var(--lagoon);display:block;line-height:1.1}
+.hero-stats span{font-size:.78rem;color:var(--muted)}
+/* resort visual */
+.scene{position:relative;min-height:400px;display:grid;place-items:center}
+.scene-card{width:min(340px,78%);aspect-ratio:4/4.6;border-radius:26px;background:linear-gradient(180deg,#0E6E8C 0%,#0B3B54 55%,#082C40 100%);position:relative;overflow:hidden;box-shadow:0 60px 100px rgba(11,59,84,.35)}
+.scene-card::before{content:'';position:absolute;top:16%;left:12%;width:76%;height:26%;background:radial-gradient(circle at 30% 40%,#FFE9B8,#FFB56B 60%,transparent 75%);border-radius:50%;filter:blur(6px)}
+.scene-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:34%;background:linear-gradient(180deg,rgba(127,198,232,.35),rgba(127,198,232,.12))}
+.scene-sun{position:absolute;top:8%;right:12%;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,#FFDD87,#F2704B);box-shadow:0 0 60px rgba(242,112,75,.7)}
+.scene-boat{position:absolute;bottom:22%;left:18%;color:#fff;font-size:1.6rem;animation:sail 9s linear infinite}
+@keyframes sail{0%{transform:translateX(-40px)}100%{transform:translateX(180px)}}
+.float{position:absolute;background:#fff;border-radius:14px;box-shadow:0 18px 40px rgba(11,59,84,.16);padding:13px 18px;display:flex;gap:11px;align-items:center;font-size:.82rem;font-weight:600;border:1px solid var(--line);animation:bob 4.5s ease-in-out infinite}
+.float i{color:var(--lagoon)}
+.fl1{top:4%;left:-4%}.fl2{bottom:8%;right:-6%;animation-delay:1.4s}.fl3{top:44%;left:-10%;animation-delay:2.4s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+/* room strip */
+.strip{background:var(--deep);color:#CFE8F2;padding:22px 0}
+.strip-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:.86rem;font-weight:600}
+.strip-row span i{color:var(--sky);margin-right:8px}
+/* sections */
+section{padding:90px 0}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 52px}
+.sec-head .kicker{color:var(--lagoon);font-weight:800;font-size:.78rem;letter-spacing:3px;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.9rem);margin:10px 0}
+.sec-head p{color:var(--muted)}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.room{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.35s}
+.room:hover{transform:translateY(-8px);box-shadow:0 34px 64px rgba(11,59,84,.14)}
+.room-visual{height:170px;position:relative;display:grid;place-items:center;color:#fff;font-size:2.4rem}
+.rv1{background:linear-gradient(135deg,#0E6E8C,#7FC6E8)}
+.rv2{background:linear-gradient(135deg,#F2704B,#FFB56B)}
+.rv3{background:linear-gradient(135deg,#0B3B54,#0E6E8C)}
+.room .price-tag{position:absolute;top:14px;right:14px;background:#fff;color:var(--lagoon);font-size:.75rem;font-weight:800;padding:6px 13px;border-radius:30px}
+.room-body{padding:24px}
+.room-body h4{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:8px}
+.room-body p{font-size:.87rem;color:var(--muted);margin-bottom:16px}
+.room-feats{display:flex;gap:14px;flex-wrap:wrap;font-size:.75rem;color:var(--muted);margin-bottom:18px}
+.room-feats i{color:var(--lagoon);margin-right:5px}
+.room-body .btn{width:100%;justify-content:center;padding:11px}
+/* amenities */
+.amen{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.amen-item{text-align:center;padding:26px 14px;border-radius:var(--radius);transition:.3s}
+.amen-item:hover{background:var(--sand)}
+.amen-item i{width:58px;height:58px;border-radius:50%;background:rgba(14,110,140,.08);color:var(--lagoon);display:inline-grid;place-items:center;font-size:1.3rem;margin-bottom:14px}
+.amen-item h5{font-size:.95rem;font-weight:700}.amen-item span{font-size:.78rem;color:var(--muted)}
+/* booking */
+.booking{background:linear-gradient(135deg,#0B3B54,#0E6E8C);color:#fff;border-radius:26px;padding:54px;display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:center}
+.booking h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:12px}
+.booking p{color:#BFE0EE;margin-bottom:24px}
+.book-form{background:#fff;border-radius:18px;padding:28px;color:var(--deep)}
+.book-form label{font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin:12px 0 6px}
+.book-form input,.book-form select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-family:inherit;font-size:.9rem;background:var(--sand);outline:none}
+.book-form .btn{width:100%;justify-content:center;margin-top:20px}
+footer{background:var(--deep);color:#BFD9E5;padding:56px 0 30px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:#fff;font-size:1rem;margin-bottom:14px;font-weight:700}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--sky)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:var(--sky)}
+@media(max-width:920px){.hero-grid,.booking,.f-grid{grid-template-columns:1fr}.rooms,.amen-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}.scene{min-height:320px}}
+@media(max-width:600px){.rooms,.amen-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Lake%20Kivu%20Bay%20Resort%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="ic"><i class="fas fa-water"></i></span>Lake Kivu Bay</a>
+    <nav class="nav-links"><a href="#rooms">Rooms</a><a href="#amenities">Amenities</a><a href="#book">Offers</a><a href="#footer">Contact</a></nav>
+    <a href="#book" class="btn btn-coral"><i class="fas fa-calendar-check"></i> Book Your Stay</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker"><i class="fas fa-star" style="color:#F2B705"></i> 4.8 · Rubavu, Lake Kivu</span>
+      <h1>Wake up to the <em>lake</em>, not an alarm.</h1>
+      <p>Lakefront rooms, infinity pool over the water and sunsets that stop conversation. Three hours from Kigali — a world away from everything.</p>
+      <div class="hero-btns">
+        <a href="#book" class="btn btn-coral"><i class="fas fa-sun"></i> Check Availability</a>
+        <a href="#rooms" class="btn btn-white"><i class="fas fa-bed"></i> Explore Rooms</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>34</strong>Lakefront rooms</div>
+        <div><strong>2</strong>Pools &amp; a spa</div>
+        <div><strong>7</strong>Water sports</div>
+      </div>
+    </div>
+    <div class="scene">
+      <div class="scene-card"><span class="scene-sun"></span><span class="scene-boat"><i class="fas fa-sailboat"></i></span></div>
+      <div class="float fl1"><i class="fas fa-umbrella-beach"></i> Private beach cove</div>
+      <div class="float fl2"><i class="fas fa-martini-glass-citrus"></i> Sunset sundowners</div>
+      <div class="float fl3"><i class="fas fa-person-swimming"></i> Infinity lake pool</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="container strip-row">
+    <span><i class="fas fa-wifi"></i> Free fast Wi-Fi</span>
+    <span><i class="fas fa-utensils"></i> Lakeview restaurant</span>
+    <span><i class="fas fa-spa"></i> Kivu Spa &amp; sauna</span>
+    <span><i class="fas fa-child-reaching"></i> Kids' club</span>
+    <span><i class="fas fa-plane-arrival"></i> Airport transfers</span>
+  </div>
+</div>
+
+<section id="rooms">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Stay With Us</span>
+      <h2>Rooms that face the water</h2>
+      <p>Every room opens to the lake — choose your sunrise.</p>
+    </div>
+    <div class="rooms">
+      <div class="room">
+        <div class="room-visual rv1"><i class="fas fa-bed"></i><span class="price-tag">$120 / night</span></div>
+        <div class="room-body">
+          <h4>Garden Studio</h4>
+          <p>Ground-floor studio opening to the palm gardens, steps from the pool.</p>
+          <div class="room-feats"><span><i class="fas fa-user"></i>2</span><span><i class="fas fa-expand"></i>32m²</span><span><i class="fas fa-mug-hot"></i>Breakfast</span></div>
+          <a href="#book" class="btn btn-white">Reserve</a>
+        </div>
+      </div>
+      <div class="room">
+        <div class="room-visual rv2"><i class="fas fa-water"></i><span class="price-tag">$185 / night</span></div>
+        <div class="room-body">
+          <h4>Lakeview Deluxe</h4>
+          <p>Private balcony over the bay, king bed and a soaking tub for two.</p>
+          <div class="room-feats"><span><i class="fas fa-user"></i>2–3</span><span><i class="fas fa-expand"></i>45m²</span><span><i class="fas fa-mug-hot"></i>Half board</span></div>
+          <a href="#book" class="btn btn-white">Reserve</a>
+        </div>
+      </div>
+      <div class="room">
+        <div class="room-visual rv3"><i class="fas fa-house-tsunami"></i><span class="price-tag">$260 / night</span></div>
+        <div class="room-body">
+          <h4>Bay Family Villa</h4>
+          <p>Two-bedroom villa with kitchenette, terrace and direct beach access.</p>
+          <div class="room-feats"><span><i class="fas fa-user"></i>4–5</span><span><i class="fas fa-expand"></i>80m²</span><span><i class="fas fa-mug-hot"></i>All board</span></div>
+          <a href="#book" class="btn btn-white">Reserve</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="amen" id="amenities">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Resort Life</span>
+      <h2>Everything included in the view</h2>
+    </div>
+    <div class="amen-grid">
+      <div class="amen-item"><i class="fas fa-person-swimming"></i><h5>Infinity Pool</h5><span>Heated · lake edge</span></div>
+      <div class="amen-item"><i class="fas fa-spa"></i><h5>Kivu Spa</h5><span>Massages &amp; sauna</span></div>
+      <div class="amen-item"><i class="fas fa-sailboat"></i><h5>Water Sports</h5><span>Kayak · SUP · jet ski</span></div>
+      <div class="amen-item"><i class="fas fa-utensils"></i><h5>Lakeview Dining</h5><span>Grill &amp; Swahili fusion</span></div>
+      <div class="amen-item"><i class="fas fa-dumbbell"></i><h5>Fitness Deck</h5><span>Open sunrise to sunset</span></div>
+      <div class="amen-item"><i class="fas fa-child-reaching"></i><h5>Kids' Club</h5><span>Daily 9am – 5pm</span></div>
+      <div class="amen-item"><i class="fas fa-van-shuttle"></i><h5>Transfers</h5><span>Kigali &amp; Goma pickup</span></div>
+      <div class="amen-item"><i class="fas fa-fire"></i><h5>Beach Bonfires</h5><span>Every Saturday</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="container">
+    <div class="booking">
+      <div>
+        <h2>Midweek escape — 25% off</h2>
+        <p>Book 2+ nights Sunday to Thursday and get breakfast, a spa session and a sunset boat cruise included. Free cancellation up to 48 hours.</p>
+        <ul style="font-size:.9rem">
+          <li style="margin-bottom:8px"><i class="fas fa-check" style="color:var(--sky);margin-right:8px"></i>Best-rate guarantee when you book direct</li>
+          <li style="margin-bottom:8px"><i class="fas fa-check" style="color:var(--sky);margin-right:8px"></i>Kids under 12 stay free</li>
+          <li><i class="fas fa-check" style="color:var(--sky);margin-right:8px"></i>Pay on arrival — no card needed</li>
+        </ul>
+      </div>
+      <form class="book-form" onsubmit="event.preventDefault();this.querySelector('.btn').innerHTML='<i class=\'fas fa-check\'></i> Request sent — we\'ll confirm on WhatsApp!'">
+        <label>Check-in</label><input type="date"/>
+        <label>Check-out</label><input type="date"/>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div><label>Guests</label><select><option>2 adults</option><option>2 adults, 1 child</option><option>Family (4+)</option></select></div>
+          <div><label>Room</label><select><option>Garden Studio</option><option>Lakeview Deluxe</option><option>Bay Family Villa</option></select></div>
+        </div>
+        <label>Phone / WhatsApp</label><input type="tel" placeholder="+250 ..."/>
+        <button class="btn btn-coral" type="submit"><i class="fas fa-paper-plane"></i> Check Availability</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px;color:#fff"><span class="ic"><i class="fas fa-water"></i></span>Lake Kivu Bay</a>
+        <p>A beach resort &amp; spa on the northern shores of Lake Kivu. Sunsets guaranteed, stress not.</p>
+      </div>
+      <div><h5>Resort</h5><ul><li><a href="#rooms">Rooms &amp; Villas</a></li><li><a href="#amenities">Amenities</a></li><li><a href="#book">Offers</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li>+250 788 000 000</li><li>stay@lakekivubay.rw</li><li>Rubavu, Lake Kivu</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Lake Kivu Bay Resort (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

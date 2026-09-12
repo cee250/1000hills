@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FleetTrack | Transport &amp; Fleet Management System — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live fleet management system demo by 1000 Hills Group — vehicle tracking, trips, fuel, maintenance and driver management."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bg:#0F1512;--side:#14201A;--side2:#182A21;--green:#3DD68C;--green-d:#27A96B;--card:#1A2620;--card2:#1F2F27;--ink:#E4EFE8;--muted:#8AA396;--line:rgba(255,255,255,.08);--red:#FF5C7A;--amber:#FFC048;--blue:#5CA8FF;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:14px;padding-top:46px}
+a{text-decoration:none;color:inherit}ul{list-style:none}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.app{display:flex;min-height:calc(100vh - 46px)}
+.sidebar{width:228px;background:var(--side);border-right:1px solid var(--line);color:var(--muted);display:flex;flex-direction:column;position:sticky;top:46px;height:calc(100vh - 46px)}
+.s-logo{display:flex;align-items:center;gap:10px;padding:18px 16px;border-bottom:1px solid var(--line)}
+.s-logo .ic{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--green),#7BE8B4);display:grid;place-items:center;color:#08130D;font-size:.9rem}
+.s-logo h4{color:#fff;font-size:.95rem}
+.s-logo small{display:block;font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600}
+.s-nav{padding:14px 10px;flex:1;overflow-y:auto}
+.s-nav .label{font-size:.6rem;letter-spacing:2px;text-transform:uppercase;color:#5C7266;font-weight:700;padding:12px 10px 6px}
+.s-nav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:9px;font-size:.84rem;font-weight:500;color:var(--muted);margin-bottom:2px;transition:.25s}
+.s-nav a i{width:18px;text-align:center;font-size:.9rem}
+.s-nav a:hover{background:rgba(255,255,255,.05);color:#fff}
+.s-nav a.on{background:linear-gradient(90deg,var(--green-d),rgba(61,214,140,.14));color:#fff;box-shadow:0 6px 18px rgba(39,169,107,.28)}
+.s-nav a .n-badge{margin-left:auto;background:var(--red);color:#fff;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:20px}
+.s-user{padding:14px;display:flex;gap:11px;align-items:center;border-top:1px solid var(--line)}
+.s-user .av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--green),#7BE8B4);display:grid;place-items:center;color:#08130D;font-weight:800;font-size:.78rem}
+.s-user h6{color:#fff;font-size:.8rem}.s-user span{font-size:.68rem;color:var(--muted)}
+.main{flex:1;min-width:0}
+.topbar{background:var(--card);border-bottom:1px solid var(--line);padding:12px 24px;display:flex;align-items:center;gap:14px;position:sticky;top:46px;z-index:50;flex-wrap:wrap}
+.topbar h3{font-size:1.05rem}
+.live-chip{font-size:.68rem;font-weight:800;background:rgba(61,214,140,.12);color:var(--green);padding:5px 12px;border-radius:20px;display:inline-flex;gap:7px;align-items:center}
+.live-chip::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);animation:blink 1.6s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.tb-search{margin-left:auto;display:flex;align-items:center;gap:9px;background:var(--bg);border:1px solid var(--line);border-radius:30px;padding:8px 16px;min-width:210px}
+.tb-search i{color:var(--muted);font-size:.8rem}
+.tb-search input{border:0;background:none;outline:none;font-family:inherit;font-size:.8rem;width:100%;color:var(--ink)}
+.content{padding:22px 24px}
+.page-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
+.page-head p{font-size:.82rem;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:9px;font-size:.8rem;font-weight:700;transition:.25s;border:0}
+.btn-green{background:var(--green);color:#08130D}
+.btn-green:hover{background:var(--green-d);color:#fff}
+.btn-ghost{background:var(--card2);border:1px solid var(--line);color:var(--ink)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.k1::before{background:var(--green)}.k2::before{background:var(--blue)}.k3::before{background:var(--amber)}.k4::before{background:var(--red)}
+.kpi .row{display:flex;justify-content:space-between;align-items:center}
+.kpi .ic{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;font-size:.9rem}
+.k1 .ic{background:rgba(61,214,140,.12);color:var(--green)}
+.k2 .ic{background:rgba(92,168,255,.12);color:var(--blue)}
+.k3 .ic{background:rgba(255,192,72,.12);color:var(--amber)}
+.k4 .ic{background:rgba(255,92,122,.12);color:var(--red)}
+.kpi strong{font-size:1.5rem;display:block;margin-top:10px;line-height:1.1}
+.kpi span{font-size:.72rem;color:var(--muted);font-weight:600}
+.kpi .delta{font-size:.68rem;font-weight:800}
+.up{color:var(--green)}.down{color:var(--red)}
+/* live map */
+.panels{display:grid;grid-template-columns:1.55fr 1fr;gap:14px;margin-bottom:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.panel-head h4{font-size:.92rem}
+.panel-head a{font-size:.72rem;color:var(--green);font-weight:700}
+.map{height:230px;border-radius:10px;position:relative;overflow:hidden;border:1px solid var(--line);
+ background:linear-gradient(rgba(61,214,140,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(61,214,140,.03) 1px,transparent 1px);
+ background-size:34px 34px;background-color:#121D17}
+.map::before{content:'';position:absolute;top:0;left:22%;bottom:0;width:3px;background:rgba(92,168,255,.25);border-radius:3px}
+.map::after{content:'';position:absolute;left:0;top:44%;right:0;height:3px;background:rgba(255,192,72,.22);border-radius:3px}
+.truck{position:absolute;width:34px;height:34px;border-radius:50%;background:rgba(61,214,140,.16);display:grid;place-items:center;color:var(--green);border:1.5px solid var(--green);font-size:.8rem}
+.truck small{position:absolute;top:105%;white-space:nowrap;font-size:.56rem;font-weight:700;color:var(--muted)}
+.t1{top:26%;left:12%}.t2{top:58%;left:44%}.t3{top:34%;left:70%}
+.t3{border-color:var(--red);color:var(--red);background:rgba(255,92,122,.14)}
+.t3 small{color:var(--red)}
+/* trips */
+.trip{display:grid;gap:9px}
+.tr{display:flex;gap:11px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.tr .av{width:34px;height:34px;border-radius:10px;background:var(--card2);border:1px solid var(--line);display:grid;place-items:center;color:var(--green);font-size:.8rem;flex:none}
+.tr h6{font-size:.8rem}
+.tr small{display:block;font-size:.66rem;color:var(--muted)}
+.tr .st{margin-left:auto;font-size:.6rem;font-weight:800;padding:4px 10px;border-radius:20px;white-space:nowrap}
+.st-go{background:rgba(61,214,140,.12);color:var(--green)}
+.st-idle{background:rgba(255,192,72,.14);color:var(--amber)}
+.st-svc{background:rgba(255,92,122,.12);color:var(--red)}
+/* table */
+.table-panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.table-panel .panel-head{padding:16px 18px;margin:0;border-bottom:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+th{text-align:left;font-size:.64rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);padding:11px 18px;background:rgba(255,255,255,.02);border-bottom:1px solid var(--line)}
+td{padding:12px 18px;border-bottom:1px solid var(--line)}
+tr:last-child td{border:0}
+tbody tr:hover{background:rgba(255,255,255,.02)}
+.pill{font-size:.62rem;font-weight:800;padding:4px 11px;border-radius:20px;white-space:nowrap}
+.pl-ok{background:rgba(61,214,140,.12);color:var(--green)}
+.pl-warn{background:rgba(255,192,72,.14);color:var(--amber)}
+.pl-bad{background:rgba(255,92,122,.12);color:var(--red)}
+.sys-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:18px 4px 4px;font-size:.7rem;color:var(--muted)}
+.sys-foot a{color:var(--green);font-weight:700}
+@media(max-width:1100px){.kpis{grid-template-columns:1fr 1fr}.panels{grid-template-columns:1fr}}
+@media(max-width:860px){.sidebar{display:none}.tb-search{display:none}}
+@media(max-width:560px){.kpis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live System Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20the%20FleetTrack%20fleet%20management%20system." target="_blank" rel="noopener">Get this system</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="s-logo">
+      <span class="ic"><i class="fas fa-truck-fast"></i></span>
+      <h4>FleetTrack<small>Transport Suite</small></h4>
+    </div>
+    <nav class="s-nav">
+      <p class="label">Live</p>
+      <a href="#" class="on"><i class="fas fa-satellite-dish"></i> Live Map</a>
+      <a href="#"><i class="fas fa-route"></i> Trips &amp; Dispatch <span class="n-badge">4</span></a>
+      <a href="#"><i class="fas fa-id-card"></i> Drivers</a>
+      <p class="label">Assets</p>
+      <a href="#"><i class="fas fa-truck"></i> Vehicles</a>
+      <a href="#"><i class="fas fa-gas-pump"></i> Fuel &amp; Mileage</a>
+      <a href="#"><i class="fas fa-screwdriver-wrench"></i> Maintenance</a>
+      <p class="label">Business</p>
+      <a href="#"><i class="fas fa-file-invoice-dollar"></i> Invoicing</a>
+      <a href="#"><i class="fas fa-chart-line"></i> Cost Reports</a>
+      <a href="#"><i class="fas fa-gear"></i> Settings</a>
+    </nav>
+    <div class="s-user">
+      <span class="av">EN</span>
+      <div><h6>Emmanuel Ndayisaba</h6><span>Fleet Operations Lead</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h3>Live Operations</h3>
+      <span class="live-chip">GPS LIVE</span>
+      <div class="tb-search"><i class="fas fa-magnifying-glass"></i><input placeholder="Search vehicle, driver, plate…"/></div>
+      <span class="tb-ic" style="width:38px;height:38px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);background:var(--card2)"><i class="far fa-bell"></i></span>
+    </div>
+
+    <div class="content">
+      <div class="page-head">
+        <div><p>Tuesday, September 12 · 28 vehicles registered · Kigali — Musanze — Rubavu corridor</p></div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-ghost"><i class="fas fa-file-circle-plus"></i> New Trip</button>
+          <button class="btn btn-green"><i class="fas fa-satellite-dish"></i> Track All</button>
+        </div>
+      </div>
+
+      <div class="kpis">
+        <div class="kpi k1"><div class="row"><span class="ic"><i class="fas fa-truck-moving"></i></span><span class="delta up">+2</span></div><strong>21/28</strong><span>Vehicles on the road</span></div>
+        <div class="kpi k2"><div class="row"><span class="ic"><i class="fas fa-route"></i></span><span class="delta up">+8%</span></div><strong>12,480 km</strong><span>Distance this week</span></div>
+        <div class="kpi k3"><div class="row"><span class="ic"><i class="fas fa-gas-pump"></i></span><span class="delta down">-6%</span></div><strong>3,120 L</strong><span>Fuel this month</span></div>
+        <div class="kpi k4"><div class="row"><span class="ic"><i class="fas fa-screwdriver-wrench"></i></span><span class="delta down">1 urgent</span></div><strong>3</strong><span>Vehicles due service</span></div>
+      </div>
+
+      <div class="panels">
+        <div class="panel">
+          <div class="panel-head"><h4>Live GPS Map</h4><a href="#">Open full map →</a></div>
+          <div class="map">
+            <span class="truck t1"><i class="fas fa-truck-fast"></i><small>GBV 214 PX · Kiyovu</small></span>
+            <span class="truck t2"><i class="fas fa-truck-fast"></i><small>GBV 778 AX · Nyabugogo</small></span>
+            <span class="truck t3"><i class="fas fa-triangle-exclamation"></i><small>GBV 431 CZ · idle 24m</small></span>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h4>Active Trips</h4><a href="#">Dispatch board →</a></div>
+          <div class="trip">
+            <div class="tr"><span class="av"><i class="fas fa-box"></i></span><div><h6>Shipment #2291 — Cement</h6><small>Kigali → Musanze · ETA 14:40 · driver M. Bizimana</small></div><span class="st st-go">MOVING</span></div>
+            <div class="tr"><span class="av"><i class="fas fa-people-carry-box"></i></span><div><h6>Shipment #2294 — Furniture</h6><small>Kigali → Huye · ETA 17:20 · driver A. Ndoli</small></div><span class="st st-go">MOVING</span></div>
+            <div class="tr"><span class="av"><i class="fas fa-temperature-low"></i></span><div><h6>Shipment #2296 — Cold chain</h6><small>Kigali → Rubavu · awaiting loading</small></div><span class="st st-idle">IDLE</span></div>
+            <div class="tr"><span class="av"><i class="fas fa-screwdriver-wrench"></i></span><div><h6>GBV 431 CZ</h6><small>Workshop · brake inspection</small></div><span class="st st-svc">SERVICE</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-panel">
+        <div class="panel-head"><h4>Fleet Health &amp; Documents</h4><a href="#">Full fleet →</a></div>
+        <table>
+          <thead><tr><th>Vehicle</th><th>Driver</th><th>Odometer</th><th>Fuel Eff.</th><th>Insurance</th><th>Next Service</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><b>GBV 214 PX</b><br/><small style="color:var(--muted)">Isuzu FRR · 5t</small></td><td>M. Bizimana</td><td>184,320 km</td><td>8.4 km/L</td><td>Dec 2025</td><td>Oct 02</td><td><span class="pill pl-ok">HEALTHY</span></td></tr>
+            <tr><td><b>GBV 778 AX</b><br/><small style="color:var(--muted)">Toyota Hiace · 14 seats</small></td><td>A. Ndoli</td><td>96,410 km</td><td>11.2 km/L</td><td>Nov 2025</td><td>Sep 20</td><td><span class="pill pl-warn">DUE SOON</span></td></tr>
+            <tr><td><b>GBV 431 CZ</b><br/><small style="color:var(--muted)">Fuso Fighter · 8t</small></td><td>—</td><td>231,880 km</td><td>6.1 km/L</td><td>Jan 2026</td><td><b style="color:var(--red)">OVERDUE</b></td><td><span class="pill pl-bad">WORKSHOP</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="sys-foot">
+        <span>FleetTrack v2.2 — transport &amp; fleet management (demo data)</span>
+        <span>System demo by <a href="../demos.html">1000 Hills Group</a> — we build yours custom</span>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

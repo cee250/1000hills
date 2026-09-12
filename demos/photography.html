@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lens &amp; Light Studio | Photography &amp; Film, Kigali — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live photography studio website demo by 1000 Hills Group — portfolio, packages, booking and photo sessions template."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--noir:#0D0D0F;--noir2:#151518;--card:#1B1B1F;--white:#F2F2F0;--amber:#E8B84B;--muted:#9A9AA0;--line:rgba(255,255,255,.09);--radius:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--noir);color:var(--white);line-height:1.65;overflow-x:hidden;padding-top:46px}
+a{text-decoration:none;color:inherit;transition:.3s}ul{list-style:none}
+h1,h2,h3,.syne{font-family:'Syne',sans-serif}
+.container{width:min(1160px,92%);margin:0 auto}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+header{position:sticky;top:46px;z-index:900;background:rgba(13,13,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem}
+.brand .ap{width:44px;height:44px;border-radius:50%;background:var(--amber);display:grid;place-items:center;color:#0D0D0F;font-size:1.05rem}
+.brand b{color:var(--amber)}
+.nav-links{display:flex;gap:26px;font-size:.84rem;font-weight:600}
+.nav-links a:hover{color:var(--amber)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 26px;font-size:.84rem;font-weight:700;border-radius:4px;transition:.3s}
+.btn-amber{background:var(--amber);color:#0D0D0F}
+.btn-amber:hover{background:#F2CB6E;transform:translateY(-2px)}
+.btn-line{border:1px solid rgba(255,255,255,.25)}
+.btn-line:hover{border-color:var(--amber);color:var(--amber)}
+/* HERO */
+.hero{position:relative;overflow:hidden;background:
+ radial-gradient(ellipse 40% 40% at 85% 20%, rgba(232,184,75,.1), transparent 60%), var(--noir)}
+.hero::before{content:'';position:absolute;top:10%;left:8%;width:300px;height:300px;border-radius:50%;border:1px solid rgba(232,184,75,.14)}
+.hero::after{content:'';position:absolute;top:18%;left:13%;width:190px;height:190px;border-radius:50%;border:1px solid rgba(232,184,75,.1)}
+.hero .container{position:relative;z-index:2;padding:100px 0;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--amber);font-weight:700}
+.hero h1{font-size:clamp(2.7rem,5.8vw,4.5rem);font-weight:800;line-height:1.04;margin:20px 0;letter-spacing:-1px}
+.hero h1 .it{font-family:'Syne',sans-serif;font-weight:400;font-style:italic;color:var(--amber)}
+.hero p{color:var(--muted);max-width:46ch;margin-bottom:32px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.hero-nums{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}
+.hero-nums strong{font-family:'Syne',sans-serif;font-size:1.8rem;color:var(--amber);display:block;line-height:1.1}
+.hero-nums span{font-size:.74rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+/* camera visual */
+.cam-scene{position:relative;display:grid;place-items:center;min-height:400px}
+.cam{width:min(340px,78%);aspect-ratio:3/2.4;background:linear-gradient(160deg,#222226,#121215);border:1px solid rgba(255,255,255,.1);border-radius:20px;position:relative;box-shadow:0 50px 100px rgba(0,0,0,.6)}
+.cam .top{position:absolute;top:-16px;left:20%;width:60%;height:32px;background:linear-gradient(160deg,#2A2A2F,#1A1A1E);border-radius:8px 8px 0 0;border:1px solid rgba(255,255,255,.1);border-bottom:0}
+.cam .lens{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56%;aspect-ratio:1;border-radius:50%;background:conic-gradient(from 40deg,#2E2E33,#17171A,#2E2E33,#17171A,#2E2E33);border:6px solid #0A0A0C;display:grid;place-items:center}
+.cam .lens::before{content:'';width:52%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 32%,#4A5568,#10131C 65%);box-shadow:inset 0 0 20px rgba(0,0,0,.8)}
+.cam .lens::after{content:'';position:absolute;width:20%;height:20%;border-radius:50%;background:radial-gradient(circle,rgba(232,184,75,.5),transparent 70%);top:22%;left:26%;filter:blur(2px)}
+.cam .rec{position:absolute;top:14px;right:18px;display:flex;gap:7px;align-items:center;font-size:.64rem;font-weight:800;letter-spacing:2px;color:var(--amber)}
+.cam .rec::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--amber);animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.flash{position:absolute;top:-34px;right:12%;width:40px;height:22px;background:#2A2A2F;border-radius:5px 5px 0 0;border:1px solid rgba(255,255,255,.12);border-bottom:0}
+.spec-chip{position:absolute;background:rgba(27,27,31,.94);border:1px solid var(--line);backdrop-filter:blur(6px);border-radius:8px;padding:11px 16px;font-size:.74rem;font-weight:700;display:flex;gap:9px;align-items:center;animation:bob 4.8s ease-in-out infinite}
+.spec-chip i{color:var(--amber)}
+.sc1{top:4%;left:-4%}.sc2{bottom:10%;right:-6%;animation-delay:1.5s}.sc3{top:46%;left:-10%;animation-delay:3s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+/* portfolio */
+section{padding:84px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;margin-top:8px}
+.sec-head .kicker2{color:var(--amber);font-size:.72rem;letter-spacing:3px;text-transform:uppercase;font-weight:700}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.f-btn{padding:9px 20px;border:1px solid var(--line);border-radius:40px;font-size:.78rem;font-weight:600;color:var(--muted)}
+.f-btn:hover,.f-btn.on{border-color:var(--amber);color:var(--amber)}
+.port{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.shot{height:260px;border-radius:var(--radius);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:18px}
+.shot::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.65))}
+.shot span{position:relative;z-index:2;font-size:.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.shot i{position:absolute;top:14px;right:14px;z-index:2;color:rgba(255,255,255,.7);font-size:.9rem}
+.sh1{background:linear-gradient(150deg,#4A3B2E,#1C1610)}
+.sh2{background:linear-gradient(150deg,#2E4A3B,#101C16)}
+.sh3{background:linear-gradient(150deg,#3B2E4A,#16101C)}
+.sh4{background:linear-gradient(150deg,#4A4A2E,#1C1C10)}
+.sh5{background:linear-gradient(150deg,#2E3B4A,#10161C)}
+.sh6{background:linear-gradient(150deg,#4A2E2E,#1C1010)}
+.sh7{background:linear-gradient(150deg,#4A2E3B,#1C1016)}
+.sh8{background:linear-gradient(150deg,#2E2E2E,#131313)}
+.sh9{background:linear-gradient(150deg,#3B4A2E,#161C10)}
+/* packages */
+.packs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pack{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;transition:.35s;position:relative}
+.pack:hover{transform:translateY(-7px);border-color:rgba(232,184,75,.5);box-shadow:0 30px 60px rgba(0,0,0,.5)}
+.pack .p-name{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:4px}
+.pack .p-for{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:18px}
+.pack .p-price{font-family:'Syne',sans-serif;font-size:2.2rem;font-weight:800;margin-bottom:2px}
+.pack .p-price small{font-size:.85rem;color:var(--muted);font-weight:500}
+.pack ul{margin:20px 0 24px}
+.pack ul li{padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.09);font-size:.84rem;display:flex;gap:10px;color:#D5D5D2}
+.pack ul i{color:var(--amber);margin-top:4px;font-size:.7rem}
+.pack .btn{width:100%;justify-content:center}
+/* quote band */
+.band{text-align:center;background:linear-gradient(135deg,#1E1A12,#161310);border:1px solid rgba(232,184,75,.2);border-radius:14px;padding:60px 30px}
+.band h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:800;margin-bottom:12px}
+.band h2 b{color:var(--amber)}
+.band p{color:var(--muted);max-width:52ch;margin:0 auto 28px}
+footer{background:#08080A;color:var(--muted);padding:56px 0 30px;font-size:.86rem;border-top:1px solid rgba(255,255,255,.05)}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;margin-bottom:36px}
+.f-grid h5{color:var(--white);margin-bottom:14px;font-family:'Syne',sans-serif}
+.f-grid li{margin-bottom:9px}.f-grid a:hover{color:var(--amber)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.76rem}
+.f-bottom a{color:var(--amber)}
+@media(max-width:920px){.hero .container,.f-grid{grid-template-columns:1fr}.port{grid-template-columns:1fr 1fr}.packs{grid-template-columns:1fr}.nav-links{display:none}.cam-scene{min-height:320px}}
+@media(max-width:560px){.port{grid-template-columns:1fr 1fr;gap:10px}}
+</style>
+</head>
+<body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20love%20the%20Lens%20%26%20Light%20design." target="_blank" rel="noopener">Get this design</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="brand"><span class="ap"><i class="fas fa-aperture"></i></span>LENS<b>&amp;</b>LIGHT</a>
+    <nav class="nav-links"><a href="#work">Portfolio</a><a href="#packages">Packages</a><a href="#about">Studio</a><a href="#book">Book</a></nav>
+    <a href="#book" class="btn btn-amber"><i class="fas fa-calendar-check"></i> Book a Session</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container">
+    <div>
+      <span class="kicker"><i class="fas fa-star"></i> Weddings · Fashion · Brand films</span>
+      <h1>We freeze <span class="it">time</span>, beautifully.</h1>
+      <p>Kigali-based photo and film studio capturing weddings, brands and stories across East Africa — 300+ shoots, one obsession: light.</p>
+      <div class="hero-btns">
+        <a href="#work" class="btn btn-amber"><i class="fas fa-images"></i> See Our Work</a>
+        <a href="#packages" class="btn btn-line">Packages &amp; Pricing</a>
+      </div>
+      <div class="hero-nums">
+        <div><strong>300+</strong>Shoots delivered</div>
+        <div><strong>8K</strong>Film capability</div>
+        <div><strong>48h</strong>Sneak peeks</div>
+      </div>
+    </div>
+    <div class="cam-scene">
+      <div class="cam"><span class="flash"></span><div class="top"></div><div class="lens"></div><span class="rec">REC</span></div>
+      <div class="spec-chip sc1"><i class="fas fa-video"></i> Cinema-grade film</div>
+      <div class="spec-chip sc2"><i class="fas fa-plane-departure"></i> Travel across EAC</div>
+      <div class="spec-chip sc3"><i class="fas fa-bolt"></i> Same-day socials cut</div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">Selected Work</span>
+        <h2>Frames we're proud of</h2>
+      </div>
+      <a href="#book" class="btn btn-line">Full portfolio</a>
+    </div>
+    <div class="filters">
+      <button class="f-btn on">All</button><button class="f-btn">Weddings</button><button class="f-btn">Fashion</button><button class="f-btn">Brand</button><button class="f-btn">Film</button>
+    </div>
+    <div class="port">
+      <div class="shot sh1"><i class="fas fa-expand"></i><span>Kivu Cliff Wedding</span></div>
+      <div class="shot sh2"><i class="fas fa-expand"></i><span>Tea Fields Editorial</span></div>
+      <div class="shot sh3"><i class="fas fa-expand"></i><span>Kitenge Fashion Week</span></div>
+      <div class="shot sh4"><i class="fas fa-expand"></i><span>Golden Hour Couple</span></div>
+      <div class="shot sh5"><i class="fas fa-expand"></i><span>Kigali Towers Brand Film</span></div>
+      <div class="shot sh6"><i class="fas fa-expand"></i><span>Gusaba Ceremony</span></div>
+      <div class="shot sh7"><i class="fas fa-expand"></i><span>Studio Portraits</span></div>
+      <div class="shot sh8"><i class="fas fa-expand"></i><span>Street Stories · Nyamirambo</span></div>
+      <div class="shot sh9"><i class="fas fa-expand"></i><span>Moto Fest Aftermovie</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="kicker2">Packages</span>
+        <h2>Simple pricing, stunning output</h2>
+      </div>
+    </div>
+    <div class="packs">
+      <div class="pack">
+        <span class="p-name">The Portrait</span>
+        <span class="p-for">Individuals &amp; headshots</span>
+        <div class="p-price">120k <small>RWF</small></div>
+        <ul>
+          <li><i class="fas fa-check"></i> 90-minute studio session</li>
+          <li><i class="fas fa-check"></i> 2 outfit changes</li>
+          <li><i class="fas fa-check"></i> 15 retouched photos</li>
+          <li><i class="fas fa-check"></i> Online gallery in 72h</li>
+        </ul>
+        <a href="#book" class="btn btn-line">Book Portrait</a>
+      </div>
+      <div class="pack">
+        <span class="p-name">The Brand</span>
+        <span class="p-for">Businesses &amp; products</span>
+        <div class="p-price">450k <small>RWF</small></div>
+        <ul>
+          <li><i class="fas fa-check"></i> Half-day shoot (photo + video)</li>
+          <li><i class="fas fa-check"></i> 30 images + 60s brand film</li>
+          <li><i class="fas fa-check"></i> 3 vertical socials cuts</li>
+          <li><i class="fas fa-check"></i> Licensed for all marketing</li>
+        </ul>
+        <a href="#book" class="btn btn-amber">Book Brand Day</a>
+      </div>
+      <div class="pack">
+        <span class="p-name">The Forever</span>
+        <span class="p-for">Weddings &amp; traditional</span>
+        <div class="p-price">1.4M <small>RWF</small></div>
+        <ul>
+          <li><i class="fas fa-check"></i> 2 photographers + cinematographer</li>
+          <li><i class="fas fa-check"></i> Gusaba + wedding coverage</li>
+          <li><i class="fas fa-check"></i> 400+ edited photos</li>
+          <li><i class="fas fa-check"></i> 8-minute highlight film</li>
+          <li><i class="fas fa-check"></i> Leather keepsake album</li>
+        </ul>
+        <a href="#book" class="btn btn-line">Check My Date</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="band">
+      <span class="kicker" style="justify-content:center">The Studio</span>
+      <h2 style="margin-top:14px">Great photos aren't taken. <b>They're made.</b></h2>
+      <p>A 200m² daylight studio in Kimihurura with black, white and cyc walls, plus a mobile kit that follows you anywhere in East Africa. Directed by award-winning photographer Kwizera Duke.</p>
+      <a href="https://wa.me/250788695396?text=I%20want%20to%20book%20a%20session%20with%20Lens%20%26%20Light!" target="_blank" rel="noopener" class="btn btn-amber"><i class="fab fa-whatsapp"></i> Plan My Shoot</a>
+    </div>
+  </div>
+</section>
+
+<footer id="book">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="brand" style="display:flex;margin-bottom:14px;color:var(--white)"><span class="ap" style="width:38px;height:38px;font-size:.9rem"><i class="fas fa-aperture"></i></span>LENS<b style="color:var(--amber)">&amp;</b>LIGHT</a>
+        <p>Photography &amp; film studio in Kigali. Lovers of light, lasters of moments.</p>
+      </div>
+      <div><h5>Studio</h5><ul><li><a href="#work">Portfolio</a></li><li><a href="#packages">Packages</a></li><li>KG 11 Ave, Kimihurura</li></ul></div>
+      <div><h5>Contact</h5><ul><li>hello@lensandlight.rw</li><li>+250 788 000 000</li><li>@lensandlight.rw</li></ul></div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Lens &amp; Light Studio (fictional demo studio)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
