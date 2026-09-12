@@ -158,6 +158,65 @@
         .hero-buttons {
             margin-top: 20px;
         }
+
+        /* ======================================== */
+        /* DEMOS SHOWCASE CARDS                     */
+        /* ======================================== */
+        .demos-showcase {
+            background: var(--dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .ds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .ds-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            padding: 26px 16px;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .ds-card::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #C9A96E, #E8D5A3);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+        .ds-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(201, 169, 110, 0.45);
+            box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45);
+        }
+        .ds-card:hover::after {
+            transform: scaleX(1);
+        }
+        .ds-card i {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+        .ds-card h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .ds-card span {
+            font-size: 0.72rem;
+            color: var(--grey);
+        }
     </style>
 </head>
 <body>
@@ -181,6 +240,7 @@
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
+                    <li><a href="demos.html">Demos</a></li>
                     <li><a href="companies.html">Our Companies</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -311,6 +371,51 @@
             </div>
             <div class="services-cta" data-aos="fade-up">
                 <a href="services.html" class="btn-primary"><i class="fas fa-th-large"></i> View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- DEMOS SHOWCASE                           -->
+    <!-- ======================================== -->
+    <section class="demos-showcase" id="demos-showcase">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="tag"><i class="fas fa-play-circle"></i> Our Work · Live Demos</span>
+                <h2>See What We Can Build <span class="highlight">For Your Business</span></h2>
+                <p>Pick your industry, preview a live demo — then we customize it with your brand and content.</p>
+            </div>
+            <div class="ds-grid">
+                <a class="ds-card" href="demos.html#restaurant" data-aos="fade-up" data-aos-delay="50">
+                    <i class="fas fa-utensils"></i><h4>Restaurant</h4><span>Amahoro Kitchen</span>
+                </a>
+                <a class="ds-card" href="demos.html#hotel" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-hotel"></i><h4>Hotel &amp; Tourism</h4><span>Nyungwe Eco Lodge</span>
+                </a>
+                <a class="ds-card" href="demos.html#realestate" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-city"></i><h4>Real Estate</h4><span>Kivu Properties</span>
+                </a>
+                <a class="ds-card" href="demos.html#ecommerce" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-cart-shopping"></i><h4>E-Commerce</h4><span>Agaseke Market</span>
+                </a>
+                <a class="ds-card" href="demos.html#education" data-aos="fade-up" data-aos-delay="250">
+                    <i class="fas fa-graduation-cap"></i><h4>Education</h4><span>Excel Academy</span>
+                </a>
+                <a class="ds-card" href="demos.html#ngo" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-hand-holding-heart"></i><h4>NGO &amp; Church</h4><span>Hope Rwanda</span>
+                </a>
+                <a class="ds-card" href="demos.html#health" data-aos="fade-up" data-aos-delay="350">
+                    <i class="fas fa-heart-pulse"></i><h4>Health</h4><span>Uzima Clinic</span>
+                </a>
+                <a class="ds-card" href="demos.html#corporate" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-briefcase"></i><h4>Corporate</h4><span>Virunga Consulting</span>
+                </a>
+                <a class="ds-card" href="demos.html#system" data-aos="fade-up" data-aos-delay="450">
+                    <i class="fas fa-gauge-high"></i><h4>Systems</h4><span>ShulePro Dashboard</span>
+                </a>
+            </div>
+            <div class="services-cta" data-aos="fade-up">
+                <a href="demos.html" class="btn-primary"><i class="fas fa-play"></i> Browse All Live Demos</a>
             </div>
         </div>
     </section>
@@ -527,6 +632,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
+                        <li><a href="demos.html">Demos</a></li>
                         <li><a href="companies.html">Our Companies</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>

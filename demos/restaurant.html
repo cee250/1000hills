@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amahoro Kitchen | Rwandan Fusion Restaurant in Kigali — Demo</title>
+<meta name="description" content="Live website demo by 1000 Hills Group — Restaurant & fine dining website template." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{--bg:#151110;--bg2:#1E1714;--card:#241B17;--gold:#D4A24E;--gold-l:#EBC982;--cream:#F5EEE3;--muted:#B7A794;--line:rgba(212,162,78,.18);--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--cream);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+h1,h2,h3,.serif{font-family:'Playfair Display',serif}
+.container{width:min(1140px,92%);margin:0 auto}
+/* ===== 1000 HILLS DEMO BAR ===== */
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-bar .db-left i{color:#C9A96E}
+.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-right{display:flex;align-items:center;gap:8px}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-cta:hover{transform:translateY(-1px)}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+body{padding-top:46px}
+.demo-bar.hidden{display:none}
+/* ===== NAV ===== */
+header{position:sticky;top:46px;z-index:900;background:rgba(21,17,16,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700}
+.brand .logo-ic{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-l));display:grid;place-items:center;color:#1E1714;font-size:1rem}
+.nav-links{display:flex;gap:30px;font-size:.88rem;font-weight:500}
+.nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:40px;font-size:.85rem;font-weight:600;cursor:pointer;border:0;transition:.3s}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-l));color:#1E1714}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(212,162,78,.35)}
+.btn-ghost{border:1px solid var(--line);color:var(--cream)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.hamburger{display:none;background:none;border:0;color:var(--gold);font-size:1.3rem;cursor:pointer}
+/* ===== HERO ===== */
+.hero{min-height:88vh;display:flex;align-items:center;position:relative;background:url('img/restaurant-hero.jpg') center/cover no-repeat}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,17,16,.55),rgba(21,17,16,.45) 45%,var(--bg))}
+.hero .container{position:relative;z-index:2;padding:90px 0}
+.tag-pill{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;letter-spacing:2.5px;font-weight:600;color:var(--gold);text-transform:uppercase;border:1px solid var(--line);padding:8px 18px;border-radius:40px;background:rgba(21,17,16,.5)}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:900;line-height:1.08;margin:22px 0;max-width:14ch}
+.hero h1 em{color:var(--gold)}
+.hero p{max-width:46ch;color:var(--muted);font-size:1.02rem;font-weight:300}
+.hero-btns{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.hero-rating{display:flex;align-items:center;gap:12px;margin-top:34px;font-size:.85rem;color:var(--muted)}
+.hero-rating .stars{color:var(--gold);letter-spacing:2px}
+/* ===== HIGHLIGHTS ===== */
+.highlights{border-bottom:1px solid var(--line);background:var(--bg2)}
+.hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:34px 0}
+.hl{display:flex;align-items:center;gap:16px}
+.hl i{font-size:1.35rem;color:var(--gold);width:52px;height:52px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:var(--card)}
+.hl h4{font-size:.98rem;font-weight:600}.hl span{font-size:.8rem;color:var(--muted);font-weight:300}
+/* ===== MENU ===== */
+section{padding:90px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 54px}
+.sec-head .kicker{color:var(--gold);font-size:.78rem;letter-spacing:3px;font-weight:600;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:700;margin:10px 0}
+.sec-head p{color:var(--muted);font-weight:300}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:44px 60px}
+.menu-col h3{font-size:1.15rem;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:26px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.menu-item{margin-bottom:24px}
+.menu-item .mi-top{display:flex;align-items:baseline;gap:6px}
+.menu-item .mi-top h5{font-size:.98rem;font-weight:600;white-space:nowrap}
+.menu-item .dots{flex:1;border-bottom:1px dotted rgba(183,167,148,.4);transform:translateY(-4px)}
+.menu-item .price{font-family:'Playfair Display',serif;color:var(--gold-l);font-weight:700;white-space:nowrap}
+.menu-item p{font-size:.82rem;color:var(--muted);font-weight:300}
+.badge-spicy{color:#E06C4A;font-size:.7rem;vertical-align:super}
+/* ===== ABOUT ===== */
+.about{background:var(--bg2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-img{position:relative}
+.about-img img{border-radius:var(--radius);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.about-img::after{content:'';position:absolute;inset:-16px;border:1px solid var(--line);border-radius:var(--radius);z-index:-1}
+.about-exp{position:absolute;bottom:-24px;right:-14px;background:linear-gradient(135deg,var(--gold),var(--gold-l));color:#1E1714;padding:18px 26px;border-radius:var(--radius);text-align:center;box-shadow:0 20px 50px rgba(212,162,78,.3)}
+.about-exp strong{font-family:'Playfair Display',serif;font-size:1.9rem;display:block;line-height:1}
+.about-exp span{font-size:.72rem;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+.about-txt .kicker{color:var(--gold);font-size:.78rem;letter-spacing:3px;font-weight:600;text-transform:uppercase}
+.about-txt h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:12px 0 18px}
+.about-txt p{color:var(--muted);font-weight:300;margin-bottom:16px}
+.about-stats{display:flex;gap:34px;margin-top:28px;flex-wrap:wrap}
+.about-stats strong{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--gold);display:block}
+.about-stats span{font-size:.78rem;color:var(--muted)}
+/* ===== QUOTE / VISIT ===== */
+.visit{background:linear-gradient(rgba(21,17,16,.92),rgba(21,17,16,.92)),url('img/restaurant-interior.jpg') center/cover fixed}
+.visit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;text-align:center}
+.visit-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:38px 26px}
+.visit-card i{font-size:1.5rem;color:var(--gold);margin-bottom:16px}
+.visit-card h4{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:10px}
+.visit-card p{font-size:.87rem;color:var(--muted);font-weight:300}
+/* ===== CTA ===== */
+.cta{text-align:center;background:radial-gradient(ellipse at center,rgba(212,162,78,.12),transparent 65%)}
+.cta h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:14px}
+.cta p{color:var(--muted);margin-bottom:30px}
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--line);background:var(--bg2);padding:60px 0 30px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.f-grid h5{font-size:.85rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.f-grid p,.f-grid li{font-size:.85rem;color:var(--muted);font-weight:300}
+.f-grid li{margin-bottom:10px}.f-grid li i{color:var(--gold);margin-right:8px;width:16px}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted)}
+.socials a:hover{background:var(--gold);color:#1E1714;border-color:var(--gold)}
+.f-bottom{border-top:1px solid var(--line);padding-top:24px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.78rem;color:var(--muted)}
+.f-bottom a{color:var(--gold)}
+@media(max-width:860px){.nav-links,.nav .btn{display:none}.hamburger{display:block}
+.about-grid,.visit-grid{grid-template-columns:1fr}.hl-grid{grid-template-columns:1fr}
+.f-grid{grid-template-columns:1fr}.about-exp{right:10px}}
+</style>
+</head>
+<body>
+
+<!-- 1000 Hills demo bar -->
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20restaurant%20website%20like%20the%20Amahoro%20Kitchen%20demo." target="_blank" rel="noopener">Get a site like this</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand"><span class="logo-ic"><i class="fas fa-utensils"></i></span>Amahoro Kitchen</a>
+    <nav class="nav-links">
+      <a href="#home">Home</a><a href="#menu">Menu</a><a href="#about">Our Story</a><a href="#visit">Visit Us</a>
+    </nav>
+    <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20reserve%20a%20table%20at%20Amahoro%20Kitchen." target="_blank" rel="noopener" class="btn btn-gold"><i class="fas fa-calendar-check"></i> Reserve a Table</a>
+    <button class="hamburger" aria-label="menu"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <span class="tag-pill"><i class="fas fa-location-dot"></i> Kigali · Rwanda</span>
+    <h1>A Taste of the <em>Thousand Hills</em></h1>
+    <p>Modern Rwandan fusion — where grandmother's recipes meet fine-dining craft. Local farms, open fire, bold flavour.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn btn-gold"><i class="fas fa-book-open"></i> Explore the Menu</a>
+      <a href="#visit" class="btn btn-ghost"><i class="fas fa-clock"></i> Opening Hours</a>
+    </div>
+    <div class="hero-rating">
+      <span class="stars">★★★★★</span> 4.9 · rated by 500+ guests this year
+    </div>
+  </div>
+</section>
+
+<div class="highlights">
+  <div class="container hl-grid">
+    <div class="hl"><i class="fas fa-seedling"></i><div><h4>Farm-to-Table Fresh</h4><span>Ingredients from 12 local partner farms</span></div></div>
+    <div class="hl"><i class="fas fa-fire"></i><div><h4>Open-Fire Kitchen</h4><span>Watch our chefs work the charcoal grill</span></div></div>
+    <div class="hl"><i class="fas fa-music"></i><div><h4>Live Music Fridays</h4><span>Traditional Inanga &amp; jazz every week</span></div></div>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Our Menu</span>
+      <h2>Crafted From the Hills</h2>
+      <p>A rotating menu that follows the seasons and honours Rwandan tradition.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-col">
+        <h3><i class="fas fa-leaf"></i> Starters</h3>
+        <div class="menu-item"><div class="mi-top"><h5>Isombe Bites</h5><span class="dots"></span><span class="price">8,000 RWF</span></div><p>Crispy cassava-leaf croquettes, smoked mackerel aioli</p></div>
+        <div class="menu-item"><div class="mi-top"><h5>Fire-Grilled Plantain <span class="badge-spicy">✦</span></h5><span class="dots"></span><span class="price">7,000 RWF</span></div><p>Charred plantain, honey-chilli glaze, groundnut crumble</p></div>
+        <div class="menu-item"><div class="mi-top"><h5>Amafula Soup</h5><span class="dots"></span><span class="price">9,000 RWF</span></div><p>Roasted butternut, coconut, toasted agusu seeds</p></div>
+      </div>
+      <div class="menu-col">
+        <h3><i class="fas fa-drumstick-bite"></i> Main Course</h3>
+        <div class="menu-item"><div class="mi-top"><h5>Thousand Hills Beef</h5><span class="dots"></span><span class="price">26,000 RWF</span></div><p>Charcoal-grilled fillet, plantain crust, banana-glace reduction</p></div>
+        <div class="menu-item"><div class="mi-top"><h5>Lake Kivu Tilapia</h5><span class="dots"></span><span class="price">22,000 RWF</span></div><p>Whole grilled tilapia, isombe, lemon-butter sauce</p></div>
+        <div class="menu-item"><div class="mi-top"><h5>Brochettes Royale <span class="badge-spicy">🌶</span></h5><span class="dots"></span><span class="price">18,000 RWF</span></div><p>Goat &amp; beef skewers, house pili-pili, fried plantain</p></div>
+      </div>
+      <div class="menu-col">
+        <h3><i class="fas fa-wine-glass"></i> Drinks &amp; Dessert</h3>
+        <div class="menu-item"><div class="mi-top"><h5>Banana Wine Flight</h5><span class="dots"></span><span class="price">15,000 RWF</span></div><p>Three local urwagwa tastings, honeyed fruit pairing</p></div>
+        <div class="menu-item"><div class="mi-top"><h5>Gorilla Hills Coffee</h5><span class="dots"></span><span class="price">5,000 RWF</span></div><p>Single-origin arabica, cardamom, knipsgeit cream</p></div>
+        <div class="menu-item"><div class="mi-top"><h5>Milk Tart Kivu</h5><span class="dots"></span><span class="price">8,000 RWF</span></div><p>Vintage milk tart, passionfruit curd, cinnamon dust</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-img">
+      <img src="img/restaurant-interior.jpg" alt="Amahoro Kitchen dining room" loading="lazy" />
+      <div class="about-exp"><strong>7</strong><span>Years Serving Kigali</span></div>
+    </div>
+    <div class="about-txt">
+      <span class="kicker">Our Story</span>
+      <h2>Where Family Recipes Meet Fine Dining</h2>
+      <p>Founded in 2018, Amahoro Kitchen — "Kitchen of Peace" — began as a family table of eight seats. Today we welcome guests from all over the world, but the philosophy never changed: honest Rwandan ingredients, cooked with fire and patience.</p>
+      <p>Our kitchen works directly with smallholder farms across the Southern and Northern provinces, and our dining room glows with the work of local artisans.</p>
+      <div class="about-stats">
+        <div><strong>40+</strong><span>Seats nightly</span></div>
+        <div><strong>12</strong><span>Partner farms</span></div>
+        <div><strong>4.9★</strong><span>Guest rating</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Visit Us</span>
+      <h2>Our Table Awaits</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-card"><i class="fas fa-location-dot"></i><h4>Find Us</h4><p>KN 4 Ave, Kiyovu<br/>Kigali, Rwanda</p></div>
+      <div class="visit-card"><i class="fas fa-clock"></i><h4>Opening Hours</h4><p>Tue – Sun · 11:00 – 23:00<br/>Kitchen closes 22:00</p></div>
+      <div class="visit-card"><i class="fas fa-phone"></i><h4>Reservations</h4><p>+250 788 000 000<br/>hello@amahorokitchen.rw</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2 class="serif">Hungry Already?</h2>
+    <p>Reserve your table — groups and private events welcome.</p>
+    <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20reserve%20a%20table%20at%20Amahoro%20Kitchen." target="_blank" rel="noopener" class="btn btn-gold"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#home" class="brand" style="margin-bottom:14px"><span class="logo-ic"><i class="fas fa-utensils"></i></span>Amahoro Kitchen</a>
+        <p>Modern Rwandan fusion cuisine in the heart of Kigali. Farm-fresh, fire-cooked, family-run.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul><li><a href="#menu">The Menu</a></li><li><a href="#about">Our Story</a></li><li><a href="#visit">Visit Us</a></li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul><li><i class="fas fa-phone"></i>+250 788 000 000</li><li><i class="fas fa-envelope"></i>hello@amahorokitchen.rw</li><li><i class="fas fa-location-dot"></i>KN 4 Ave, Kigali</li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Amahoro Kitchen (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a> — Get yours today</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Demos | Website & System Templates — 1000 Hills Group</title>
+
+    <meta name="description" content="Browse live website and system demos by 1000 Hills Group — restaurant, hotel, real estate, e-commerce, school, NGO, clinic and corporate demos you can preview and get customized for your business." />
+    <meta name="keywords" content="website demos Rwanda, web design templates Kigali, restaurant website, hotel website, school management system, ecommerce Rwanda" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://1000hillsgroup.africa/demos.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Live Website & System Demos — 1000 Hills Group" />
+    <meta property="og:description" content="Preview what we can build for your business — demos by industry: restaurant, hotel, real estate, e-commerce, school, NGO, clinic, corporate and systems." />
+    <meta property="og:image" content="https://1000hillsgroup.africa/1000hills-logo.png" />
+    <meta property="og:url" content="https://1000hillsgroup.africa/demos.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/png" href="1000hills-logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+        /* ======================================== */
+        /* DEMOS PAGE CUSTOM STYLES                 */
+        /* ======================================== */
+        .demo-hero {
+            padding: 160px 0 70px;
+            background:
+                radial-gradient(ellipse 55% 45% at 80% 10%, rgba(201, 169, 110, 0.08), transparent 60%),
+                radial-gradient(ellipse 45% 40% at 10% 90%, rgba(201, 169, 110, 0.06), transparent 60%),
+                var(--black);
+            position: relative;
+            overflow: hidden;
+        }
+        .demo-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+            background-size: 52px 52px;
+            mask-image: radial-gradient(ellipse 65% 60% at 50% 30%, black, transparent);
+            pointer-events: none;
+        }
+        .demo-hero .container { position: relative; z-index: 2; }
+        .demo-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 900; line-height: 1.12; margin: 18px 0; }
+        .demo-hero h1 .highlight { color: var(--gold); }
+        .demo-hero p { color: var(--grey); max-width: 60ch; font-size: 1.02rem; }
+        .demo-hero-stats { display: flex; gap: 38px; margin-top: 36px; flex-wrap: wrap; }
+        .demo-hero-stats strong { font-size: 1.6rem; font-weight: 800; color: var(--gold); display: block; line-height: 1.2; }
+        .demo-hero-stats span { font-size: .8rem; color: var(--grey); }
+
+        /* ---- Filter bar ---- */
+        .filter-bar {
+            position: sticky;
+            top: 80px;
+            z-index: 500;
+            background: rgba(10, 22, 40, 0.88);
+            backdrop-filter: blur(14px);
+            border-top: 1px solid rgba(255,255,255,.06);
+            border-bottom: 1px solid rgba(255,255,255,.06);
+            padding: 14px 0;
+        }
+        .filter-inner { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .filter-pills { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; scrollbar-color: var(--dark-hover) transparent; flex: 1; min-width: 0; }
+        .filter-pills::-webkit-scrollbar { height: 5px; }
+        .filter-pills::-webkit-scrollbar-thumb { background: var(--dark-hover); border-radius: 10px; }
+        .pill {
+            flex: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,.1);
+            background: var(--dark-card);
+            color: var(--grey-light);
+            font-size: .8rem;
+            font-weight: 600;
+            padding: 9px 18px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        .pill i { font-size: .74rem; color: var(--gold); }
+        .pill:hover { border-color: var(--gold); color: var(--white); }
+        .pill.active { background: linear-gradient(135deg, #C9A96E, #E8D5A3); color: #0A1628; border-color: transparent; }
+        .pill.active i { color: #0A1628; }
+        .demo-search {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 40px;
+            padding: 9px 18px;
+            min-width: 220px;
+        }
+        .demo-search i { color: var(--gold); font-size: .85rem; }
+        .demo-search input { background: none; border: 0; outline: none; color: var(--white); font-family: var(--font); font-size: .85rem; width: 100%; }
+        .demo-search input::placeholder { color: var(--grey); }
+
+        /* ---- Demos grid ---- */
+        .demos-section { padding: 70px 0 90px; background: var(--black); }
+        .demo-count { color: var(--grey); font-size: .86rem; margin-bottom: 34px; }
+        .demo-count strong { color: var(--gold); }
+        .demos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+        }
+        .demo-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+        .demo-card:hover { transform: translateY(-8px); border-color: rgba(201,169,110,.45); box-shadow: 0 24px 60px rgba(0,0,0,.5); }
+        .demo-card.hidden { display: none; }
+
+        /* live browser preview */
+        .demo-viewport {
+            position: relative;
+            aspect-ratio: 1280 / 820;
+            background: var(--dark);
+            overflow: hidden;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255,255,255,.06);
+        }
+        .demo-viewport .chrome-bar {
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 26px;
+            background: #0D1B2F;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 0 12px;
+            z-index: 5;
+            border-bottom: 1px solid rgba(255,255,255,.05);
+        }
+        .chrome-bar .dot { width: 9px; height: 9px; border-radius: 50%; }
+        .chrome-bar .d1 { background: #FF5F57; } .chrome-bar .d2 { background: #FEBC2E; } .chrome-bar .d3 { background: #28C840; }
+        .chrome-bar .url {
+            margin-left: 8px;
+            font-size: 8px;
+            color: #7E93AF;
+            background: rgba(255,255,255,.05);
+            border-radius: 20px;
+            padding: 2px 12px;
+            letter-spacing: .3px;
+            max-width: 55%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .demo-frame {
+            position: absolute;
+            top: 26px; left: 0;
+            width: 1280px;
+            height: 794px;
+            border: 0;
+            transform-origin: top left;
+            opacity: 0;
+            transition: opacity .6s ease;
+            pointer-events: none;
+            background: #fff;
+        }
+        .demo-frame.loaded { opacity: 1; }
+        .demo-placeholder {
+            position: absolute;
+            inset: 26px 0 0 0;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #0F2040, #162D50);
+        }
+        .demo-placeholder i { font-size: 2.4rem; color: rgba(201,169,110,.55); animation: demoPulse 1.8s ease-in-out infinite; }
+        @keyframes demoPulse { 0%,100% { opacity:.4; transform:scale(1);} 50% { opacity:1; transform:scale(1.08);} }
+        .demo-view {
+            position: absolute;
+            inset: 26px 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(10,22,40,.55);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 6;
+        }
+        .demo-viewport:hover .demo-view { opacity: 1; }
+        .demo-view span {
+            background: linear-gradient(135deg, #C9A96E, #E8D5A3);
+            color: #0A1628;
+            font-size: .8rem;
+            font-weight: 700;
+            padding: 10px 22px;
+            border-radius: 40px;
+        }
+        .demo-badges { position: absolute; top: 38px; left: 12px; right: 12px; display: flex; justify-content: space-between; z-index: 6; pointer-events: none; }
+        .demo-badges span {
+            font-size: .64rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 30px;
+            backdrop-filter: blur(6px);
+        }
+        .badge-cat { background: rgba(10,22,40,.75); color: var(--gold-light); border: 1px solid rgba(201,169,110,.4); }
+        .badge-live { background: rgba(16,185,129,.85); color: #fff; display: inline-flex; align-items: center; gap: 6px; }
+        .badge-live::before { content: ''; width: 6px; height: 6px; background: #fff; border-radius: 50%; animation: livePulse 1.6s infinite; }
+        @keyframes livePulse { 0%,100% { box-shadow: 0 0 0 0 rgba(255,255,255,.7);} 50% { box-shadow: 0 0 0 5px rgba(255,255,255,0);} }
+
+        .demo-body { padding: 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+        .demo-title-row { display: flex; align-items: center; gap: 12px; }
+        .demo-title-row .demo-ic {
+            width: 44px; height: 44px; flex: none;
+            border-radius: 12px;
+            background: linear-gradient(135deg, rgba(201,169,110,.2), rgba(201,169,110,.06));
+            border: 1px solid rgba(201,169,110,.3);
+            display: grid; place-items: center;
+            color: var(--gold);
+            font-size: 1.05rem;
+        }
+        .demo-title-row h3 { font-size: 1.08rem; font-weight: 700; line-height: 1.3; }
+        .demo-title-row .type { font-size: .7rem; color: var(--grey); font-weight: 500; letter-spacing: 1px; text-transform: uppercase; }
+        .demo-desc { font-size: .87rem; color: var(--grey); font-weight: 300; }
+        .demo-feats { display: flex; flex-wrap: wrap; gap: 7px; }
+        .demo-feats span { font-size: .68rem; border: 1px solid rgba(255,255,255,.1); padding: 4px 11px; border-radius: 30px; color: var(--grey-light); }
+        .demo-actions { display: flex; gap: 10px; margin-top: auto; padding-top: 8px; }
+        .demo-actions .btn-preview {
+            flex: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #C9A96E, #E8D5A3);
+            color: #0A1628;
+            font-size: .8rem;
+            font-weight: 700;
+            padding: 11px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            border: 0;
+            transition: var(--transition);
+            font-family: var(--font);
+        }
+        .demo-actions .btn-preview:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(201,169,110,.3); }
+        .demo-actions .btn-icon {
+            width: 40px; height: 40px; flex: none;
+            display: grid; place-items: center;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,.14);
+            color: var(--grey-light);
+            transition: var(--transition);
+        }
+        .demo-actions .btn-icon:hover { border-color: var(--gold); color: var(--gold); }
+        .demo-actions .btn-wa:hover { border-color: #25D366; color: #25D366; }
+
+        .no-results { text-align: center; padding: 60px 20px; color: var(--grey); display: none; }
+        .no-results i { font-size: 2.2rem; color: var(--gold); margin-bottom: 16px; display: block; }
+
+        /* ---- How it works ---- */
+        .how-section { background: var(--dark); border-top: 1px solid rgba(255,255,255,.05); border-bottom: 1px solid rgba(255,255,255,.05); padding: 70px 0; }
+        .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 10px; }
+        .how-card { text-align: center; padding: 10px; position: relative; }
+        .how-card .n {
+            width: 58px; height: 58px; margin: 0 auto 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #C9A96E, #E8D5A3);
+            color: #0A1628;
+            font-weight: 800; font-size: 1.15rem;
+            display: grid; place-items: center;
+            box-shadow: 0 12px 30px rgba(201,169,110,.25);
+        }
+        .how-card h4 { font-size: 1.02rem; margin-bottom: 8px; }
+        .how-card p { font-size: .84rem; color: var(--grey); font-weight: 300; }
+
+        /* ---- Preview modal ---- */
+        .demo-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(4, 10, 20, 0.92);
+            backdrop-filter: blur(8px);
+            display: none;
+            flex-direction: column;
+        }
+        .demo-modal.open { display: flex; }
+        .modal-top {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 22px;
+            background: #0A1628;
+            border-bottom: 1px solid rgba(201,169,110,.25);
+            flex-wrap: wrap;
+        }
+        .modal-top .m-title { font-weight: 700; font-size: .98rem; }
+        .modal-top .m-title small { display: block; font-size: .68rem; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
+        .device-group { display: flex; gap: 6px; margin-left: auto; background: rgba(255,255,255,.05); padding: 5px; border-radius: 40px; }
+        .device-btn {
+            border: 0; background: none; color: var(--grey);
+            font-size: .78rem; font-family: var(--font);
+            padding: 7px 14px; border-radius: 30px; cursor: pointer;
+            transition: var(--transition);
+        }
+        .device-btn.active { background: linear-gradient(135deg, #C9A96E, #E8D5A3); color: #0A1628; font-weight: 700; }
+        .modal-actions { display: flex; gap: 8px; }
+        .modal-actions a, .modal-actions button {
+            width: 38px; height: 38px;
+            display: grid; place-items: center;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,.14);
+            background: none; color: var(--grey-light);
+            cursor: pointer; transition: var(--transition);
+            font-size: .9rem;
+        }
+        .modal-actions a:hover { border-color: var(--gold); color: var(--gold); }
+        .modal-actions button:hover { border-color: #FF5F57; color: #FF5F57; }
+        .modal-stage { flex: 1; display: flex; align-items: stretch; justify-content: center; background: #060D1A; overflow: hidden; padding: 0; }
+        .modal-frame {
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            transition: width .4s cubic-bezier(.25,.46,.45,.94), margin .4s;
+            overflow: hidden;
+        }
+        .modal-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+        .modal-frame.dev-tablet { width: 768px; margin: 18px auto; height: calc(100% - 36px); border-radius: 14px; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+        .modal-frame.dev-mobile { width: 402px; margin: 18px auto; height: calc(100% - 36px); border-radius: 18px; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+
+        /* ---- CTA band ---- */
+        .demos-cta { text-align: center; }
+        .demos-cta .mini-cards { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-top: 8px; margin-bottom: 34px; }
+        .demos-cta .mini-card {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: var(--dark-card); border: 1px solid rgba(255,255,255,.08);
+            color: var(--grey-light); font-size: .82rem; font-weight: 600;
+            padding: 10px 20px; border-radius: 40px;
+        }
+        .demos-cta .mini-card i { color: var(--gold); }
+
+        @media (max-width: 768px) {
+            .filter-bar { top: 74px; }
+            .filter-inner { flex-direction: column; align-items: stretch; }
+            .demo-search { min-width: 0; }
+            .how-grid { grid-template-columns: 1fr; }
+            .modal-top { padding: 10px 14px; }
+            .device-group { margin-left: 0; }
+            .demos-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======================================== -->
+    <!-- HEADER                                   -->
+    <!-- ======================================== -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="1000hills-logo.png" alt="1000 Hills Group logo" />
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="demos.html" class="active">Demos</a></li>
+                    <li><a href="companies.html">Our Companies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======================================== -->
+    <!-- PAGE HERO                                -->
+    <!-- ======================================== -->
+    <section class="demo-hero">
+        <div class="container">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <span class="tag"><i class="fas fa-play-circle"></i> OUR WORK · LIVE DEMOS</span>
+                <h1>See What We Can Build <span class="highlight">For You</span></h1>
+                <p>Browse real, working website and system demos by industry. Pick the one you love, and we'll customize it with your brand, colors and content — live in 2–3 weeks.</p>
+                <div class="demo-hero-stats">
+                    <div><strong>9</strong><span>Live demos</span></div>
+                    <div><strong>8</strong><span>Industries</span></div>
+                    <div><strong>100%</strong><span>Customizable</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- FILTER BAR                               -->
+    <!-- ======================================== -->
+    <div class="filter-bar">
+        <div class="container filter-inner">
+            <div class="filter-pills" id="filterPills">
+                <button class="pill active" data-filter="all"><i class="fas fa-grip"></i> All Demos</button>
+                <button class="pill" data-filter="restaurant"><i class="fas fa-utensils"></i> Restaurant</button>
+                <button class="pill" data-filter="hotel"><i class="fas fa-hotel"></i> Hotel &amp; Tourism</button>
+                <button class="pill" data-filter="realestate"><i class="fas fa-city"></i> Real Estate</button>
+                <button class="pill" data-filter="ecommerce"><i class="fas fa-cart-shopping"></i> E-Commerce</button>
+                <button class="pill" data-filter="education"><i class="fas fa-graduation-cap"></i> Education</button>
+                <button class="pill" data-filter="ngo"><i class="fas fa-hand-holding-heart"></i> NGO &amp; Church</button>
+                <button class="pill" data-filter="health"><i class="fas fa-heart-pulse"></i> Health</button>
+                <button class="pill" data-filter="corporate"><i class="fas fa-briefcase"></i> Corporate</button>
+                <button class="pill" data-filter="system"><i class="fas fa-gauge-high"></i> Systems</button>
+            </div>
+            <label class="demo-search">
+                <i class="fas fa-magnifying-glass"></i>
+                <input type="text" id="demoSearch" placeholder="Search demos… e.g. hotel, school" aria-label="Search demos" />
+            </label>
+        </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- DEMOS GRID                               -->
+    <!-- ======================================== -->
+    <section class="demos-section">
+        <div class="container">
+            <p class="demo-count" id="demoCount" data-aos="fade-up"></p>
+            <div class="demos-grid" id="demosGrid"></div>
+            <div class="no-results" id="noResults">
+                <i class="fas fa-face-frown"></i>
+                No demos match your search — but we can still <strong style="color:var(--gold)">build it custom</strong> for you!
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- HOW IT WORKS                             -->
+    <!-- ======================================== -->
+    <section class="how-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="tag"><i class="fas fa-route"></i> SIMPLE PROCESS</span>
+                <h2>From Demo to <span class="highlight">Live Website</span></h2>
+                <p>Three easy steps to get your business online</p>
+            </div>
+            <div class="how-grid">
+                <div class="how-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="n">1</div>
+                    <h4><i class="fas fa-hand-pointer" style="color:var(--gold)"></i> Pick a Demo</h4>
+                    <p>Preview by industry and choose the style that fits your business.</p>
+                </div>
+                <div class="how-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="n">2</div>
+                    <h4><i class="fas fa-palette" style="color:var(--gold)"></i> We Customize It</h4>
+                    <p>Your logo, colors, content and features — tailored to your brand.</p>
+                </div>
+                <div class="how-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="n">3</div>
+                    <h4><i class="fas fa-rocket" style="color:var(--gold)"></i> Launch</h4>
+                    <p>Your new website goes live in 2–3 weeks, with training and support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- CUSTOM CTA                               -->
+    <!-- ======================================== -->
+    <section class="cta-section demos-cta">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <span class="tag"><i class="fas fa-wand-magic-sparkles"></i> DON'T SEE YOUR INDUSTRY?</span>
+                <h2>We Build <span class="highlight">Custom</span> Too</h2>
+                <p>These demos are just starting points. Tell us about your business and we'll design something completely unique.</p>
+                <div class="mini-cards">
+                    <span class="mini-card"><i class="fas fa-church"></i> Church</span>
+                    <span class="mini-card"><i class="fas fa-dumbbell"></i> Gym &amp; Fitness</span>
+                    <span class="mini-card"><i class="fas fa-scissors"></i> Salon &amp; Spa</span>
+                    <span class="mini-card"><i class="fas fa-truck-fast"></i> Logistics</span>
+                    <span class="mini-card"><i class="fas fa-camera-retro"></i> Photography</span>
+                    <span class="mini-card"><i class="fas fa-gavel"></i> Law Firm</span>
+                </div>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20custom%20website%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i> Request a Custom Demo
+                    </a>
+                    <a href="contact.html" class="btn-secondary">
+                        <i class="fas fa-envelope"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================== -->
+    <!-- PREVIEW MODAL                            -->
+    <!-- ======================================== -->
+    <div class="demo-modal" id="demoModal" role="dialog" aria-modal="true" aria-label="Demo preview">
+        <div class="modal-top">
+            <div class="m-title" id="modalTitle">Demo<small id="modalCat">Category</small></div>
+            <div class="device-group">
+                <button class="device-btn active" data-device="desktop" title="Desktop view"><i class="fas fa-desktop"></i> Desktop</button>
+                <button class="device-btn" data-device="tablet" title="Tablet view"><i class="fas fa-tablet-screen-button"></i> Tablet</button>
+                <button class="device-btn" data-device="mobile" title="Mobile view"><i class="fas fa-mobile-screen-button"></i> Mobile</button>
+            </div>
+            <div class="modal-actions">
+                <a href="#" id="modalOpen" target="_blank" rel="noopener" title="Open in new tab"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                <a href="#" id="modalWa" target="_blank" rel="noopener" title="Get a quote" style="color:#25D366;border-color:rgba(37,211,102,.4)"><i class="fab fa-whatsapp"></i></a>
+                <button id="modalClose" title="Close preview"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="modal-stage">
+            <div class="modal-frame" id="modalFrame">
+                <iframe id="modalIframe" title="Demo preview" src="about:blank"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================== -->
+    <!-- FOOTER                                   -->
+    <!-- ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="1000hills-logo.png" alt="1000 Hills Group logo" />
+                    </a>
+                    <p>Rising to your Tech challenges since 2020. We deliver innovative digital solutions across Rwanda and beyond.</p>
+                    <div class="socials">
+                        <a href="https://www.instagram.com/1000hillsgroup_?igsh=NWZuNHBveGsxMG56&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/250788695396" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="demos.html">Demos</a></li>
+                        <li><a href="companies.html">Our Companies</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Our Services</h5>
+                    <ul>
+                        <li><a href="services.html#web-design">Web Design</a></li>
+                        <li><a href="services.html#social-media">Social Media</a></li>
+                        <li><a href="services.html#seo">SEO</a></li>
+                        <li><a href="services.html#mobile-apps">Mobile Apps</a></li>
+                        <li><a href="services.html#ai-automation">AI Automation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+250788695396">+250 788 695 396</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@1000hillsgroup.africa">info@1000hillsgroup.africa</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> KG 11 Ave, Kigali, Rwanda</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2020 1000 Hills Group. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart" style="color: #C9A96E;"></i> by <strong>1000 Hills Team</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="main.js"></script>
+    <script src="render.js"></script>
+    <script>
+    /* ========================================
+       DEMOS DATA
+       To add a new demo: drop its .html file
+       in the /demos folder and add an entry
+       to this list.
+       ======================================== */
+    const DEMOS = [
+        {
+            name: "Amahoro Kitchen",
+            category: "Restaurant & Food",
+            cat: "restaurant",
+            type: "Website Demo",
+            file: "demos/restaurant.html",
+            icon: "fas fa-utensils",
+            desc: "Elegant restaurant website with digital menu, table reservations and brand story sections.",
+            features: ["Digital menu", "Table booking", "Ratings", "Mobile-first"]
+        },
+        {
+            name: "Nyungwe Eco Lodge",
+            category: "Hotel & Tourism",
+            cat: "hotel",
+            type: "Website Demo",
+            file: "demos/hotel.html",
+            icon: "fas fa-mountain-sun",
+            desc: "Premium lodge website with room showcase, experiences, sustainability story and booking flow.",
+            features: ["Room booking", "Experiences", "Ratings", "Photo-led"]
+        },
+        {
+            name: "Kivu Properties",
+            category: "Real Estate",
+            cat: "realestate",
+            type: "Website Demo",
+            file: "demos/real-estate.html",
+            icon: "fas fa-city",
+            desc: "Real estate agency site with property search, featured listings and seller onboarding.",
+            features: ["Property search", "Listings", "Lead capture", "Light theme"]
+        },
+        {
+            name: "Agaseke Market",
+            category: "E-Commerce",
+            cat: "ecommerce",
+            type: "Website Demo",
+            file: "demos/ecommerce.html",
+            icon: "fas fa-basket-shopping",
+            desc: "Made-in-Rwanda online shop with product grid, categories, cart and mobile money checkout.",
+            features: ["Product grid", "Shopping cart", "MoMo checkout", "Categories"]
+        },
+        {
+            name: "Excel Academy",
+            category: "Education",
+            cat: "education",
+            type: "Website Demo",
+            file: "demos/school.html",
+            icon: "fas fa-graduation-cap",
+            desc: "Private school website with programs by level, admissions steps and campus tour booking.",
+            features: ["Programs", "Admissions flow", "Stats", "Tour booking"]
+        },
+        {
+            name: "Hope Rwanda",
+            category: "NGO & Church",
+            cat: "ngo",
+            type: "Website Demo",
+            file: "demos/ngo.html",
+            icon: "fas fa-hand-holding-heart",
+            desc: "Nonprofit website with mission, programs, animated impact counters and donation tiers.",
+            features: ["Donation tiers", "Impact stats", "Volunteer CTA", "Animated counters"]
+        },
+        {
+            name: "Uzima Health Clinic",
+            category: "Health",
+            cat: "health",
+            type: "Website Demo",
+            file: "demos/clinic.html",
+            icon: "fas fa-heart-pulse",
+            desc: "Clinic website with departments, doctors, opening hours, insurance partners and appointments.",
+            features: ["Appointment form", "Doctors", "Insurance info", "Hours"]
+        },
+        {
+            name: "Virunga Consulting",
+            category: "Corporate",
+            cat: "corporate",
+            type: "Website Demo",
+            file: "demos/corporate.html",
+            icon: "fas fa-briefcase",
+            desc: "Professional consulting firm site with services, process, testimonials and lead capture.",
+            features: ["Service grid", "Process", "Testimonials", "Dark premium"]
+        },
+        {
+            name: "ShulePro",
+            category: "Management System",
+            cat: "system",
+            type: "System Demo",
+            file: "demos/school-system.html",
+            icon: "fas fa-gauge-high",
+            desc: "School management dashboard — students, attendance, fees, charts and reports in one system.",
+            features: ["Dashboard", "Fees tracking", "Charts", "Role-based"]
+        }
+    ];
+
+    const WA_NUMBER = "250788695396";
+    const grid = document.getElementById('demosGrid');
+    const countEl = document.getElementById('demoCount');
+    const noResults = document.getElementById('noResults');
+    let activeFilter = 'all';
+    let searchQuery = '';
+
+    /* ---- Render cards ---- */
+    function renderCards() {
+        grid.innerHTML = DEMOS.map((d, i) => `
+            <article class="demo-card" data-cat="${d.cat}" data-name="${d.name.toLowerCase()} ${d.category.toLowerCase()} ${d.desc.toLowerCase()}" data-idx="${i}" data-aos="fade-up" data-aos-delay="${(i % 3) * 100}">
+                <div class="demo-viewport" data-preview="${i}" title="Preview ${d.name}">
+                    <div class="chrome-bar">
+                        <span class="dot d1"></span><span class="dot d2"></span><span class="dot d3"></span>
+                        <span class="url">1000hills · ${d.name.toLowerCase().replace(/\s+/g, '')}.rw</span>
+                    </div>
+                    <div class="demo-placeholder"><i class="${d.icon}"></i></div>
+                    <iframe class="demo-frame" data-src="${d.file}" scrolling="no" title="${d.name} preview" tabindex="-1"></iframe>
+                    <div class="demo-badges">
+                        <span class="badge-cat">${d.category}</span>
+                        <span class="badge-live">Live</span>
+                    </div>
+                    <div class="demo-view"><span><i class="fas fa-play"></i> Live Preview</span></div>
+                </div>
+                <div class="demo-body">
+                    <div class="demo-title-row">
+                        <span class="demo-ic"><i class="${d.icon}"></i></span>
+                        <div>
+                            <h3>${d.name}</h3>
+                            <span class="type">${d.type}</span>
+                        </div>
+                    </div>
+                    <p class="demo-desc">${d.desc}</p>
+                    <div class="demo-feats">${d.features.map(f => `<span>${f}</span>`).join('')}</div>
+                    <div class="demo-actions">
+                        <button class="btn-preview" data-preview="${i}"><i class="fas fa-play"></i> Live Preview</button>
+                        <a class="btn-icon" href="${d.file}" target="_blank" rel="noopener" title="Open in new tab"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                        <a class="btn-icon btn-wa" href="https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hi 1000 Hills Group! I want a website like the ' + d.name + ' demo (' + d.category + ').')}" target="_blank" rel="noopener" title="Get a quote on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </article>
+        `).join('');
+
+        /* lazy-load iframe previews when card scrolls into view */
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const f = entry.target.querySelector('.demo-frame');
+                    if (!f.src && f.dataset.src) {
+                        f.src = f.dataset.src;
+                        f.addEventListener('load', () => {
+                            f.classList.add('loaded');
+                            const ph = entry.target.querySelector('.demo-placeholder');
+                            if (ph) ph.style.display = 'none';
+                        }, { once: true });
+                    }
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '300px 0px' });
+        document.querySelectorAll('.demo-viewport').forEach(v => io.observe(v));
+
+        /* scale iframes to fit cards */
+        fitPreviews();
+        applyFilters();
+    }
+
+    function fitPreviews() {
+        document.querySelectorAll('.demo-viewport').forEach(v => {
+            const scale = v.clientWidth / 1280;
+            const f = v.querySelector('.demo-frame');
+            if (f) f.style.transform = `scale(${scale})`;
+        });
+    }
+    window.addEventListener('resize', fitPreviews);
+
+    /* ---- Filtering + search ---- */
+    function applyFilters() {
+        let visible = 0;
+        document.querySelectorAll('.demo-card').forEach(card => {
+            const matchCat = activeFilter === 'all' || card.dataset.cat === activeFilter;
+            const matchSearch = !searchQuery || card.dataset.name.includes(searchQuery);
+            const show = matchCat && matchSearch;
+            card.classList.toggle('hidden', !show);
+            if (show) visible++;
+        });
+        countEl.innerHTML = `Showing <strong>${visible}</strong> of <strong>${DEMOS.length}</strong> demos`;
+        noResults.style.display = visible === 0 ? 'block' : 'none';
+    }
+
+    document.getElementById('filterPills').addEventListener('click', (e) => {
+        const pill = e.target.closest('.pill');
+        if (!pill) return;
+        document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        activeFilter = pill.dataset.filter;
+        applyFilters();
+    });
+
+    document.getElementById('demoSearch').addEventListener('input', (e) => {
+        searchQuery = e.target.value.toLowerCase().trim();
+        applyFilters();
+    });
+
+    /* ---- Preview modal ---- */
+    const modal = document.getElementById('demoModal');
+    const modalIframe = document.getElementById('modalIframe');
+    const modalFrame = document.getElementById('modalFrame');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalCat = document.getElementById('modalCat');
+    const modalOpen = document.getElementById('modalOpen');
+    const modalWa = document.getElementById('modalWa');
+
+    function openPreview(idx) {
+        const d = DEMOS[idx];
+        modalTitle.childNodes[0].textContent = d.name;
+        modalCat.textContent = d.category;
+        modalOpen.href = d.file;
+        modalWa.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent('Hi 1000 Hills Group! I want a website like the ' + d.name + ' demo (' + d.category + ').')}`;
+        modalIframe.src = d.file;
+        setDevice('desktop');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closePreview() {
+        modal.classList.remove('open');
+        modalIframe.src = 'about:blank';
+        document.body.style.overflow = '';
+    }
+    function setDevice(dev) {
+        document.querySelectorAll('.device-btn').forEach(b => {
+            b.classList.toggle('active', b.dataset.device === dev);
+        });
+        modalFrame.className = 'modal-frame' + (dev !== 'desktop' ? ' dev-' + dev : '');
+    }
+
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('[data-preview]');
+        if (trigger) { e.preventDefault(); openPreview(parseInt(trigger.dataset.preview, 10)); }
+    });
+    document.getElementById('modalClose').addEventListener('click', closePreview);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closePreview(); });
+    document.querySelectorAll('.device-btn').forEach(b => b.addEventListener('click', () => setDevice(b.dataset.device)));
+
+    renderCards();
+
+    /* ---- Deep-link support: demos.html#restaurant pre-selects the filter ---- */
+    (function () {
+        const hash = window.location.hash.replace('#', '');
+        if (hash) {
+            const pill = document.querySelector(`.pill[data-filter="${hash}"]`);
+            if (pill) pill.click();
+        }
+    })();
+    </script>
+</body>
+</html>

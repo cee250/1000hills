@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Virunga Consulting | Business &amp; Tax Advisory in Rwanda — Demo</title>
+<meta name="description" content="Live website demo by 1000 Hills Group — Corporate consulting website template." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{--slate:#0B121E;--slate2:#111C2E;--emerald:#10B981;--emerald-l:#34D399;--bg:#0B121E;--card:#121E32;--line:rgba(255,255,255,.08);--text:#E6EDF6;--muted:#8CA1BA;--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;padding-top:46px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+h1,h2,h3,h4{font-family:'Sora',sans-serif}
+.container{width:min(1140px,92%);margin:0 auto}
+/* ===== 1000 HILLS DEMO BAR ===== */
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden}
+.demo-bar .db-left i{color:#C9A96E}
+.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.demo-bar.hidden{display:none}
+/* ===== NAV ===== */
+header{position:sticky;top:46px;z-index:900;background:rgba(11,18,30,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:1.06rem}
+.brand .logo-ic{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--emerald),#059669);display:grid;place-items:center;color:#04110C;font-size:1.05rem}
+.nav-links{display:flex;gap:28px;font-size:.85rem;font-weight:500}
+.nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--emerald-l)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border-radius:10px;font-size:.85rem;font-weight:600;cursor:pointer;border:0;transition:.3s;font-family:'Sora',sans-serif}
+.btn-em{background:var(--emerald);color:#04110C;font-weight:700}
+.btn-em:hover{background:var(--emerald-l);transform:translateY(-2px);box-shadow:0 14px 34px rgba(16,185,129,.3)}
+.btn-line{border:1px solid var(--line);color:var(--text)}
+.btn-line:hover{border-color:var(--emerald);color:var(--emerald-l)}
+.hamburger{display:none;background:none;border:0;color:var(--text);font-size:1.3rem;cursor:pointer}
+/* ===== HERO ===== */
+.hero{position:relative;padding:100px 0 90px;overflow:hidden;background:
+ radial-gradient(ellipse 60% 50% at 75% 20%,rgba(16,185,129,.13),transparent 60%),var(--bg)}
+.hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 60% at 50% 20%,black,transparent)}
+.hero .container{position:relative;z-index:2}
+.tag-pill{display:inline-flex;align-items:center;gap:9px;font-size:.74rem;letter-spacing:2px;font-weight:600;color:var(--emerald-l);text-transform:uppercase;border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.07);padding:8px 18px;border-radius:40px}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.7rem);font-weight:800;line-height:1.12;margin:24px 0 18px;max-width:16ch}
+.hero h1 em{font-style:normal;color:var(--emerald-l)}
+.hero p{color:var(--muted);max-width:50ch;font-weight:300}
+.hero-btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.hero-metrics{display:flex;gap:44px;margin-top:56px;flex-wrap:wrap}
+.hero-metrics strong{font-family:'Sora',sans-serif;font-size:1.9rem;font-weight:800;display:block;line-height:1.2}
+.hero-metrics strong span{color:var(--emerald-l)}
+.hero-metrics span.lbl{font-size:.78rem;color:var(--muted)}
+/* logos strip */
+.logos{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;background:var(--slate2)}
+.logos .lbl{text-align:center;font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.logo-row{display:flex;justify-content:center;gap:14px 44px;flex-wrap:wrap;font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:#516478}
+.logo-row i{margin-right:8px;color:var(--emerald);opacity:.7}
+/* ===== SERVICES ===== */
+section{padding:92px 0}
+.sec-head{max-width:620px;margin-bottom:50px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.kicker{color:var(--emerald-l);font-size:.74rem;letter-spacing:3px;font-weight:600;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.8rem,3.8vw,2.5rem);margin:12px 0}
+.sec-head p{color:var(--muted);font-weight:300}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:.3s;position:relative;overflow:hidden}
+.svc::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--emerald);opacity:0;transition:.3s}
+.svc:hover{transform:translateY(-6px);border-color:rgba(16,185,129,.35)}
+.svc:hover::after{opacity:1}
+.svc .num{font-family:'Sora',sans-serif;font-size:.72rem;font-weight:700;color:var(--emerald);letter-spacing:2px;margin-bottom:18px;display:block}
+.svc i{font-size:1.4rem;color:var(--emerald-l);margin-bottom:16px}
+.svc h3{font-size:1.06rem;margin-bottom:8px}
+.svc p{font-size:.83rem;color:var(--muted);font-weight:300}
+/* ===== PROCESS ===== */
+.process{background:var(--slate2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.step{position:relative;padding:6px 4px}
+.step .n{font-family:'Sora',sans-serif;font-size:2.4rem;font-weight:800;color:transparent;-webkit-text-stroke:1.5px rgba(16,185,129,.5);line-height:1;margin-bottom:14px}
+.step h4{font-size:.98rem;margin-bottom:8px}
+.step p{font-size:.8rem;color:var(--muted);font-weight:300}
+.step::after{content:'';position:absolute;top:20px;right:-16px;width:24px;height:1px;background:rgba(16,185,129,.3)}
+.step:last-child::after{display:none}
+/* ===== TESTIMONIAL ===== */
+.testi{max-width:760px;margin:0 auto;text-align:center}
+.testi .q{font-family:'Sora',sans-serif;font-size:clamp(1.2rem,2.6vw,1.7rem);font-weight:600;line-height:1.5}
+.testi .q em{color:var(--emerald-l);font-style:normal}
+.testi .who{margin-top:26px;font-size:.86rem}
+.testi .who b{display:block;color:var(--text)}
+.testi .who span{color:var(--muted);font-size:.78rem}
+.testi .stars{color:var(--emerald-l);letter-spacing:3px;margin-bottom:22px}
+/* ===== CTA ===== */
+.cta{text-align:center}
+.cta-card{background:linear-gradient(135deg,#0E2A22,#0B121E 60%);border:1px solid rgba(16,185,129,.25);border-radius:22px;padding:64px 34px;position:relative;overflow:hidden}
+.cta-card::before{content:'';position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.18),transparent 70%);top:-160px;right:-100px}
+.cta h2{font-size:clamp(1.8rem,3.8vw,2.6rem);margin-bottom:12px;position:relative;z-index:2}
+.cta p{color:var(--muted);margin-bottom:30px;position:relative;z-index:2}
+.cta .btn{position:relative;z-index:2}
+/* ===== FOOTER ===== */
+footer{border-top:1px solid var(--line);background:var(--slate2);padding:60px 0 28px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.f-grid h5{font-size:.84rem;letter-spacing:2px;text-transform:uppercase;color:var(--emerald-l);margin-bottom:16px;font-family:'Sora',sans-serif}
+.f-grid p,.f-grid li{font-size:.85rem;color:var(--muted)}
+.f-grid li{margin-bottom:10px}.f-grid li i{color:var(--emerald);margin-right:8px;width:16px}
+.f-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.78rem;color:var(--muted)}
+.f-bottom a{color:var(--emerald-l)}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted)}
+.socials a:hover{background:var(--emerald);color:#04110C;border-color:var(--emerald)}
+@media(max-width:940px){.nav-links,.nav .btn{display:none}.hamburger{display:block}
+.svc-grid,.steps{grid-template-columns:1fr}.step::after{display:none}.f-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20corporate%20website%20like%20the%20Virunga%20Consulting%20demo." target="_blank" rel="noopener">Get a site like this</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand"><span class="logo-ic"><i class="fas fa-mountain"></i></span>Virunga Consulting</a>
+    <nav class="nav-links">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#process">Process</a><a href="#contact">Contact</a>
+    </nav>
+    <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20a%20free%20consultation%20with%20Virunga%20Consulting." target="_blank" rel="noopener" class="btn btn-em"><i class="fas fa-comments"></i> Free Consultation</a>
+    <button class="hamburger" aria-label="menu"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <span class="tag-pill"><i class="fas fa-arrow-trend-up"></i> Business Advisory · Kigali, Rwanda</span>
+    <h1>Strategy. Growth. <em>Compliance.</em> Handled.</h1>
+    <p>We help local and international companies start, structure and scale in Rwanda — from company registration to tax optimization, so you can focus on the business.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20a%20free%20consultation%20with%20Virunga%20Consulting." target="_blank" rel="noopener" class="btn btn-em"><i class="fas fa-comments"></i> Book Free Consultation</a>
+      <a href="#services" class="btn btn-line">Explore Services</a>
+    </div>
+    <div class="hero-metrics">
+      <div><strong>300<span>+</span></strong><span class="lbl">Companies Served</span></div>
+      <div><strong>12</strong><span class="lbl">Industries Covered</span></div>
+      <div><strong>98<span>%</span></strong><span class="lbl">Client Retention</span></div>
+      <div><strong>4.9<span>★</span></strong><span class="lbl">Average Rating</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="logos">
+  <div class="lbl">Trusted by ambitious companies across Rwanda</div>
+  <div class="logo-row">
+    <span><i class="fas fa-building-columns"></i>Kigali Capital Ltd</span>
+    <span><i class="fas fa-warehouse"></i>Hillside Logistics</span>
+    <span><i class="fas fa-mug-hot"></i>Lake Coffee Co.</span>
+    <span><i class="fas fa-hotel"></i>Mille Collines Group</span>
+    <span><i class="fas fa-tractor"></i>AgriGrow Rwanda</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">What We Do</span>
+      <h2>Full-Stack Business Services</h2>
+      <p>Everything your company needs to be compliant, efficient and investable.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><span class="num">01</span><i class="fas fa-file-signature"></i><h3>Company Registration</h3><p>RDB registration, TIN, VAT and trading licenses — handled in days, not weeks.</p></div>
+      <div class="svc"><span class="num">02</span><i class="fas fa-calculator"></i><h3>Tax Advisory</h3><p>Compliant tax planning, RRA filings and audit support that keeps you penalty-free.</p></div>
+      <div class="svc"><span class="num">03</span><i class="fas fa-chart-pie"></i><h3>Business Plans</h3><p>Bank-ready and investor-ready business plans with realistic financial models.</p></div>
+      <div class="svc"><span class="num">04</span><i class="fas fa-book"></i><h3>Bookkeeping</h3><p>Monthly books, payroll and reports — IFRS-compliant and always on time.</p></div>
+      <div class="svc"><span class="num">05</span><i class="fas fa-magnifying-glass-chart"></i><h3>Investment Advisory</h3><p>Due diligence, structuring and market entry strategy for foreign investors.</p></div>
+      <div class="svc"><span class="num">06</span><i class="fas fa-users-gear"></i><h3>HR &amp; Compliance</h3><p>Contracts, RSSB registrations, labor law compliance and org design.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <div class="sec-head center">
+      <span class="kicker">How We Work</span>
+      <h2>From Idea to Operating in 4 Steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><h4>Discovery Call</h4><p>A free 30-minute session to understand your goals and constraints.</p></div>
+      <div class="step"><div class="n">02</div><h4>Roadmap</h4><p>A clear, fixed-price proposal with timelines and deliverables.</p></div>
+      <div class="step"><div class="n">03</div><h4>Execution</h4><p>We handle registrations, filings and setup — with weekly updates.</p></div>
+      <div class="step"><div class="n">04</div><h4>Ongoing Support</h4><p>Retainer plans for bookkeeping, tax and compliance all year round.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p class="q">"Virunga registered our company in <em>5 days</em> and restructured our tax setup — saving us over 8 million RWF in year one. They speak plain language and answer the phone. Rare."</p>
+      <div class="who"><b>Sandra Mutesi</b><span>Managing Director, Lake Coffee Co.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta-card">
+      <h2>Ready to Get Structured?</h2>
+      <p>Book a free consultation this week — no obligation, pure value.</p>
+      <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20a%20free%20consultation%20with%20Virunga%20Consulting." target="_blank" rel="noopener" class="btn btn-em"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#home" class="brand" style="margin-bottom:14px"><span class="logo-ic"><i class="fas fa-mountain"></i></span>Virunga Consulting</a>
+        <p>Business, tax and investment advisory for companies operating in Rwanda. Offices in Kigali.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul><li><a href="#services">Registration</a></li><li><a href="#services">Tax Advisory</a></li><li><a href="#services">Bookkeeping</a></li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul><li><i class="fas fa-phone"></i>+250 788 000 000</li><li><i class="fas fa-envelope"></i>hello@virungaconsulting.rw</li><li><i class="fas fa-location-dot"></i>KN 3 Rd, Kigali</li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Virunga Consulting (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a> — Get yours today</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

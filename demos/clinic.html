@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Uzima Health Clinic | Quality Healthcare in Kigali — Demo</title>
+<meta name="description" content="Live website demo by 1000 Hills Group — Health clinic & medical website template." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{--teal:#0E9F8A;--teal-d:#0A7A6A;--teal-x:#075E52;--mint:#E6F7F3;--ink:#0F2E2A;--muted:#5E7B76;--bg:#F7FBFA;--white:#fff;--line:#DCEDE8;--radius:16px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif}
+.container{width:min(1140px,92%);margin:0 auto}
+/* ===== 1000 HILLS DEMO BAR ===== */
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden}
+.demo-bar .db-left i{color:#C9A96E}
+.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.demo-bar.hidden{display:none}
+/* ===== NAV ===== */
+header{position:sticky;top:46px;z-index:900;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:13px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.1rem}
+.brand .logo-ic{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--teal),#2CCDB4);display:grid;place-items:center;color:#fff;font-size:1.05rem}
+.nav-links{display:flex;gap:26px;font-size:.86rem;font-weight:500}
+.nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border-radius:12px;font-size:.86rem;font-weight:700;cursor:pointer;border:0;transition:.3s;font-family:'Plus Jakarta Sans',sans-serif}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-d);transform:translateY(-2px);box-shadow:0 12px 30px rgba(14,159,138,.35)}
+.btn-line{border:1.5px solid var(--line);color:var(--teal-d);background:#fff}
+.btn-line:hover{border-color:var(--teal)}
+.hamburger{display:none;background:none;border:0;color:var(--teal-x);font-size:1.3rem;cursor:pointer}
+/* ===== HERO ===== */
+.hero{padding:80px 0 90px;position:relative;overflow:hidden;background:
+ radial-gradient(circle at 85% 10%,rgba(44,205,180,.16),transparent 40%),
+ radial-gradient(circle at 5% 90%,rgba(14,159,138,.1),transparent 45%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.tag-pill{display:inline-flex;align-items:center;gap:8px;background:var(--mint);color:var(--teal-d);font-size:.76rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:8px 16px;border-radius:40px}
+.tag-pill .pulse{width:8px;height:8px;background:#10B981;border-radius:50%;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.5)}50%{box-shadow:0 0 0 7px rgba(16,185,129,0)}}
+.hero h1{font-size:clamp(2.1rem,4.8vw,3.4rem);font-weight:800;line-height:1.14;margin:20px 0}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p{color:var(--muted);max-width:46ch}
+.hero-btns{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.hero-trust{display:flex;gap:24px;margin-top:32px;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
+.hero-trust i{color:var(--teal);margin-right:6px}
+/* appointment card */
+.appt-card{background:var(--white);border-radius:20px;box-shadow:0 30px 80px rgba(15,46,42,.14);padding:32px;position:relative;overflow:hidden}
+.appt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--teal),#2CCDB4)}
+.appt-card h3{font-size:1.15rem;margin-bottom:4px}
+.appt-card .sub{font-size:.8rem;color:var(--muted);margin-bottom:22px}
+.appt-field{margin-bottom:16px}
+.appt-field label{display:block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px}
+.appt-field select,.appt-field input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none;background:var(--bg)}
+.appt-field select:focus,.appt-field input:focus{border-color:var(--teal)}
+.appt-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.appt-card .btn{width:100%;justify-content:center;margin-top:6px}
+.appt-note{text-align:center;font-size:.74rem;color:var(--muted);margin-top:14px}
+.appt-note i{color:#10B981}
+/* ===== SERVICES ===== */
+section{padding:88px 0}
+.sec-head{text-align:center;max-width:600px;margin:0 auto 50px}
+.kicker{color:var(--teal);font-size:.74rem;letter-spacing:3px;font-weight:700;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin:10px 0}
+.sec-head p{color:var(--muted)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.svc{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:.3s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(15,46,42,.1);border-color:var(--teal)}
+.svc .ic{width:58px;height:58px;border-radius:16px;background:var(--mint);display:grid;place-items:center;font-size:1.35rem;color:var(--teal-d);margin-bottom:18px}
+.svc h3{font-size:1.05rem;margin-bottom:8px}
+.svc p{font-size:.83rem;color:var(--muted)}
+.svc .fee{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:.78rem;font-weight:700;color:var(--teal-d)}
+/* ===== DOCTORS ===== */
+.docs{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.doc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.doc{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:30px;text-align:center;transition:.3s}
+.doc:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(15,46,42,.1)}
+.avatar{width:84px;height:84px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:800;color:#fff}
+.av1{background:linear-gradient(135deg,var(--teal),#2CCDB4)}
+.av2{background:linear-gradient(135deg,#3B82F6,#60A5FA)}
+.av3{background:linear-gradient(135deg,#8B5CF6,#A78BFA)}
+.doc h3{font-size:1.02rem}
+.doc .spec{font-size:.78rem;color:var(--teal);font-weight:600;margin-bottom:8px}
+.doc p{font-size:.8rem;color:var(--muted)}
+.doc .days{margin-top:12px;font-size:.72rem;color:var(--muted)}
+.doc .days i{color:var(--teal);margin-right:5px}
+/* ===== HOURS/INSURANCE ===== */
+.info-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
+.info-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:34px}
+.info-card h3{font-size:1.15rem;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.info-card h3 i{color:var(--teal)}
+.hours li{display:flex;justify-content:space-between;font-size:.88rem;padding:10px 0;border-bottom:1px dashed var(--line)}
+.hours li:last-child{border:0}
+.hours .today{color:var(--teal-d);font-weight:700}
+.ins-chips{display:flex;flex-wrap:wrap;gap:10px}
+.ins-chips span{border:1.5px solid var(--line);border-radius:40px;padding:9px 18px;font-size:.8rem;font-weight:600;color:var(--teal-d);background:var(--mint)}
+/* ===== CTA ===== */
+.cta{text-align:center;background:linear-gradient(135deg,var(--teal-x),var(--teal-d));color:#fff}
+.cta h2{font-size:clamp(1.8rem,3.8vw,2.6rem);margin-bottom:12px}
+.cta p{color:#BFE8DF;margin-bottom:30px}
+.cta .btn{background:#fff;color:var(--teal-x)}
+.cta .btn:hover{transform:translateY(-2px)}
+/* ===== FOOTER ===== */
+footer{background:var(--teal-x);color:#A9D6CC;padding:60px 0 28px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.f-grid h5{font-size:.84rem;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px;font-family:'Plus Jakarta Sans',sans-serif}
+.f-grid p,.f-grid li{font-size:.85rem;color:#A9D6CC}
+.f-grid li{margin-bottom:10px}.f-grid li i{color:#2CCDB4;margin-right:8px;width:16px}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:#2CCDB4}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;color:#A9D6CC}
+.socials a:hover{background:#2CCDB4;color:var(--teal-x);border-color:#2CCDB4}
+@media(max-width:940px){.nav-links,.nav .btn{display:none}.hamburger{display:block}
+.hero-grid,.svc-grid,.doc-grid,.info-grid{grid-template-columns:1fr}.f-grid{grid-template-columns:1fr}}
+@media(max-width:620px){.svc-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20clinic%20website%20like%20the%20Uzima%20Health%20demo." target="_blank" rel="noopener">Get a site like this</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand"><span class="logo-ic"><i class="fas fa-heart-pulse"></i></span>Uzima Health</a>
+    <nav class="nav-links">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#doctors">Doctors</a><a href="#info">Hours &amp; Insurance</a><a href="#contact">Contact</a>
+    </nav>
+    <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20an%20appointment%20at%20Uzima%20Health%20Clinic." target="_blank" rel="noopener" class="btn btn-teal"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+    <button class="hamburger" aria-label="menu"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag-pill"><span class="pulse"></span> Open today · Walk-ins welcome</span>
+      <h1>Quality Healthcare, <em>Close to Home</em></h1>
+      <p>Modern, affordable and caring medical services for your whole family — consultations from 10,000 RWF, lab results the same day.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20an%20appointment%20at%20Uzima%20Health%20Clinic." target="_blank" rel="noopener" class="btn btn-teal"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+        <a href="#services" class="btn btn-line">Our Services</a>
+      </div>
+      <div class="hero-trust">
+        <span><i class="fas fa-check-circle"></i> Rwanda Medical Council registered</span>
+        <span><i class="fas fa-shield-heart"></i> Major insurers accepted</span>
+      </div>
+    </div>
+    <div class="appt-card">
+      <h3>Book an Appointment</h3>
+      <p class="sub">Choose a time that works for you — we'll confirm on WhatsApp.</p>
+      <form onsubmit="event.preventDefault();this.innerHTML='<div style=\'text-align:center;padding:30px 0\'><i class=\'fas fa-circle-check\' style=\'font-size:2.6rem;color:#10B981\'></i><h3 style=\'margin-top:14px\'>Request Received!</h3><p style=\'font-size:.85rem;color:var(--muted)\'>Our receptionist will confirm your appointment shortly.</p></div>'">
+        <div class="appt-field">
+          <label>Full name</label>
+          <input type="text" placeholder="e.g. Aline Uwase" required />
+        </div>
+        <div class="appt-field">
+          <label>Department</label>
+          <select><option>General Consultation</option><option>Dental Care</option><option>Laboratory Tests</option><option>Maternity Care</option><option>Pediatrics</option><option>Vaccination</option></select>
+        </div>
+        <div class="appt-row">
+          <div class="appt-field"><label>Preferred date</label><input type="date" required /></div>
+          <div class="appt-field"><label>Time</label><select><option>Morning</option><option>Afternoon</option><option>Evening</option></select></div>
+        </div>
+        <button class="btn btn-teal" type="submit"><i class="fas fa-paper-plane"></i> Request Appointment</button>
+      </form>
+      <p class="appt-note"><i class="fas fa-lock"></i> Your information stays private — demo form, no data is sent</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Our Services</span>
+      <h2>Care for the Whole Family</h2>
+      <p>From routine check-ups to specialized care — all under one roof.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="ic"><i class="fas fa-user-doctor"></i></div><h3>General Consultation</h3><p>Diagnosis, treatment and referrals by experienced general practitioners.</p><span class="fee"><i class="fas fa-tag"></i> From 10,000 RWF</span></div>
+      <div class="svc"><div class="ic"><i class="fas fa-tooth"></i></div><h3>Dental Care</h3><p>Cleanings, fillings, extractions and cosmetic dentistry for all ages.</p><span class="fee"><i class="fas fa-tag"></i> From 20,000 RWF</span></div>
+      <div class="svc"><div class="ic"><i class="fas fa-flask-vial"></i></div><h3>Laboratory Tests</h3><p>Full-range lab with same-day results — bloodwork, malaria, urinalysis.</p><span class="fee"><i class="fas fa-tag"></i> From 5,000 RWF</span></div>
+      <div class="svc"><div class="ic"><i class="fas fa-baby"></i></div><h3>Maternity Care</h3><p>Antenatal care, safe delivery and postnatal support for mothers.</p><span class="fee"><i class="fas fa-tag"></i> Packages available</span></div>
+      <div class="svc"><div class="ic"><i class="fas fa-child"></i></div><h3>Pediatrics</h3><p>Friendly, patient care for babies and children — growth to immunization.</p><span class="fee"><i class="fas fa-tag"></i> From 12,000 RWF</span></div>
+      <div class="svc"><div class="ic"><i class="fas fa-syringe"></i></div><h3>Vaccination</h3><p>Childhood immunizations, flu shots and travel vaccines in stock.</p><span class="fee"><i class="fas fa-tag"></i> From 8,000 RWF</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="docs" id="doctors">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Our Team</span>
+      <h2>Meet the Doctors</h2>
+    </div>
+    <div class="doc-grid">
+      <div class="doc"><div class="avatar av1">AM</div><h3>Dr. Aline Mugisha</h3><div class="spec">General Practitioner</div><p>10+ years of family medicine experience, with a special interest in diabetes care.</p><div class="days"><i class="fas fa-calendar"></i>Mon – Fri</div></div>
+      <div class="doc"><div class="avatar av2">EN</div><h3>Dr. Eric Nshimiyimana</h3><div class="spec">Dental Surgeon</div><p>Smile-restoration specialist — from routine care to full cosmetic procedures.</p><div class="days"><i class="fas fa-calendar"></i>Tue – Sat</div></div>
+      <div class="doc"><div class="avatar av3">CU</div><h3>Dr. Clarisse Uwimana</h3><div class="spec">Pediatrician</div><p>Gentle, child-first care. Clarisse leads our child wellness and immunization program.</p><div class="days"><i class="fas fa-calendar"></i>Mon – Thu</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="info">
+  <div class="container info-grid">
+    <div class="info-card">
+      <h3><i class="fas fa-clock"></i> Opening Hours</h3>
+      <ul class="hours">
+        <li><span>Monday – Friday</span><span>07:00 – 21:00</span></li>
+        <li><span>Saturday</span><span>08:00 – 18:00</span></li>
+        <li><span>Sunday</span><span>09:00 – 14:00 (emergency only)</span></li>
+        <li><span class="today">Emergency line</span><span class="today">24/7 · +250 788 000 000</span></li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3><i class="fas fa-file-shield"></i> Insurance Accepted</h3>
+      <div class="ins-chips">
+        <span>RSSB / RAMA</span><span>MMI</span><span>Radiant</span><span>Bharti</span><span>Britam</span><span>UAP Old Mutual</span>
+      </div>
+      <p style="font-size:.8rem;color:var(--muted);margin-top:18px">Not insured? We offer family packages and flexible payment plans — just ask at reception.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="container">
+    <h2>Your Health Can't Wait</h2>
+    <p>Book an appointment today — same-day slots usually available.</p>
+    <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20book%20an%20appointment%20at%20Uzima%20Health%20Clinic." target="_blank" rel="noopener" class="btn"><i class="fab fa-whatsapp"></i> Book on WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#home" class="brand" style="color:#fff;margin-bottom:14px"><span class="logo-ic"><i class="fas fa-heart-pulse"></i></span>Uzima Health</a>
+        <p>Modern, affordable and caring healthcare for Kigali families.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul><li><a href="#services">Services</a></li><li><a href="#doctors">Our Doctors</a></li><li><a href="#info">Hours &amp; Insurance</a></li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul><li><i class="fas fa-phone"></i>+250 788 000 000</li><li><i class="fas fa-envelope"></i>care@uzimahealth.rw</li><li><i class="fas fa-location-dot"></i>KG 7 Ave, Kigali</li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Uzima Health Clinic (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a> — Get yours today</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

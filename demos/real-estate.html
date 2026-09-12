@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kivu Properties | Real Estate in Kigali, Rwanda — Demo</title>
+<meta name="description" content="Live website demo by 1000 Hills Group — Real estate agency website template with listings." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{--navy:#0C2340;--navy2:#123458;--sky:#2E9BFF;--gold:#D8A94E;--bg:#F6F9FC;--ink:#12263F;--muted:#5B7089;--line:#E1E9F2;--white:#fff;--radius:14px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+h1,h2,h3,h4,h5{font-family:'Poppins',sans-serif}
+.container{width:min(1160px,92%);margin:0 auto}
+/* ===== 1000 HILLS DEMO BAR ===== */
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden}
+.demo-bar .db-left i{color:#C9A96E}
+.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.demo-bar.hidden{display:none}
+/* ===== NAV ===== */
+header{position:sticky;top:46px;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.1rem;color:var(--navy)}
+.brand .logo-ic{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--navy),var(--navy2));display:grid;place-items:center;color:#fff;font-size:1rem}
+.nav-links{display:flex;gap:28px;font-size:.86rem;font-weight:500}
+.nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--sky)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;border:0;transition:.3s;font-family:'Poppins',sans-serif}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--sky);transform:translateY(-2px)}
+.btn-sky{background:var(--sky);color:#fff}
+.btn-sky:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(46,155,255,.35)}
+.hamburger{display:none;background:none;border:0;color:var(--navy);font-size:1.3rem;cursor:pointer}
+/* ===== HERO ===== */
+.hero{background:linear-gradient(rgba(12,35,64,.88),rgba(12,35,64,.78)),url('img/realestate-hero.jpg') center/cover no-repeat;padding:90px 0 110px;color:#fff}
+.hero h1{font-size:clamp(2rem,4.6vw,3.3rem);font-weight:700;line-height:1.15;max-width:20ch;margin:14px 0}
+.hero p{color:#B9CCDF;max-width:52ch;font-weight:300}
+.tag-pill{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;letter-spacing:2px;font-weight:600;text-transform:uppercase;color:var(--gold);border:1px solid rgba(216,169,78,.4);padding:7px 16px;border-radius:30px}
+/* search panel */
+.search-panel{background:var(--white);border-radius:var(--radius);padding:18px;display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:14px;margin-top:44px;box-shadow:0 30px 70px rgba(12,35,64,.35)}
+.sp-field label{display:block;font-size:.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.sp-field select,.sp-field input{width:100%;border:1px solid var(--line);border-radius:8px;padding:11px 12px;font-family:'Inter',sans-serif;font-size:.88rem;color:var(--ink);background:var(--bg);outline:none}
+.sp-field select:focus,.sp-field input:focus{border-color:var(--sky)}
+.search-panel .btn{align-self:end;justify-content:center}
+/* ===== STATS ===== */
+.stats{margin-top:-46px;position:relative;z-index:5}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 60px rgba(12,35,64,.12)}
+.stat{padding:28px 20px;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat strong{font-family:'Poppins',sans-serif;font-size:1.65rem;color:var(--navy);display:block}
+.stat strong span{color:var(--sky)}
+.stat span.lbl{font-size:.76rem;color:var(--muted)}
+/* ===== LISTINGS ===== */
+section.listings{padding:90px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:40px;flex-wrap:wrap}
+.sec-head .kicker{color:var(--sky);font-size:.74rem;letter-spacing:3px;font-weight:600;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.3rem);color:var(--navy);margin-top:8px}
+.listings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.prop{background:var(--white);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);transition:.3s;display:flex;flex-direction:column}
+.prop:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(12,35,64,.14)}
+.prop-img{position:relative}
+.prop-img img,.prop-img .ph{height:210px;width:100%;object-fit:cover}
+.prop-img .ph{display:grid;place-items:center;font-size:2.2rem;color:#fff;background:linear-gradient(135deg,var(--navy),#2E9BFF)}
+.prop-status{position:absolute;top:14px;left:14px;font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:6px}
+.st-sale{background:#16A34A;color:#fff}.st-rent{background:var(--gold);color:#fff}
+.prop-price{position:absolute;bottom:12px;left:14px;background:rgba(12,35,64,.9);color:#fff;font-family:'Poppins',sans-serif;font-weight:600;font-size:.95rem;padding:6px 14px;border-radius:8px}
+.prop-body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.prop-body h3{font-size:1.05rem;color:var(--navy)}
+.prop-loc{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+.prop-feats{display:flex;gap:16px;font-size:.78rem;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.prop-feats i{color:var(--sky);margin-right:5px}
+.prop-body .btn{margin-top:auto;justify-content:center}
+/* ===== WHY ===== */
+.why{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:70px 0}
+.why-card{text-align:center;padding:10px}
+.why-card .ic{width:64px;height:64px;margin:0 auto 18px;border-radius:18px;background:linear-gradient(135deg,#E7F3FF,#F0F7FF);display:grid;place-items:center;font-size:1.4rem;color:var(--sky)}
+.why-card h4{font-size:1rem;color:var(--navy);margin-bottom:8px}
+.why-card p{font-size:.82rem;color:var(--muted)}
+/* ===== SELL CTA ===== */
+.sell{padding:90px 0}
+.sell-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+.sell-grid .kicker{color:var(--sky);font-size:.74rem;letter-spacing:3px;font-weight:600;text-transform:uppercase}
+.sell-grid h2{font-size:clamp(1.7rem,3.6vw,2.5rem);color:var(--navy);margin:10px 0 14px}
+.sell-grid p{color:var(--muted)}
+.sell-steps{margin:26px 0 30px;display:grid;gap:14px}
+.sell-steps li{display:flex;gap:14px;align-items:flex-start;font-size:.9rem;color:var(--ink)}
+.sell-steps .n{width:28px;height:28px;flex:none;border-radius:50%;background:var(--navy);color:#fff;font-size:.76rem;font-weight:700;display:grid;place-items:center;margin-top:2px}
+.sell-img img{border-radius:var(--radius);box-shadow:0 30px 70px rgba(12,35,64,.2)}
+/* ===== FOOTER ===== */
+footer{background:var(--navy);color:#B9CCDF;padding:64px 0 30px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.f-grid h5{font-size:.85rem;letter-spacing:2px;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.f-grid p,.f-grid li{font-size:.85rem;color:#B9CCDF}
+.f-grid li{margin-bottom:10px}.f-grid li i{color:var(--gold);margin-right:8px;width:16px}
+.f-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.78rem}
+.f-bottom a{color:var(--gold)}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:grid;place-items:center;color:#B9CCDF}
+.socials a:hover{background:var(--sky);border-color:var(--sky);color:#fff}
+@media(max-width:920px){.nav-links,.nav .btn{display:none}.hamburger{display:block}
+.search-panel{grid-template-columns:1fr 1fr}.listings-grid{grid-template-columns:1fr}
+.why-grid{grid-template-columns:repeat(2,1fr)}.stats-grid{grid-template-columns:repeat(2,1fr)}
+.sell-grid{grid-template-columns:1fr}.f-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.search-panel{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20real%20estate%20website%20like%20the%20Kivu%20Properties%20demo." target="_blank" rel="noopener">Get a site like this</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand"><span class="logo-ic"><i class="fas fa-city"></i></span>Kivu Properties</a>
+    <nav class="nav-links">
+      <a href="#home">Buy</a><a href="#listings">Rent</a><a href="#sell">Sell</a><a href="#agents">Agents</a><a href="#contact">Contact</a>
+    </nav>
+    <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20list%20my%20property%20with%20Kivu%20Properties." target="_blank" rel="noopener" class="btn btn-navy"><i class="fas fa-plus"></i> List Property</a>
+    <button class="hamburger" aria-label="menu"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <span class="tag-pill"><i class="fas fa-house-chimney"></i> Kigali's Trusted Agency Since 2015</span>
+    <h1>Find a Home You'll Love in the Heart of Kigali</h1>
+    <p>From modern apartments in Nyarutarama to hillside villas in Kacyiru — 250+ verified listings, honest pricing, and agents who answer.</p>
+    <div class="search-panel">
+      <div class="sp-field"><label>Location</label><select><option>Any location</option><option>Nyarutarama</option><option>Kiyovu</option><option>Kacyiru</option><option>Kimihurura</option><option>Gacuriro</option></select></div>
+      <div class="sp-field"><label>Property Type</label><select><option>Any type</option><option>House / Villa</option><option>Apartment</option><option>Land</option><option>Commercial</option></select></div>
+      <div class="sp-field"><label>Max Budget</label><select><option>No maximum</option><option>Under 50M RWF</option><option>50M – 100M RWF</option><option>100M – 250M RWF</option><option>250M+ RWF</option></select></div>
+      <button class="btn btn-sky" onclick="this.innerHTML='<i class=\'fas fa-spinner fa-spin\'></i> Searching…';setTimeout(()=>this.innerHTML='<i class=\'fas fa-check\'></i> 24 matches found',1200)"><i class="fas fa-magnifying-glass"></i> Search</button>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><strong>250<span>+</span></strong><span class="lbl">Active Listings</span></div>
+    <div class="stat"><strong>180<span>+</span></strong><span class="lbl">Families Housed</span></div>
+    <div class="stat"><strong>15</strong><span class="lbl">Licensed Agents</span></div>
+    <div class="stat"><strong>4.9<span>★</span></strong><span class="lbl">Client Rating</span></div>
+  </div>
+</div>
+
+<section class="listings" id="listings">
+  <div class="container">
+    <div class="sec-head">
+      <div><span class="kicker">Featured</span><h2>Latest Properties</h2></div>
+      <a href="#" class="btn btn-navy">View All 250+ Listings</a>
+    </div>
+    <div class="listings-grid">
+      <article class="prop">
+        <div class="prop-img">
+          <img src="img/realestate-hero.jpg" alt="Hillside villa" loading="lazy" />
+          <span class="prop-status st-sale">For Sale</span>
+          <span class="prop-price">185M RWF</span>
+        </div>
+        <div class="prop-body">
+          <h3>Panoramic Hillside Villa</h3>
+          <div class="prop-loc"><i class="fas fa-location-dot"></i> Gacuriro, Kigali</div>
+          <div class="prop-feats"><span><i class="fas fa-bed"></i>5 Beds</span><span><i class="fas fa-bath"></i>4 Baths</span><span><i class="fas fa-ruler-combined"></i>450m²</span></div>
+          <a href="https://wa.me/250788695396?text=I%20am%20interested%20in%20the%20Panoramic%20Hillside%20Villa%20in%20Gacuriro." target="_blank" rel="noopener" class="btn btn-sky">View Details</a>
+        </div>
+      </article>
+      <article class="prop">
+        <div class="prop-img">
+          <img src="img/realestate-interior.jpg" alt="Modern apartment interior" loading="lazy" />
+          <span class="prop-status st-rent">For Rent</span>
+          <span class="prop-price">1.2M RWF/mo</span>
+        </div>
+        <div class="prop-body">
+          <h3>Furnished Modern Apartment</h3>
+          <div class="prop-loc"><i class="fas fa-location-dot"></i> Nyarutarama, Kigali</div>
+          <div class="prop-feats"><span><i class="fas fa-bed"></i>3 Beds</span><span><i class="fas fa-bath"></i>2 Baths</span><span><i class="fas fa-ruler-combined"></i>140m²</span></div>
+          <a href="https://wa.me/250788695396?text=I%20am%20interested%20in%20the%20Furnished%20Modern%20Apartment%20in%20Nyarutarama." target="_blank" rel="noopener" class="btn btn-sky">View Details</a>
+        </div>
+      </article>
+      <article class="prop">
+        <div class="prop-img">
+          <div class="ph"><i class="fas fa-map-location-dot"></i></div>
+          <span class="prop-status st-sale">For Sale</span>
+          <span class="prop-price">45M RWF</span>
+        </div>
+        <div class="prop-body">
+          <h3>Prime Residential Land — 800m²</h3>
+          <div class="prop-loc"><i class="fas fa-location-dot"></i> Kabinja, Gasabo</div>
+          <div class="prop-feats"><span><i class="fas fa-ruler-combined"></i>800m²</span><span><i class="fas fa-road"></i>Road access</span><span><i class="fas fa-bolt"></i>Power nearby</span></div>
+          <a href="https://wa.me/250788695396?text=I%20am%20interested%20in%20the%20Prime%20Residential%20Land%20in%20Kabinja." target="_blank" rel="noopener" class="btn btn-sky">View Details</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="agents">
+  <div class="container why-grid">
+    <div class="why-card"><div class="ic"><i class="fas fa-file-shield"></i></div><h4>Verified Listings</h4><p>Every property is physically inspected and title-checked before listing.</p></div>
+    <div class="why-card"><div class="ic"><i class="fas fa-handshake"></i></div><h4>Honest Pricing</h4><p>Transparent commissions — no hidden fees, ever.</p></div>
+    <div class="why-card"><div class="ic"><i class="fas fa-key"></i></div><h4>End-to-End Support</h4><p>From viewing to keys, we handle contracts and notary steps.</p></div>
+    <div class="why-card"><div class="ic"><i class="fas fa-chart-line"></i></div><h4>Investment Advice</h4><p>Market data on every neighborhood to help you decide smart.</p></div>
+  </div>
+</section>
+
+<section class="sell" id="sell">
+  <div class="container sell-grid">
+    <div>
+      <span class="kicker">Sell or Rent With Us</span>
+      <h2>Your Property, Sold Faster</h2>
+      <p>List with Kivu Properties and reach thousands of verified buyers and renters every month.</p>
+      <ul class="sell-steps">
+        <li><span class="n">1</span>Book a free property valuation — we visit within 48 hours.</li>
+        <li><span class="n">2</span>Professional photos and listing go live in 3 days.</li>
+        <li><span class="n">3</span>We screen buyers and negotiate on your behalf to close.</li>
+      </ul>
+      <a href="https://wa.me/250788695396?text=I%20would%20like%20to%20list%20my%20property%20with%20Kivu%20Properties." target="_blank" rel="noopener" class="btn btn-navy"><i class="fab fa-whatsapp"></i> Get a Free Valuation</a>
+    </div>
+    <div class="sell-img"><img src="img/realestate-interior.jpg" alt="Premium interior" loading="lazy" /></div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#home" class="brand" style="color:#fff;margin-bottom:14px"><span class="logo-ic" style="background:linear-gradient(135deg,#2E9BFF,#0C2340)"><i class="fas fa-city"></i></span>Kivu Properties</a>
+        <p>Kigali's trusted real estate agency. Verified listings, honest advice, end-to-end support.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul><li><a href="#listings">Properties</a></li><li><a href="#sell">Sell With Us</a></li><li><a href="#agents">Our Agents</a></li></ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul><li><i class="fas fa-phone"></i>+250 788 000 000</li><li><i class="fas fa-envelope"></i>hello@kivuproperties.rw</li><li><i class="fas fa-location-dot"></i>KN 5 Rd, Kigali</li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Kivu Properties (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a> — Get yours today</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

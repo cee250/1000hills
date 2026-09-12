@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Agaseke Market | Made in Rwanda Online Shop — Demo</title>
+<meta name="description" content="Live website demo by 1000 Hills Group — E-commerce online shop website template." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+:root{--orange:#F97316;--orange-d:#EA6A0C;--ink:#231F1B;--cream:#FFF9F2;--card:#fff;--muted:#7A716A;--line:#F0E4D8;--radius:16px;--green:#16A34A}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;overflow-x:hidden;padding-top:46px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+h1,h2,h3,h4{font-family:'Poppins',sans-serif}
+.container{width:min(1160px,92%);margin:0 auto}
+/* ===== 1000 HILLS DEMO BAR ===== */
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;gap:10px;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3;white-space:nowrap;overflow:hidden}
+.demo-bar .db-left i{color:#C9A96E}
+.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px;white-space:nowrap}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;font-size:.95rem;cursor:pointer;padding:4px 6px}
+.demo-bar.hidden{display:none}
+/* ===== ANNOUNCEMENT ===== */
+.announce{background:var(--ink);color:#FDE9D9;text-align:center;font-size:.78rem;padding:9px 14px;letter-spacing:.3px}
+.announce strong{color:var(--orange)}
+/* ===== NAV ===== */
+header{position:sticky;top:46px;z-index:900;background:rgba(255,249,242,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.12rem}
+.brand .logo-ic{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--orange),#FDBA74);display:grid;place-items:center;color:#fff;font-size:1.05rem}
+.nav-links{display:flex;gap:26px;font-size:.87rem;font-weight:500}
+.nav-links a{color:var(--muted)}.nav-links a:hover{color:var(--orange)}
+.nav-icons{display:flex;align-items:center;gap:18px}
+.nav-icons a{position:relative;font-size:1.05rem;color:var(--ink)}
+.cart-count{position:absolute;top:-8px;right:-10px;background:var(--orange);color:#fff;font-size:.62rem;font-weight:700;width:17px;height:17px;border-radius:50%;display:grid;place-items:center}
+.hamburger{display:none;background:none;border:0;color:var(--ink);font-size:1.3rem;cursor:pointer}
+/* ===== HERO ===== */
+.hero{padding:70px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.tag-pill{display:inline-flex;align-items:center;gap:8px;background:#FFEFE0;color:var(--orange-d);font-size:.76rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:8px 16px;border-radius:30px}
+.hero h1{font-size:clamp(2.1rem,4.8vw,3.4rem);font-weight:800;line-height:1.12;margin:18px 0}
+.hero h1 em{color:var(--orange);font-style:normal}
+.hero p{color:var(--muted);max-width:46ch}
+.hero-btns{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:40px;font-size:.88rem;font-weight:600;cursor:pointer;border:0;transition:.3s;font-family:'Poppins',sans-serif}
+.btn-orange{background:var(--orange);color:#fff}
+.btn-orange:hover{background:var(--orange-d);transform:translateY(-2px);box-shadow:0 14px 30px rgba(249,115,22,.35)}
+.btn-line{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.hero-trust{display:flex;gap:26px;margin-top:32px;font-size:.8rem;color:var(--muted);flex-wrap:wrap}
+.hero-trust i{color:var(--green);margin-right:6px}
+.hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hc{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 16px 40px rgba(35,31,27,.08);transition:.3s}
+.hc:hover{transform:translateY(-6px) rotate(-.5deg)}
+.hc img{height:150px;width:100%;object-fit:cover}
+.hc .hc-body{padding:14px 16px}
+.hc .hc-body h4{font-size:.86rem;font-weight:600}
+.hc .hc-body span{font-size:.82rem;font-weight:700;color:var(--orange)}
+.hc.feature{grid-row:span 2;display:flex;flex-direction:column}
+.hc.feature img{height:100%;min-height:260px;flex:1}
+/* ===== CATEGORIES ===== */
+.cats{padding:26px 0 8px}
+.cat-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.cat{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:40px;padding:10px 20px;font-size:.84rem;font-weight:600;transition:.3s}
+.cat i{color:var(--orange)}
+.cat:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+/* ===== PRODUCTS ===== */
+section.products{padding:70px 0}
+.sec-head{text-align:center;margin-bottom:44px}
+.sec-head .kicker{color:var(--orange-d);font-size:.74rem;letter-spacing:3px;font-weight:600;text-transform:uppercase}
+.sec-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem);margin-top:8px}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.prod{background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);transition:.3s;position:relative}
+.prod:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(35,31,27,.12)}
+.prod-img{position:relative}
+.prod-img img{height:230px;width:100%;object-fit:cover}
+.prod-tag{position:absolute;top:12px;left:12px;font-size:.66rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--green);color:#fff;padding:4px 10px;border-radius:6px}
+.prod-tag.hot{background:var(--orange)}
+.wish{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--muted);border:0;cursor:pointer;transition:.3s}
+.wish:hover,.wish.on{color:#E11D48}
+.prod-body{padding:18px 20px 20px}
+.prod-body h3{font-size:.96rem;font-weight:600}
+.prod-cat{font-size:.72rem;color:var(--muted);margin-bottom:8px}
+.prod-row{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.price{font-family:'Poppins',sans-serif;font-weight:700;color:var(--ink)}
+.price small{color:var(--muted);font-weight:400;font-size:.72rem}
+.add-btn{width:40px;height:40px;border-radius:12px;background:var(--ink);color:#fff;border:0;cursor:pointer;transition:.3s;font-size:.9rem}
+.add-btn:hover{background:var(--orange)}
+/* ===== FEATURES ===== */
+.feats{background:var(--ink);color:#fff;padding:64px 0}
+.feat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.feat i{font-size:1.5rem;color:var(--orange);margin-bottom:14px}
+.feat h4{font-size:.95rem;margin-bottom:6px}
+.feat p{font-size:.78rem;color:#B8AFA8}
+/* ===== NEWSLETTER ===== */
+.news{padding:80px 0;text-align:center}
+.news-card{background:linear-gradient(135deg,#FFEFE0,#FFF4E6);border-radius:24px;padding:60px 30px;max-width:720px;margin:0 auto}
+.news h2{font-size:clamp(1.6rem,3.4vw,2.2rem);margin-bottom:10px}
+.news p{color:var(--muted);margin-bottom:26px}
+.news-form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.news-form input{flex:1;min-width:220px;border:1px solid var(--line);border-radius:40px;padding:13px 20px;font-family:'Inter',sans-serif;font-size:.88rem;outline:none}
+/* ===== FOOTER ===== */
+footer{background:var(--card);border-top:1px solid var(--line);padding:60px 0 28px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:38px}
+.f-grid h5{font-size:.82rem;letter-spacing:2px;text-transform:uppercase;color:var(--ink);margin-bottom:16px}
+.f-grid p,.f-grid li{font-size:.84rem;color:var(--muted)}
+.f-grid li{margin-bottom:10px}.f-grid li i{color:var(--orange);margin-right:8px;width:16px}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted)}
+.socials a:hover{background:var(--orange);color:#fff;border-color:var(--orange)}
+.f-bottom{border-top:1px solid var(--line);padding-top:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.78rem;color:var(--muted)}
+.f-bottom a{color:var(--orange-d)}
+@media(max-width:920px){.nav-links,.nav .search-mini{display:none}.hamburger{display:block}
+.hero-grid{grid-template-columns:1fr}.prod-grid{grid-template-columns:repeat(2,1fr)}
+.feat-grid{grid-template-columns:repeat(2,1fr)}.f-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.prod-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20online%20shop%20website%20like%20the%20Agaseke%20Market%20demo." target="_blank" rel="noopener">Get a site like this</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close demo bar"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<div class="announce">🇷🇼 <strong>Free delivery in Kigali</strong> on orders over 30,000 RWF · Pay with MTN MoMo, Airtel Money or card</div>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand"><span class="logo-ic"><i class="fas fa-basket-shopping"></i></span>Agaseke Market</a>
+    <nav class="nav-links">
+      <a href="#home">Shop</a><a href="#categories">Categories</a><a href="#products">Bestsellers</a><a href="#about">Our Story</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="#" aria-label="Search"><i class="fas fa-magnifying-glass"></i></a>
+      <a href="#" aria-label="Wishlist"><i class="fas fa-heart"></i></a>
+      <a href="#" aria-label="Cart" id="cartLink"><i class="fas fa-cart-shopping"></i><span class="cart-count" id="cartCount">0</span></a>
+      <button class="hamburger" aria-label="menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag-pill"><i class="fas fa-star"></i> Proudly Made in Rwanda</span>
+      <h1>Handcrafted Treasures, <em>Delivered to Your Door</em></h1>
+      <p>Shop authentic Rwandan crafts, fashion, coffee and art directly from 200+ local artisans and producers — with secure mobile money checkout.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn btn-orange"><i class="fas fa-bag-shopping"></i> Shop Bestsellers</a>
+        <a href="#categories" class="btn btn-line">Browse Categories</a>
+      </div>
+      <div class="hero-trust">
+        <span><i class="fas fa-shield-heart"></i> Secure checkout</span>
+        <span><i class="fas fa-truck-fast"></i> 24–48h delivery</span>
+        <span><i class="fas fa-rotate-left"></i> 7-day returns</span>
+      </div>
+    </div>
+    <div class="hero-cards">
+      <article class="hc feature">
+        <img src="img/shop-basket.jpg" alt="Agaseke peace basket" loading="lazy" />
+        <div class="hc-body"><h4>Agaseke Peace Basket</h4><span>25,000 RWF</span></div>
+      </article>
+      <article class="hc">
+        <img src="img/shop-coffee.jpg" alt="Rwandan coffee" loading="lazy" />
+        <div class="hc-body"><h4>Arabica Coffee 1kg</h4><span>12,000 RWF</span></div>
+      </article>
+      <article class="hc">
+        <img src="img/shop-fashion.jpg" alt="Kitenge dress" loading="lazy" />
+        <div class="hc-body"><h4>Kitenge Dress</h4><span>45,000 RWF</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cats" id="categories">
+  <div class="container cat-row">
+    <a href="#products" class="cat"><i class="fas fa-basket-shopping"></i> Baskets</a>
+    <a href="#products" class="cat"><i class="fas fa-shirt"></i> Fashion</a>
+    <a href="#products" class="cat"><i class="fas fa-mug-hot"></i> Coffee &amp; Tea</a>
+    <a href="#products" class="cat"><i class="fas fa-palette"></i> Imigongo Art</a>
+    <a href="#products" class="cat"><i class="fas fa-couch"></i> Home &amp; Living</a>
+    <a href="#products" class="cat"><i class="fas fa-gem"></i> Jewelry</a>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="sec-head">
+      <span class="kicker">Shop</span>
+      <h2>This Week's Bestsellers</h2>
+    </div>
+    <div class="prod-grid">
+      <article class="prod">
+        <div class="prod-img">
+          <img src="img/shop-basket.jpg" alt="Agaseke peace basket" loading="lazy" />
+          <span class="prod-tag hot">Bestseller</span>
+          <button class="wish" aria-label="Add to wishlist" onclick="this.classList.toggle('on')"><i class="fas fa-heart"></i></button>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Baskets · Handwoven</div>
+          <h3>Agaseke Peace Basket — Large</h3>
+          <div class="prod-row"><span class="price">25,000 <small>RWF</small></span><button class="add-btn" onclick="addToCart()" aria-label="Add to cart"><i class="fas fa-plus"></i></button></div>
+        </div>
+      </article>
+      <article class="prod">
+        <div class="prod-img">
+          <img src="img/shop-coffee.jpg" alt="Rwandan arabica coffee" loading="lazy" />
+          <span class="prod-tag">New Harvest</span>
+          <button class="wish" aria-label="Add to wishlist" onclick="this.classList.toggle('on')"><i class="fas fa-heart"></i></button>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Coffee · Single Origin</div>
+          <h3>Nyungwe Arabica Coffee — 1kg</h3>
+          <div class="prod-row"><span class="price">12,000 <small>RWF</small></span><button class="add-btn" onclick="addToCart()" aria-label="Add to cart"><i class="fas fa-plus"></i></button></div>
+        </div>
+      </article>
+      <article class="prod">
+        <div class="prod-img">
+          <img src="img/shop-fashion.jpg" alt="Kitenge dress" loading="lazy" />
+          <span class="prod-tag hot">Trending</span>
+          <button class="wish" aria-label="Add to wishlist" onclick="this.classList.toggle('on')"><i class="fas fa-heart"></i></button>
+        </div>
+        <div class="prod-body">
+          <div class="prod-cat">Fashion · Kitenge</div>
+          <h3>Kitenge Wrap Dress</h3>
+          <div class="prod-row"><span class="price">45,000 <small>RWF</small></span><button class="add-btn" onclick="addToCart()" aria-label="Add to cart"><i class="fas fa-plus"></i></button></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="feats" id="about">
+  <div class="container feat-grid">
+    <div class="feat"><i class="fas fa-mobile-screen"></i><h4>Mobile Money</h4><p>Pay with MTN MoMo or Airtel Money — no card needed.</p></div>
+    <div class="feat"><i class="fas fa-truck-fast"></i><h4>Fast Delivery</h4><p>24–48h in Kigali, 2–5 days nationwide.</p></div>
+    <div class="feat"><i class="fas fa-handshake-angle"></i><h4>Fair Trade</h4><p>70% of every purchase goes directly to the artisan.</p></div>
+    <div class="feat"><i class="fas fa-rotate-left"></i><h4>Easy Returns</h4><p>Changed your mind? 7-day hassle-free returns.</p></div>
+  </div>
+</section>
+
+<section class="news">
+  <div class="container">
+    <div class="news-card">
+      <h2>Get 10% Off Your First Order</h2>
+      <p>Join 8,000+ subscribers for new arrivals, artisan stories and members-only deals.</p>
+      <form class="news-form" onsubmit="event.preventDefault();this.innerHTML='<p style=\'color:#16A34A;font-weight:600\'><i class=\'fas fa-check-circle\'></i> Murakoze! Check your inbox for your discount code.</p>'">
+        <input type="email" placeholder="Your email address" required />
+        <button class="btn btn-orange" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-grid">
+      <div>
+        <a href="#home" class="brand" style="margin-bottom:14px"><span class="logo-ic"><i class="fas fa-basket-shopping"></i></span>Agaseke Market</a>
+        <p>Rwanda's marketplace for authentic handcrafted goods. Every purchase empowers a local artisan.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <ul><li><a href="#products">Bestsellers</a></li><li><a href="#categories">Categories</a></li><li><a href="#about">Our Story</a></li></ul>
+      </div>
+      <div>
+        <h5>Support</h5>
+        <ul><li><i class="fas fa-phone"></i>+250 788 000 000</li><li><i class="fas fa-envelope"></i>hello@agasekemarket.rw</li><li><i class="fas fa-location-dot"></i>Kigali, Rwanda</li></ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 Agaseke Market (fictional demo business)</p>
+      <p>Website demo by <a href="../demos.html" target="_blank" rel="noopener">1000 Hills Group</a> — Get yours today</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function addToCart(){var c=document.getElementById('cartCount');c.textContent=parseInt(c.textContent)+1;c.animate([{transform:'scale(1)'},{transform:'scale(1.5)'},{transform:'scale(1)'}],{duration:300});}
+</script>
+</body>
+</html>
