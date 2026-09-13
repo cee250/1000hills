@@ -1,10 +1,10 @@
 // ======================================== //
-// MAIN.JS - FIREBASE CONFIG & INIT        //
+// MAIN.JS - SITE BEHAVIOUR + OPTIONAL FIREBASE
+// Firebase is only needed by client-portal.html, so the SDK
+// is initialised defensively: pages that do not load it still
+// get the header, menu and preloader behaviour.
 // ======================================== //
 
-// ======================================== //
-// FIREBASE CONFIG                          //
-// ======================================== //
 const firebaseConfig = {
     apiKey: "AIzaSyABeFEPPKjKVFU14cx4s__uwWLRpHa5J2c",
     authDomain: "luxury-properties-36554.firebaseapp.com",
@@ -14,77 +14,95 @@ const firebaseConfig = {
     appId: "1:214959691683:web:864ba0f961cfefd7baac16"
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-const auth = firebase.auth();
+let db = null;
+let auth = null;
+
+(function initFirebase() {
+    if (typeof firebase === 'undefined') return;          // SDK not loaded on this page
+    try {
+        if (!firebase.apps || !firebase.apps.length) firebase.initializeApp(firebaseConfig);
+        db = firebase.firestore();
+        auth = firebase.auth();
+    } catch (err) {
+        console.warn('Firebase unavailable on this page:', err.message);
+    }
+})();
 
 // ======================================== //
 // DOM READY                                //
 // ======================================== //
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // ======================================== //
-    // HEADER SCROLL EFFECT                    //
+    // HEADER SCROLL EFFECT (rAF-throttled)     //
     // ======================================== //
     const header = document.getElementById('header');
     if (header) {
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+        let ticking = false;
+        const update = function () {
+            header.classList.toggle('scrolled', (window.pageYOffset || document.documentElement.scrollTop) > 50);
+            ticking = false;
+        };
+        window.addEventListener('scroll', function () {
+            if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+        }, { passive: true });
+        update();
     }
 
     // ======================================== //
-    // HAMBURGER MENU                          //
+    // HAMBURGER MENU                           //
     // ======================================== //
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
-    
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            this.classList.toggle('active');
-            navLinks.classList.toggle('open');
-            const isOpen = navLinks.classList.contains('open');
-            if (this) this.setAttribute('aria-expanded', isOpen);
-        });
 
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('open');
-                if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
-            });
+    if (hamburger && navLinks) {
+        const setMenu = function (open) {
+            hamburger.classList.toggle('active', open);
+            navLinks.classList.toggle('open', open);
+            hamburger.setAttribute('aria-expanded', String(open));
+            document.body.style.overflow = open ? 'hidden' : '';
+        };
+        hamburger.addEventListener('click', function () {
+            setMenu(!navLinks.classList.contains('open'));
         });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMenu(false));
+        });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+        window.addEventListener('resize', () => { if (window.innerWidth > 992) setMenu(false); });
     }
 
     // ======================================== //
-    // PRELOADER                               //
+    // PRELOADER                                //
     // ======================================== //
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                preloader.classList.add('hide');
-            }, 800);
-        });
+        const hide = function () {
+            preloader.classList.add('hide');
+            setTimeout(() => { preloader.style.display = 'none'; }, 700);
+        };
+        window.addEventListener('load', function () { setTimeout(hide, 350); });
+        setTimeout(hide, 3500);   // never trap the visitor behind a spinner
     }
 
     // ======================================== //
-    // AOS INIT                                 //
+    // REVEAL ANIMATIONS (local, no CDN)        //
     // ======================================== //
     if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 50,
-            easing: 'ease-out-cubic'
-        });
+        AOS.init({ duration: 700, once: true, offset: 40 });
     }
 
-    console.log('🚀 1000 Hills Group - Website Loaded Successfully!');
-    console.log('🔥 Connected to Firebase Firestore');
+    // ======================================== //
+    // BACK TO TOP                              //
+    // ======================================== //
+    const toTop = document.getElementById('backToTop');
+    if (toTop) {
+        window.addEventListener('scroll', function () {
+            toTop.classList.toggle('show', (window.pageYOffset || 0) > 700);
+        }, { passive: true });
+        toTop.addEventListener('click', function () {
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+        });
+    }
 });

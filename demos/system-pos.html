@@ -112,6 +112,44 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
 @media(max-width:1100px){.kpis{grid-template-columns:1fr 1fr}.pos{grid-template-columns:1fr}.products{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:860px){.sidebar{display:none}.tb-search{display:none}}
 @media(max-width:560px){.kpis{grid-template-columns:1fr}.products{grid-template-columns:1fr 1fr}}
+/* 1000hills-mobile-nav */
+.mh-scrim,.mh-btn{display:none}
+@media (max-width:1024px){
+  .sidebar{
+    position:fixed !important;top:46px;left:0;bottom:0;height:auto !important;
+    width:min(272px,84vw) !important;display:flex !important;flex-direction:column;
+    z-index:9995;transform:translateX(-103%);
+    transition:transform .3s cubic-bezier(.22,1,.36,1);
+    box-shadow:0 24px 60px rgba(0,0,0,.5);overflow-y:auto;
+  }
+  body.mh-open .sidebar{transform:none}
+  body.mh-open{overflow:hidden}
+  .mh-btn{
+    display:grid;place-items:center;width:36px;height:36px;flex:none;border-radius:10px;
+    border:1px solid var(--line,rgba(15,23,42,.14));background:var(--card,#fff);
+    color:var(--muted,#475569);cursor:pointer;font-size:.9rem;transition:.2s;
+  }
+  .mh-btn:hover{color:var(--green,#0EA5E9);border-color:currentColor}
+  .mh-scrim{
+    display:block;position:fixed;inset:46px 0 0;background:rgba(6,13,26,.58);
+    backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);
+    z-index:9990;opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s ease;
+  }
+  body.mh-open .mh-scrim{opacity:1;visibility:visible}
+  .app{display:block}
+  .main,.content,main{min-width:0}
+  .kpis{grid-template-columns:repeat(2,1fr) !important}
+  .panels,.grid-2,.grid-3,.pos{grid-template-columns:1fr !important}
+  .topbar{padding:10px 14px !important;gap:10px !important}
+  .content,.main > div{padding-left:14px !important;padding-right:14px !important}
+  .tscroll,.table-panel{overflow-x:auto;-webkit-overflow-scrolling:touch}
+}
+@media (max-width:620px){
+  .kpis{grid-template-columns:1fr !important}
+  .tb-search{display:none !important}
+}
+@media (prefers-reduced-motion:reduce){.sidebar,.mh-scrim{transition:none}}
+
 </style>
 </head>
 <body>
@@ -221,5 +259,41 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
     </div>
   </main>
 </div>
+
+<script>
+/* 1000hills-mobile-nav */
+(function () {
+  if (window.__mhSys) return;
+  window.__mhSys = true;
+  var sidebar = document.querySelector('.sidebar');
+  if (!sidebar) return;
+
+  var scrim = document.createElement('div');
+  scrim.className = 'mh-scrim';
+  document.body.appendChild(scrim);
+
+  var btn = document.createElement('button');
+  btn.className = 'mh-btn';
+  btn.type = 'button';
+  btn.setAttribute('aria-label', 'Open menu');
+  btn.setAttribute('aria-expanded', 'false');
+  btn.innerHTML = '<i class="fas fa-bars"></i>';
+  var host = document.querySelector('.topbar') || document.querySelector('.main') || document.body;
+  if (host.firstChild) host.insertBefore(btn, host.firstChild); else host.appendChild(btn);
+
+  function setOpen(open) {
+    document.body.classList.toggle('mh-open', open);
+    btn.setAttribute('aria-expanded', String(open));
+  }
+  btn.addEventListener('click', function () { setOpen(!document.body.classList.contains('mh-open')); });
+  scrim.addEventListener('click', function () { setOpen(false); });
+  sidebar.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setOpen(false); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 1024) setOpen(false); });
+})();
+</script>
+
 </body>
 </html>

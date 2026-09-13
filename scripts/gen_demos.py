@@ -414,7 +414,7 @@ dict(file="corp-accounting.html", cat="corporate", category="Corporate", icon="f
      wa="Hi%201000%20Hills%20Group!%20I%20want%20an%20accounting%20firm%20website.", cta="Get a site like this",
      place="CPAs · Kigali", h1="Books you can <em>defend</em>", lead="Accounting, RRA filings and CFO-on-call for SMEs.",
      btn="Book a consult", kicker="Practice", h2="How we help",
-     cards=[("fa-file-invoice-dollar","Tax","VAT & CIT."),("fa-books","Bookkeeping","Monthly close."),("fa-chart-pie","CFO","Board packs.")],
+     cards=[("fa-file-invoice-dollar","Tax","VAT & CIT."),("fa-book","Bookkeeping","Monthly close."),("fa-chart-pie","CFO","Board packs.")],
      stats=[("RRA","E-tax"),("IFRS","SME"),("NDA","Standard")],
      nav=["Services","Industries","Contact"], about_h="Quiet competence", about="Imena is a licensed CPA practice.",
      list=["Xero & QuickBooks","Payroll PAYE","Audit support"],

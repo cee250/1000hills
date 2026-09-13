@@ -133,7 +133,7 @@
   async function init() {
     let data;
     try {
-      const res = await fetch('content.json', { cache: 'no-store' });
+      const res = await fetch('content.json');
       data = await res.json();
     } catch (err) {
       console.error('Could not load content.json — falling back to the content already in the HTML.', err);

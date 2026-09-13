@@ -1,0 +1,50 @@
+# Netlify configuration — static site, no build step.
+# Rules are ordered most-specific first: Netlify applies every matching rule,
+# and earlier rules win when the same header key is set twice.
+
+# --- shared demo shell (CSS/JS used by all 130 demos) ---
+[[headers]]
+  for = "/demos/assets/**"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+# --- images: long cache, they are content-hashed by filename in practice ---
+[[headers]]
+  for = "/assets/img/**"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/demos/img/**"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, stale-while-revalidate=86400"
+
+# --- site assets ---
+[[headers]]
+  for = "/assets/js/**"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/style.css"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/main.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+[[headers]]
+  for = "/render.js"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, stale-while-revalidate=86400"
+
+# --- HTML always revalidates so a new deploy shows up immediately ---
+[[headers]]
+  for = "/**"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
