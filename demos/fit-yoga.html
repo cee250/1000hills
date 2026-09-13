@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Amahoro Yoga | Yoga Studio — Demo by 1000 Hills Group</title>
+<meta name="description" content="Live website demo by 1000 Hills Group — Calm yoga studio with class timetable, intro offer and teacher bios."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bg:#FDFCFB;--ink:#3F3A36;--muted:#7C746C;--acc:#0D9488;--acc2:#5EEAD4;--card:#fff;--line:#CCFBF1;}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;padding-top:46px}
+a{text-decoration:none;color:inherit}ul{list-style:none}h1,h2,.serif{font-family:'Playfair Display',serif}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999;border-bottom:1px solid rgba(201,169,110,.35)}
+.demo-bar .db-left{display:flex;align-items:center;gap:8px;font-size:.78rem;color:#E8D5A3}
+.demo-bar .db-left i,.demo-bar .db-left a{color:#E8D5A3;font-weight:600}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;cursor:pointer}
+header{position:sticky;top:46px;z-index:50;background:#fff;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{width:min(1120px,92%);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.brand .ic{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;color:#fff}
+.nav-links{display:flex;gap:22px;font-size:.86rem;font-weight:600;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:40px;font-weight:700;font-size:.84rem;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff}
+.hero{padding:88px 0 70px;background:#F0FDFA;}
+.wrap{width:min(1120px,92%);margin:0 auto}
+.pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--line);padding:7px 14px;border-radius:30px;font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--acc);font-weight:700}
+.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);line-height:1.1;margin:16px 0;max-width:16ch}
+.hero h1 em{color:var(--acc);font-style:normal}
+.hero p{max-width:52ch;color:var(--muted);font-size:1.05rem}
+.hero-btns{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn-ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.stats{display:flex;gap:36px;margin-top:40px;flex-wrap:wrap}
+.stats strong{display:block;font-size:1.6rem;color:var(--acc)}
+.stats span{font-size:.78rem;color:var(--muted)}
+section{padding:72px 0}
+.sec{text-align:center;max-width:640px;margin:0 auto 40px}
+.sec .k{color:var(--acc);font-size:.75rem;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.sec h2{font-size:clamp(1.6rem,3vw,2.4rem);margin:8px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px}
+.card i{color:var(--acc);font-size:1.3rem;margin-bottom:12px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.split ul li{margin:10px 0;display:flex;gap:10px;align-items:flex-start}
+.split ul i{color:var(--acc);margin-top:4px}
+.cta{text-align:center;background:#CCFBF1;}
+footer{border-top:1px solid var(--line);padding:40px 0;color:var(--muted);font-size:.85rem}
+.frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.frow a{color:var(--acc);font-weight:700}
+@media(max-width:800px){.nav-links{display:none}.split{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20yoga%20studio%20website." target="_blank" rel="noopener">Get a site like this</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop=0" aria-label="Close"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+
+<header><div class="nav">
+  <a class="brand" href="#"><span class="ic"><i class="fas fa-spa"></i></span>Amahoro Yoga</a>
+  <nav class="nav-links"><a href="#timetable">Timetable</a><a href="#teachers">Teachers</a><a href="#retreats">Retreats</a></nav>
+  <a class="btn" href="https://wa.me/250788695396" target="_blank"><i class="fab fa-whatsapp"></i> Try intro week</a>
+</div></header>
+<section class="hero"><div class="wrap">
+  <span class="pill"><i class="fas fa-location-dot"></i> Kiyovu loft</span>
+  <h1>Breathe with the <em>hills</em></h1>
+  <p>Vinyasa, yin and breathwork in a sunlit loft.</p>
+  <div class="hero-btns">
+    <a class="btn" href="#offer">Try intro week</a>
+    <a class="btn btn-ghost" href="#about">Learn more</a>
+  </div>
+  <div class="stats"><div><strong>12</strong><span>Classes / wk</span></div><div><strong>Mats</strong><span>Provided</span></div><div><strong>All</strong><span>Levels</span></div></div>
+</div></section>
+<section id="offer"><div class="wrap">
+  <div class="sec"><span class="k">Practice</span><h2>This week’s classes</h2><p>Calm yoga studio with class timetable, intro offer and teacher bios.</p></div>
+  <div class="grid"><div class="card"><i class="fas fa-sun"></i><h3>Morning flow</h3><p>6:45am.</p></div><div class="card"><i class="fas fa-moon"></i><h3>Yin evenings</h3><p>Restore.</p></div><div class="card"><i class="fas fa-mountain"></i><h3>Retreats</h3><p>Lake Kivu.</p></div></div>
+</div></section>
+<section id="about"><div class="wrap split">
+  <div>
+    <span class="k" style="color:var(--acc);font-size:.75rem;letter-spacing:2px;font-weight:800;text-transform:uppercase">About</span>
+    <h2 class="serif" style="font-size:2rem;margin:10px 0">A small, serious studio</h2>
+    <p style="color:var(--muted)">Amahoro is teacher-owned.</p>
+  </div>
+  <ul><li><i class="fas fa-check"></i> Intro week 15,000 RWF</li><li><i class="fas fa-check"></i> Private sessions</li><li><i class="fas fa-check"></i> Corporate offsites</li></ul>
+</section>
+<section class="cta" id="contact"><div class="wrap">
+  <h2 class="serif" style="font-size:2.1rem;margin-bottom:10px">Come to the loft</h2>
+  <p style="color:var(--muted);margin-bottom:22px">Book intro week.</p>
+  <a class="btn" href="https://wa.me/250788695396" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp us</a>
+</div></section>
+<footer><div class="wrap frow">
+  <p>© 2026 Amahoro Yoga (fictional demo)</p>
+  <p>Website demo by <a href="../demos.html">1000 Hills Group</a></p>
+</div></footer>
+</body></html>
