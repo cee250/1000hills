@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Amplitudes DJ | DJ & production — Demo by 1000 Hills Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+:root{--bg:#0A0A0A;--ink:#FAFAFA;--muted:#A1A1AA;--acc:#A3E635;--acc2:#BEF264;--card:#18181B;--line:rgba(163,230,53,.25);}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;padding-top:46px}
+a{text-decoration:none;color:inherit}ul{list-style:none}h1,h2{font-family:'Playfair Display',serif}
+.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999}
+.demo-bar .db-left,.demo-bar .db-left a{color:#E8D5A3;font-size:.78rem;font-weight:600;display:flex;gap:8px;align-items:center}
+.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px}
+.demo-bar .db-close{background:none;border:0;color:#A8B9D0;cursor:pointer}
+header{position:sticky;top:46px;background:#0A0A0A;border-bottom:1px solid var(--line);z-index:40}
+.nav{width:min(1100px,92%);margin:auto;display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:12px}
+.brand{display:flex;gap:10px;align-items:center;font-weight:800}
+.brand .ic{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;color:#0A0A0A}
+.nav-links{display:flex;gap:18px;color:var(--muted);font-size:.86rem;font-weight:600}
+.btn{display:inline-flex;gap:8px;align-items:center;padding:11px 22px;border-radius:40px;font-weight:700;font-size:.84rem;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#0A0A0A}
+.hero{padding:80px 0 64px;background:#0A0A0A}
+.wrap{width:min(1100px,92%);margin:auto}
+.pill{display:inline-flex;gap:8px;border:1px solid var(--line);padding:6px 14px;border-radius:30px;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--acc);font-weight:800}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:14px 0;max-width:16ch}
+.hero h1 em{color:var(--acc);font-style:normal}
+.hero p{max-width:50ch;color:var(--muted)}
+.stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
+.stats strong{display:block;font-size:1.5rem;color:var(--acc)}
+.stats span{font-size:.75rem;color:var(--muted)}
+section{padding:64px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card i{color:var(--acc);font-size:1.2rem;margin-bottom:10px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.split li{margin:10px 0;display:flex;gap:8px}
+.split i{color:var(--acc)}
+.cta{text-align:center;background:#18181B}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.84rem}
+.frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.frow a{color:var(--acc);font-weight:700}
+@media(max-width:800px){.nav-links{display:none}.split{grid-template-columns:1fr}}
+</style></head><body>
+<div class="demo-bar" id="demoBar">
+  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-right">
+    <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20a%20DJ%20website." target="_blank" rel="noopener">Get a site like this</a>
+    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop='0'" aria-label="Close"><i class="fas fa-times"></i></button>
+  </div>
+</div>
+<header><div class="nav">
+<a class="brand" href="#"><span class="ic"><i class="fas fa-headphones"></i></span>Amplitudes DJ</a>
+<nav class="nav-links"><a href="#mixes">Mixes</a><a href="#packages">Packages</a><a href="#book">Book</a></nav>
+<a class="btn" href="https://wa.me/250788695396" target="_blank"><i class="fab fa-whatsapp"></i> Hold a date</a>
+</div></header>
+<section class="hero"><div class="wrap">
+<span class="pill"><i class="fas fa-location-dot"></i> Kigali / touring</span>
+<h1>Nights that <em>move</em></h1>
+<p>Weddings, clubs and brand launches.</p>
+<div class="stats"><div><strong>120</strong><span>Events / yr</span></div><div><strong>4h</strong><span>Typical set</span></div><div><strong>Rider</strong><span>On request</span></div></div>
+</div></section>
+<section><div class="wrap">
+<h2 style="margin-bottom:24px">Packages</h2>
+<div class="grid"><div class="card"><i class="fas fa-ring"></i><h3>Weddings</h3><p>Full reception.</p></div><div class="card"><i class="fas fa-champagne-glasses"></i><h3>Clubs</h3><p>Resident sets.</p></div><div class="card"><i class="fas fa-briefcase"></i><h3>Brands</h3><p>Launch nights.</p></div></div>
+</div></section>
+<section><div class="wrap split">
+<div><h2>Vinyl + USB</h2><p style="color:var(--muted);margin-top:10px">Amplitudes is a Kigali DJ collective.</p></div>
+<ul><li><i class="fas fa-check"></i> MC add-on</li><li><i class="fas fa-check"></i> Lighting</li><li><i class="fas fa-check"></i> Backup decks</li></ul>
+</div></section>
+<section class="cta"><div class="wrap">
+<h2>Date still free?</h2>
+<p style="color:var(--muted);margin:10px 0 20px">Hold it today.</p>
+<a class="btn" href="https://wa.me/250788695396" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div></section>
+<footer><div class="wrap frow"><p>© 2026 Amplitudes DJ (fictional demo)</p><p>Demo by <a href="../demos.html">1000 Hills Group</a></p></div></footer>
+</body></html>
