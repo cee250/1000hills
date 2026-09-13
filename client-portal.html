@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0A1628" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
     <title>Client Portal - 1000 Hills Group</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
@@ -213,7 +216,7 @@
     <header class="header" id="header">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="1000 Hills Group" />
+                <img fetchpriority="high" decoding="async" src="assets/img/1000hills-logo.webp" alt="1000 Hills Group" />
                 <span>1000<span>Hills</span><small>Group</small></span>
             </a>
             <nav class="nav-links" id="navLinks">
@@ -222,7 +225,7 @@
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="demos.html">Demos</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="demos.html">Portfolio</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="client-portal.html" class="nav-cta"><i class="fas fa-user"></i> Portal</a></li>
                 </ul>
@@ -240,7 +243,7 @@
             <!-- Login Form -->
             <div class="portal-box" id="loginBox">
                 <div class="logo" style="display: flex; align-items: center; gap: 10px; justify-content: center;">
-                    <img src="logo.png" alt="1000 Hills Group" style="height: 40px;" />
+                    <img decoding="async" src="assets/img/1000hills-logo.webp" alt="1000 Hills Group" style="height: 40px;" />
                     <span style="font-weight: 800; font-size: 1.2rem;">1000<span style="color: var(--gold);">Hills</span></span>
                 </div>
                 <h2>Client <span class="highlight">Portal</span></h2>
@@ -318,7 +321,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="logo.png" alt="1000 Hills Group" />
+                        <img loading="lazy" decoding="async" src="assets/img/1000hills-logo.webp" alt="1000 Hills Group" />
                         <span>1000<span>Hills</span><small>Group</small></span>
                     </a>
                     <p>Rising to your Tech challenges since 2024.</p>
@@ -337,7 +340,7 @@
                         <li><a href="about.html">About Us</a></li>
                         <li><a href="services.html">Services</a></li>
                     <li><a href="demos.html">Demos</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="demos.html">Portfolio</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>

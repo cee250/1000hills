@@ -1,75 +1,252 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>RidgeTech MSP | Managed IT — Demo by 1000 Hills Group</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>RidgeTech MSP | Managed IT in Kigali — Website Demo by 1000 Hills Group</title>
+<meta name="description" content="Live website demo by 1000 Hills Group: RidgeTech MSP — MSP site with support plans, cybersecurity and on-site SLAs. Fully responsive on phone, tablet and desktop."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#020617"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2322D3EE'/><text x='32' y='45' font-family='Inter,Arial' font-size='34' font-weight='800' text-anchor='middle' fill='%23020617'>R</text></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/></noscript>
+<link rel="stylesheet" href="assets/pro-site.css"/>
 <style>
-:root{--bg:#020617;--ink:#E2E8F0;--muted:#94A3B8;--acc:#22D3EE;--acc2:#67E8F9;--card:#0F172A;--line:rgba(34,211,238,.2);}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;padding-top:46px}
-a{text-decoration:none;color:inherit}ul{list-style:none}h1,h2{font-family:'Playfair Display',serif}
-.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999}
-.demo-bar .db-left,.demo-bar .db-left a{color:#E8D5A3;font-size:.78rem;font-weight:600;display:flex;gap:8px;align-items:center}
-.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px}
-.demo-bar .db-close{background:none;border:0;color:#A8B9D0;cursor:pointer}
-header{position:sticky;top:46px;background:rgba(2,6,23,.95);border-bottom:1px solid var(--line);z-index:40}
-.nav{width:min(1100px,92%);margin:auto;display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:12px}
-.brand{display:flex;gap:10px;align-items:center;font-weight:800}
-.brand .ic{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;color:#020617}
-.nav-links{display:flex;gap:18px;color:var(--muted);font-size:.86rem;font-weight:600}
-.btn{display:inline-flex;gap:8px;align-items:center;padding:11px 22px;border-radius:40px;font-weight:700;font-size:.84rem;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#020617}
-.hero{padding:80px 0 64px;background:#020617}
-.wrap{width:min(1100px,92%);margin:auto}
-.pill{display:inline-flex;gap:8px;border:1px solid var(--line);padding:6px 14px;border-radius:30px;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--acc);font-weight:800}
-.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:14px 0;max-width:16ch}
-.hero h1 em{color:var(--acc);font-style:normal}
-.hero p{max-width:50ch;color:var(--muted)}
-.stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
-.stats strong{display:block;font-size:1.5rem;color:var(--acc)}
-.stats span{font-size:.75rem;color:var(--muted)}
-section{padding:64px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
-.card i{color:var(--acc);font-size:1.2rem;margin-bottom:10px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.split li{margin:10px 0;display:flex;gap:8px}
-.split i{color:var(--acc)}
-.cta{text-align:center;background:#0F172A}
-footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.84rem}
-.frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.frow a{color:var(--acc);font-weight:700}
-@media(max-width:800px){.nav-links{display:none}.split{grid-template-columns:1fr}}
-</style></head><body>
+:root{
+  --acc:#22D3EE;--acc-2:#67E8F9;--acc-ink:#020617;--acc-bg:rgba(34,211,238,0.13);--acc-line:rgba(34,211,238,0.32);
+  --bg:#020617;--bg-2:#080E20;--card:#0F172A;--card-2:#090F21;
+  --ink:#E2E8F0;--muted:#94A3B8;--faint:#5D677B;--line:rgba(255,255,255,0.1);--line-2:rgba(255,255,255,0.19);
+  --ok:#10B981;--warn:#F59E0B;
+  --nav-bg:rgba(2,6,23,.95);
+  --r:14px;--r-l:20px;--r-xl:28px;
+  --sh:0 18px 44px -22px rgba(0,0,0,.55);
+  --sh-l:0 34px 80px -30px rgba(0,0,0,.65);
+  --bar:46px;--head:66px;
+  --wrap:min(1140px,92vw);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --display:var(--font);
+}
+</style>
+</head>
+<body>
+
+<!-- 1000 Hills Group demo bar -->
 <div class="demo-bar" id="demoBar">
-  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-left">
+    <i class="fas fa-bolt" aria-hidden="true"></i>
+    <a href="../demos.html">1000 Hills Group</a>
+    <span class="sep">·</span>
+    <span class="kind">Live website demo — RidgeTech MSP</span>
+  </div>
   <div class="db-right">
     <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20IT%20company%20website." target="_blank" rel="noopener">Get a site like this</a>
-    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop='0'" aria-label="Close"><i class="fas fa-times"></i></button>
+    <button class="db-close" id="dbClose" type="button" aria-label="Close demo bar"><i class="fas fa-times" aria-hidden="true"></i></button>
   </div>
 </div>
-<header><div class="nav">
-<a class="brand" href="#"><span class="ic"><i class="fas fa-server"></i></span>RidgeTech MSP</a>
-<nav class="nav-links"><a href="#plans">Plans</a><a href="#security">Security</a><a href="#contact">Contact</a></nav>
-<a class="btn" href="https://wa.me/250788695396" target="_blank"><i class="fab fa-whatsapp"></i> Get a plan</a>
-</div></header>
-<section class="hero"><div class="wrap">
-<span class="pill"><i class="fas fa-location-dot"></i> Kigali</span>
-<h1>IT that <em>stays up</em></h1>
-<p>Helpdesk, cloud and security for Rwanda SMEs.</p>
-<div class="stats"><div><strong>15m</strong><span>Reply</span></div><div><strong>24/7</strong><span>Watch</span></div><div><strong>RURA</strong><span>Aware</span></div></div>
-</div></section>
-<section><div class="wrap">
-<h2 style="margin-bottom:24px">Plans</h2>
-<div class="grid"><div class="card"><i class="fas fa-headset"></i><h3>Helpdesk</h3><p>15-min first reply.</p></div><div class="card"><i class="fas fa-shield"></i><h3>Security</h3><p>EDR + backup.</p></div><div class="card"><i class="fas fa-cloud"></i><h3>Cloud</h3><p>M365 & Google.</p></div></div>
-</div></section>
-<section><div class="wrap split">
-<div><h2>Your in-house IT, outsourced</h2><p style="color:var(--muted);margin-top:10px">RidgeTech is a local MSP.</p></div>
-<ul><li><i class="fas fa-check"></i> On-site engineers</li><li><i class="fas fa-check"></i> vCIO</li><li><i class="fas fa-check"></i> Fixed monthly</li></ul>
-</div></section>
-<section class="cta"><div class="wrap">
-<h2>Need a desk?</h2>
-<p style="color:var(--muted);margin:10px 0 20px">Talk to us.</p>
-<a class="btn" href="https://wa.me/250788695396" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-</div></section>
-<footer><div class="wrap frow"><p>© 2026 RidgeTech MSP (fictional demo)</p><p>Demo by <a href="../demos.html">1000 Hills Group</a></p></div></footer>
-</body></html>
+
+<!-- header -->
+<header class="site-head" id="siteHead">
+  <div class="head-in">
+    <a class="brand" href="#top"><span class="bic"><i class="fas fa-server" aria-hidden="true"></i></span><b>RidgeTech MSP</b></a>
+    <nav class="site-nav" aria-label="Main"><a href="#services">Plans</a><a href="#about">Security</a><a href="#gallery">Contact</a><a href="#contact">Contact</a></nav>
+    <div class="head-cta">
+      <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20IT%20company%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Get a plan</a>
+    </div>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="Mobile">
+  <a href="#services"><i class="fas fa-briefcase" aria-hidden="true"></i> Plans</a><a href="#about"><i class="fas fa-circle-info" aria-hidden="true"></i> Security</a><a href="#gallery"><i class="fas fa-images" aria-hidden="true"></i> Contact</a><a href="#contact"><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact</a>
+  <div class="d-foot">
+    <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20IT%20company%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Get a plan</a>
+    <a class="btn btn-b" href="#contact"><i class="fas fa-phone" aria-hidden="true"></i> Call +250 790 167 168</a>
+    <small>RidgeTech MSP · Kigali — fictional demo by 1000 Hills Group</small>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- hero -->
+  <section class="hero" style="--herobg:#020617">
+    <div class="wrap hero-grid">
+      <div class="rv">
+        <span class="kicker"><i class="fas fa-location-dot" aria-hidden="true"></i> Kigali · Managed IT</span>
+        <h1>IT that <em>stays up</em></h1>
+        <p class="lead">Helpdesk, cloud and security for Rwanda SMEs.</p>
+        <div class="hero-cta">
+          <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20IT%20company%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Get a plan</a>
+          <a class="btn btn-b" href="#services"><i class="fas fa-briefcase" aria-hidden="true"></i> Plans</a>
+        </div>
+        <div class="hero-stats"><div><strong>15m</strong><span>Reply</span></div><div><strong>24/7</strong><span>Watch</span></div><div><strong>RURA</strong><span>Aware</span></div></div>
+      </div>
+      <div class="visual rv" data-delay="120">
+        <div class="vcard vmain">
+          <div class="vhead">
+            <span class="bic"><i class="fas fa-server" aria-hidden="true"></i></span>
+            <div>
+              <h4>RidgeTech MSP</h4>
+              <small><i class="fas fa-star" aria-hidden="true"></i> 4.7 · 249 reviews · Kigali</small>
+            </div>
+          </div>
+          <div class="vrow"><i class="fas fa-headset" aria-hidden="true"></i><span><b>Helpdesk</b><small>15-min first reply.</small></span><span class="tagm">SLAs</span></div><div class="vrow"><i class="fas fa-shield" aria-hidden="true"></i><span><b>Security</b><small>EDR + backup.</small></span><span class="tagm">Security</span></div><div class="vrow"><i class="fas fa-cloud" aria-hidden="true"></i><span><b>Cloud</b><small>M365 & Google.</small></span><span class="tagm">Cloud</span></div>
+        </div>
+        <div class="vcard vpill"><i class="fas fa-circle-check" aria-hidden="true"></i> Replies within one business hour</div>
+        <div class="vcard vbadge"><strong>12+ yrs</strong><span>In business</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- marquee -->
+  <div class="strip" aria-hidden="true"><div class="strip-in"><span><i class="fas fa-circle-check" aria-hidden="true"></i> SLAs</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Security</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Cloud</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Helpdesk</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Contracts & SLAs</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Company profiles</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Multi-site teams</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Reports & invoicing</span></div></div>
+
+  <!-- cards -->
+  <section id="services">
+    <div class="wrap">
+      <div class="shead center rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-server" aria-hidden="true"></i> What we do</span>
+        <h2>Plans</h2>
+        <p>MSP site with support plans, cybersecurity and on-site SLAs.</p>
+      </div>
+      <div class="cards"><article class="card rv" data-delay="0"><span class="cic"><i class="fas fa-headset" aria-hidden="true"></i></span><h3>Helpdesk</h3><p>15-min first reply.</p></article><article class="card rv" data-delay="70"><span class="cic"><i class="fas fa-shield" aria-hidden="true"></i></span><h3>Security</h3><p>EDR + backup.</p></article><article class="card rv" data-delay="140"><span class="cic"><i class="fas fa-cloud" aria-hidden="true"></i></span><h3>Cloud</h3><p>M365 & Google.</p></article></div>
+    </div>
+  </section>
+
+  <!-- about -->
+  <section id="about" style="background:var(--bg-2)">
+    <div class="wrap split">
+      <div class="rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-heart" aria-hidden="true"></i> Who we are</span>
+        <h2 style="font-size:clamp(1.55rem,4.2vw,2.3rem);margin:14px 0 12px">Your in-house IT, outsourced</h2>
+        <p style="color:var(--muted)">RidgeTech is a local MSP. Every detail — colours, photos, wording and forms — is rebuilt around your brand.</p>
+        <ul class="checklist"><li><i class="fas fa-check" aria-hidden="true"></i> On-site engineers</li><li><i class="fas fa-check" aria-hidden="true"></i> vCIO</li><li><i class="fas fa-check" aria-hidden="true"></i> Fixed monthly</li></ul>
+        <div class="hero-cta" style="margin-top:26px">
+          <a class="btn btn-b" href="#contact"><i class="fas fa-calendar-check" aria-hidden="true"></i> Get a plan</a>
+        </div>
+      </div>
+      <div class="artstack rv" data-delay="120"><div class="art rv" data-delay="0"><i class="fas fa-headset big" aria-hidden="true"></i><div><h4>Helpdesk</h4><p>15-min first reply.</p></div></div><div class="art alt rv" data-delay="90"><i class="fas fa-shield big" aria-hidden="true"></i><div><h4>Security</h4><p>EDR + backup.</p></div></div><div class="art rv" data-delay="180"><i class="fas fa-cloud big" aria-hidden="true"></i><div><h4>Cloud</h4><p>M365 & Google.</p></div></div></div>
+    </div>
+  </section>
+
+  <!-- gallery -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-images" aria-hidden="true"></i> Our work</span>
+        <h2>Projects and people</h2>
+        <p>Case studies, logos and outcomes — the sections clients ask for.</p>
+      </div>
+      <div class="gal"><figure class="gtile rv" data-delay="0" data-toast="Photo block — we drop in your own photography."><i class="fas fa-briefcase" aria-hidden="true"></i><figcaption>Helpdesk</figcaption></figure><figure class="gtile rv" data-delay="80" data-toast="Photo block — we drop in your own photography."><i class="fas fa-handshake" aria-hidden="true"></i><figcaption>Security</figcaption></figure><figure class="gtile rv" data-delay="160" data-toast="Photo block — we drop in your own photography."><i class="fas fa-chart-line" aria-hidden="true"></i><figcaption>Cloud</figcaption></figure><figure class="gtile rv" data-delay="0" data-toast="Photo block — we drop in your own photography."><i class="fas fa-building" aria-hidden="true"></i><figcaption>SLAs</figcaption></figure><figure class="gtile rv" data-delay="80" data-toast="Photo block — we drop in your own photography."><i class="fas fa-file-contract" aria-hidden="true"></i><figcaption>Plans</figcaption></figure><figure class="gtile rv" data-delay="160" data-toast="Photo block — we drop in your own photography."><i class="fas fa-people-group" aria-hidden="true"></i><figcaption>Contact</figcaption></figure></div>
+    </div>
+  </section>
+
+  <!-- testimonials -->
+  <section style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="shead center rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-quote-left" aria-hidden="true"></i> Reviews</span>
+        <h2>What people say</h2>
+        <p>Sample testimonials — we wire in your real Google and WhatsApp reviews.</p>
+      </div>
+      <div class="quotes"><figure class="quote rv" data-delay="0"><div class="qm"><i class="fas fa-quote-left" aria-hidden="true"></i></div><p>Paid with MoMo, got a receipt instantly, and the service was exactly as described online. Highly recommended.</p><div class="who"><span class="av">PN</span><span><b>Patrick Ndayisaba</b><small>Procurement lead · Musanze</small></span><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div></figure><figure class="quote rv" data-delay="90"><div class="qm"><i class="fas fa-quote-left" aria-hidden="true"></i></div><p>As a RidgeTech MSP I need reliability. Kigali has never let me down, and the online form means I stop calling around.</p><div class="who"><span class="av">DM</span><span><b>Divine Mukamana</b><small>Managing director · Kimironko</small></span><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div></figure><figure class="quote rv" data-delay="180"><div class="qm"><i class="fas fa-quote-left" aria-hidden="true"></i></div><p>Booked through the website on a Sunday night and got a WhatsApp confirmation in two minutes. RidgeTech MSP is now the only place we go in Kigali.</p><div class="who"><span class="av">SN</span><span><b>Samuel Niyonzima</b><small>IT manager · Nyamirambo</small></span><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div></figure></div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-paper-plane" aria-hidden="true"></i> Get in touch</span>
+        <h2>Need a desk?</h2>
+        <p>Talk to us. Message us on WhatsApp and we will confirm within minutes — or send the form and we will call you back.</p>
+      </div>
+      <div class="contact">
+        <div class="infobox rv">
+          <div class="irow"><i class="fas fa-location-dot" aria-hidden="true"></i><div><b>Find us</b><span>Kigali, Kigali — by appointment</span></div></div>
+          <div class="irow"><i class="fas fa-clock" aria-hidden="true"></i><div><b>Opening hours</b><span>Mon – Fri · 08:00 – 17:30</span></div></div>
+          <div class="irow"><i class="fas fa-phone" aria-hidden="true"></i><div><b>Call or WhatsApp</b><span>+250 790 167 168</span></div></div>
+          <div class="irow"><i class="fas fa-credit-card" aria-hidden="true"></i><div><b>We accept</b><span>Bank transfer · Purchase order · Card</span></div></div>
+          <div class="map"><span>Kigali, Kigali</span></div>
+        </div>
+        <form class="book rv" id="bookForm" data-delay="120" novalidate>
+          <div class="f2">
+            <label class="fl">Your name<input type="text" name="name" placeholder="e.g. Aline Uwase" required/></label>
+            <label class="fl">Phone<input type="tel" name="phone" placeholder="+250 7XX XXX XXX" required/></label>
+          </div>
+          <div class="f2">
+            <label class="fl">Company<input type="text" name="when" placeholder="e.g. Kigali Foods Ltd"/></label>
+            <label class="fl">People<select name="pax"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option><option>12</option><option>20</option></select></label>
+          </div>
+          <label class="fl">Message<textarea name="msg" placeholder="Tell us what you need…"></textarea></label>
+          <button class="btn btn-a" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send request</button>
+          <p class="form-note"><i class="fas fa-circle-info" aria-hidden="true"></i> Demo form — in your live site this delivers to your email, WhatsApp and admin dashboard instantly.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- cta -->
+  <section class="cta">
+    <div class="wrap rv">
+      <h2>Need a desk?</h2>
+      <p>Talk to us. Message us on WhatsApp and we will confirm within minutes — or send the form and we will call you back.</p>
+      <div class="cta-btns">
+        <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20IT%20company%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Get a plan</a>
+        <a class="btn btn-b" href="../demos.html"><i class="fas fa-layer-group" aria-hidden="true"></i> See more demos</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><span class="bic"><i class="fas fa-server" aria-hidden="true"></i></span><b>RidgeTech MSP</b></a>
+        <p>RidgeTech MSP — managed it in Kigali. This is a fictional demo business created by 1000 Hills Group to show what your own website could look like.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram" data-toast="Instagram feed embeds are available on every site we build."><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook" data-toast="Facebook page integration + pixel included."><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20IT%20company%20website." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul><li><a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i> Plans</a></li><li><a href="#about"><i class="fas fa-chevron-right" aria-hidden="true"></i> Security</a></li><li><a href="#gallery"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li><li><a href="#contact"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li></ul>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul>
+          <li><span><i class="fas fa-location-dot" aria-hidden="true"></i> Kigali, Kigali — by appointment</span></li>
+          <li><span><i class="fas fa-phone" aria-hidden="true"></i> +250 790 167 168</span></li>
+          <li><span><i class="fas fa-clock" aria-hidden="true"></i> Mon – Fri 08:00 – 17:30</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 RidgeTech MSP — fictional demo business</span>
+      <span>Designed &amp; built by <a href="../demos.html">1000 Hills Group</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20IT%20company%20website." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+<button class="totop" id="toTop" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+<div class="toast" id="toast" role="status" aria-live="polite"><i class="fas fa-circle-info" aria-hidden="true"></i><span id="toastMsg"></span></div>
+
+<script src="assets/pro-site.js" defer></script>
+</body>
+</html>

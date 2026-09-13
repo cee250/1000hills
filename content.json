@@ -4,7 +4,7 @@
       "name": "GAKIRE KELVIN",
       "role": "Chief Executive Officer",
       "bio": "Visionary leader driving 1000 Hills Group's mission to deliver exceptional tech solutions across Rwanda.",
-      "image": "Gakire.jpeg",
+      "image": "assets/img/Gakire.webp",
       "badge": "CEO",
       "badgeIcon": "fas fa-crown",
       "skills": ["Leadership", "Strategy", "Innovation"],
@@ -17,7 +17,7 @@
       "name": "CIPHERFOX",
       "role": "Web Developer & Cybersecurity Specialist",
       "bio": "Building secure, high-performance digital solutions for Rwanda's top brands. Protecting your digital assets.",
-      "image": "cipherfox.jpeg",
+      "image": "assets/img/cipherfox.webp",
       "badge": "Security Expert",
       "badgeIcon": "fas fa-shield-alt",
       "skills": ["Web Dev", "Cybersecurity", "Full-Stack", "Firebase"],
@@ -156,35 +156,35 @@
     }
   ],
   "clients": [
-    { "name": "Lemigo", "logo": "Lemigo.png" },
-    { "name": "Grazia", "logo": "Grazia.jpeg" },
-    { "name": "Inzozi", "logo": "Inzozi.jpeg" },
-    { "name": "Motel Nyanza", "logo": "Motel-Nyanza.jpeg" },
-    { "name": "Nsbliss", "logo": "Nsbliss.jpeg" },
-    { "name": "Retreat", "logo": "Retreat.jpeg" },
-    { "name": "Rose", "logo": "Rose.png" },
-    { "name": "Saphir", "logo": "Saphir.jpeg" }
+    { "name": "Lemigo", "logo": "assets/img/Lemigo.webp" },
+    { "name": "Grazia", "logo": "assets/img/Grazia.webp" },
+    { "name": "Inzozi", "logo": "assets/img/Inzozi.webp" },
+    { "name": "Motel Nyanza", "logo": "assets/img/Motel-Nyanza.webp" },
+    { "name": "Nsbliss", "logo": "assets/img/Nsbliss.webp" },
+    { "name": "Retreat", "logo": "assets/img/Retreat.webp" },
+    { "name": "Rose", "logo": "assets/img/Rose.webp" },
+    { "name": "Saphir", "logo": "assets/img/Saphir.webp" }
   ],
  "portfolio": [
 
    {
     "name": "MenuHub",
     "description": "A digital QR menu platform that helps restaurants, cafés, bars, and hotels create beautiful online menus with real-time updates and a modern customer experience.",
-    "logo": "menuhub.png",
+    "logo": "assets/img/menuhub.webp",
     "url": "https://menuhub1.netlify.app",
     "status": "live"
   },
   {
     "name": "Luxury Properties Rwanda",
     "description": "Premium real estate platform with Firebase backend, property listings, and admin dashboard.",
-    "logo": "Luxury.jpeg",
+    "logo": "assets/img/Luxury.webp",
     "url": "https://luxuryproperties.vercel.app",
     "status": "live"
   },
     {
     "name": "Awakart",
     "description": "Your go-to online shopping destination for electronics, gadgets, and everyday essentials. Shop smart, save more.",
-    "logo": "awakart.jpeg",
+    "logo": "assets/img/awakart.webp",
     "url": "https://awakart.com",
     "status": "live"
  },
@@ -192,7 +192,7 @@
   {
     "name": "Tripsync",
     "description": "Innovative travel platform connecting travelers with seamless booking experiences across Africa.",
-    "logo": "Tripsync.jpeg",
+    "logo": "assets/img/Tripsync.webp",
     "url": "#",
     "status": "coming"
   }

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>document.documentElement.className += ' js';</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | 1000 Hills Group</title>
@@ -10,13 +11,13 @@
     <meta property="og:title" content="Contact Us | 1000 Hills Group" />
     <meta property="og:description" content="Reach 1000 Hills Group — Kigali's tech and digital agency." />
     <meta property="og:image" content="https://1000hillsgroup.africa/1000hills-logo.png" />
-    <link rel="icon" type="image/png" href="1000hills-logo.png" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 
     <style>
@@ -264,7 +265,7 @@
     <!-- ======================================== -->
     <div id="preloader">
         <div class="preloader-logo">
-            <img src="1000hills-logo.png" alt="1000 Hills Group" />
+            <img fetchpriority="high" decoding="async" src="assets/img/1000hills-logo.webp" alt="1000 Hills Group" />
         </div>
         <div class="preloader-bar"><div class="fill"></div></div>
     </div>
@@ -275,7 +276,7 @@
     <header class="header" id="header">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="1000hills-logo.png" alt="1000 Hills Group logo" />
+                <img decoding="async" src="assets/img/1000hills-logo.webp" alt="1000 Hills Group logo" />
             </a>
             <nav class="nav-links" id="navLinks">
                 <ul>
@@ -431,7 +432,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="1000hills-logo.png" alt="1000 Hills Group logo" />
+                        <img loading="lazy" decoding="async" src="assets/img/1000hills-logo.webp" alt="1000 Hills Group logo" />
                     </a>
                     <p>Rising to your tech challenges since 2020.</p>
                     <div class="socials">
@@ -479,7 +480,6 @@
     <!-- ======================================== -->
     <!-- SCRIPTS                                  -->
     <!-- ======================================== -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
         // ======================================== //
@@ -612,5 +612,6 @@
 
         console.log('📧 Contact page loaded successfully!');
     </script>
+    <script src="assets/js/reveal.js" defer></script>
 </body>
 </html>

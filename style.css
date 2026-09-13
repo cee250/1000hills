@@ -53,7 +53,6 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
-    loading: lazy;
 }
 
 a {
@@ -1900,5 +1899,71 @@ select:focus-visible {
     .why-card::before,
     .hero-card::before {
         animation-duration: 6s;
+    }
+}
+/* ======================================== */
+/* REVEAL (local AOS replacement)          */
+/* Animations only hide content when JS is  */
+/* available — html.js is set in <head>.    */
+/* ======================================== */
+
+html.js [data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 700ms;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+html.js [data-aos].aos-animate {
+    opacity: 1;
+    transform: none;
+}
+html.js [data-aos="fade-up"]     { transform: translate3d(0, 26px, 0); }
+html.js [data-aos="fade-down"]   { transform: translate3d(0, -26px, 0); }
+html.js [data-aos="fade-left"]   { transform: translate3d(28px, 0, 0); }
+html.js [data-aos="fade-right"]  { transform: translate3d(-28px, 0, 0); }
+html.js [data-aos="fade-in"]     { transform: none; }
+html.js [data-aos="zoom-in"]     { transform: scale(0.94); }
+html.js [data-aos="zoom-in-up"]  { transform: scale(0.94) translate3d(0, 26px, 0); }
+html.js [data-aos="flip-up"]     { transform: perspective(1000px) rotateX(-12deg) translate3d(0, 22px, 0); }
+html.js [data-aos="flip-left"]   { transform: perspective(1000px) rotateY(-12deg) translate3d(22px, 0, 0); }
+
+@media (prefers-reduced-motion: reduce) {
+    html.js [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* ======================================== */
+/* GLOBAL MOBILE / PERFORMANCE POLISH      */
+/* ======================================== */
+
+img[loading="lazy"] { background-color: rgba(255, 255, 255, 0.04); }
+
+.hamburger { padding: 10px; margin-right: -10px; }
+
+@media (max-width: 992px) {
+    .nav-links {
+        max-height: min(70vh, 520px);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+    .nav-links a { padding: 12px 0; font-size: 1.02rem; }
+}
+
+@media (max-width: 560px) {
+    body { font-size: 15.5px; }
+    .container { padding: 0 14px; }
+    .logo img { height: 34px; }
+    .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+    .cta-buttons, .hero-buttons { gap: 10px; }
+}
+
+@media (hover: none) {
+    /* Touch devices have no hover — keep cards legible and tappable. */
+    .service-card:hover, .portfolio-item:hover, .why-card:hover, .hero-card:hover {
+        transform: none;
     }
 }

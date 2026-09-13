@@ -1,56 +1,203 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>GatePass Visitors | Visitor management — System Demo</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<style>
-:root{--side:#1F2937;--acc:#FBBF24;--bg:#FFFBEB;--ink:#1F2937;}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);padding-top:46px;font-size:14px}
-a{text-decoration:none;color:inherit}
-.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999}
-.demo-bar .db-left,.demo-bar .db-left a{color:#E8D5A3;font-size:.78rem;display:flex;gap:8px;align-items:center;font-weight:600}
-.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px}
-.demo-bar .db-close{background:none;border:0;color:#A8B9D0;cursor:pointer}
-.app{display:flex;min-height:calc(100vh - 46px)}
-.sidebar{width:220px;background:var(--side);color:#c9d4e4;padding:16px 12px}
-.s-logo{display:flex;gap:10px;align-items:center;color:#fff;font-weight:800;margin-bottom:16px}
-.s-logo .ic{width:36px;height:36px;border-radius:10px;background:var(--acc);color:#0A1628;display:grid;place-items:center}
-.sidebar a{display:flex;gap:10px;padding:10px 12px;border-radius:8px;margin:3px 0;font-size:.84rem}
-.sidebar a.on{background:var(--acc);color:#0A1628;font-weight:700}
-.main{flex:1;padding:22px}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
-.kpi{background:#fff;border-radius:12px;padding:16px;border:1px solid #e6eaf0}
-.kpi span{font-size:.72rem;color:#6b7a90;font-weight:700}
-.kpi strong{display:block;font-size:1.35rem;margin-top:6px}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
-th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef1f5;font-size:.84rem}
-th{background:#f6f8fb;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:#6b7a90}
-.ok{color:#059669;font-weight:700}
-.note{margin-top:18px;font-size:.78rem;color:#6b7a90}
-.note a{color:var(--acc);font-weight:700}
-@media(max-width:860px){.sidebar{display:none}.kpis{grid-template-columns:1fr 1fr}}
-</style></head><body>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>GatePass Visitors | Visitor management — System Demo by 1000 Hills Group</title>
+<meta name="description" content="Live GatePass Visitors system demo by 1000 Hills Group (Rwanda): Front desk — visitors, badges, host alerts and watchlist. Works on phone, tablet and desktop."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#1F2937"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23FBBF24'/><text x='32' y='45' font-family='Inter,Arial' font-size='36' font-weight='800' text-anchor='middle' fill='%230B1220'>G</text></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/></noscript>
+<link rel="stylesheet" href="assets/pro-system.css"/>
+<style>/* Per-demo design tokens — injected inline by the generator. */
+:root{
+  --acc:#FBBF24;--acc-2:#FCD56E;--acc-ink:#0B1220;
+  --side:#1F2937;--side-2:#18202B;--side-ink:#DCE5F1;--side-muted:#7A8390;
+  --bg:#FFFBEB;--card:#FFFFFF;--card-2:#FFFDF6;
+  --ink:#1F2937;--muted:#868A8A;--faint:#B3B4AE;
+  --line:rgba(31,41,55,0.09);--line-2:rgba(31,41,55,0.16);
+  --ok:#0E9F6E;--warn:#D97706;--bad:#DC2626;--info:#2563EB;
+  --ok-bg:rgba(14,159,110,0.12);--warn-bg:rgba(217,119,6,0.13);--bad-bg:rgba(220,38,38,0.1);--info-bg:rgba(37,99,235,0.1);
+  --acc-bg:rgba(251,191,36,0.1);
+  --acc-light:#FDDC87;--acc-fade:rgba(251,191,36,0.55);
+  --ok-light:#7ACAAF;--warn-light:#EAB476;--bad-light:#EC8888;
+  --r-s:8px;--r:12px;--r-l:16px;--r-xl:22px;
+  --sh-s:0 1px 2px rgba(15,23,42,.05),0 1px 3px rgba(15,23,42,.05);
+  --sh:0 6px 18px -8px rgba(15,23,42,.18),0 2px 6px -2px rgba(15,23,42,.08);
+  --sh-l:0 22px 48px -20px rgba(15,23,42,.32);
+  --bar:46px;--font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+</style>
+</head>
+<body>
+
+<!-- 1000 Hills Group demo bar -->
 <div class="demo-bar" id="demoBar">
-  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live System Demo</div>
+  <div class="db-left">
+    <i class="fas fa-bolt" aria-hidden="true"></i>
+    <a href="../demos.html">1000 Hills Group</a>
+    <span class="sep">·</span>
+    <span class="kind">Live system demo — GatePass Visitors</span>
+  </div>
   <div class="db-right">
     <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20GatePass." target="_blank" rel="noopener">Get this system</a>
-    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop='0'" aria-label="Close"><i class="fas fa-times"></i></button>
+    <button class="db-close" id="dbClose" type="button" aria-label="Close demo bar"><i class="fas fa-times" aria-hidden="true"></i></button>
   </div>
 </div>
+
 <div class="app">
-<aside class="sidebar">
-<div class="s-logo"><span class="ic"><i class="fas fa-id-badge"></i></span>GatePass Visitors</div>
-<a href="#" class="on"><i class="fas fa-door-open"></i> Check-in</a><a href="#" class=""><i class="fas fa-id-badge"></i> Badges</a><a href="#" class=""><i class="fas fa-bell"></i> Hosts</a><a href="#" class=""><i class="fas fa-shield"></i> Watchlist</a><a href="#" class=""><i class="fas fa-gear"></i> Settings</a>
-</aside>
-<main class="main">
-<h2>Lobby now</h2>
-<p style="color:#6b7a90">Visitor management · demo data for Rwanda SMEs</p>
-<div class="kpis"><div class="kpi"><span>On site</span><strong>23</strong></div><div class="kpi"><span>Expected</span><strong>9</strong></div><div class="kpi"><span>Overstay</span><strong>1</strong></div><div class="kpi"><span>Deliveries</span><strong>6</strong></div></div>
-<table>
-<thead><tr><th>Visitor</th><th>Host</th><th>In</th><th>Badge</th></tr></thead>
-<tbody><tr><td>Eric N.</td><td>Finance</td><td>09:12</td><td class='ok'>V-104</td></tr><tr><td>DHL</td><td>Reception</td><td>09:40</td><td class='ok'>DEL</td></tr><tr><td>Aline K.</td><td>CEO</td><td>10:05</td><td class='ok'>V-105</td></tr></tbody>
-</table>
-<p class="note">System demo by <a href="../demos.html">1000 Hills Group</a> — we build yours custom (roles, MoMo, reports).</p>
-</main></div>
-</body></html>
+  <div class="scrim" id="scrim"></div>
+
+  <!-- sidebar / mobile drawer -->
+  <aside class="sidebar" id="sidebar" aria-label="GatePass Visitors navigation">
+    <div class="s-logo">
+      <span class="ic"><i class="fas fa-id-badge" aria-hidden="true"></i></span>
+      <div><h4>GatePass Visitors</h4><small>VISITOR MANAGEMENT</small></div>
+    </div>
+    <nav class="s-nav">
+      <div class="s-label">Workspace</div>
+      <a href="#" class="on"><i class="fas fa-door-open" aria-hidden="true"></i> Check-in<span class="n-badge">7</span></a><a href="#"><i class="fas fa-id-badge" aria-hidden="true"></i> Badges</a><a href="#"><i class="fas fa-bell" aria-hidden="true"></i> Hosts</a>
+      <div class="s-label">Insights</div>
+      <a href="#"><i class="fas fa-shield" aria-hidden="true"></i> Watchlist<span class="n-badge">14</span></a><a href="#"><i class="fas fa-gear" aria-hidden="true"></i> Settings</a>
+    </nav>
+    <div class="s-plan">
+      <p>GatePass Visitors demo workspace</p>
+      <div class="meter"><i style="width:68%"></i></div>
+      <small>68% of monthly quota used</small>
+      <a href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20GatePass." target="_blank" rel="noopener">Talk to us</a>
+    </div>
+    <div class="s-user">
+      <span class="av">DM</span>
+      <div><h6>Divine Mukamana</h6><span>Administrator</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <!-- topbar -->
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <div class="tb-title">
+        <h1>Lobby now</h1>
+        <div class="crumb"><span>GatePass Visitors</span><i class="fas fa-chevron-right" aria-hidden="true"></i><span>Lobby now</span></div>
+      </div>
+      <label class="tb-search">
+        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" id="globalSearch" placeholder="Search visitors…" aria-label="Search"/>
+        <kbd>/</kbd>
+      </label>
+      <div class="tb-right">
+        <button class="icon-btn dot-alert" type="button" data-toast="4 items need your attention today — demo notifications." aria-label="Notifications"><i class="fas fa-bell" aria-hidden="true"></i></button>
+        <button class="icon-btn" type="button" data-toast="Reports export to PDF, Excel and WhatsApp — included in every build." aria-label="Reports"><i class="fas fa-chart-pie" aria-hidden="true"></i></button>
+        <div class="tb-me" role="button" tabindex="0" data-toast="Signed in as Divine Mukamana · Administrator">
+          <span class="av">DM</span>
+          <div><b>Divine</b><span>Administrator</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- page head -->
+      <div class="page-head rv">
+        <div class="ph-l">
+          <h2>Lobby now</h2>
+          <p>Front desk — visitors, badges, host alerts and watchlist. Demo data for a Rwandan team — in your build every number, role and workflow is yours.</p>
+        </div>
+        <div class="ph-r">
+          <div class="seg" role="group" aria-label="Date range">
+            <button type="button" data-toast="Showing today’s live demo data.">Today</button>
+            <button type="button" class="on" data-toast="Showing the last 7 days of demo data.">7 days</button>
+            <button type="button" data-toast="Showing this month’s demo data.">Month</button>
+          </div>
+          <button class="btn btn-b" type="button" data-toast="Export ready — PDF, Excel or WhatsApp delivery."><i class="fas fa-download" aria-hidden="true"></i> Export</button>
+          <button class="btn btn-a" type="button" data-toast="Demo form — in the live build this opens your visitor form with validation and MoMo payment."><i class="fas fa-plus" aria-hidden="true"></i> Add Visitor</button>
+        </div>
+      </div>
+
+      <!-- KPIs -->
+      <section class="kpis rv" aria-label="Key metrics"><article class="kpi k-ok"><div class="kpi-top"><span class="kpi-ic"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span><span class="delta up"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i> +12%</span></div><b><span data-count="23.0" data-pre="" data-suf="" data-dec="0">23</span></b><span>On site</span><div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="ar" d="M0,30.0 0.0,4.9 9.1,7.1 18.2,5.9 27.3,10.6 36.4,11.9 45.5,11.2 54.5,10.9 63.6,10.5 72.7,10.9 81.8,7.6 90.9,4.3 100.0,9.5 100.0,30.0 Z"/><path class="ln" d="M0.0,4.9 9.1,7.1 18.2,5.9 27.3,10.6 36.4,11.9 45.5,11.2 54.5,10.9 63.6,10.5 72.7,10.9 81.8,7.6 90.9,4.3 100.0,9.5"/><circle cx="100.0" cy="9.5" r="2.6" fill="#0E9F6E"/></svg></div></article><article class="kpi k-info"><div class="kpi-top"><span class="kpi-ic"><i class="fas fa-calendar" aria-hidden="true"></i></span><span class="delta down"><i class="fas fa-arrow-trend-down" aria-hidden="true"></i> -4%</span></div><b><span data-count="9.0" data-pre="" data-suf="" data-dec="0">9</span></b><span>Expected</span><div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="ar" d="M0,30.0 0.0,16.8 9.1,14.8 18.2,9.2 27.3,8.6 36.4,14.5 45.5,3.9 54.5,7.1 63.6,6.6 72.7,16.6 81.8,16.1 90.9,9.1 100.0,4.4 100.0,30.0 Z"/><path class="ln" d="M0.0,16.8 9.1,14.8 18.2,9.2 27.3,8.6 36.4,14.5 45.5,3.9 54.5,7.1 63.6,6.6 72.7,16.6 81.8,16.1 90.9,9.1 100.0,4.4"/><circle cx="100.0" cy="4.4" r="2.6" fill="#2563EB"/></svg></div></article><article class="kpi "><div class="kpi-top"><span class="kpi-ic"><i class="fas fa-clock" aria-hidden="true"></i></span><span class="delta up"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i> +8%</span></div><b><span data-count="1.0" data-pre="" data-suf="" data-dec="0">1</span></b><span>Overstay</span><div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="ar" d="M0,30.0 0.0,17.8 9.1,16.4 18.2,18.3 27.3,8.1 36.4,17.4 45.5,17.9 54.5,10.3 63.6,5.6 72.7,5.3 81.8,10.6 90.9,9.1 100.0,8.9 100.0,30.0 Z"/><path class="ln" d="M0.0,17.8 9.1,16.4 18.2,18.3 27.3,8.1 36.4,17.4 45.5,17.9 54.5,10.3 63.6,5.6 72.7,5.3 81.8,10.6 90.9,9.1 100.0,8.9"/><circle cx="100.0" cy="8.9" r="2.6" fill="#FBBF24"/></svg></div></article><article class="kpi k-ok"><div class="kpi-top"><span class="kpi-ic"><i class="fas fa-box" aria-hidden="true"></i></span><span class="delta up"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i> +2.1%</span></div><b><span data-count="6.0" data-pre="" data-suf="" data-dec="0">6</span></b><span>Deliveries</span><div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="ar" d="M0,30.0 0.0,12.5 9.1,11.6 18.2,12.9 27.3,15.5 36.4,12.7 45.5,16.9 54.5,17.6 63.6,18.7 72.7,13.3 81.8,6.5 90.9,18.6 100.0,12.4 100.0,30.0 Z"/><path class="ln" d="M0.0,12.5 9.1,11.6 18.2,12.9 27.3,15.5 36.4,12.7 45.5,16.9 54.5,17.6 63.6,18.7 72.7,13.3 81.8,6.5 90.9,18.6 100.0,12.4"/><circle cx="100.0" cy="12.4" r="2.6" fill="#0E9F6E"/></svg></div></article></section>
+
+      <!-- chart + side panel -->
+      <section class="grid-2 rv">
+        <div class="panel">
+          <div class="p-head">
+            <div><h3>On site — last 7 days</h3><small>Demo series for a Rwandan team · updates automatically in the live build</small></div>
+            <div class="p-tools">
+              <div class="seg" role="group" aria-label="Chart series">
+                <button type="button" class="on" data-toast="On site — last 7 days — demo series.">On site</button>
+                <button type="button" data-toast="Comparative series is available in the live build.">vs last</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-body">
+            <div class="chart" id="chart"><div class="col"><div class="bar" data-h="87" data-v="25"></div><small>Mon</small></div><div class="col"><div class="bar" data-h="58" data-v="17"></div><small>Tue</small></div><div class="col"><div class="bar" data-h="62" data-v="18"></div><small>Wed</small></div><div class="col"><div class="bar" data-h="74" data-v="21"></div><small>Thu</small></div><div class="col hi"><div class="bar" data-h="100" data-v="28"></div><small>Fri</small></div><div class="col"><div class="bar" data-h="65" data-v="19"></div><small>Sat</small></div><div class="col"><div class="bar" data-h="80" data-v="23"></div><small>Sun</small></div></div>
+            <div class="chart-foot">
+              <div class="legend"><span><i></i> On site</span><span><i class="b"></i> Peak</span></div>
+              <div class="mini-stats"><div>Peak<b>28</b></div><div>Average<b>21</b></div><div>Total<b>150</b></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel"><div class="p-head"><div><h3>Activity</h3><small>Everything your team did, in one audit trail</small></div><button class="p-link" type="button" data-toast="Full audit log with filters and export.">View all <i class="fas fa-arrow-right" aria-hidden="true"></i></button></div><div class="p-body"><ul class="feed"><li><span class="fav "><i class="fas fa-pen" aria-hidden="true"></i></span><div><p><b>Claire</b> updated <b>Eric N.</b> — V-104</p><time>2 minutes ago</time></div></li><li><span class="fav ok"><i class="fas fa-check" aria-hidden="true"></i></span><div><p><b>Divine</b> closed <b>DHL</b> — DEL</p><time>18 minutes ago</time></div></li><li><span class="fav warn"><i class="fas fa-flag" aria-hidden="true"></i></span><div><p><b>Samuel</b> flagged <b>P. Nshuti</b> — V-441</p><time>1 hour ago</time></div></li><li><span class="fav bad"><i class="fas fa-user-plus" aria-hidden="true"></i></span><div><p><b>Kevin</b> assigned <b>SIFA Ltd courier</b> — V-447</p><time>Today, 09:12</time></div></li><li><span class="fav "><i class="fas fa-shield-halved" aria-hidden="true"></i></span><div><p><b>Samuel</b> approved <b>Dr. A. Kagabo</b> — V-451</p><time>Yesterday, 16:40</time></div></li></ul></div></div>
+      </section>
+
+      <!-- table -->
+      <section class="panel rv">
+        <div class="p-head">
+          <div><h3>Visitors overview</h3><small>Visitor management · sorted by badge · demo data</small></div>
+          <div class="p-tools">
+            <button class="btn btn-b" type="button" data-toast="Filters: date, status, owner and amount — all configurable."><i class="fas fa-sliders" aria-hidden="true"></i> Filters</button>
+            <button class="btn btn-a" type="button" data-toast="Demo form — in the live build this opens your visitor form with validation and MoMo payment."><i class="fas fa-plus" aria-hidden="true"></i> New</button>
+          </div>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Views"><button type="button" class="on">All</button><button type="button">V-104</button><button type="button">DEL</button><button type="button">V-105</button><button type="button">V-441</button><button type="button">V-447</button></div>
+        <div class="chips" id="chips"><button type="button" class="chip on">All visitors</button><button type="button" class="chip" data-nofilter data-toast="Kigali filter — configured per business in the live build.">Kigali</button><button type="button" class="chip" data-nofilter data-toast="This week filter — configured per business in the live build.">This week</button><button type="button" class="chip" data-nofilter data-toast="High value filter — configured per business in the live build.">High value</button><button type="button" class="chip" data-nofilter data-toast="MoMo paid filter — configured per business in the live build.">MoMo paid</button></div>
+        <div class="tscroll">
+          <table id="dataTable" data-total="190" data-noun="visitors">
+            <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Visitors overview</caption>
+            <thead><tr><th>Visitor</th><th>Host</th><th>In</th><th>Badge</th></tr></thead>
+            <tbody><tr><td class="strong" data-l="Visitor"><span class="who"><span class="av">EN</span><span><b>Eric N.</b></span></span></td><td data-l="Host">Finance</td><td data-l="In">09:12</td><td data-l="Badge"><span class="pill p-info">V-104</span></td></tr><tr><td class="strong" data-l="Visitor"><span class="who"><span class="av">DH</span><span><b>DHL</b></span></span></td><td data-l="Host">Reception</td><td data-l="In">09:40</td><td data-l="Badge"><span class="pill p-info">DEL</span></td></tr><tr><td class="strong" data-l="Visitor"><span class="who"><span class="av">AK</span><span><b>Aline K.</b></span></span></td><td data-l="Host">CEO</td><td data-l="In">10:05</td><td data-l="Badge"><span class="pill p-info">V-105</span></td></tr><tr><td class="strong" data-l="Visitor"><span class="who"><span class="av">PN</span><span><b>P. Nshuti</b></span></span></td><td data-l="Host">Procurement</td><td data-l="In">09:12</td><td data-l="Badge"><span class="pill p-info">V-441</span></td></tr><tr><td class="strong" data-l="Visitor"><span class="who"><span class="av">SC</span><span><b>SIFA Ltd courier</b></span></span></td><td data-l="Host">Stores</td><td data-l="In">10:02</td><td data-l="Badge"><span class="pill p-info">V-447</span></td></tr><tr><td class="strong" data-l="Visitor"><span class="who"><span class="av">DK</span><span><b>Dr. A. Kagabo</b></span></span></td><td data-l="Host">CEO office</td><td data-l="In">10:40</td><td data-l="Badge"><span class="pill p-info">V-451</span></td></tr></tbody>
+          </table>
+        </div>
+        <div class="t-foot">
+          <small id="tInfo">Showing 6 of 190 visitors</small>
+          <div class="pager">
+            <button type="button" disabled aria-label="Previous page"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <button type="button" class="on">1</button>
+            <button type="button" data-toast="Pagination is wired to the live database.">2</button>
+            <button type="button" data-toast="Pagination is wired to the live database.">3</button>
+            <button type="button" data-toast="Pagination is wired to the live database."><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- quick actions -->
+      <section class="panel rv">
+        <div class="p-head"><div><h3>Quick actions</h3><small>Every module is tailored to how your team actually works</small></div></div>
+        <div class="p-body"><div class="quick"><button class="qa" type="button" data-toast="Check-in module — fully customisable to your workflow."><i class="fas fa-door-open" aria-hidden="true"></i><span><b>Open Check-in</b><small>Live module</small></span></button><button class="qa" type="button" data-toast="Badges module — fully customisable to your workflow."><i class="fas fa-id-badge" aria-hidden="true"></i><span><b>Open Badges</b><small>Live module</small></span></button><button class="qa" type="button" data-toast="Hosts module — fully customisable to your workflow."><i class="fas fa-bell" aria-hidden="true"></i><span><b>Open Hosts</b><small>Live module</small></span></button><button class="qa" type="button" data-toast="Watchlist module — fully customisable to your workflow."><i class="fas fa-shield" aria-hidden="true"></i><span><b>Open Watchlist</b><small>Live module</small></span></button></div></div>
+      </section>
+
+      <!-- footer -->
+      <footer class="sys-foot rv">
+        <div class="fl">
+          <h4><i class="fas fa-cube" aria-hidden="true"></i> Built for Rwandan businesses</h4>
+          <p>GatePass Visitors is a demo by <a href="../demos.html">1000 Hills Group</a>. We ship it with your roles, MoMo &amp; bank payments, SMS/WhatsApp reminders, offline support and training — live in 2–3 weeks.</p>
+        </div>
+        <div class="fr">
+          <a class="btn btn-b" href="../demos.html" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff"><i class="fas fa-arrow-left" aria-hidden="true"></i> All demos</a>
+          <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20GatePass." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Get GatePass Visitors</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><i class="fas fa-circle-info" aria-hidden="true"></i><span id="toastMsg"></span></div>
+
+<script src="assets/pro-system.js" defer></script>
+</body>
+</html>

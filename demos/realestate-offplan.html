@@ -1,75 +1,252 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Skyline Off-Plan | Off-plan developments — Demo by 1000 Hills Group</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Skyline Off-Plan | Off-plan developments in Kigali skyline — Website Demo by 1000 Hills Group</title>
+<meta name="description" content="Live website demo by 1000 Hills Group: Skyline Off-Plan — Off-plan sales with unit picker, payment plans and site cam. Fully responsive on phone, tablet and desktop."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#020617"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23F59E0B'/><text x='32' y='45' font-family='Inter,Arial' font-size='34' font-weight='800' text-anchor='middle' fill='%23020617'>S</text></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/></noscript>
+<link rel="stylesheet" href="assets/pro-site.css"/>
 <style>
-:root{--bg:#020617;--ink:#F8FAFC;--muted:#94A3B8;--acc:#F59E0B;--acc2:#FCD34D;--card:#111827;--line:rgba(245,158,11,.25);}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;padding-top:46px}
-a{text-decoration:none;color:inherit}ul{list-style:none}h1,h2{font-family:'Playfair Display',serif}
-.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999}
-.demo-bar .db-left,.demo-bar .db-left a{color:#E8D5A3;font-size:.78rem;font-weight:600;display:flex;gap:8px;align-items:center}
-.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px}
-.demo-bar .db-close{background:none;border:0;color:#A8B9D0;cursor:pointer}
-header{position:sticky;top:46px;background:rgba(2,6,23,.95);border-bottom:1px solid var(--line);z-index:40}
-.nav{width:min(1100px,92%);margin:auto;display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:12px}
-.brand{display:flex;gap:10px;align-items:center;font-weight:800}
-.brand .ic{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc2));display:grid;place-items:center;color:#020617}
-.nav-links{display:flex;gap:18px;color:var(--muted);font-size:.86rem;font-weight:600}
-.btn{display:inline-flex;gap:8px;align-items:center;padding:11px 22px;border-radius:40px;font-weight:700;font-size:.84rem;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#020617}
-.hero{padding:80px 0 64px;background:#020617}
-.wrap{width:min(1100px,92%);margin:auto}
-.pill{display:inline-flex;gap:8px;border:1px solid var(--line);padding:6px 14px;border-radius:30px;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:var(--acc);font-weight:800}
-.hero h1{font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin:14px 0;max-width:16ch}
-.hero h1 em{color:var(--acc);font-style:normal}
-.hero p{max-width:50ch;color:var(--muted)}
-.stats{display:flex;gap:28px;margin-top:32px;flex-wrap:wrap}
-.stats strong{display:block;font-size:1.5rem;color:var(--acc)}
-.stats span{font-size:.75rem;color:var(--muted)}
-section{padding:64px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
-.card i{color:var(--acc);font-size:1.2rem;margin-bottom:10px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.split li{margin:10px 0;display:flex;gap:8px}
-.split i{color:var(--acc)}
-.cta{text-align:center;background:#111827}
-footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:.84rem}
-.frow{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.frow a{color:var(--acc);font-weight:700}
-@media(max-width:800px){.nav-links{display:none}.split{grid-template-columns:1fr}}
-</style></head><body>
+:root{
+  --acc:#F59E0B;--acc-2:#FCD34D;--acc-ink:#020617;--acc-bg:rgba(245,158,11,0.13);--acc-line:rgba(245,158,11,0.32);
+  --bg:#020617;--bg-2:#090E1E;--card:#111827;--card-2:#0A1020;
+  --ink:#F8FAFC;--muted:#94A3B8;--faint:#5D677B;--line:rgba(255,255,255,0.1);--line-2:rgba(255,255,255,0.19);
+  --ok:#10B981;--warn:#F59E0B;
+  --nav-bg:rgba(2,6,23,.95);
+  --r:14px;--r-l:20px;--r-xl:28px;
+  --sh:0 18px 44px -22px rgba(0,0,0,.55);
+  --sh-l:0 34px 80px -30px rgba(0,0,0,.65);
+  --bar:46px;--head:66px;
+  --wrap:min(1140px,92vw);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  --display:'Playfair Display', Georgia, serif;
+}
+</style>
+</head>
+<body>
+
+<!-- 1000 Hills Group demo bar -->
 <div class="demo-bar" id="demoBar">
-  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live Website Demo</div>
+  <div class="db-left">
+    <i class="fas fa-bolt" aria-hidden="true"></i>
+    <a href="../demos.html">1000 Hills Group</a>
+    <span class="sep">·</span>
+    <span class="kind">Live website demo — Skyline Off-Plan</span>
+  </div>
   <div class="db-right">
     <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20off-plan%20website." target="_blank" rel="noopener">Get a site like this</a>
-    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop='0'" aria-label="Close"><i class="fas fa-times"></i></button>
+    <button class="db-close" id="dbClose" type="button" aria-label="Close demo bar"><i class="fas fa-times" aria-hidden="true"></i></button>
   </div>
 </div>
-<header><div class="nav">
-<a class="brand" href="#"><span class="ic"><i class="fas fa-city"></i></span>Skyline Off-Plan</a>
-<nav class="nav-links"><a href="#units">Units</a><a href="#plans">Plans</a><a href="#visit">Visit</a></nav>
-<a class="btn" href="https://wa.me/250788695396" target="_blank"><i class="fab fa-whatsapp"></i> See the tower</a>
-</div></header>
-<section class="hero"><div class="wrap">
-<span class="pill"><i class="fas fa-location-dot"></i> Kigali skyline</span>
-<h1>Buy the <em>view</em> early</h1>
-<p>Studios to penthouses with staged payments.</p>
-<div class="stats"><div><strong>240</strong><span>Units</span></div><div><strong>2027</strong><span>Handover</span></div><div><strong>Escrow</strong><span>Bank</span></div></div>
-</div></section>
-<section><div class="wrap">
-<h2 style="margin-bottom:24px">The scheme</h2>
-<div class="grid"><div class="card"><i class="fas fa-layer-group"></i><h3>Phases</h3><p>Two towers.</p></div><div class="card"><i class="fas fa-percent"></i><h3>Plans</h3><p>20 / 40 / 40.</p></div><div class="card"><i class="fas fa-video"></i><h3>Site cam</h3><p>Weekly.</p></div></div>
-</div></section>
-<section><div class="wrap split">
-<div><h2>A serious developer site</h2><p style="color:var(--muted);margin-top:10px">Skyline sells off-plan with escrow.</p></div>
-<ul><li><i class="fas fa-check"></i> Show apartment</li><li><i class="fas fa-check"></i> Mortgage desk</li><li><i class="fas fa-check"></i> WhatsApp sales</li></ul>
-</div></section>
-<section class="cta"><div class="wrap">
-<h2>Reserve a unit</h2>
-<p style="color:var(--muted);margin:10px 0 20px">Talk to sales.</p>
-<a class="btn" href="https://wa.me/250788695396" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-</div></section>
-<footer><div class="wrap frow"><p>© 2026 Skyline Off-Plan (fictional demo)</p><p>Demo by <a href="../demos.html">1000 Hills Group</a></p></div></footer>
-</body></html>
+
+<!-- header -->
+<header class="site-head" id="siteHead">
+  <div class="head-in">
+    <a class="brand" href="#top"><span class="bic"><i class="fas fa-city" aria-hidden="true"></i></span><b>Skyline Off-Plan</b></a>
+    <nav class="site-nav" aria-label="Main"><a href="#services">Units</a><a href="#about">Plans</a><a href="#gallery">Visit</a><a href="#contact">Contact</a></nav>
+    <div class="head-cta">
+      <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20off-plan%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> See the tower</a>
+    </div>
+    <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="Mobile">
+  <a href="#services"><i class="fas fa-house-chimney" aria-hidden="true"></i> Units</a><a href="#about"><i class="fas fa-circle-info" aria-hidden="true"></i> Plans</a><a href="#gallery"><i class="fas fa-images" aria-hidden="true"></i> Visit</a><a href="#contact"><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact</a>
+  <div class="d-foot">
+    <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20off-plan%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> See the tower</a>
+    <a class="btn btn-b" href="#contact"><i class="fas fa-phone" aria-hidden="true"></i> Call +250 798 636 470</a>
+    <small>Skyline Off-Plan · Kigali skyline — fictional demo by 1000 Hills Group</small>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- hero -->
+  <section class="hero" style="--herobg:#020617">
+    <div class="wrap hero-grid">
+      <div class="rv">
+        <span class="kicker"><i class="fas fa-location-dot" aria-hidden="true"></i> Kigali skyline · Off-plan developments</span>
+        <h1>Buy the <em>view</em> early</h1>
+        <p class="lead">Studios to penthouses with staged payments.</p>
+        <div class="hero-cta">
+          <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20off-plan%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> See the tower</a>
+          <a class="btn btn-b" href="#services"><i class="fas fa-house-chimney" aria-hidden="true"></i> Units</a>
+        </div>
+        <div class="hero-stats"><div><strong>240</strong><span>Units</span></div><div><strong>2027</strong><span>Handover</span></div><div><strong>Escrow</strong><span>Bank</span></div></div>
+      </div>
+      <div class="visual rv" data-delay="120">
+        <div class="vcard vmain">
+          <div class="vhead">
+            <span class="bic"><i class="fas fa-city" aria-hidden="true"></i></span>
+            <div>
+              <h4>Skyline Off-Plan</h4>
+              <small><i class="fas fa-star" aria-hidden="true"></i> 4.9 · 87 reviews · Kigali skyline</small>
+            </div>
+          </div>
+          <div class="vrow"><i class="fas fa-layer-group" aria-hidden="true"></i><span><b>Phases</b><small>Two towers.</small></span><span class="tagm">Unit picker</span></div><div class="vrow"><i class="fas fa-percent" aria-hidden="true"></i><span><b>Plans</b><small>20 / 40 / 40.</small></span><span class="tagm">Plans</span></div><div class="vrow"><i class="fas fa-video" aria-hidden="true"></i><span><b>Site cam</b><small>Weekly.</small></span><span class="tagm">Site cam</span></div>
+        </div>
+        <div class="vcard vpill"><i class="fas fa-circle-check" aria-hidden="true"></i> Viewings this week available</div>
+        <div class="vcard vbadge"><strong>86</strong><span>Live listings</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- marquee -->
+  <div class="strip" aria-hidden="true"><div class="strip-in"><span><i class="fas fa-circle-check" aria-hidden="true"></i> Unit picker</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Plans</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Site cam</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Escrow</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Verified titles</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Viewings in 24h</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Mortgage help</span><span><i class="fas fa-circle-check" aria-hidden="true"></i> Property management</span></div></div>
+
+  <!-- cards -->
+  <section id="services">
+    <div class="wrap">
+      <div class="shead center rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-city" aria-hidden="true"></i> Listings & services</span>
+        <h2>The scheme</h2>
+        <p>Off-plan sales with unit picker, payment plans and site cam.</p>
+      </div>
+      <div class="cards"><article class="card rv" data-delay="0"><span class="cic"><i class="fas fa-layer-group" aria-hidden="true"></i></span><h3>Phases</h3><p>Two towers.</p></article><article class="card rv" data-delay="70"><span class="cic"><i class="fas fa-percent" aria-hidden="true"></i></span><h3>Plans</h3><p>20 / 40 / 40.</p></article><article class="card rv" data-delay="140"><span class="cic"><i class="fas fa-video" aria-hidden="true"></i></span><h3>Site cam</h3><p>Weekly.</p></article></div>
+    </div>
+  </section>
+
+  <!-- about -->
+  <section id="about" style="background:var(--bg-2)">
+    <div class="wrap split">
+      <div class="rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-heart" aria-hidden="true"></i> How we sell</span>
+        <h2 style="font-size:clamp(1.55rem,4.2vw,2.3rem);margin:14px 0 12px">A serious developer site</h2>
+        <p style="color:var(--muted)">Skyline sells off-plan with escrow. Every detail — colours, photos, wording and forms — is rebuilt around your brand.</p>
+        <ul class="checklist"><li><i class="fas fa-check" aria-hidden="true"></i> Show apartment</li><li><i class="fas fa-check" aria-hidden="true"></i> Mortgage desk</li><li><i class="fas fa-check" aria-hidden="true"></i> WhatsApp sales</li></ul>
+        <div class="hero-cta" style="margin-top:26px">
+          <a class="btn btn-b" href="#contact"><i class="fas fa-calendar-check" aria-hidden="true"></i> See the tower</a>
+        </div>
+      </div>
+      <div class="artstack rv" data-delay="120"><div class="art rv" data-delay="0"><i class="fas fa-layer-group big" aria-hidden="true"></i><div><h4>Phases</h4><p>Two towers.</p></div></div><div class="art alt rv" data-delay="90"><i class="fas fa-percent big" aria-hidden="true"></i><div><h4>Plans</h4><p>20 / 40 / 40.</p></div></div><div class="art rv" data-delay="180"><i class="fas fa-video big" aria-hidden="true"></i><div><h4>Site cam</h4><p>Weekly.</p></div></div></div>
+    </div>
+  </section>
+
+  <!-- gallery -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-images" aria-hidden="true"></i> The property</span>
+        <h2>Interiors, plots and views</h2>
+        <p>Your listings, floor plans and site photos go here.</p>
+      </div>
+      <div class="gal"><figure class="gtile rv" data-delay="0" data-toast="Photo block — we drop in your own photography."><i class="fas fa-house-chimney" aria-hidden="true"></i><figcaption>Phases</figcaption></figure><figure class="gtile rv" data-delay="80" data-toast="Photo block — we drop in your own photography."><i class="fas fa-city" aria-hidden="true"></i><figcaption>Plans</figcaption></figure><figure class="gtile rv" data-delay="160" data-toast="Photo block — we drop in your own photography."><i class="fas fa-key" aria-hidden="true"></i><figcaption>Site cam</figcaption></figure><figure class="gtile rv" data-delay="0" data-toast="Photo block — we drop in your own photography."><i class="fas fa-ruler-combined" aria-hidden="true"></i><figcaption>Unit picker</figcaption></figure><figure class="gtile rv" data-delay="80" data-toast="Photo block — we drop in your own photography."><i class="fas fa-tree" aria-hidden="true"></i><figcaption>Escrow</figcaption></figure><figure class="gtile rv" data-delay="160" data-toast="Photo block — we drop in your own photography."><i class="fas fa-building" aria-hidden="true"></i><figcaption>Units</figcaption></figure></div>
+    </div>
+  </section>
+
+  <!-- testimonials -->
+  <section style="background:var(--bg-2)">
+    <div class="wrap">
+      <div class="shead center rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-quote-left" aria-hidden="true"></i> Reviews</span>
+        <h2>What people say</h2>
+        <p>Sample testimonials — we wire in your real Google and WhatsApp reviews.</p>
+      </div>
+      <div class="quotes"><figure class="quote rv" data-delay="0"><div class="qm"><i class="fas fa-quote-left" aria-hidden="true"></i></div><p>As a Skyline Off-Plan I need reliability. Kigali skyline has never let me down, and the online form means I stop calling around.</p><div class="who"><span class="av">EN</span><span><b>Eric Nshimiyimana</b><small>First-time buyer · Nyarutarama</small></span><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div></figure><figure class="quote rv" data-delay="90"><div class="qm"><i class="fas fa-quote-left" aria-hidden="true"></i></div><p>Booked through the website on a Sunday night and got a WhatsApp confirmation in two minutes. Skyline Off-Plan is now the only place we go in Kigali skyline.</p><div class="who"><span class="av">SU</span><span><b>Sandrine Uwera</b><small>Investor · Gikondo</small></span><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div></figure><figure class="quote rv" data-delay="180"><div class="qm"><i class="fas fa-quote-left" aria-hidden="true"></i></div><p>The team remembered every preference from last time. That is rare in Kigali, and it is why we keep coming back to Skyline Off-Plan.</p><div class="who"><span class="av">JM</span><span><b>Jean Bosco Mugabo</b><small>Tenant · Remera</small></span><span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span></div></figure></div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="shead rv">
+        <div class="rule"></div>
+        <span class="kicker"><i class="fas fa-paper-plane" aria-hidden="true"></i> Get in touch</span>
+        <h2>Reserve a unit</h2>
+        <p>Talk to sales. Message us on WhatsApp and we will confirm within minutes — or send the form and we will call you back.</p>
+      </div>
+      <div class="contact">
+        <div class="infobox rv">
+          <div class="irow"><i class="fas fa-location-dot" aria-hidden="true"></i><div><b>Find us</b><span>Agency: Kigali skyline, Kigali</span></div></div>
+          <div class="irow"><i class="fas fa-clock" aria-hidden="true"></i><div><b>Opening hours</b><span>Mon – Sat · 08:00 – 18:00 · Viewings by booking</span></div></div>
+          <div class="irow"><i class="fas fa-phone" aria-hidden="true"></i><div><b>Call or WhatsApp</b><span>+250 798 636 470</span></div></div>
+          <div class="irow"><i class="fas fa-credit-card" aria-hidden="true"></i><div><b>We accept</b><span>Bank transfer · MoMo deposit · Escrow</span></div></div>
+          <div class="map"><span>Kigali skyline, Kigali</span></div>
+        </div>
+        <form class="book rv" id="bookForm" data-delay="120" novalidate>
+          <div class="f2">
+            <label class="fl">Your name<input type="text" name="name" placeholder="e.g. Aline Uwase" required/></label>
+            <label class="fl">Phone<input type="tel" name="phone" placeholder="+250 7XX XXX XXX" required/></label>
+          </div>
+          <div class="f2">
+            <label class="fl">Viewing date<input type="text" name="when" placeholder="e.g. Saturday 10:00"/></label>
+            <label class="fl">People<select name="pax"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option><option>12</option><option>20</option></select></label>
+          </div>
+          <label class="fl">Message<textarea name="msg" placeholder="Tell us what you need…"></textarea></label>
+          <button class="btn btn-a" type="submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send request</button>
+          <p class="form-note"><i class="fas fa-circle-info" aria-hidden="true"></i> Demo form — in your live site this delivers to your email, WhatsApp and admin dashboard instantly.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- cta -->
+  <section class="cta">
+    <div class="wrap rv">
+      <h2>Reserve a unit</h2>
+      <p>Talk to sales. Message us on WhatsApp and we will confirm within minutes — or send the form and we will call you back.</p>
+      <div class="cta-btns">
+        <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20off-plan%20website." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> See the tower</a>
+        <a class="btn btn-b" href="../demos.html"><i class="fas fa-layer-group" aria-hidden="true"></i> See more demos</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- footer -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#top"><span class="bic"><i class="fas fa-city" aria-hidden="true"></i></span><b>Skyline Off-Plan</b></a>
+        <p>Skyline Off-Plan — off-plan developments in Kigali skyline. This is a fictional demo business created by 1000 Hills Group to show what your own website could look like.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram" data-toast="Instagram feed embeds are available on every site we build."><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Facebook" data-toast="Facebook page integration + pixel included."><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+          <a href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20off-plan%20website." target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul><li><a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i> Units</a></li><li><a href="#about"><i class="fas fa-chevron-right" aria-hidden="true"></i> Plans</a></li><li><a href="#gallery"><i class="fas fa-chevron-right" aria-hidden="true"></i> Visit</a></li><li><a href="#contact"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li></ul>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul>
+          <li><span><i class="fas fa-location-dot" aria-hidden="true"></i> Agency: Kigali skyline, Kigali</span></li>
+          <li><span><i class="fas fa-phone" aria-hidden="true"></i> +250 798 636 470</span></li>
+          <li><span><i class="fas fa-clock" aria-hidden="true"></i> Mon – Sat 08:00 – 18:00</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 Skyline Off-Plan — fictional demo business</span>
+      <span>Designed &amp; built by <a href="../demos.html">1000 Hills Group</a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20an%20off-plan%20website." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+<button class="totop" id="toTop" type="button" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+<div class="toast" id="toast" role="status" aria-live="polite"><i class="fas fa-circle-info" aria-hidden="true"></i><span id="toastMsg"></span></div>
+
+<script src="assets/pro-site.js" defer></script>
+</body>
+</html>

@@ -1,56 +1,203 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>KiloWatch Energy | Energy & solar monitoring — System Demo</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<style>
-:root{--side:#713F12;--acc:#FACC15;--bg:#FEFCE8;--ink:#713F12;}
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);padding-top:46px;font-size:14px}
-a{text-decoration:none;color:inherit}
-.demo-bar{position:fixed;top:0;left:0;right:0;height:46px;background:#0A1628;display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:9999}
-.demo-bar .db-left,.demo-bar .db-left a{color:#E8D5A3;font-size:.78rem;display:flex;gap:8px;align-items:center;font-weight:600}
-.demo-bar .db-cta{background:linear-gradient(135deg,#C9A96E,#E8D5A3);color:#0A1628;font-size:.72rem;font-weight:700;padding:5px 12px;border-radius:30px}
-.demo-bar .db-close{background:none;border:0;color:#A8B9D0;cursor:pointer}
-.app{display:flex;min-height:calc(100vh - 46px)}
-.sidebar{width:220px;background:var(--side);color:#c9d4e4;padding:16px 12px}
-.s-logo{display:flex;gap:10px;align-items:center;color:#fff;font-weight:800;margin-bottom:16px}
-.s-logo .ic{width:36px;height:36px;border-radius:10px;background:var(--acc);color:#0A1628;display:grid;place-items:center}
-.sidebar a{display:flex;gap:10px;padding:10px 12px;border-radius:8px;margin:3px 0;font-size:.84rem}
-.sidebar a.on{background:var(--acc);color:#0A1628;font-weight:700}
-.main{flex:1;padding:22px}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
-.kpi{background:#fff;border-radius:12px;padding:16px;border:1px solid #e6eaf0}
-.kpi span{font-size:.72rem;color:#6b7a90;font-weight:700}
-.kpi strong{display:block;font-size:1.35rem;margin-top:6px}
-table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden}
-th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #eef1f5;font-size:.84rem}
-th{background:#f6f8fb;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;color:#6b7a90}
-.ok{color:#059669;font-weight:700}
-.note{margin-top:18px;font-size:.78rem;color:#6b7a90}
-.note a{color:var(--acc);font-weight:700}
-@media(max-width:860px){.sidebar{display:none}.kpis{grid-template-columns:1fr 1fr}}
-</style></head><body>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>KiloWatch Energy | Energy & solar monitoring — System Demo by 1000 Hills Group</title>
+<meta name="description" content="Live KiloWatch Energy system demo by 1000 Hills Group (Rwanda): Energy OS — meters, solar yield, outages and tenant billing. Works on phone, tablet and desktop."/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#713F12"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23FACC15'/><text x='32' y='45' font-family='Inter,Arial' font-size='36' font-weight='800' text-anchor='middle' fill='%230B1220'>K</text></svg>"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.rel='stylesheet'"/>
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/></noscript>
+<link rel="stylesheet" href="assets/pro-system.css"/>
+<style>/* Per-demo design tokens — injected inline by the generator. */
+:root{
+  --acc:#FACC15;--acc-2:#FCDD65;--acc-ink:#0B1220;
+  --side:#713F12;--side-2:#58310E;--side-ink:#DCE5F1;--side-muted:#A48F7D;
+  --bg:#FEFCE8;--card:#FFFFFF;--card-2:#FFFEF5;
+  --ink:#713F12;--muted:#B29674;--faint:#CEBC9F;
+  --line:rgba(113,63,18,0.09);--line-2:rgba(113,63,18,0.16);
+  --ok:#0E9F6E;--warn:#D97706;--bad:#DC2626;--info:#2563EB;
+  --ok-bg:rgba(14,159,110,0.12);--warn-bg:rgba(217,119,6,0.13);--bad-bg:rgba(220,38,38,0.1);--info-bg:rgba(37,99,235,0.1);
+  --acc-bg:rgba(250,204,21,0.1);
+  --acc-light:#FCE37E;--acc-fade:rgba(250,204,21,0.55);
+  --ok-light:#7ACAAF;--warn-light:#EAB476;--bad-light:#EC8888;
+  --r-s:8px;--r:12px;--r-l:16px;--r-xl:22px;
+  --sh-s:0 1px 2px rgba(15,23,42,.05),0 1px 3px rgba(15,23,42,.05);
+  --sh:0 6px 18px -8px rgba(15,23,42,.18),0 2px 6px -2px rgba(15,23,42,.08);
+  --sh-l:0 22px 48px -20px rgba(15,23,42,.32);
+  --bar:46px;--font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+}
+</style>
+</head>
+<body>
+
+<!-- 1000 Hills Group demo bar -->
 <div class="demo-bar" id="demoBar">
-  <div class="db-left"><i class="fas fa-bolt"></i> <a href="../demos.html">1000 Hills Group</a> — Live System Demo</div>
+  <div class="db-left">
+    <i class="fas fa-bolt" aria-hidden="true"></i>
+    <a href="../demos.html">1000 Hills Group</a>
+    <span class="sep">·</span>
+    <span class="kind">Live system demo — KiloWatch Energy</span>
+  </div>
   <div class="db-right">
     <a class="db-cta" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20KiloWatch." target="_blank" rel="noopener">Get this system</a>
-    <button class="db-close" onclick="document.getElementById('demoBar').classList.add('hidden');document.body.style.paddingTop='0'" aria-label="Close"><i class="fas fa-times"></i></button>
+    <button class="db-close" id="dbClose" type="button" aria-label="Close demo bar"><i class="fas fa-times" aria-hidden="true"></i></button>
   </div>
 </div>
+
 <div class="app">
-<aside class="sidebar">
-<div class="s-logo"><span class="ic"><i class="fas fa-bolt"></i></span>KiloWatch Energy</div>
-<a href="#" class="on"><i class="fas fa-solar-panel"></i> Solar</a><a href="#" class=""><i class="fas fa-gauge"></i> Meters</a><a href="#" class=""><i class="fas fa-plug"></i> Outages</a><a href="#" class=""><i class="fas fa-file-invoice"></i> Billing</a><a href="#" class=""><i class="fas fa-gear"></i> Settings</a>
-</aside>
-<main class="main">
-<h2>Site yield</h2>
-<p style="color:#6b7a90">Energy & solar monitoring · demo data for Rwanda SMEs</p>
-<div class="kpis"><div class="kpi"><span>Today kWh</span><strong>1,842</strong></div><div class="kpi"><span>Solar share</span><strong>61%</strong></div><div class="kpi"><span>Outages 7d</span><strong>2</strong></div><div class="kpi"><span>Tenants billed</span><strong>48</strong></div></div>
-<table>
-<thead><tr><th>Site</th><th>kWh today</th><th>Solar %</th><th>Status</th></tr></thead>
-<tbody><tr><td>Kacyiru HQ</td><td>420</td><td>72%</td><td class='ok'>OK</td></tr><tr><td>Warehouse</td><td>610</td><td>54%</td><td class='ok'>Watch</td></tr><tr><td>Clinic</td><td>180</td><td>81%</td><td class='ok'>OK</td></tr></tbody>
-</table>
-<p class="note">System demo by <a href="../demos.html">1000 Hills Group</a> — we build yours custom (roles, MoMo, reports).</p>
-</main></div>
-</body></html>
+  <div class="scrim" id="scrim"></div>
+
+  <!-- sidebar / mobile drawer -->
+  <aside class="sidebar" id="sidebar" aria-label="KiloWatch Energy navigation">
+    <div class="s-logo">
+      <span class="ic"><i class="fas fa-bolt" aria-hidden="true"></i></span>
+      <div><h4>KiloWatch Energy</h4><small>ENERGY & SOLAR MONITOR</small></div>
+    </div>
+    <nav class="s-nav">
+      <div class="s-label">Workspace</div>
+      <a href="#" class="on"><i class="fas fa-solar-panel" aria-hidden="true"></i> Solar<span class="n-badge">9</span></a><a href="#"><i class="fas fa-gauge" aria-hidden="true"></i> Meters</a><a href="#"><i class="fas fa-plug" aria-hidden="true"></i> Outages</a>
+      <div class="s-label">Insights</div>
+      <a href="#"><i class="fas fa-file-invoice" aria-hidden="true"></i> Billing<span class="n-badge">11</span></a><a href="#"><i class="fas fa-gear" aria-hidden="true"></i> Settings</a>
+    </nav>
+    <div class="s-plan">
+      <p>KiloWatch Energy demo workspace</p>
+      <div class="meter"><i style="width:74%"></i></div>
+      <small>74% of monthly quota used</small>
+      <a href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20KiloWatch." target="_blank" rel="noopener">Talk to us</a>
+    </div>
+    <div class="s-user">
+      <span class="av">AU</span>
+      <div><h6>Aline Uwase</h6><span>Operations lead</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <!-- topbar -->
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar"><i class="fas fa-bars" aria-hidden="true"></i></button>
+      <div class="tb-title">
+        <h1>Site yield</h1>
+        <div class="crumb"><span>KiloWatch Energy</span><i class="fas fa-chevron-right" aria-hidden="true"></i><span>Site yield</span></div>
+      </div>
+      <label class="tb-search">
+        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" id="globalSearch" placeholder="Search sites…" aria-label="Search"/>
+        <kbd>/</kbd>
+      </label>
+      <div class="tb-right">
+        <button class="icon-btn dot-alert" type="button" data-toast="4 items need your attention today — demo notifications." aria-label="Notifications"><i class="fas fa-bell" aria-hidden="true"></i></button>
+        <button class="icon-btn" type="button" data-toast="Reports export to PDF, Excel and WhatsApp — included in every build." aria-label="Reports"><i class="fas fa-chart-pie" aria-hidden="true"></i></button>
+        <div class="tb-me" role="button" tabindex="0" data-toast="Signed in as Aline Uwase · Operations lead">
+          <span class="av">AU</span>
+          <div><b>Aline</b><span>Operations lead</span></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- page head -->
+      <div class="page-head rv">
+        <div class="ph-l">
+          <h2>Site yield</h2>
+          <p>Energy OS — meters, solar yield, outages and tenant billing. Demo data for a Rwandan team — in your build every number, role and workflow is yours.</p>
+        </div>
+        <div class="ph-r">
+          <div class="seg" role="group" aria-label="Date range">
+            <button type="button" data-toast="Showing today’s live demo data.">Today</button>
+            <button type="button" class="on" data-toast="Showing the last 7 days of demo data.">7 days</button>
+            <button type="button" data-toast="Showing this month’s demo data.">Month</button>
+          </div>
+          <button class="btn btn-b" type="button" data-toast="Export ready — PDF, Excel or WhatsApp delivery."><i class="fas fa-download" aria-hidden="true"></i> Export</button>
+          <button class="btn btn-a" type="button" data-toast="Demo form — in the live build this opens your site form with validation and MoMo payment."><i class="fas fa-plus" aria-hidden="true"></i> Add Site</button>
+        </div>
+      </div>
+
+      <!-- KPIs -->
+      <section class="kpis rv" aria-label="Key metrics"><article class="kpi k-ok"><div class="kpi-top"><span class="kpi-ic"><i class="fas fa-triangle-exclamation" aria-hidden="true"></i></span><span class="delta up"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i> +12%</span></div><b><span data-count="1842.0" data-pre="" data-suf="" data-dec="0">1,842</span></b><span>Today kWh</span><div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="ar" d="M0,30.0 0.0,18.6 9.1,17.4 18.2,10.0 27.3,16.7 36.4,16.7 45.5,12.2 54.5,14.5 63.6,14.1 72.7,11.7 81.8,5.6 90.9,12.6 100.0,5.0 100.0,30.0 Z"/><path class="ln" d="M0.0,18.6 9.1,17.4 18.2,10.0 27.3,16.7 36.4,16.7 45.5,12.2 54.5,14.5 63.6,14.1 72.7,11.7 81.8,5.6 90.9,12.6 100.0,5.0"/><circle cx="100.0" cy="5.0" r="2.6" fill="#0E9F6E"/></svg></div></article><article class="kpi k-info"><div class="kpi-top"><span class="kpi-ic"><i class="fas fa-calendar" aria-hidden="true"></i></span><span class="delta down"><i class="fas fa-arrow-trend-down" aria-hidden="true"></i> -4%</span></div><b><span data-count="61.0" data-pre="" data-suf="%" data-dec="0">61%</span></b><span>Solar share</span><div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="ar" d="M0,30.0 0.0,12.6 9.1,11.4 18.2,14.4 27.3,8.7 36.4,4.5 45.5,17.6 54.5,9.6 63.6,11.7 72.7,14.7 81.8,5.3 90.9,8.1 100.0,17.1 100.0,30.0 Z"/><path class="ln" d="M0.0,12.6 9.1,11.4 18.2,14.4 27.3,8.7 36.4,4.5 45.5,17.6 54.5,9.6 63.6,11.7 72.7,14.7 81.8,5.3 90.9,8.1 100.0,17.1"/><circle cx="100.0" cy="17.1" r="2.6" fill="#2563EB"/></svg></div></article><article class="kpi "><div class="kpi-top"><span class="kpi-ic"><i class="fas fa-clock" aria-hidden="true"></i></span><span class="delta up"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i> +8%</span></div><b><span data-count="2.0" data-pre="" data-suf="" data-dec="0">2</span></b><span>Outages 7d</span><div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="ar" d="M0,30.0 0.0,9.1 9.1,20.3 18.2,17.8 27.3,5.8 36.4,5.3 45.5,10.4 54.5,15.9 63.6,16.7 72.7,3.9 81.8,15.1 90.9,13.4 100.0,17.1 100.0,30.0 Z"/><path class="ln" d="M0.0,9.1 9.1,20.3 18.2,17.8 27.3,5.8 36.4,5.3 45.5,10.4 54.5,15.9 63.6,16.7 72.7,3.9 81.8,15.1 90.9,13.4 100.0,17.1"/><circle cx="100.0" cy="17.1" r="2.6" fill="#FACC15"/></svg></div></article><article class="kpi k-ok"><div class="kpi-top"><span class="kpi-ic"><i class="fas fa-box" aria-hidden="true"></i></span><span class="delta up"><i class="fas fa-arrow-trend-up" aria-hidden="true"></i> +2.1%</span></div><b><span data-count="48.0" data-pre="" data-suf="" data-dec="0">48</span></b><span>Tenants billed</span><div class="spark"><svg viewBox="0 0 100 30" preserveAspectRatio="none" aria-hidden="true"><path class="ar" d="M0,30.0 0.0,18.9 9.1,8.6 18.2,20.2 27.3,3.7 36.4,3.5 45.5,20.3 54.5,15.9 63.6,9.8 72.7,4.3 81.8,7.7 90.9,5.4 100.0,15.9 100.0,30.0 Z"/><path class="ln" d="M0.0,18.9 9.1,8.6 18.2,20.2 27.3,3.7 36.4,3.5 45.5,20.3 54.5,15.9 63.6,9.8 72.7,4.3 81.8,7.7 90.9,5.4 100.0,15.9"/><circle cx="100.0" cy="15.9" r="2.6" fill="#0E9F6E"/></svg></div></article></section>
+
+      <!-- chart + side panel -->
+      <section class="grid-2 rv">
+        <div class="panel">
+          <div class="p-head">
+            <div><h3>Today kWh — last 7 days</h3><small>Demo series for a Rwandan team · updates automatically in the live build</small></div>
+            <div class="p-tools">
+              <div class="seg" role="group" aria-label="Chart series">
+                <button type="button" class="on" data-toast="Today kWh — last 7 days — demo series.">Today kWh</button>
+                <button type="button" data-toast="Comparative series is available in the live build.">vs last</button>
+              </div>
+            </div>
+          </div>
+          <div class="p-body">
+            <div class="chart" id="chart"><div class="col"><div class="bar" data-h="70" data-v="1,639"></div><small>Mon</small></div><div class="col"><div class="bar" data-h="91" data-v="2,153"></div><small>Tue</small></div><div class="col"><div class="bar" data-h="82" data-v="1,933"></div><small>Wed</small></div><div class="col"><div class="bar" data-h="56" data-v="1,308"></div><small>Thu</small></div><div class="col hi"><div class="bar" data-h="100" data-v="2,356"></div><small>Fri</small></div><div class="col"><div class="bar" data-h="79" data-v="1,871"></div><small>Sat</small></div><div class="col"><div class="bar" data-h="75" data-v="1,770"></div><small>Sun</small></div></div>
+            <div class="chart-foot">
+              <div class="legend"><span><i></i> Today kWh</span><span><i class="b"></i> Peak</span></div>
+              <div class="mini-stats"><div>Peak<b>2,356</b></div><div>Average<b>1,862</b></div><div>Total<b>13,031</b></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="panel"><div class="p-head"><div><h3>Breakdown</h3><small>Share of sites by status</small></div></div><div class="p-body"><div class="donut-wrap"><div class="donut" style="background:conic-gradient(#FACC15 0.0deg 92.3deg, #FCE177 92.3deg 200.0deg, #B4961B 200.0deg 360.0deg)"><b>2925<em>records</em></b></div><div class="dlist"><div><i style="background:#FACC15"></i><span>OK</span><b>26%</b></div><div><i style="background:#FCE177"></i><span>Watch</span><b>30%</b></div><div><i style="background:#B4961B"></i><span>Grid</span><b>44%</b></div></div></div></div></div>
+      </section>
+
+      <!-- table -->
+      <section class="panel rv">
+        <div class="p-head">
+          <div><h3>Sites overview</h3><small>Energy & solar monitoring · sorted by status · demo data</small></div>
+          <div class="p-tools">
+            <button class="btn btn-b" type="button" data-toast="Filters: date, status, owner and amount — all configurable."><i class="fas fa-sliders" aria-hidden="true"></i> Filters</button>
+            <button class="btn btn-a" type="button" data-toast="Demo form — in the live build this opens your site form with validation and MoMo payment."><i class="fas fa-plus" aria-hidden="true"></i> New</button>
+          </div>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Views"><button type="button" class="on">All</button><button type="button">OK</button><button type="button">Watch</button><button type="button">Grid</button></div>
+        <div class="chips" id="chips"><button type="button" class="chip on">All sites</button><button type="button" class="chip" data-nofilter data-toast="My team filter — configured per business in the live build.">My team</button><button type="button" class="chip" data-nofilter data-toast="MoMo paid filter — configured per business in the live build.">MoMo paid</button><button type="button" class="chip" data-nofilter data-toast="This week filter — configured per business in the live build.">This week</button><button type="button" class="chip" data-nofilter data-toast="Kigali filter — configured per business in the live build.">Kigali</button></div>
+        <div class="tscroll">
+          <table id="dataTable" data-total="396" data-noun="sites">
+            <caption class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Sites overview</caption>
+            <thead><tr><th>Site</th><th>kWh today</th><th>Solar %</th><th>Status</th></tr></thead>
+            <tbody><tr><td class="strong" data-l="Site"><span class="who"><span class="av ai"><i class="fas fa-bolt" aria-hidden="true"></i></span><span><b>Kacyiru HQ</b></span></span></td><td data-l="kWh today">420</td><td data-l="Solar %">72%</td><td data-l="Status"><span class="pill p-ok">OK</span></td></tr><tr><td class="strong" data-l="Site"><span class="who"><span class="av ai"><i class="fas fa-bolt" aria-hidden="true"></i></span><span><b>Warehouse</b></span></span></td><td data-l="kWh today">610</td><td data-l="Solar %">54%</td><td data-l="Status"><span class="pill p-bad">Watch</span></td></tr><tr><td class="strong" data-l="Site"><span class="who"><span class="av ai"><i class="fas fa-bolt" aria-hidden="true"></i></span><span><b>Clinic</b></span></span></td><td data-l="kWh today">180</td><td data-l="Solar %">81%</td><td data-l="Status"><span class="pill p-ok">OK</span></td></tr><tr><td class="strong" data-l="Site"><span class="who"><span class="av ai"><i class="fas fa-bolt" aria-hidden="true"></i></span><span><b>Kicukiro market</b></span></span></td><td data-l="kWh today">412</td><td data-l="Solar %">54%</td><td data-l="Status"><span class="pill p-ok">OK</span></td></tr><tr><td class="strong" data-l="Site"><span class="who"><span class="av ai"><i class="fas fa-bolt" aria-hidden="true"></i></span><span><b>Nyagatare clinic</b></span></span></td><td data-l="kWh today">96</td><td data-l="Solar %">88%</td><td data-l="Status"><span class="pill p-ok">OK</span></td></tr><tr><td class="strong" data-l="Site"><span class="who"><span class="av ai"><i class="fas fa-bolt" aria-hidden="true"></i></span><span><b>Gisenyi cold store</b></span></span></td><td data-l="kWh today">640</td><td data-l="Solar %">22%</td><td data-l="Status"><span class="pill p-bad">Grid</span></td></tr></tbody>
+          </table>
+        </div>
+        <div class="t-foot">
+          <small id="tInfo">Showing 6 of 396 sites</small>
+          <div class="pager">
+            <button type="button" disabled aria-label="Previous page"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+            <button type="button" class="on">1</button>
+            <button type="button" data-toast="Pagination is wired to the live database.">2</button>
+            <button type="button" data-toast="Pagination is wired to the live database.">3</button>
+            <button type="button" data-toast="Pagination is wired to the live database."><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- quick actions -->
+      <section class="panel rv">
+        <div class="p-head"><div><h3>Quick actions</h3><small>Every module is tailored to how your team actually works</small></div></div>
+        <div class="p-body"><div class="quick"><button class="qa" type="button" data-toast="Solar module — fully customisable to your workflow."><i class="fas fa-solar-panel" aria-hidden="true"></i><span><b>Open Solar</b><small>Live module</small></span></button><button class="qa" type="button" data-toast="Meters module — fully customisable to your workflow."><i class="fas fa-gauge" aria-hidden="true"></i><span><b>Open Meters</b><small>Live module</small></span></button><button class="qa" type="button" data-toast="Outages module — fully customisable to your workflow."><i class="fas fa-plug" aria-hidden="true"></i><span><b>Open Outages</b><small>Live module</small></span></button><button class="qa" type="button" data-toast="Billing module — fully customisable to your workflow."><i class="fas fa-file-invoice" aria-hidden="true"></i><span><b>Open Billing</b><small>Live module</small></span></button></div></div>
+      </section>
+
+      <!-- footer -->
+      <footer class="sys-foot rv">
+        <div class="fl">
+          <h4><i class="fas fa-cube" aria-hidden="true"></i> Built for Rwandan businesses</h4>
+          <p>KiloWatch Energy is a demo by <a href="../demos.html">1000 Hills Group</a>. We ship it with your roles, MoMo &amp; bank payments, SMS/WhatsApp reminders, offline support and training — live in 2–3 weeks.</p>
+        </div>
+        <div class="fr">
+          <a class="btn btn-b" href="../demos.html" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff"><i class="fas fa-arrow-left" aria-hidden="true"></i> All demos</a>
+          <a class="btn btn-a" href="https://wa.me/250788695396?text=Hi%201000%20Hills%20Group!%20I%20want%20KiloWatch." target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Get KiloWatch Energy</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"><i class="fas fa-circle-info" aria-hidden="true"></i><span id="toastMsg"></span></div>
+
+<script src="assets/pro-system.js" defer></script>
+</body>
+</html>
