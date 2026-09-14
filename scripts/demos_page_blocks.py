@@ -286,7 +286,7 @@ CSS = r"""
         }
         .demo-frame.loaded { opacity: 1; }
 
-        /* poster: an instant CSS "screenshot" of the demo */
+        /* poster: an instant "screenshot" of the demo */
         .poster {
             position: absolute; inset: 26px 0 0 0; z-index: 1;
             padding: 5% 5% 6%;
@@ -296,6 +296,14 @@ CSS = r"""
                 linear-gradient(155deg, var(--pc-1), var(--pc-2));
             overflow: hidden;
         }
+        /* real screenshot of the demo — the card face before the live preview loads */
+        .p-shot {
+            position: absolute; inset: 0; z-index: 3;
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: top center;
+            background: #fff;
+        }
+        .p-shot[src=""], .p-shot:not([src]) { visibility: hidden; }
         .poster::after {
             content: ''; position: absolute; inset: 0;
             background: linear-gradient(200deg, rgba(255, 255, 255, .07), transparent 42%);

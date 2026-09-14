@@ -308,7 +308,7 @@
         }
         .demo-frame.loaded { opacity: 1; }
 
-        /* poster: an instant CSS "screenshot" of the demo */
+        /* poster: an instant "screenshot" of the demo */
         .poster {
             position: absolute; inset: 26px 0 0 0; z-index: 1;
             padding: 5% 5% 6%;
@@ -318,6 +318,14 @@
                 linear-gradient(155deg, var(--pc-1), var(--pc-2));
             overflow: hidden;
         }
+        /* real screenshot of the demo — the card face before the live preview loads */
+        .p-shot {
+            position: absolute; inset: 0; z-index: 3;
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: top center;
+            background: #fff;
+        }
+        .p-shot[src=""], .p-shot:not([src]) { visibility: hidden; }
         .poster::after {
             content: ''; position: absolute; inset: 0;
             background: linear-gradient(200deg, rgba(255, 255, 255, .07), transparent 42%);
@@ -2191,9 +2199,15 @@
     };
     function tint(cat) { return CAT_TINT[cat] || CAT_TINT.corporate; }
 
-    /* ---- poster: a lightweight CSS "screenshot" so the grid paints instantly ---- */
+    /* ---- poster: a real screenshot of the demo so the grid paints instantly ----
+       The wireframe below is the fallback while the shot loads (or if it 404s);
+       the live iframe takes over on top once it loads. */
     function poster(d) {
         const mark = '<i class="' + d.icon + ' p-mark" aria-hidden="true"></i>';
+        const shot = d.file ? d.file.replace(/^.*\//, '').replace(/\.html$/, '') : '';
+        const shotImg = shot
+            ? '<img class="p-shot" src="demos/img/thumbs/' + shot + '.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" onerror="this.remove()">'
+            : '';
         if (d.cat === 'system') {
             const bars = [38, 62, 47, 84, 55, 92, 44].map(h => '<i style="--h:' + h + '%"></i>').join('');
             return '<div class="p-body">' +
@@ -2204,14 +2218,14 @@
                 '<div class="p-main"><div class="p-kpis"><span></span><span></span><span></span><span></span></div>' +
                 '<div class="p-chart">' + bars + '</div>' +
                 '<div class="p-table"><span></span><span></span><span></span></div></div>' +
-                '</div>' + mark;
+                '</div>' + mark + shotImg;
         }
         return '<div class="p-nav"><span class="p-dot"></span><span class="p-line w22"></span>' +
             '<span class="p-line w15 soft"></span><span class="p-line w15 soft"></span><span class="p-cta"></span></div>' +
             '<div class="p-hero"><span class="p-line thick w70"></span><span class="p-line thick w50"></span>' +
             '<span class="p-line soft w85"></span><span class="p-line soft w60"></span>' +
             '<div class="p-btns"><span></span><span class="ghost"></span></div></div>' +
-            '<div class="p-cards"><span></span><span></span><span></span></div>' + mark;
+            '<div class="p-cards"><span></span><span></span><span></span></div>' + mark + shotImg;
     }
 
     function waLink(d) {

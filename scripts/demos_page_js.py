@@ -42,9 +42,17 @@ JS = r"""
     };
     function tint(cat) { return CAT_TINT[cat] || CAT_TINT.corporate; }
 
-    /* ---- poster: a lightweight CSS "screenshot" so the grid paints instantly ---- */
+    /* ---- poster: a real screenshot of the demo so the grid paints instantly ----
+       The wireframe below is the fallback while the shot loads (or if it 404s);
+       the live iframe takes over on top once it loads.
+       Thumbnails are generated into demos/img/thumbs/<demo>.webp — see
+       scripts/shoot_thumbs.js (headless Chromium, 1280x794 @0.5dsf). */
     function poster(d) {
         const mark = '<i class="' + d.icon + ' p-mark" aria-hidden="true"></i>';
+        const shot = d.file ? d.file.replace(/^.*\//, '').replace(/\.html$/, '') : '';
+        const shotImg = shot
+            ? '<img class="p-shot" src="demos/img/thumbs/' + shot + '.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" onerror="this.remove()">'
+            : '';
         if (d.cat === 'system') {
             const bars = [38, 62, 47, 84, 55, 92, 44].map(h => '<i style="--h:' + h + '%"></i>').join('');
             return '<div class="p-body">' +
@@ -55,14 +63,14 @@ JS = r"""
                 '<div class="p-main"><div class="p-kpis"><span></span><span></span><span></span><span></span></div>' +
                 '<div class="p-chart">' + bars + '</div>' +
                 '<div class="p-table"><span></span><span></span><span></span></div></div>' +
-                '</div>' + mark;
+                '</div>' + mark + shotImg;
         }
         return '<div class="p-nav"><span class="p-dot"></span><span class="p-line w22"></span>' +
             '<span class="p-line w15 soft"></span><span class="p-line w15 soft"></span><span class="p-cta"></span></div>' +
             '<div class="p-hero"><span class="p-line thick w70"></span><span class="p-line thick w50"></span>' +
             '<span class="p-line soft w85"></span><span class="p-line soft w60"></span>' +
             '<div class="p-btns"><span></span><span class="ghost"></span></div></div>' +
-            '<div class="p-cards"><span></span><span></span><span></span></div>' + mark;
+            '<div class="p-cards"><span></span><span></span><span></span></div>' + mark + shotImg;
     }
 
     function waLink(d) {
