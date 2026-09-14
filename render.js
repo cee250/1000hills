@@ -130,13 +130,39 @@
       : 'Read More <i class="fas fa-chevron-down"></i>';
   }
 
+  /* Containers that render.js is responsible for filling. */
+  const CONTENT_IDS = [
+    'teamGrid', 'servicesGrid', 'servicesGridFull',
+    'clientsGrid', 'companiesGrid', 'testimonialsGrid'
+  ];
+
+  /* If content.json cannot be fetched (404, opened straight from disk via
+     file:// where fetch is blocked, offline, blocked by an extension...) the
+     grids would sit there saying "Loading..." forever. Replace those
+     placeholders with a real message instead of a fake loading state. */
+  function showFallback() {
+    const message = 'Content is temporarily unavailable. Please refresh the page, or ' +
+      '<a href="contact.html" style="color:#C9A96E;">get in touch</a>.';
+    CONTENT_IDS.forEach(function (id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (el.querySelector('.team-card, .service-card, .service-full-card, .client-item, .company-card, .testimonial-card')) return;
+      const text = (el.textContent || '').trim();
+      if (!text || /loading/i.test(text)) {
+        el.innerHTML = '<p style="text-align:center;color:#888;grid-column:1/-1;">' + message + '</p>';
+      }
+    });
+  }
+
   async function init() {
     let data;
     try {
       const res = await fetch('content.json');
+      if (!res.ok) throw new Error('content.json responded ' + res.status);
       data = await res.json();
     } catch (err) {
       console.error('Could not load content.json — falling back to the content already in the HTML.', err);
+      showFallback();
       return;
     }
 
@@ -146,6 +172,9 @@
     renderClients(data.clients, document.getElementById('clientsGrid'));
     renderPortfolio(data.portfolio, document.getElementById('companiesGrid'));
     renderTestimonials(data.testimonials, document.getElementById('testimonialsGrid'));
+
+    /* Anything still showing a "Loading..." placeholder gets a real message. */
+    showFallback();
 
     if (window.AOS) {
       setTimeout(() => window.AOS.refresh(), 50);
