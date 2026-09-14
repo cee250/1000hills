@@ -2254,9 +2254,26 @@
         if (typeof AOS !== 'undefined') AOS.refresh();
     }
 
-    /* ---- live iframe on hover (desktop only, capped so memory stays sane) ---- */
+    /* ---- live iframe previews ----
+       Loaded when a card scrolls near the viewport (every device — this is what
+       paints the actual demo image in each card) and instantly on desktop hover.
+       Capped: frames far out of view are evicted back to their poster and
+       reloaded on demand, so scrolling 130 demos never runs out of memory. */
     const liveStack = [];
-    const LIVE_MAX = 6;
+    const LIVE_MAX = 14;
+    const nearView = new WeakSet();
+
+    function evictStaleFrames() {
+        while (liveStack.length > LIVE_MAX) {
+            /* never evict a frame that is still on/near the screen */
+            const idx = liveStack.findIndex(f => !nearView.has(f.closest('.demo-viewport')));
+            if (idx === -1) return;
+            const old = liveStack.splice(idx, 1)[0];
+            old.classList.remove('loaded');
+            old.removeAttribute('src');
+            old.dataset.live = '0';
+        }
+    }
 
     function goLive(frame) {
         if (!frame || frame.dataset.live === '1') return;
@@ -2264,12 +2281,31 @@
         frame.addEventListener('load', () => frame.classList.add('loaded'), { once: true });
         frame.src = frame.dataset.src;
         liveStack.push(frame);
-        while (liveStack.length > LIVE_MAX) {
-            const old = liveStack.shift();
-            old.classList.remove('loaded');
-            old.removeAttribute('src');
-            old.dataset.live = '0';
+        evictStaleFrames();
+    }
+
+    /* lazy-load the live preview as each card approaches the viewport */
+    function observePreviews() {
+        if (!('IntersectionObserver' in window)) {
+            /* very old browsers: load everything up front */
+            document.querySelectorAll('.demo-frame').forEach(goLive);
+            return;
         }
+        if (!observePreviews.io) {
+            observePreviews.io = new IntersectionObserver(entries => {
+                entries.forEach(en => {
+                    const vp = en.target;
+                    if (en.isIntersecting) {
+                        nearView.add(vp);
+                        goLive(vp.querySelector('.demo-frame'));
+                    } else {
+                        nearView.delete(vp);
+                    }
+                });
+                evictStaleFrames();
+            }, { rootMargin: '350px 0px' });
+        }
+        document.querySelectorAll('.demo-viewport').forEach(v => observePreviews.io.observe(v));
     }
 
     function fitPreviews() {
@@ -2498,6 +2534,7 @@
 
     renderCards();
     updateRail();
+    observePreviews();
 
     /* ---- deep link: demos.html#system pre-selects that category ---- */
     (function () {
