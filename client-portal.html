@@ -380,25 +380,38 @@
         const portalDashboard = document.getElementById('portalDashboard');
         const clientName = document.getElementById('clientName');
 
-        // Check auth state
-        auth.onAuthStateChanged(user => {
-            if (user) {
-                loginBox.style.display = 'none';
-                portalDashboard.classList.add('active');
-                clientName.textContent = user.displayName || 'Client';
-                loadClientProjects(user.uid);
-            } else {
-                loginBox.style.display = 'block';
-                portalDashboard.classList.remove('active');
-            }
-        });
+        // Check auth state.
+        // main.js only defines `auth` when the Firebase SDK actually loaded.
+        // Without this guard a blocked/offline SDK threw
+        // "Cannot read properties of null (reading 'onAuthStateChanged')"
+        // and the whole portal stayed blank.
+        if (!auth) {
+            console.warn('Firebase is unavailable (SDK blocked or offline) — showing the login box only.');
+            loginBox.style.display = 'block';
+        } else {
+            auth.onAuthStateChanged(user => {
+                if (user) {
+                    loginBox.style.display = 'none';
+                    portalDashboard.classList.add('active');
+                    clientName.textContent = user.displayName || 'Client';
+                    loadClientProjects(user.uid);
+                } else {
+                    loginBox.style.display = 'block';
+                    portalDashboard.classList.remove('active');
+                }
+            });
+        }
 
         // Login
         document.getElementById('portalLoginForm').addEventListener('submit', async (e) => {
             e.preventDefault();
+            if (!auth) {
+                alert('Sign-in is unavailable right now. Please try again shortly or contact support.');
+                return;
+            }
             const email = document.getElementById('portalEmail').value;
             const password = document.getElementById('portalPassword').value;
-            
+
             try {
                 await auth.signInWithEmailAndPassword(email, password);
             } catch (error) {
@@ -408,6 +421,7 @@
 
         // Logout
         document.getElementById('portalLogout').addEventListener('click', async () => {
+            if (!auth) return;
             await auth.signOut();
         });
 

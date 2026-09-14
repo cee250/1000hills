@@ -5,7 +5,11 @@
 // get the header, menu and preloader behaviour.
 // ======================================== //
 
-const firebaseConfig = {
+// Deliberately NOT named `firebaseConfig`: firebase-config.js declares a
+// top-level `const firebaseConfig` too, so loading both files on one page is a
+// fatal "Identifier 'firebaseConfig' has already been declared" SyntaxError
+// that kills every script on the page.
+const siteFirebaseConfig = {
     apiKey: "AIzaSyABeFEPPKjKVFU14cx4s__uwWLRpHa5J2c",
     authDomain: "luxury-properties-36554.firebaseapp.com",
     projectId: "luxury-properties-36554",
@@ -20,7 +24,7 @@ let auth = null;
 (function initFirebase() {
     if (typeof firebase === 'undefined') return;          // SDK not loaded on this page
     try {
-        if (!firebase.apps || !firebase.apps.length) firebase.initializeApp(firebaseConfig);
+        if (!firebase.apps || !firebase.apps.length) firebase.initializeApp(siteFirebaseConfig);
         db = firebase.firestore();
         auth = firebase.auth();
     } catch (err) {

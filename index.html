@@ -676,56 +676,36 @@
     <!-- ======================================== -->
     <!-- SCRIPTS                                  -->
     <!-- ======================================== -->
+    <script src="main.js" defer></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 50,
-            easing: 'ease-out-cubic'
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                setTimeout(function() {
-                    preloader.classList.add('hide');
-                }, 800);
-            }
-        });
-
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                setTimeout(function() {
-                    preloader.classList.add('hide');
-                }, 200);
-            }
-        });
-
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-
-        if (hamburger && navLinks) {
-            hamburger.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navLinks.classList.toggle('open');
-                const isOpen = navLinks.classList.contains('open');
-                this.setAttribute('aria-expanded', isOpen);
-            });
-
-            navLinks.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    hamburger.classList.remove('active');
-                    navLinks.classList.remove('open');
-                    hamburger.setAttribute('aria-expanded', 'false');
+        // NOTE: AOS is defined by assets/js/reveal.js, which is loaded with
+        // "defer" and therefore only runs AFTER this inline script has finished.
+        // Calling AOS.init() here unguarded threw
+        //   "Uncaught ReferenceError: AOS is not defined"
+        // which aborted the rest of this script -- including the preloader-hide
+        // handlers -- leaving #preloader (fixed, full-screen, z-index 99999)
+        // covering the whole page forever. Guard it, and let main.js own the
+        // preloader, header and mobile menu.
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 50,
+                    easing: 'ease-out-cubic'
                 });
-            });
-        }
+            }
+        });
 
-        console.log('🚀 1000 Hills Group - Homepage Loaded!');
-        console.log('👤 Team: GAKIRE KELVIN & UWACU EDDY CARNETTY');
-        console.log('📋 3 Testimonials loaded!');
-        console.log('🏢 Partners logos displayed in original colors!');
+        // Hard failsafe: no matter what happens above, the visitor is never
+        // left staring at the spinner.
+        setTimeout(function () {
+            var preloader = document.getElementById('preloader');
+            if (preloader) preloader.classList.add('hide');
+        }, 4000);
+
+        console.log('\uD83D\uDE80 1000 Hills Group - Homepage Loaded!');
+        console.log('\uD83D\uDC64 Team: GAKIRE KELVIN & UWACU EDDY CARNETTY');
     </script>
     <script src="assets/js/reveal.js" defer></script>
 </body>

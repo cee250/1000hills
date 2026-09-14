@@ -508,12 +508,26 @@
         // ======================================== //
         // AOS INIT                                 //
         // ======================================== //
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 50,
-            easing: 'ease-out-cubic'
+        // AOS comes from assets/js/reveal.js, which is deferred and only runs
+        // after this inline script. An unguarded AOS.init() here threw
+        // "ReferenceError: AOS is not defined" and silently killed everything
+        // below it (typing effect, form validation, submit handler).
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 50,
+                    easing: 'ease-out-cubic'
+                });
+            }
         });
+
+        // Hard failsafe: never leave the visitor behind the spinner.
+        setTimeout(function () {
+            var preloader = document.getElementById('preloader');
+            if (preloader) preloader.classList.add('hide');
+        }, 4000);
 
         // ======================================== //
         // TYPING EFFECT                           //
