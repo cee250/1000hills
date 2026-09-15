@@ -25,6 +25,16 @@
         { "url": "https://wa.me/250788889077", "icon": "fab fa-whatsapp" },
         { "url": "https://potfolio-1-pink.vercel.app/", "icon": "fas fa-briefcase" }
       ]
+    },
+    {
+      "name": "MUGISHA GILBERT",
+      "role": "Social Media Specialist",
+      "bio": "Creative social media specialist helping brands grow through engaging content, meaningful community interaction, and practical digital campaigns.",
+      "image": "assets/img/Mugisha-Gilbert.webp",
+      "badge": "Social Media",
+      "badgeIcon": "fas fa-share-nodes",
+      "skills": ["Content Strategy", "Community", "Campaigns", "Analytics"],
+      "socials": []
     }
   ],
   "services": [
