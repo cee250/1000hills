@@ -104,10 +104,10 @@
         }
 
         /* ======================================== */
-        /* HERO - GREY BACKGROUND WITH LOGO       */
+        /* HERO - TEAM PHOTO BACKGROUND           */
         /* ======================================== */
         .hero {
-            background: #1a1a2e;
+            background: #10131a;
             position: relative;
             min-height: 90vh;
             display: flex;
@@ -118,14 +118,19 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 70%;
-            max-width: 600px;
-            height: 70%;
-            background: url('assets/img/1000hills-logo.webp') no-repeat center center / contain;
-            opacity: 0.12;
+            inset: -18px;
+            background: url('assets/img/hero-team.webp') center center / cover no-repeat;
+            filter: blur(5px);
+            transform: scale(1.04);
+            opacity: 0.42;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(10, 14, 22, 0.88) 0%, rgba(10, 14, 22, 0.68) 48%, rgba(10, 14, 22, 0.78) 100%);
             z-index: 0;
             pointer-events: none;
         }
