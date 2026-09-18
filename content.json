@@ -27,7 +27,7 @@
       ]
     },
     {
-      "name": "MUGISHA GILBERT",
+      "name": "ISHIMWE GILBERT",
       "role": "Social Media Specialist",
       "bio": "Creative social media specialist helping brands grow through engaging content, meaningful community interaction, and practical digital campaigns.",
       "image": "assets/img/Mugisha-Gilbert.webp",
@@ -175,59 +175,56 @@
     { "name": "Rose", "logo": "assets/img/Rose.webp" },
     { "name": "Saphir", "logo": "assets/img/Saphir.webp" }
   ],
- "portfolio": [
-
-   {
-    "name": "MenuHub",
-    "description": "A digital QR menu platform that helps restaurants, cafés, bars, and hotels create beautiful online menus with real-time updates and a modern customer experience.",
-    "logo": "assets/img/menuhub.webp",
-    "url": "https://menuhub1.netlify.app",
-    "status": "live"
-  },
-  {
-    "name": "Luxury Properties Rwanda",
-    "description": "Premium real estate platform with Firebase backend, property listings, and admin dashboard.",
-    "logo": "assets/img/Luxury.webp",
-    "url": "https://luxuryproperties.vercel.app",
-    "status": "live"
-  },
+  "portfolio": [
     {
-    "name": "Awakart",
-    "description": "Your go-to online shopping destination for electronics, gadgets, and everyday essentials. Shop smart, save more.",
-    "logo": "assets/img/awakart.webp",
-    "url": "https://awakart.com",
-    "status": "live"
- },
- 
-  {
-    "name": "Tripsync",
-    "description": "Innovative travel platform connecting travelers with seamless booking experiences across Africa.",
-    "logo": "assets/img/Tripsync.webp",
-    "url": "#",
-    "status": "coming"
-  }
-
-],
+      "name": "MenuHub",
+      "description": "A digital QR menu platform that helps restaurants, cafés, bars, and hotels create beautiful online menus with real-time updates and a modern customer experience.",
+      "logo": "assets/img/menuhub.webp",
+      "url": "https://menuhub1.netlify.app",
+      "status": "live"
+    },
+    {
+      "name": "Luxury Properties Rwanda",
+      "description": "Premium real estate platform with Firebase backend, property listings, and admin dashboard.",
+      "logo": "assets/img/Luxury.webp",
+      "url": "https://luxuryproperties.vercel.app",
+      "status": "live"
+    },
+    {
+      "name": "Awakart",
+      "description": "Your go-to online shopping destination for electronics, gadgets, and everyday essentials. Shop smart, save more.",
+      "logo": "assets/img/awakart.webp",
+      "url": "https://awakart.com",
+      "status": "live"
+    },
+    {
+      "name": "Tripsync",
+      "description": "Innovative travel platform connecting travelers with seamless booking experiences across Africa.",
+      "logo": "assets/img/Tripsync.webp",
+      "url": "#",
+      "status": "coming"
+    }
+  ],
   "testimonials": [
     {
       "company": "Kigali Tech Solutions",
       "role": "CEO",
-      "text": "1000 Hills Group completely transformed our online presence. Our website traffic increased by 200% and our sales doubled within 3 months of working with them. Their team is professional, responsive, and truly understands our business needs."
+      "text": "1000 Hills Group completely transformed our online presence. Our website traffic increased by 200% and our sales doubled within 3 months of working with them. Their team is professional, detail-oriented, and genuinely cares about results."
     },
     {
       "company": "Rwanda Digital Hub",
       "role": "Marketing Director",
-      "text": "The social media strategy developed by 1000 Hills Group grew our following by 300% in just 2 months. Their content creation and community management are top-notch. We've seen a significant increase in engagement and brand awareness."
+      "text": "The social media strategy developed by 1000 Hills Group grew our following by 300% in just 2 months. Their content creation and community management are top-notch. We've seen a significant improvement in engagement and brand visibility."
     },
     {
       "company": "Rwandan E-Commerce Ltd",
       "role": "Founder",
-      "text": "Working with 1000 Hills Group on our mobile app development was a game-changer. They delivered a high-quality, user-friendly app that our customers love. The team's technical expertise and attention to detail are exceptional."
+      "text": "Working with 1000 Hills Group on our mobile app development was a game-changer. They delivered a high-quality, user-friendly app that our customers love. The team's technical expertise and communication were excellent throughout the project."
     },
     {
       "company": "Rwanda Real Estate Group",
       "role": "CEO",
-      "text": "1000 Hills Group built our corporate website from scratch and the results exceeded our expectations. The website is fast, beautiful, and SEO-optimized. We've seen a 150% increase in organic traffic since the launch."
+      "text": "1000 Hills Group built our corporate website from scratch and the results exceeded our expectations. The website is fast, beautiful, and SEO-optimized. We've seen a 150% increase in inbound leads since launch."
     }
   ]
 }
