@@ -6,7 +6,7 @@
 // ======================================== //
 
 // Deliberately NOT named `firebaseConfig`: firebase-config.js declares a
-'top-level `const firebaseConfig` too, so loading both files on one page is a
+// top-level `const firebaseConfig` too, so loading both files on one page is a
 // fatal "Identifier 'firebaseConfig' has already been declared" SyntaxError
 // that kills every script on the page.
 const siteFirebaseConfig = {
@@ -39,6 +39,7 @@ function updateTeamNames() {
     const replacements = [
         ['MUGISHA GILBERT', 'ISHIMWE GILBERT'],
         ['Mugisha Gilbert', 'Ishimwe Gilbert'],
+        ['MUGISHA', 'ISHIMWE'],
         ['CIPHERFOX', 'UWACU EDDY CARNETTY'],
         ['Cipherfox', 'Uwacu Eddy Carnetty']
     ];
