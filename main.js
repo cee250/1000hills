@@ -6,7 +6,7 @@
 // ======================================== //
 
 // Deliberately NOT named `firebaseConfig`: firebase-config.js declares a
-// top-level `const firebaseConfig` too, so loading both files on one page is a
+'top-level `const firebaseConfig` too, so loading both files on one page is a
 // fatal "Identifier 'firebaseConfig' has already been declared" SyntaxError
 // that kills every script on the page.
 const siteFirebaseConfig = {
@@ -32,10 +32,37 @@ let auth = null;
     }
 })();
 
+// Replace legacy team names in rendered markup while preserving existing image
+// filenames and URLs. This keeps the home and About pages consistent with the
+// canonical team data in content.json.
+function updateTeamNames() {
+    const replacements = [
+        ['MUGISHA GILBERT', 'ISHIMWE GILBERT'],
+        ['Mugisha Gilbert', 'Ishimwe Gilbert'],
+        ['CIPHERFOX', 'UWACU EDDY CARNETTY'],
+        ['Cipherfox', 'Uwacu Eddy Carnetty']
+    ];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    const textNodes = [];
+    while (walker.nextNode()) textNodes.push(walker.currentNode);
+    textNodes.forEach(node => {
+        let value = node.nodeValue || '';
+        replacements.forEach(([oldName, newName]) => { value = value.replaceAll(oldName, newName); });
+        node.nodeValue = value;
+    });
+    document.querySelectorAll('img[alt]').forEach(image => {
+        replacements.forEach(([oldName, newName]) => {
+            image.alt = image.alt.replaceAll(oldName, newName);
+        });
+    });
+}
+
 // ======================================== //
 // DOM READY                                //
 // ======================================== //
 document.addEventListener('DOMContentLoaded', function () {
+
+    updateTeamNames();
 
     // ======================================== //
     // HEADER SCROLL EFFECT (rAF-throttled)     //
