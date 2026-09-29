@@ -458,7 +458,7 @@ select:focus-visible {
     object-fit: cover;
     object-position: center center;
     pointer-events: none;
-    background: #10131a url('assets/img/hero-video-poster.webp') center center / cover no-repeat;
+    background: transparent;
 }
 .hero::after {
     content: '';

@@ -124,7 +124,7 @@
             object-position: center center;
             z-index: 0;
             pointer-events: none;
-            background: #10131a url('assets/img/hero-video-poster.webp') center center / cover no-repeat;
+            background: transparent;
         }
         .hero::after {
             content: '';
@@ -262,6 +262,7 @@
     <!-- ======================================== -->
     <section class="hero" id="home">
         <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-video-poster.webp" aria-hidden="true">
+            <source media="(min-width: 769px)" src="assets/video/hero-background-desktop.mp4" type="video/mp4" />
             <source src="assets/video/hero-background-hd.mp4" type="video/mp4" />
         </video>
         <div class="hero-overlay"></div>
