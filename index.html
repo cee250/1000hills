@@ -109,10 +109,10 @@
         .hero {
             background: #10131a;
             position: relative;
-            min-height: 90vh;
+            min-height: 100svh;
             display: flex;
             align-items: center;
-            padding: 100px 0 60px;
+            padding: 120px 0 80px;
             overflow: hidden;
         }
         .hero-video {
@@ -124,13 +124,13 @@
             object-position: center center;
             z-index: 0;
             pointer-events: none;
-            background: #10131a url('assets/img/hero-team.webp') center center / cover no-repeat;
+            background: #10131a url('assets/img/hero-video-poster.webp') center center / cover no-repeat;
         }
         .hero::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(90deg, rgba(10, 14, 22, 0.88) 0%, rgba(10, 14, 22, 0.68) 48%, rgba(10, 14, 22, 0.78) 100%);
+            background: linear-gradient(90deg, rgba(10, 14, 22, 0.84) 0%, rgba(10, 14, 22, 0.38) 52%, rgba(10, 14, 22, 0.16) 100%), linear-gradient(0deg, rgba(10, 14, 22, 0.35), transparent 36%);
             z-index: 1;
             pointer-events: none;
         }
@@ -225,7 +225,7 @@
         }
     </style>
 </head>
-<body>
+<body class="home-page">
 
     <div id="preloader">
         <div class="preloader-logo">
@@ -258,55 +258,25 @@
     </header>
 
     <!-- ======================================== -->
-    <!-- HERO - BOLD TEXT 37PX NO DANCE         -->
+    <!-- HERO - FULL-SCREEN VIDEO               -->
     <!-- ======================================== -->
     <section class="hero" id="home">
-        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-team.webp" aria-hidden="true">
-            <source src="assets/video/hero-background.mp4" type="video/mp4" />
+        <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/hero-video-poster.webp" aria-hidden="true">
+            <source src="assets/video/hero-background-hd.mp4" type="video/mp4" />
         </video>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-                <span class="tag"><i class="fas fa-bolt"></i> YOUR TRUSTED TECH PARTNER</span>
-                
-                <h1 class="hero-main-title">Transform Your Business With Us</h1>
-                <h2 class="hero-sub-title">Your trusted tech partner</h2>
-                
+                <span class="tag">1000 HILLS GROUP</span>
+                <h1 class="hero-main-title">Digital solutions for a better tomorrow</h1>
+                <p class="hero-lead">Web, digital marketing, and technology built for growth.</p>
                 <div class="hero-buttons">
                     <a href="services.html" class="btn-primary">
-                        Our Services
+                        Explore our services
                     </a>
                     <a href="contact.html" class="btn-outline">
-                        <i class="fas fa-comment"></i> Let's Talk
+                        Let's talk
                     </a>
-                </div>
-            </div>
-            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                <div class="hero-card">
-                    <div class="hero-card-content">
-                        <h4>Social Media Marketing</h4>
-                        <p>Grow your brand with strategic social media campaigns</p>
-                        <div class="badge-group">
-                            <span class="badge"><i class="fas fa-check"></i> Content Strategy</span>
-                            <span class="badge"><i class="fas fa-check"></i> Analytics Driven</span>
-                        </div>
-                    </div>
-                    <div class="hero-card-image">
-                        <i class="fas fa-share-alt"></i>
-                    </div>
-                </div>
-                <div class="hero-card" style="animation-delay: 0.5s;">
-                    <div class="hero-card-content">
-                        <h4>Web Development</h4>
-                        <p>High-performance, responsive websites that convert</p>
-                        <div class="badge-group">
-                            <span class="badge"><i class="fas fa-check"></i> Fast Loading</span>
-                            <span class="badge"><i class="fas fa-check"></i> Mobile First</span>
-                        </div>
-                    </div>
-                    <div class="hero-card-image">
-                        <i class="fas fa-globe"></i>
-                    </div>
                 </div>
             </div>
         </div>
